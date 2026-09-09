@@ -6,7 +6,7 @@ Web and Android, Russian and English.
 
 - Web: https://isverifiedby.me
 - Google Play: https://play.google.com/store/apps/details?id=me.isverifiedby.pickgame
-- Direct APK: https://isverifiedby.me/dl/tappetite.apk
+- Direct APK: https://isverifiedby.me/download/tappetite-latest.apk
 - Hackathon deck: https://isverifiedby.me/hackathon/deck.html
 
 ## Clock In (Solana Mobile hackathon), Sept 8 to Oct 8, 2026
