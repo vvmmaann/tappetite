@@ -1,0 +1,152 @@
+[
+  {
+    "key": "mood_artist::Русский трэп и phonk",
+    "new_p1_ru": "В колонках — низкий бас, резкая подача и чувство, что город едет ночью без тормозов. Тебе важен саунд, который не просит разрешения.",
+    "new_p1_en": "In the speakers — low bass, sharp delivery, and the feeling of a city moving at night without brakes. You want a sound that asks no permission."
+  },
+  {
+    "key": "mood_artist::K-pop сторона",
+    "new_p1_ru": "На экране — клип, где каждый жест выверен, а припев цепляет с первого раза. Ты слышишь не фанатский шум, а полноценную сцену.",
+    "new_p1_en": "On screen — a video where every move is precise and the chorus lands at once. You hear not fan noise, but a full scene with its own rules."
+  },
+  {
+    "key": "mood_artist::Стадионный катарсис",
+    "new_p1_ru": "Толпа поднимает руки, и одна строчка вдруг становится общей. Тебе нужны артисты, которые превращают личную эмоцию в стадионный взрыв.",
+    "new_p1_en": "The crowd raises its hands, and one line suddenly belongs to everyone. You need artists who turn private emotion into a stadium-wide release."
+  },
+  {
+    "key": "current_fashion_style::Богатый шик",
+    "new_p1_ru": "Никаких криков с ткани — только посадка, материал и спокойная уверенность. Тебе важен образ, который считывают те, кто умеет смотреть.",
+    "new_p1_en": "No shouting from the fabric — only fit, material, and quiet confidence. You want a look read by people who actually know how to look."
+  },
+  {
+    "key": "current_fashion_style::Тёмное и техно",
+    "new_p1_ru": "Чёрный силуэт, жёсткая фактура, будто улица уже чуть ближе к будущему. Твой образ не спорит с миром — он строит свой маршрут.",
+    "new_p1_en": "A black silhouette, hard textures, like the street is already a little closer to the future. Your look doesn't argue with the world — it builds its own."
+  },
+  {
+    "key": "current_fashion_style::Уличный спорт",
+    "new_p1_ru": "Кроссовки завязаны так, будто день может резко ускориться. Тебе нужна одежда, в которой удобно двигаться и всё равно выглядеть собранно.",
+    "new_p1_en": "The sneakers are tied like the day could suddenly speed up. You need clothes that let you move and still look completely put together."
+  },
+  {
+    "key": "current_fashion_style::Нежность природы",
+    "new_p1_ru": "Мягкая ткань, цветочный принт, вещь будто с чужой красивой истории. Ты собираешь образ не ради тренда, а ради спокойного мира вокруг себя.",
+    "new_p1_en": "Soft fabric, a floral print, a piece that feels borrowed from someone else's pretty story. You build a look for a calm world around you, not for a trend."
+  },
+  {
+    "key": "current_fashion_style::Технический аутдор",
+    "new_p1_ru": "Куртка держит ветер, карманы знают своё дело, обувь готова к долгому маршруту. Тебе нравится стиль, который сначала работает, а потом выглядит.",
+    "new_p1_en": "The jacket holds the wind, the pockets know their job, the shoes are ready for a long route. You like style that works first and looks good after."
+  },
+  {
+    "key": "your_aesthetic::Y2K и нулевые",
+    "new_p1_ru": "Старый глянец снова мигает с витрин, только теперь ты видишь его осознанно. Тебя цепляет эпоха, которая вернулась уже с иронией.",
+    "new_p1_en": "The old gloss is blinking from shop windows again, only now you see it consciously. You're drawn to an era that came back with irony attached."
+  },
+  {
+    "key": "your_aesthetic::Чистый шик",
+    "new_p1_ru": "Чистая линия, спокойный цвет, ничего лишнего на виду. Тебе нравится, когда стиль говорит тихо, но именно поэтому звучит дороже.",
+    "new_p1_en": "A clean line, a calm color, nothing extra in sight. You like style that speaks quietly — and sounds more expensive because of it."
+  },
+  {
+    "key": "your_aesthetic::Тёмная академия",
+    "new_p1_ru": "В комнате пахнет бумагой, дождём и старым деревом. Тебе близка эстетика, где интеллект выглядит не стерильно, а немного таинственно.",
+    "new_p1_en": "The room smells of paper, rain, and old wood. You're drawn to an aesthetic where intellect doesn't look sterile, but slightly mysterious."
+  },
+  {
+    "key": "your_aesthetic::Кибер-будущее",
+    "new_p1_ru": "Неон режет темноту, силуэты будто собраны из интерфейсов и ночных улиц. Тебя тянет туда, где стиль ещё не успел стать понятным.",
+    "new_p1_en": "Neon cuts through the dark, silhouettes look built from interfaces and night streets. You're pulled toward style before it has become understandable."
+  },
+  {
+    "key": "your_aesthetic::Природа и уют",
+    "new_p1_ru": "Тёплый свет, мука на столе, трава за окном, будто жизнь можно замедлить руками. Тебе нужен визуальный мир до шума и вечной спешки.",
+    "new_p1_en": "Warm light, flour on the table, grass beyond the window, as if life could be slowed by hand. You need a visual world before noise and constant rush."
+  },
+  {
+    "key": "your_aesthetic::Девичья нежность",
+    "new_p1_ru": "Бант на волосах, мягкий цвет, жест без защиты и показной силы. Тебе близка нежность, которая не оправдывается и не просит разрешения.",
+    "new_p1_en": "A bow in the hair, a soft color, a gesture without armor or forced toughness. You're drawn to tenderness that doesn't apologize or ask permission."
+  },
+  {
+    "key": "your_aesthetic::Авангард-эксперимент",
+    "new_p1_ru": "Утро начинается как чистый холст, и обычная одежда кажется слишком скучным ответом. Тебе нужен образ, который удивляет первым.",
+    "new_p1_en": "The morning starts like a blank canvas, and ordinary clothes feel like too boring an answer. You need a look that surprises first."
+  },
+  {
+    "key": "ideal_evening::Дома в покое",
+    "new_p1_ru": "Дверь закрылась, чай остывает рядом, и наконец никто ничего не требует. Твой вечер начинается там, где внешний мир перестаёт стучать в расписание.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "ideal_evening::Активная социальность",
+    "new_p1_ru": "Вечер загорается, когда рядом голоса, смех и общий шум. Тебе нужен не фон, а люди — те, с кем время становится громче и живее.",
+    "new_p1_en": "The evening lights up when there are voices, laughter, and shared noise nearby. You need people, not background — the ones who make time louder and alive."
+  },
+  {
+    "key": "ideal_evening::Романтика и парность",
+    "new_p1_ru": "Два бокала на столе, один маршрут на вечер и ощущение, что весь город стал тише. Тебе важен формат «мы», без толпы и лишнего шума.",
+    "new_p1_en": "Two glasses on the table, one route for the evening, and the sense that the city has gone quieter. You need the format of two, without crowds or extra noise."
+  },
+  {
+    "key": "ideal_evening::Тихий восстановитель",
+    "new_p1_ru": "Один столик у окна, книга раскрыта, телефон лежит лицом вниз. Тебе нужен вечер, где одиночество не давит, а возвращает тебя себе.",
+    "new_p1_en": "One table by the window, a book open, the phone lying face down. You need an evening where solitude doesn't press on you, but brings you back to yourself."
+  },
+  {
+    "key": "ideal_evening::Тренировка тела",
+    "new_p1_ru": "После долгого дня тело просит не диван, а движение. Тебе важно сбросить офисную неподвижность через шаг, вес, ритм или простую готовку.",
+    "new_p1_en": "After a long day, the body asks not for the couch, but for motion. You need to shake off office stillness through steps, weight, rhythm, or simple cooking."
+  },
+  {
+    "key": "ideal_evening::Учиться и расти",
+    "new_p1_ru": "Вечер для тебя не выключатель, а тихое продолжение роста. Страница, урок, разговор издалека — всё это делает день не просто прожитым.",
+    "new_p1_en": "For you, evening isn't a switch-off, but a quiet continuation of growth. A page, a lesson, a distant call — all of it makes the day feel used well."
+  },
+  {
+    "key": "ideal_evening::Эстетический поход",
+    "new_p1_ru": "Правильный свет, хороший звук, город после темноты — и обычный вечер становится маленьким ритуалом. Тебе важны место, фон и ощущение.",
+    "new_p1_en": "The right light, good sound, the city after dark — and an ordinary evening becomes a small ritual. Place, backdrop, and feeling matter to you."
+  },
+  {
+    "key": "career_vibe::Стартап-драйв",
+    "new_p1_ru": "Белая доска исписана, дедлайн близко, а энергия только растёт. Тебе нужен темп, где риск не пугает, а включает азарт и рост.",
+    "new_p1_en": "The whiteboard is full, the deadline is close, and the energy only rises. You need a pace where risk doesn't scare you, but switches on drive and growth."
+  },
+  {
+    "key": "career_vibe::Стабильность корпорации",
+    "new_p1_ru": "Чёткий процесс, понятная лестница, зарплата приходит без сюрпризов. Тебе важна работа, где будущее можно планировать, а не угадывать.",
+    "new_p1_en": "A clear process, a visible ladder, a salary that arrives without surprises. You need work where the future can be planned, not guessed."
+  },
+  {
+    "key": "career_vibe::Креатив и контент",
+    "new_p1_ru": "Пустой бриф превращается в образ, а идея — в то, что можно увидеть и почувствовать. Тебе нужна работа, где смысл важнее механики.",
+    "new_p1_en": "A blank brief turns into an image, and an idea becomes something you can see and feel. You need work where meaning matters more than mechanics."
+  },
+  {
+    "key": "career_vibe::IT-волна",
+    "new_p1_ru": "Код, продукт, гипотеза, прототип — тебе нравится работать там, где будущее собирают руками. Это не просто сфера, а язык эпохи.",
+    "new_p1_en": "Code, product, hypothesis, prototype — you like working where the future is built by hand. This isn't just a field, but the language of the era."
+  },
+  {
+    "key": "career_vibe::Польза другим",
+    "new_p1_ru": "Утром ты хочешь понимать, кому станет легче из-за твоей работы. Зарплата важна, но главный смысл — в человеке, которому ты помог.",
+    "new_p1_en": "In the morning, you want to know whose life will get easier because of your work. Salary matters, but the real meaning is the person you helped."
+  },
+  {
+    "key": "career_vibe::Своё дело",
+    "new_p1_ru": "Никакого чужого сценария — только твой ритм, твои правила и твоя ответственность. Тебе важно самому решать, куда растёт работа.",
+    "new_p1_en": "No borrowed script — only your rhythm, your rules, and your responsibility. You need to decide for yourself where the work is going."
+  },
+  {
+    "key": "career_vibe::Цифры и анализ",
+    "new_p1_ru": "Таблица молчит, пока кто-то не увидит в ней закономерность. Тебе нравится доставать смысл из чисел, отчётов и повторяющихся сигналов.",
+    "new_p1_en": "A table stays silent until someone sees the pattern inside it. You like pulling meaning from numbers, reports, and repeating signals."
+  },
+  {
+    "key": "career_vibe::Особый путь",
+    "new_p1_ru": "На вопрос «чем ты занимаешься?» нет короткого ответа, и это нормально. Твоя работа складывается из навыков, проектов и странной смелости.",
+    "new_p1_en": "There is no short answer to “what do you do?” and that's fine. Your work is made of skills, projects, and a strange kind of courage."
+  }
+]

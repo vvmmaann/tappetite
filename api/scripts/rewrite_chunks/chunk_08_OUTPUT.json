@@ -1,0 +1,152 @@
+[
+  {
+    "key": "gaming_style::Соло и фарм",
+    "new_p1_ru": "В тишине проще слышать цель. Ты заходишь в игру не за толпой, а за личным маршрутом: собрать, пройти, улучшить и довести до своего идеала.",
+    "new_p1_en": "Silence makes the goal easier to hear. You enter the game not for the crowd, but for your own route: collect, finish, refine, make it yours."
+  },
+  {
+    "key": "gaming_style::Командное",
+    "new_p1_ru": "В голосовом чате кто-то смеётся, кто-то злится, кто-то тащит раунд. Тебе нужна игра, где победа собирается из людей, а не только из твоих рук.",
+    "new_p1_en": "In voice chat someone laughs, someone rages, someone saves the round. You need a game where victory is built from people, not only your own hands."
+  },
+  {
+    "key": "gaming_style::Творцы и моддеры",
+    "new_p1_ru": "Перед тобой не уровень, а набор кирпичей. Тебе интереснее придумать свой мир, маршрут или правило, чем просто пройти то, что уже приготовили.",
+    "new_p1_en": "What you see is not a level, but a box of bricks. You'd rather invent your own world, route, or rule than simply finish what was prepared."
+  },
+  {
+    "key": "gaming_style::Лор и философия",
+    "new_p1_ru": "Ты задерживаешься у второстепенной реплики, потому что там может быть ключ. Тебе важна не только механика, а то, что игра пытается сказать.",
+    "new_p1_en": "You pause over a side line because it might hold the key. What matters isn't only mechanics, but what the game is trying to say."
+  },
+  {
+    "key": "gaming_style::Стратег и тактик",
+    "new_p1_ru": "Победа начинается до первого хода. Ты просчитываешь, сравниваешь, ищешь лучший путь — и получаешь удовольствие не от хаоса, а от точного плана.",
+    "new_p1_en": "The win starts before the first move. You calculate, compare, seek the cleanest route — and enjoy not the chaos, but the precision of a plan."
+  },
+  {
+    "key": "gaming_style::Эмоциональный игрок",
+    "new_p1_ru": "Раунд ещё не начался, а ты уже внутри — смеёшься, споришь, горишь моментом. Тебе нужна игра, где можно проживать, а не просто выполнять.",
+    "new_p1_en": "The round hasn't even started, and you're already inside it — laughing, arguing, burning with the moment. You need to live the game, not just execute."
+  },
+  {
+    "key": "gaming_style::Профи и турниры",
+    "new_p1_ru": "Для тебя матч — не отдых, а тренировка. Повтор, разбор, ещё один заход: ты играешь так, будто у результата есть вес за пределами экрана.",
+    "new_p1_en": "For you a match is not rest, but training. Replay, review, one more run: you play as if the result carries weight beyond the screen."
+  },
+  {
+    "key": "red_flag_others::Понты и грубость",
+    "new_p1_ru": "Один разговор с обслуживанием — и портрет готов. Тебя отталкивают люди, которым важнее выглядеть сверху, чем видеть перед собой человека.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "red_flag_others::Скудная личность",
+    "new_p1_ru": "Пять минут разговора — и будто нечего зацепить. Тебя отталкивает плоскость: нет огня, нет интереса, нет способности улыбнуться себе.",
+    "new_p1_en": "Five minutes of talking — and there's nothing to hold on to. What pushes you away is flatness: no spark, no curiosity, no ability to smile at oneself."
+  },
+  {
+    "key": "red_flag_others::Враньё и контроль",
+    "new_p1_ru": "Сначала мелочь не сходится, потом рядом становится тесно. Ты быстро видишь людей, которые под видом заботы начинают управлять чужой жизнью.",
+    "new_p1_en": "First a small detail doesn't add up, then being near them feels tight. You quickly spot people who use care as a cover for managing someone else's life."
+  },
+  {
+    "key": "red_flag_others::Хаос и непунктуальность",
+    "new_p1_ru": "Ты приходишь вовремя, а человек снова «почти уже». В какой-то момент это перестаёт быть случайностью и становится отношением к твоему времени.",
+    "new_p1_en": "You arrive on time, and they are once again 'almost there.' At some point it stops being an accident and becomes an attitude toward your time."
+  },
+  {
+    "key": "red_flag_others::Эмоциональный груз",
+    "new_p1_ru": "После встречи с ними ты будто несёшь чужой рюкзак. Тебя отталкивают люди, рядом с которыми любое общение превращается в слив сил.",
+    "new_p1_en": "After seeing them, you feel like you're carrying someone else's backpack. People who turn every exchange into a drain on your energy push you away."
+  },
+  {
+    "key": "red_flag_others::Нарушение границ",
+    "new_p1_ru": "Если человек шутит за чужой счёт и не слышит «стоп», тебе всё ясно. Ты уходишь от тех, кто видит рядом не личность, а удобную функцию.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "red_flag_others::Жадность и мелочность",
+    "new_p1_ru": "Чек делят до копейки, статус выставляют напоказ, а тепла всё равно нет. Тебя отталкивает мелкость, где вещи важнее людей.",
+    "new_p1_en": "The bill is split to the cent, status is put on display, and there is still no warmth. What pushes you away is smallness, where things matter more than people."
+  },
+  {
+    "key": "red_flag_others::Прошлое тащит",
+    "new_p1_ru": "На новом свидании звучит старая история — и слишком долго. Ты чувствуешь, когда человек не пришёл к тебе, а привёл с собой весь незакрытый багаж.",
+    "new_p1_en": "On a new date, an old story starts — and goes on too long. You can feel when someone hasn't come to you, but brought all their unfinished baggage along."
+  },
+  {
+    "key": "actors_without_oscar::Культ молодёжи 90-х",
+    "new_p1_ru": "В их взгляде всё ещё есть нерв девяностых: ирония, харизма, лёгкая чужеродность. Тебя тянет к актёрам, которые не растворились в новых шаблонах.",
+    "new_p1_en": "There is still a '90s nerve in their gaze: irony, charisma, a slight outsider edge. You're drawn to actors who never dissolved into newer templates."
+  },
+  {
+    "key": "actors_without_oscar::Британская старая школа",
+    "new_p1_ru": "Один поворот головы — и уже понятно, что это школа. Тебя цепляет актёрская точность: голос, пауза, жест, собранные как сложный механизм.",
+    "new_p1_en": "One turn of the head, and you can feel the school behind it. What draws you in is precision: voice, pause, gesture, all built like a fine mechanism."
+  },
+  {
+    "key": "actors_without_oscar::Голливудские легенды",
+    "new_p1_ru": "Они входят в кадр — и фильму сразу спокойнее. Тебе важны актёры, которые держат уровень годами: не мода, а ремесло, проверенное временем.",
+    "new_p1_en": "They enter the frame, and the film immediately steadies. You value actors who hold the level for years: not fashion, but craft tested by time."
+  },
+  {
+    "key": "actors_without_oscar::Драматическая мощь",
+    "new_p1_ru": "В каждой роли видно усилие, но не пот. Тебе нравятся актёры, которые не продают лицо звезды, а заново собирают себя под задачу.",
+    "new_p1_en": "In every role you see effort, but not sweat. You like actors who don't sell a star face, but rebuild themselves for the job in front of them."
+  },
+  {
+    "key": "actors_without_oscar::Эксцентричные мастера",
+    "new_p1_ru": "Не все должны быть универсальными. Тебя цепляют актёры с собственной странной частотой — те, кого узнаёшь сразу, потому что второго такого нет.",
+    "new_p1_en": "Not everyone has to be universal. You're drawn to actors with their own strange frequency — the ones you recognize at once because there is no second copy."
+  },
+  {
+    "key": "actors_without_oscar::Преданные камео",
+    "new_p1_ru": "Три минуты в кадре — и фильм уже богаче. Ты замечаешь тех, кто не просит центр сцены, но приносит туда плотность, характер и жизнь.",
+    "new_p1_en": "Three minutes on screen — and the film is richer. You notice those who don't ask for the center, but bring density, character, and life into it."
+  },
+  {
+    "key": "actors_without_oscar::Молодая школа без Оскара",
+    "new_p1_ru": "Награда ещё может прийти, но интерес уже здесь. Тебе важны актёры в движении: они ещё меняются, рискуют, ищут роль, которая всё зафиксирует.",
+    "new_p1_en": "The award may still come, but the interest is already here. You value actors in motion: still changing, risking, looking for the role that will define them."
+  },
+  {
+    "key": "rodnye_00e::Тёмный буст",
+    "new_p1_ru": "В этих треках нулевые не улыбаются — они спорят, провоцируют, давят на запрет. Тебе близка энергия сцены, которая не хотела быть удобной.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "rodnye_00e::Танцпольные хиты",
+    "new_p1_ru": "Паркет липнет к кроссовкам, свет мигает, кто-то кричит припев раньше времени. Тебе важна музыка момента — простая, телесная, общая.",
+    "new_p1_en": "The dance floor sticks to your sneakers, lights flash, someone shouts the chorus too early. What matters to you is music of the moment: simple, physical, shared."
+  },
+  {
+    "key": "rodnye_00e::Лиричный поп",
+    "new_p1_ru": "Автобус едет через вечерний город, а в наушниках звучит лёгкая грусть. Тебе важны песни с историей, чувством и подростковой честностью.",
+    "new_p1_en": "The bus moves through the evening city, and a soft sadness plays in your headphones. You care about songs with story, feeling, and teenage honesty."
+  },
+  {
+    "key": "rodnye_00e::Девичий гламур",
+    "new_p1_ru": "Блёстки, клипы, хореография — и за этим целая индустрия. Ты слышишь не только глянец, но и продюсерскую работу, собранную в яркий образ.",
+    "new_p1_en": "Glitter, videos, choreography — and behind it, a whole industry. You hear not only gloss, but the production work assembled into a vivid image."
+  },
+  {
+    "key": "rodnye_00e::Мальчишеские бренды",
+    "new_p1_ru": "Плакаты на стенах, кассеты в плеере, чей-то любимчик в каждом классе. Ты помнишь поп-героев, которые были не музыкой, а подростковой мечтой.",
+    "new_p1_en": "Posters on walls, tapes in a player, someone's favorite heartthrob in every class. You remember pop heroes who were not just music, but teenage dreams."
+  },
+  {
+    "key": "rodnye_00e::Хрупкость и протест",
+    "new_p1_ru": "Посреди громкой эпохи ты выбирал не только шум. Тебе были важны голоса, в которых есть трещина, нежность и попытка остаться честным.",
+    "new_p1_en": "In the middle of a loud era, you didn't choose only noise. What mattered were voices with a crack in them, tenderness, and a wish to stay honest."
+  },
+  {
+    "key": "cult_90s_series::Ситком и улыбка",
+    "new_p1_ru": "Заставка начинается — и день становится легче. Тебе близки сериалы, где знакомая комната, любимые лица и смех работают как домашний свет.",
+    "new_p1_en": "The opening starts, and the day gets lighter. You're drawn to shows where a familiar room, beloved faces, and laughter work like warm home light."
+  },
+  {
+    "key": "cult_90s_series::Мистика и тайны",
+    "new_p1_ru": "За обычным городком что-то шевелится, и ты уже смотришь внимательнее. Тебя цепляют сериалы, где реальность держится на странной трещине.",
+    "new_p1_en": "Something moves behind an ordinary town, and you start watching more closely. You're drawn to shows where reality rests on a strange crack."
+  }
+]

@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tappetite portrait loading - demo</title>
+<style>
+  :root {
+    --bg-app-from: #FAF6F0;
+    --bg-app-to:   #F0E9DD;
+    --text-primary:   #1A1F36;
+    --text-secondary: #4A4035;
+    --text-tertiary:  #8A7A6A;
+    --text-muted:     #B0A090;
+    --accent:  #B5532E;
+    --border:  #C9BBA8;
+    --card-bg: #FFFFFF;
+    --font-display: Georgia, 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', Menlo, monospace;
+  }
+  [data-theme="dark"] {
+    --bg-app-from: #1F1B16;
+    --bg-app-to:   #2A241E;
+    --text-primary:   #F5F0E8;
+    --text-secondary: #C9B9A8;
+    --text-tertiary:  #8A7A6A;
+    --text-muted:     #6A5D50;
+    --accent:  #D4885C;
+    --border:  #3A3128;
+    --card-bg: #2A241E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 16px;
+    background: linear-gradient(180deg, var(--bg-app-from) 0%, var(--bg-app-to) 100%);
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    min-height: 100vh;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  /* Demo header with controls */
+  .demo-header {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .demo-header h1 {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  .controls {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .controls button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+  .controls button.active {
+    background: var(--accent);
+    color: var(--bg-app-from);
+    border-color: var(--accent);
+  }
+
+  /* Phone-frame mock so demo feels like the real screen */
+  .phone-frame {
+    width: 380px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: var(--bg-app-from);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: 0 12px 36px rgba(26, 31, 54, 0.10);
+    padding: 24px 18px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .phone-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .phone-frame > * { position: relative; z-index: 1; }
+
+  /* Mock status-bar so it reads as mobile screen */
+  .mock-statusbar {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-tertiary);
+    margin-bottom: 14px;
+    padding: 0 4px;
+  }
+
+  /* Mock section header (looks like the profile section heading) */
+  .mock-section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    text-align: center;
+    margin: 12px 0 4px;
+  }
+  .mock-section-title {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    margin: 0 0 20px;
+    color: var(--text-primary);
+  }
+
+  /* === ACTUAL LOADER STATE (mirrors game.html .prochteniye-loading) === */
+  .prochteniye-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px 8px 12px;
+  }
+  .prochteniye-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .prochteniye-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 1.3;
+    opacity: 0;
+    transform: translateY(-3px);
+    transition: opacity 380ms ease, transform 380ms ease;
+  }
+  .prochteniye-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .prochteniye-step.done { color: var(--text-tertiary); }
+  .prochteniye-step.active { color: var(--text-primary); }
+  .prochteniye-step-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1;
+  }
+  .prochteniye-step.done .prochteniye-step-marker::before {
+    content: '✓';
+    color: var(--accent);
+  }
+  .prochteniye-step.active .prochteniye-step-marker::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: prochStepPulse 1.1s ease-in-out infinite;
+  }
+  @keyframes prochStepPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.55); opacity: 1; }
+  }
+  .prochteniye-loading-sub {
+    margin-top: 4px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* Loader canvas — mirrors game.html .tappetite-loader rules */
+  .tappetite-loader {
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+  }
+  .tappetite-loader.portrait { width: 220px; height: 220px; margin-bottom: 10px; }
+
+  /* Hint card below the phone for demo navigation */
+  .hint {
+    max-width: 380px;
+    margin: 18px auto 0;
+    text-align: center;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+  }
+
+  /* Curve comparison strip — 4 small canvases side-by-side */
+  .curve-compare {
+    max-width: 920px;
+    margin: 48px auto 0;
+    padding-top: 28px;
+    border-top: 1px dotted var(--border);
+  }
+  .curve-compare h2 {
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 6px;
+  }
+  .curve-compare .sub {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    margin-bottom: 26px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  .curve-grid {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .curve-cell {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .curve-cell canvas {
+    width: 160px;
+    height: 160px;
+    background: transparent;
+    display: block;
+  }
+  .curve-cell .curve-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: center;
+  }
+  .curve-cell .curve-name {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 1.25;
+  }
+  .curve-cell .curve-desc {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.5;
+    max-width: 190px;
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-header">
+  <h1>portrait loading screen · demo</h1>
+  <div class="controls">
+    <span>theme:</span>
+    <button id="themeLight" class="active">light</button>
+    <button id="themeDark">dark</button>
+    <span style="margin-left: 14px;">action:</span>
+    <button id="restartBtn">restart timeline</button>
+  </div>
+</div>
+
+<div class="phone-frame">
+  <div class="mock-statusbar"><span>9:41</span><span>· · ·</span></div>
+
+  <div class="mock-section-eyebrow">прочтение</div>
+  <div class="mock-section-title">AI собирает твой портрет</div>
+
+  <!-- This block is a 1:1 clone of #prochteniyeLoading from game.html -->
+  <div class="prochteniye-loading">
+    <canvas class="tappetite-loader portrait" id="prochLoader" width="440" height="440"></canvas>
+    <div class="prochteniye-steps" id="prochteniyeSteps"></div>
+    <div class="prochteniye-loading-sub">это недолго</div>
+  </div>
+</div>
+
+<div class="hint">
+  step timeline runs at the same delays as in production (init → polish over ~34s).<br>
+  "restart timeline" replays from step 1; theme toggle hot-swaps light/dark.
+</div>
+
+<!-- ──────────────── MOTION PATTERNS ──────────────── -->
+<!-- 10 разных motion-паттернов на ОДНОЙ И ТОЙ ЖЕ дот-клауд (терракотовые
+     точки, rMin=0 collapse to center). Меняется только сам тип движения
+     - синхронизация по фазе, направление, добавочные эффекты. Все 10 идут
+     от одного таймера, чтоб сравнение было честное. -->
+<section class="curve-compare">
+  <h2>Motion patterns на нашей дот-клауд · 10 вариантов</h2>
+  <p class="sub">Точки, цвет и базовая геометрия - те же что в проде. Меняется motion: ритм, синхронизация, направление движения, добавочные эффекты. Идея взять модное движение и наложить на наш субъект.</p>
+  <div class="curve-grid">
+
+    <div class="curve-cell">
+      <canvas data-pattern="linear" width="320" height="320"></canvas>
+      <div class="curve-label">A · current</div>
+      <div class="curve-name">Linear sine</div>
+      <div class="curve-desc">Текущая прода. Симметричный пульс, все точки в такт.</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="pause" width="320" height="320"></canvas>
+      <div class="curve-label">B</div>
+      <div class="curve-name">Pause at collapse</div>
+      <div class="curve-desc">Быстрый bloom → медленное сжатие → пауза в центре. Момент сборки весомее.</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="spiral" width="320" height="320"></canvas>
+      <div class="curve-label">C</div>
+      <div class="curve-name">Spiral breath</div>
+      <div class="curve-desc">Дышит как обычно, но всё облако медленно вращается по часовой. Лёгкий гипноз.</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="stagger" width="320" height="320"></canvas>
+      <div class="curve-label">D</div>
+      <div class="curve-name">Stagger by radius</div>
+      <div class="curve-desc">Внешние точки начинают bloom первыми, внутренние догоняют. Эффект «волны изнутри».</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="wave-h" width="320" height="320"></canvas>
+      <div class="curve-label">E</div>
+      <div class="curve-name">Horizontal sweep</div>
+      <div class="curve-desc">Bloom прокатывается слева направо. Левая половина уже распустилась, правая ещё в центре.</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="counter-spin" width="320" height="320"></canvas>
+      <div class="curve-label">F</div>
+      <div class="curve-name">Counter-spin</div>
+      <div class="curve-desc">На вдохе - вращение CW, на выдохе - CCW. Каждый цикл разворот.</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="trail" width="320" height="320"></canvas>
+      <div class="curve-label">G</div>
+      <div class="curve-name">Echo trail</div>
+      <div class="curve-desc">Каждая точка тянет fade-tail (motion blur). Видно траекторию каждой за последние ~10 кадров.</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="twinkle" width="320" height="320"></canvas>
+      <div class="curve-label">H</div>
+      <div class="curve-name">Twinkle field</div>
+      <div class="curve-desc">Дышит как обычно + каждая точка моргает на своей частоте. Эффект «звёздное небо».</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="ripple" width="320" height="320"></canvas>
+      <div class="curve-label">I</div>
+      <div class="curve-name">Ring ripple</div>
+      <div class="curve-desc">Концентрическая волна от центра наружу. На радиусе R фаза такая, на R+5 другая - бегущие кольца.</div>
+    </div>
+
+    <div class="curve-cell">
+      <canvas data-pattern="snap" width="320" height="320"></canvas>
+      <div class="curve-label">J</div>
+      <div class="curve-name">Magnetic snap</div>
+      <div class="curve-desc">Долго висит на bloom, потом резко схлопывается в центр, держится, резко снова раскрывается. Драматизм.</div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // ════════════════════════════════════════════════════════════════
+  // TAPPETITE LOADER (exact copy of the module from game.html)
+  // ════════════════════════════════════════════════════════════════
+  const TappetiteLoader = (() => {
+    const active = new Map();
+
+    function getAccent() {
+      return getComputedStyle(document.documentElement)
+        .getPropertyValue('--accent').trim() || '#B5532E';
+    }
+    function withAlpha(hex, a) {
+      let h = hex.replace('#', '');
+      if (h.length === 3) h = h.split('').map(c => c + c).join('');
+      const r = parseInt(h.slice(0, 2), 16);
+      const g = parseInt(h.slice(2, 4), 16);
+      const b = parseInt(h.slice(4, 6), 16);
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+    }
+
+    function start(canvas) {
+      if (!canvas || active.has(canvas)) return;
+      const w = canvas.width, h = canvas.height;
+      const cx = w / 2, cy = h / 2;
+      const N = Math.max(170, Math.min(450, Math.round(w * h / 580)));
+      const particles = [];
+      for (let i = 0; i < N; i++) {
+        const u = Math.random();
+        particles.push({
+          angle: (i / N) * Math.PI * 2 + (Math.random() - 0.5) * 0.16,
+          rMin: 0,
+          rMax: w * (0.04 + Math.sqrt(u) * 0.30),
+          phase: Math.random() * 0.35,
+          size: 1.0 + Math.random() * 1.4,
+        });
+      }
+      const ctx = canvas.getContext('2d');
+      const state = { canvas, ctx, w, h, cx, cy, particles, raf: 0 };
+      function frame(t) {
+        const accent = getAccent();
+        ctx.clearRect(0, 0, w, h);
+        const tt = t * 0.0015;
+        for (const p of particles) {
+          const v = (Math.sin(tt - p.phase) + 1) / 2;
+          const dist = p.rMin + (p.rMax - p.rMin) * v;
+          const x = cx + Math.cos(p.angle) * dist;
+          const y = cy + Math.sin(p.angle) * dist;
+          const alpha = 0.5 + v * 0.35;
+          ctx.fillStyle = withAlpha(accent, alpha);
+          ctx.beginPath();
+          ctx.arc(x, y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        state.raf = requestAnimationFrame(frame);
+      }
+      state.raf = requestAnimationFrame(frame);
+      active.set(canvas, state);
+    }
+    function stop(canvas) {
+      const state = active.get(canvas);
+      if (!state) return;
+      if (state.raf) cancelAnimationFrame(state.raf);
+      state.ctx.clearRect(0, 0, state.w, state.h);
+      active.delete(canvas);
+    }
+    return { start, stop };
+  })();
+
+  // ════════════════════════════════════════════════════════════════
+  // STEP CHECKLIST (exact copy of _PROCH_STEPS + _prochStartSteps logic)
+  // ════════════════════════════════════════════════════════════════
+  // Same delays as production; "tournaments" arg substituted with a fake
+  // count so the second step reads naturally.
+  const FAKE_TOURNAMENT_COUNT = 24;
+  const STEP_TEXTS = {
+    'prochteniye.step.init':       'минуточку...',
+    'prochteniye.step.connect':    'подключаюсь к AI',
+    'prochteniye.step.history':    'читаю твою историю · {0} турниров',
+    'prochteniye.step.archetypes': 'собираю архетипы из каждой темы',
+    'prochteniye.step.patterns':   'ловлю общие линии между категориями',
+    'prochteniye.step.image':      'складываю в один образ',
+    'prochteniye.step.draft':      'пишу первый набросок',
+    'prochteniye.step.polish':     'правлю формулировки',
+  };
+  const PROCH_STEPS = [
+    { delayMs: 0,     key: 'prochteniye.step.init' },
+    { delayMs: 1500,  key: 'prochteniye.step.connect' },
+    { delayMs: 3500,  key: 'prochteniye.step.history', arg: 'tournaments' },
+    { delayMs: 7500,  key: 'prochteniye.step.archetypes' },
+    { delayMs: 13000, key: 'prochteniye.step.patterns' },
+    { delayMs: 19000, key: 'prochteniye.step.image' },
+    { delayMs: 26000, key: 'prochteniye.step.draft' },
+    { delayMs: 34000, key: 'prochteniye.step.polish' },
+  ];
+
+  let stepTimers = [];
+
+  function stopSteps() {
+    stepTimers.forEach((t) => clearTimeout(t));
+    stepTimers = [];
+  }
+
+  function renderStepText(step) {
+    const tmpl = STEP_TEXTS[step.key] || step.key;
+    if (step.arg === 'tournaments') {
+      return tmpl.replace('{0}', FAKE_TOURNAMENT_COUNT);
+    }
+    return tmpl;
+  }
+
+  function startSteps() {
+    const container = document.getElementById('prochteniyeSteps');
+    if (!container) return;
+    container.innerHTML = '';
+    stopSteps();
+
+    TappetiteLoader.start(document.getElementById('prochLoader'));
+
+    PROCH_STEPS.forEach((step) => {
+      const tid = setTimeout(() => {
+        // Mark previous active as done
+        const prev = container.querySelector('.prochteniye-step.active');
+        if (prev) {
+          prev.classList.remove('active');
+          prev.classList.add('done');
+        }
+        // Add new active step
+        const div = document.createElement('div');
+        div.className = 'prochteniye-step active';
+        div.innerHTML =
+          '<span class="prochteniye-step-marker"></span>' +
+          '<span class="prochteniye-step-text"></span>';
+        div.querySelector('.prochteniye-step-text').textContent = renderStepText(step);
+        container.appendChild(div);
+        // Trigger fade-in transition next frame
+        requestAnimationFrame(() => div.classList.add('visible'));
+      }, step.delayMs);
+      stepTimers.push(tid);
+    });
+  }
+
+  // Kick off
+  startSteps();
+
+  // Theme toggle
+  const btnLight = document.getElementById('themeLight');
+  const btnDark  = document.getElementById('themeDark');
+  function setTheme(name) {
+    if (name === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      btnDark.classList.add('active');
+      btnLight.classList.remove('active');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      btnLight.classList.add('active');
+      btnDark.classList.remove('active');
+    }
+  }
+  btnLight.addEventListener('click', () => setTheme('light'));
+  btnDark.addEventListener('click', () => setTheme('dark'));
+
+  // Restart timeline
+  document.getElementById('restartBtn').addEventListener('click', () => {
+    stopSteps();
+    TappetiteLoader.stop(document.getElementById('prochLoader'));
+    setTimeout(startSteps, 50);
+  });
+
+  // ════════════════════════════════════════════════════════════════
+  // 10 MOTION PATTERNS on the SAME dot cloud
+  // ════════════════════════════════════════════════════════════════
+  // Subject: same terracotta dot cloud, rMin=0 (collapse to center),
+  //   rMax distributed via sqrt(u). What varies between cells:
+  //     - breath curve (timing of bloom vs collapse)
+  //     - per-particle phase offset (synchronized vs staggered)
+  //     - angular modulation (spiral, counter-spin)
+  //     - render strategy (full clear vs motion trail)
+  //     - alpha modulation (twinkle on top of breath)
+  // All cells share one rAF loop + one master clock so visual comparison
+  // between them is honest (same cycle position at the same instant).
+
+  function getAccentLocal() {
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue('--accent').trim() || '#B5532E';
+  }
+  function withAlphaLocal(hex, a) {
+    let h = hex.replace('#', '');
+    if (h.length === 3) h = h.split('').map(c => c + c).join('');
+    const r = parseInt(h.slice(0, 2), 16);
+    const g = parseInt(h.slice(2, 4), 16);
+    const b = parseInt(h.slice(4, 6), 16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+  }
+
+  // 0..1 cycle position → 0..1 breath value (0 = collapsed at center).
+  const sineCurve  = (p) => (Math.sin(p * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+  const pauseCurve = (p) => {
+    // Fast bloom (0..0.30), slow collapse (0.30..0.80), hold at 0 (0.80..1).
+    if (p < 0.30) return 1 - Math.pow(1 - p / 0.30, 3);
+    if (p < 0.80) return Math.pow(1 - (p - 0.30) / 0.50, 3);
+    return 0;
+  };
+  const snapCurve = (p) => {
+    // Long bloom hold (0..0.55), quick collapse (0.55..0.65), hold at 0
+    // (0.65..0.90), quick bloom (0.90..1). Dramatic snap motion.
+    if (p < 0.55) return 1;
+    if (p < 0.65) return 1 - (p - 0.55) / 0.10;
+    if (p < 0.90) return 0;
+    return (p - 0.90) / 0.10;
+  };
+
+  const PERIOD_MS = 4200;
+
+  // Initialize all motion-pattern canvases.
+  const motionCanvases = document.querySelectorAll('[data-pattern]');
+  const motionStates = new Map();
+  motionCanvases.forEach((canvas) => {
+    const w = canvas.width, h = canvas.height;
+    const N = 150;
+    const particles = [];
+    for (let i = 0; i < N; i++) {
+      const u = Math.random();
+      particles.push({
+        angle: (i / N) * Math.PI * 2 + (Math.random() - 0.5) * 0.16,
+        rMax: w * (0.04 + Math.sqrt(u) * 0.30),
+        phase: Math.random() * 0.35,  // standard per-dot phase jitter
+        size: 1.0 + Math.random() * 1.4,
+        // Per-pattern extras (some only used by specific patterns)
+        twinkleFreq: 0.7 + Math.random() * 1.6,   // for "twinkle" pattern
+        twinklePhase: Math.random() * Math.PI * 2,
+      });
+    }
+    motionStates.set(canvas, {
+      canvas, ctx: canvas.getContext('2d'), w, h,
+      cx: w / 2, cy: h / 2,
+      particles,
+      pattern: canvas.dataset.pattern,
+    });
+  });
+
+  // ─── per-pattern draw functions ────────────────────────────────
+  // Each is given (s, t, cyclePos). cyclePos is 0..1 shared by all cells.
+
+  function dotAt(s, x, y, size, alpha, accent) {
+    s.ctx.fillStyle = withAlphaLocal(accent, alpha);
+    s.ctx.beginPath();
+    s.ctx.arc(x, y, size, 0, Math.PI * 2);
+    s.ctx.fill();
+  }
+
+  // A: Linear sine (baseline, current prod)
+  function patternLinear(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    for (const p of s.particles) {
+      const pp = ((cyc - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = sineCurve(pp);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  // B: Pause at collapse (recommended for narrative)
+  function patternPause(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    for (const p of s.particles) {
+      const pp = ((cyc - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = pauseCurve(pp);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  // C: Spiral — whole cloud slowly rotates while breathing
+  function patternSpiral(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    const rotation = t * 0.0004;  // slow CW rotation, ~1 turn per 15s
+    for (const p of s.particles) {
+      const pp = ((cyc - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = sineCurve(pp);
+      const dist = v * p.rMax;
+      const ang = p.angle + rotation;
+      dotAt(s, s.cx + Math.cos(ang) * dist, s.cy + Math.sin(ang) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  // D: Stagger by radius — outer particles lead by phase, inner follow
+  function patternStagger(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    const maxR = s.w * 0.34;
+    for (const p of s.particles) {
+      // rMax-driven extra phase: outer dots lead by up to 0.25 of cycle
+      const rPhase = (p.rMax / maxR) * 0.25;
+      const pp = ((cyc + rPhase - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = sineCurve(pp);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  // E: Horizontal sweep — bloom propagates left → right via x-based phase
+  function patternWaveH(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    for (const p of s.particles) {
+      // x-based phase: leftmost dots ~0.2 ahead of rightmost
+      const xPhase = (Math.cos(p.angle) + 1) / 2 * 0.30;  // 0..0.30
+      const pp = ((cyc + xPhase - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = sineCurve(pp);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  // F: Counter-spin — bloom rotates CW, collapse rotates CCW
+  function patternCounterSpin(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    for (const p of s.particles) {
+      const pp = ((cyc - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = sineCurve(pp);
+      // Direction reverses at the bloom peak: spin CW while expanding,
+      // CCW while contracting. Each cycle: half-turn forward, half back.
+      // Phase derivative: when v rises (expanding), spin += ; when falls, -=.
+      const isExpanding = pp < 0.5;
+      const halfPhase = isExpanding ? pp * 2 : (1 - pp) * 2;
+      const spinAmount = halfPhase * Math.PI * 0.6;
+      const ang = p.angle + (isExpanding ? spinAmount : -spinAmount);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(ang) * dist, s.cy + Math.sin(ang) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  // G: Echo trail — instead of clearRect, paint a semi-transparent bg
+  // over previous frame. Dots from last frames remain as fading ghosts.
+  // Uses the BG color from CSS so it works in both themes.
+  function patternTrail(s, t, cyc, accent) {
+    // Pull bg color from CSS so trail blends to canvas bg, not random.
+    const bgColor = getComputedStyle(document.documentElement)
+      .getPropertyValue('--bg-app-from').trim() || '#FAF6F0';
+    // Fade by drawing translucent bg over the whole canvas
+    s.ctx.fillStyle = withAlphaLocal(
+      bgColor.length === 7 ? bgColor : '#FAF6F0', 0.22);
+    s.ctx.fillRect(0, 0, s.w, s.h);
+    for (const p of s.particles) {
+      const pp = ((cyc - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = sineCurve(pp);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, 0.55 + v * 0.30, accent);
+    }
+  }
+
+  // H: Twinkle — breath as usual, but each dot's alpha is multiplied by
+  // its own per-dot sinusoidal sparkle. Some dots dim while others brighten.
+  function patternTwinkle(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    const tt = t * 0.003;
+    for (const p of s.particles) {
+      const pp = ((cyc - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = sineCurve(pp);
+      const twinkle = 0.55 + 0.45 * (Math.sin(tt * p.twinkleFreq + p.twinklePhase) + 1) / 2;
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, (0.5 + v * 0.35) * twinkle, accent);
+    }
+  }
+
+  // I: Ring ripple — concentric wave propagating outward from center.
+  // Phase tied to rMax of each particle, so dots at the same radius
+  // breathe in unison and the wave visibly travels.
+  function patternRipple(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    const maxR = s.w * 0.34;
+    for (const p of s.particles) {
+      // Ripple phase: outer rings are progressively LAGGING by up to 0.6
+      // of cycle. So at any instant some rings are at max while inner ones
+      // are at 0 — a wave visibly travels outward.
+      const ripplePhase = (p.rMax / maxR) * 0.6;
+      const pp = ((cyc - ripplePhase) + 1) % 1;
+      const v = sineCurve(pp);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  // J: Magnetic snap — long bloom hold, quick collapse, hold at center,
+  // quick bloom out. Dramatic.
+  function patternSnap(s, t, cyc, accent) {
+    s.ctx.clearRect(0, 0, s.w, s.h);
+    for (const p of s.particles) {
+      const pp = ((cyc - p.phase / (Math.PI * 2)) + 1) % 1;
+      const v = snapCurve(pp);
+      const dist = v * p.rMax;
+      dotAt(s, s.cx + Math.cos(p.angle) * dist, s.cy + Math.sin(p.angle) * dist,
+            p.size, 0.5 + v * 0.35, accent);
+    }
+  }
+
+  const PATTERN_FNS = {
+    linear:        patternLinear,
+    pause:         patternPause,
+    spiral:        patternSpiral,
+    stagger:       patternStagger,
+    'wave-h':      patternWaveH,
+    'counter-spin':patternCounterSpin,
+    trail:         patternTrail,
+    twinkle:       patternTwinkle,
+    ripple:        patternRipple,
+    snap:          patternSnap,
+  };
+
+  function motionTick(t) {
+    const accent = getAccentLocal();
+    const cyc = (t % PERIOD_MS) / PERIOD_MS;
+    motionStates.forEach((s) => {
+      const fn = PATTERN_FNS[s.pattern] || patternLinear;
+      fn(s, t, cyc, accent);
+    });
+    requestAnimationFrame(motionTick);
+  }
+  requestAnimationFrame(motionTick);
+</script>
+</body>
+</html>

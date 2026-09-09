@@ -1,0 +1,34 @@
+[Unit]
+Description=Tappetite daily push-notification batch (daily/comeback/streak-at-risk)
+After=network-online.target untitled-pick-game-api.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Reads UPG_NOTIF_BATCH_TOKEN from /etc/untitled-pick-game-notif.env. Token
+# is the master ADMIN_PASS so the script authenticates as full admin (no
+# named moderator session needed).
+EnvironmentFile=/etc/untitled-pick-game-notif.env
+# Step 1: log in as admin via master password (POST /api/admin/login with no
+# nickname). Cookie jar lands in /tmp; cleaned up on script exit.
+# Step 2: hit the batch endpoint. Result JSON written to systemd journal.
+ExecStart=/bin/bash -c '\
+  set -e; \
+  COOKIE=$(mktemp); \
+  trap "rm -f $COOKIE" EXIT; \
+  curl -s -X POST https://isverifiedby.me/api/admin/login \
+    -H "Content-Type: application/json" \
+    -d "{\\"password\\":\\"$UPG_NOTIF_BATCH_TOKEN\\"}" \
+    -c $COOKIE -o /dev/null -w "login_status=%{http_code}\\n"; \
+  curl -s -X POST https://isverifiedby.me/api/admin/notif/run-daily-batch \
+    -b $COOKIE \
+    -H "Content-Type: application/json" \
+    -w "\\nrun_status=%{http_code}\\n"; \
+'
+
+# Don't restart on failure — we'll just retry next scheduled run.
+Restart=no
+TimeoutStartSec=120
+
+[Install]
+WantedBy=multi-user.target

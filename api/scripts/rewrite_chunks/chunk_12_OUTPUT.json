@@ -1,0 +1,62 @@
+[
+  {
+    "key": "your_stories_style::Эстет",
+    "new_p1_ru": "Ты ловишь свет так, будто собираешь короткий фильм из обычного дня. В кадре важны не события, а настроение, цвет и пауза.",
+    "new_p1_en": "You catch light as if building a short film from an ordinary day. What matters is not the event, but the mood, the color, the pause."
+  },
+  {
+    "key": "your_stories_style::Социальный",
+    "new_p1_ru": "Для тебя сторис — не витрина, а живой разговор. Ты бросаешь повод, ловишь ответы и превращаешь ленту в маленькую комнату с людьми.",
+    "new_p1_en": "For you, stories are not a display window but a live exchange. You give people a reason to answer and turn the feed into a small room."
+  },
+  {
+    "key": "your_stories_style::Документатор жизни",
+    "new_p1_ru": "Ты снимаешь день не ради образа, а ради памяти. Важен сам след: где был, что делал, какой воздух был вокруг и что потом захочется вернуть.",
+    "new_p1_en": "You record the day not for image, but for memory. What matters is the trace: where you were, what happened, what you may want back later."
+  },
+  {
+    "key": "your_stories_style::Творческий",
+    "new_p1_ru": "Ты показываешь не только итог, а момент рождения идеи. В таких сторис виден ритм руки, паузы, сомнения и тепло самого процесса.",
+    "new_p1_en": "You show not only the result, but the moment an idea is being born. Your stories carry the hand's rhythm, pauses, doubts, and process warmth."
+  },
+  {
+    "key": "your_stories_style::Природный",
+    "new_p1_ru": "Ты замечаешь мир на уровне мелочей: как свет ложится на стекло, как ветер трогает траву, как обычный двор внезапно становится живым.",
+    "new_p1_en": "You notice the world in small things: light on glass, wind touching grass, an ordinary yard suddenly turning alive in front of you."
+  },
+  {
+    "key": "life_cover_vibe::Музыкальная коллекция",
+    "new_p1_ru": "Тебе важно, чтобы искусство оставалось вещью: шуршало, пахло бумагой, открывалось в руках. Так любимое звучит не фоном, а ритуалом.",
+    "new_p1_en": "You need art to stay physical: to rustle, smell like paper, open in your hands. Then what you love stops being background and becomes ritual."
+  },
+  {
+    "key": "life_cover_vibe::Кино-эстетика",
+    "new_p1_ru": "Ты видишь жизнь крупным планом: свет, поза, момент перед поворотом сюжета. Даже обычный день у тебя просится в отдельный кадр.",
+    "new_p1_en": "You see life in close-up: light, posture, the moment before the plot turns. Even an ordinary day starts asking to be framed."
+  },
+  {
+    "key": "life_cover_vibe::Книжная любовь",
+    "new_p1_ru": "Для тебя чтение начинается до первой строки: с веса в руках, шероховатости бумаги, запаха страниц. Форма тоже рассказывает историю.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "life_cover_vibe::Геймерская и графичная",
+    "new_p1_ru": "Ты мыслишь мирами, где текст, картинка и действие держатся вместе. История для тебя лучше всего работает, когда её можно ещё и прожить.",
+    "new_p1_en": "You think in worlds where text, image, and action hold together. For you, a story works best when it can also be lived through."
+  },
+  {
+    "key": "life_cover_vibe::Тёплая ностальгия",
+    "new_p1_ru": "Тебя тянет к вещам, в которых уже кто-то жил: потёртый угол, старая дата, чужая подпись. Память здесь теплее любого дизайна.",
+    "new_p1_en": "You're drawn to things someone has already lived with: a worn corner, an old date, another person's note. Memory feels warmer than design."
+  },
+  {
+    "key": "life_cover_vibe::Коллекционная редкость",
+    "new_p1_ru": "Тебе нужен не просто предмет, а добыча с историей. Ограниченность, поиск и редкий шанс владеть своим экземпляром дают особый азарт.",
+    "new_p1_en": "You need not just an object, but a find with a story. Scarcity, the search, and the rare chance to own your copy give you the thrill."
+  },
+  {
+    "key": "life_cover_vibe::Мягкая повседневность",
+    "new_p1_ru": "Ты выбираешь вещи без пафоса: простые, тёплые, понятные руке. В них нет редкости, зато есть жизнь, привычка и тихая нежность.",
+    "new_p1_en": "You choose things without ceremony: simple, warm, easy in the hand. They are not rare, but they carry life, habit, and quiet tenderness."
+  }
+]

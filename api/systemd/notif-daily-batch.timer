@@ -1,0 +1,16 @@
+[Unit]
+Description=Daily Tappetite push-notification batch trigger (18:00 Asia/Almaty)
+
+[Timer]
+# 18:00 local time in Asia/Almaty (UTC+5) → 13:00 UTC. systemd's OnCalendar
+# spec uses the system timezone unless overridden, so we explicitly set UTC
+# here to be portable across server timezone changes.
+OnCalendar=*-*-* 13:00:00 UTC
+# If the server was down at 13:00 UTC (rare reboot, etc) — fire on next boot.
+Persistent=true
+# Random 0-300s delay so we don't hammer push services exactly at 13:00 UTC
+# every day (this matters as the user base grows; trivial for now).
+RandomizedDelaySec=300s
+
+[Install]
+WantedBy=timers.target

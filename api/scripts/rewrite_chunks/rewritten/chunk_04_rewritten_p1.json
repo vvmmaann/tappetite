@@ -1,0 +1,152 @@
+[
+  {
+    "key": "green_flag::Тихая поддержка",
+    "new_p1_ru": "Иногда рядом с тобой человеку не надо объясняться. Ты не лезешь с решениями, не спасаешь громко – просто остаёшься там, где важно быть.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "green_flag::Не лжёт даже в мелочах",
+    "new_p1_ru": "«Скажи как есть» – с тобой это не риск, а просьба по адресу. Ты не прячешься за удобными версиями и умеешь признавать своё.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "green_flag::Радость за чужое",
+    "new_p1_ru": "Чужая хорошая новость не уменьшает твою жизнь. Ты умеешь радоваться без кислой улыбки – так, будто мир стал шире для всех.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "productivity_mode::Структурированный планировщик",
+    "new_p1_ru": "На столе всё разложено, в голове тоже. Ты не держишь день на честном слове – собираешь его в понятную схему и двигаешься спокойно.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "productivity_mode::Утренний человек",
+    "new_p1_ru": "",
+    "new_p1_en": "When the day is still quiet, your brain is already sharp. You do your best work early, before messages, errands, and other people's noise arrive."
+  },
+  {
+    "key": "productivity_mode::Ночной режим",
+    "new_p1_ru": "Город стихает, экран становится ярче, и у тебя наконец появляется доступ к себе. Поздние часы не ломают ритм – они его запускают.",
+    "new_p1_en": "The city goes quiet, the screen grows brighter, and you finally get access to yourself. Late hours don't break your rhythm – they switch it on."
+  },
+  {
+    "key": "productivity_mode::Тихий фокус",
+    "new_p1_ru": "Один лишний звук – и мысль уже распалась. Тебе нужен закрытый пузырь внимания, где никто не дёргает, не комментирует и не висит рядом.",
+    "new_p1_en": "One extra sound, and the thought falls apart. You need a sealed bubble of attention where nobody interrupts, comments, or hovers nearby."
+  },
+  {
+    "key": "productivity_mode::Социальная энергия",
+    "new_p1_ru": "Пустая комната гасит тебя, а чужой ритм заводит. Когда рядом кто-то тоже занят делом, твоя энергия собирается быстрее и смелее.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "productivity_mode::Маленькие победы",
+    "new_p1_ru": "Большая гора пугает меньше, если разложить её на камни. Тебе нужен день, где каждая маленькая галочка возвращает чувство контроля.",
+    "new_p1_en": "A mountain feels smaller once it's broken into stones. You need a day where every tiny checkmark gives you a little control back."
+  },
+  {
+    "key": "productivity_mode::Идеалист условий",
+    "new_p1_ru": "Свет не тот, звук не тот – и работа будто не пускает внутрь. Тебе важна среда: когда она собрана, мысль наконец начинает идти.",
+    "new_p1_en": "Wrong light, wrong sound – and the work seems to keep you outside. Environment matters to you; once it's right, thought finally starts moving."
+  },
+  {
+    "key": "traveler_type::Гастро-турист",
+    "new_p1_ru": "Первый маршрут в новом месте у тебя проходит через запахи. Страна становится понятнее, когда ты ешь там, где едят свои люди.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "traveler_type::Музей и культура",
+    "new_p1_ru": "Через залы, фасады и тихие подписи под картинами город открывается честнее. Отдых для тебя начинается там, где появляется смысл.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "traveler_type::Расслабиться у моря",
+    "new_p1_ru": "Иногда лучший маршрут – от номера до лежака и обратно. Тебе нужен отпуск, в котором никто не требует подвигов, планов и отчётов.",
+    "new_p1_en": "Sometimes the best route is from the room to the lounger and back. You need a trip where nobody demands feats, plans, or reports."
+  },
+  {
+    "key": "traveler_type::Экстремал",
+    "new_p1_ru": "Чем сложнее дорога, тем живее ты себя чувствуешь. Отпуск для тебя начинается там, где появляется риск, высота или неизвестность.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "traveler_type::Спонтанный или плановик",
+    "new_p1_ru": "Ты либо покупаешь билет на импульсе, либо знаешь маршрут по часам. Средний режим тебе скучен: путешествие должно иметь характер.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "traveler_type::Городской",
+    "new_p1_ru": "Город должен шуметь, спорить и мигать вывесками. В таких местах ты чувствуешь жизнь плотнее, чем среди идеальных видов вокруг.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "essential_books::Русская классика",
+    "new_p1_ru": "Тяжёлая фраза, моральный узел, герой на грани – и ты уже внутри. Тебе нужна проза, где язык сам становится событием, не фоном.",
+    "new_p1_en": "A heavy sentence, a moral knot, a hero at the edge – and you're already inside. You need prose where language becomes the event."
+  },
+  {
+    "key": "essential_books::Антиутопии и предупреждения",
+    "new_p1_ru": "Когда книга звучит как сигнал тревоги, ты не отворачиваешься. Тебе важно видеть, как общество ломается до того, как это назовут нормой.",
+    "new_p1_en": "When a book sounds like an alarm, you don't look away. You want to see society breaking before anyone starts calling it normal."
+  },
+  {
+    "key": "essential_books::Фэнтези-эпопеи",
+    "new_p1_ru": "Карта на форзаце, родословные, войны, магия – и ты готов остаться надолго. Тебе нужны миры, в которых можно жить, а не просто гостить.",
+    "new_p1_en": "A map in the front, bloodlines, wars, magic – and you're ready to stay. You need worlds to live in, not just visit for a chapter."
+  },
+  {
+    "key": "essential_books::Магический реализм",
+    "new_p1_ru": "Реальность чуть сдвигается, и это не ошибка, а приглашение. Тебе нужна проза, где сон входит в быт так спокойно, будто всегда был там.",
+    "new_p1_en": "Reality shifts slightly, and it isn't a mistake but an invitation. You need prose where dream slips into daily life as if it always belonged."
+  },
+  {
+    "key": "essential_books::Американская классика",
+    "new_p1_ru": "Большая страна видна не на карте, а в голосах её героев. Тебе интересна проза, где эпоха говорит через частную боль и выбор.",
+    "new_p1_en": "A big country is seen not on a map, but in its characters' voices. You want prose where an era speaks through private pain and choice."
+  },
+  {
+    "key": "essential_books::Путь и взросление",
+    "new_p1_ru": "Герой ещё не знает, кем станет, и в этом вся сила. Тебе нужны книги, где взросление – не возраст, а медленное узнавание себя.",
+    "new_p1_en": "The hero doesn't yet know who they'll become, and that's the force of it. You need books where growing up means slowly recognizing yourself."
+  },
+  {
+    "key": "essential_books::Научная фантастика",
+    "new_p1_ru": "Один новый закон мира – и привычная реальность уже трещит. Тебе нужны книги, где технология становится вопросом о человеке.",
+    "new_p1_en": "One new law of the world, and familiar reality starts to crack. You need books where technology becomes a question about being human."
+  },
+  {
+    "key": "your_2007_rap_hiphop::Отечественный андеграунд",
+    "new_p1_ru": "Запись звучит шероховато, зато в ней есть воздух дворов и честное слово. Тебе важен момент, когда сцена ещё не стала витриной.",
+    "new_p1_en": "The recording sounds rough, but it has courtyard air and honest words in it. You care about the moment before a scene becomes a storefront."
+  },
+  {
+    "key": "your_2007_rap_hiphop::Ростов-Москва ось",
+    "new_p1_ru": "У звука есть адрес, даже если ты слышишь его издалека. Тебе важны города, интонации и маршруты, из которых рождается сцена.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "your_2007_rap_hiphop::Мейнстрим-эпоха",
+    "new_p1_ru": "",
+    "new_p1_en": "The charts didn't feel cheap then; they felt like the center of gravity. You loved a moment when popular rap still sounded hungry, sharp, and alive."
+  },
+  {
+    "key": "best_dystopia_novel::Тоталитарное государство",
+    "new_p1_ru": "Когда мысль становится преступлением, ты читаешь внимательнее. Тебе близки антиутопии, где власть забирается в язык, память и тело.",
+    "new_p1_en": "When thought becomes a crime, you read more closely. You're drawn to dystopias where power reaches into language, memory, and the body."
+  },
+  {
+    "key": "best_dystopia_novel::Контроль через счастье",
+    "new_p1_ru": "Самая страшная клетка иногда мягкая. Тебе интересны миры, где человека не ломают криком – его усыпляют комфортом и готовым счастьем.",
+    "new_p1_en": "The scariest cage can be soft. You're interested in worlds where people aren't broken by shouting – they're lulled by comfort and ready-made happiness."
+  },
+  {
+    "key": "best_dystopia_novel::Женщины как ресурс",
+    "new_p1_ru": "Когда система называет человека функцией, у тебя срабатывает внутренний протест. Эти антиутопии важны тебе именно как разговор о достоинстве.",
+    "new_p1_en": "When a system turns a person into a function, something in you pushes back. These dystopias matter to you as a conversation about dignity."
+  },
+  {
+    "key": "best_dystopia_novel::Принудительное насилие",
+    "new_p1_ru": "Здесь жестокость не вспышка, а правило мира. Тебя цепляют истории, где тело первым принимает удар системы – и молчать уже невозможно.",
+    "new_p1_en": "Here cruelty isn't a flare-up; it's the rule of the world. You're drawn to stories where the body takes the system's first blow and silence stops working."
+  }
+]

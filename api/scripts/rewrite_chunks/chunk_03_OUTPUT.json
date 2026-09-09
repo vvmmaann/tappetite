@@ -1,0 +1,152 @@
+[
+  {
+    "key": "ny_destinations::Тропики и побег",
+    "new_p1_ru": "В декабре ты мысленно снимаешь шарф ещё в аэропорту. Праздник для тебя начинается там, где ночь тёплая, кожа солёная, а зима остаётся где-то далеко.",
+    "new_p1_en": "In December, you mentally drop the scarf before boarding. For you, the holiday begins where the night is warm, skin is salty, and winter stays far away."
+  },
+  {
+    "key": "ny_destinations::Снег и тишина",
+    "new_p1_ru": "Снаружи темнеет рано, воздух щиплет лицо, а огонь кажется главным событием вечера. Тебе нужен праздник, где холод не мешает, а делает всё настоящим.",
+    "new_p1_en": "It gets dark early, the air bites your face, and fire feels like the night's main event. You need a holiday where cold doesn't ruin things, it makes them real."
+  },
+  {
+    "key": "ny_destinations::Европейская классика",
+    "new_p1_ru": "Брусчатка блестит после дождя, окна светятся, и праздник не требует громкого сценария. Тебе достаточно красивого города и пары точных деталей.",
+    "new_p1_en": "Wet cobblestones shine, windows glow, and the holiday doesn't need a loud script. A beautiful city and a few precise details are enough for you."
+  },
+  {
+    "key": "ny_destinations::Восток и культура",
+    "new_p1_ru": "Ты входишь в праздник не через салюты, а через чужой ритм улиц, запахи еды и тишину храмов. Тебе интересно, как год начинается в другой культуре.",
+    "new_p1_en": "You enter the holiday not through fireworks, but through another street rhythm, food smells, and temple quiet. You want to see how a year begins elsewhere."
+  },
+  {
+    "key": "ny_destinations::Особый момент",
+    "new_p1_ru": "Праздник должен щёлкнуть в памяти как кадр, который потом невозможно перепутать. Тебе важен не маршрут, а ощущение: это случилось только с тобой.",
+    "new_p1_en": "The holiday has to click in memory like a frame you could never confuse with another. What matters isn't the route, but the feeling: this happened to you."
+  },
+  {
+    "key": "your_sport::Контактный бой",
+    "new_p1_ru": "Напротив живой человек, и каждая секунда меняет расклад. Тебе нужен спорт, где реакция, скорость и техника проверяются сразу, без безопасной дистанции.",
+    "new_p1_en": "There's a live person across from you, and every second changes the game. You need a sport where reaction, speed, and technique are tested in real time."
+  },
+  {
+    "key": "your_sport::Командная динамика",
+    "new_p1_ru": "Тренировка начинается по-настоящему, когда рядом кто-то дышит в том же ритме. Тебе важны синхронность, общий темп и чувство команды.",
+    "new_p1_en": "Training really starts when someone next to you breathes in the same rhythm. You need synchronization, a shared tempo, and the feeling of a team."
+  },
+  {
+    "key": "your_sport::Вода и тишина",
+    "new_p1_ru": "Стоит коснуться воды, и лишний шум будто отступает. Тебе нужен ритм, в котором тело работает спокойно, а голова наконец перестаёт спорить.",
+    "new_p1_en": "Touch the water, and the extra noise seems to step back. You need a rhythm where the body works calmly and the mind finally stops arguing."
+  },
+  {
+    "key": "your_sport::Природа и движение",
+    "new_p1_ru": "Лучше, когда маршрут пахнет ветром, камнем и мокрой землёй. Тебе нужен не зал с зеркалами, а движение, где пейзаж становится частью усилия.",
+    "new_p1_en": "It's better when the route smells of wind, stone, and wet earth. You don't need mirrors in a gym; you need movement where landscape becomes part of the effort."
+  },
+  {
+    "key": "your_sport::Тело + дыхание",
+    "new_p1_ru": "Ты ловишь момент, когда тело перестаёт быть задачей и становится партнёром. Важны дыхание, ритм и ощущение, что движение собирает тебя обратно.",
+    "new_p1_en": "You chase the moment when the body stops being a task and becomes a partner. Breath, rhythm, and movement matter because they pull you back together."
+  },
+  {
+    "key": "your_sport::Дальняя дистанция",
+    "new_p1_ru": "Сначала скучно, потом честно. Тебе нужен спорт, где победа растягивается на часы: один темп, много терпения и тихая сила продолжать.",
+    "new_p1_en": "First it feels boring, then it feels honest. You need a sport where victory stretches for hours: one pace, deep patience, and the quiet power to continue."
+  },
+  {
+    "key": "tech_brand::Эстетика премиума",
+    "new_p1_ru": "Берёшь вещь в руки — и уже понятно, за что платишь. Тебе важны не только функции, а звук, вес, материал и удовольствие от каждого касания.",
+    "new_p1_en": "You pick something up, and the price starts to make sense. You care not only about features, but sound, weight, material, and the pleasure of every touch."
+  },
+  {
+    "key": "tech_brand::Android-волна",
+    "new_p1_ru": "Закрытая витрина тебе неинтересна. Ты хочешь выбирать, настраивать, сравнивать и чувствовать, что техника подстраивается под тебя, а не наоборот.",
+    "new_p1_en": "A closed showroom doesn't interest you. You want to choose, tweak, compare, and feel the device adapting to you, not the other way around."
+  },
+  {
+    "key": "tech_brand::Microsoft и сервисы",
+    "new_p1_ru": "Тебе важнее не корпус устройства, а то, что происходит за экраном. Приложения, облака и данные для тебя уже давно главная часть техники.",
+    "new_p1_en": "You care less about the device shell than what happens behind the screen. Apps, clouds, and data have long been the main part of tech for you."
+  },
+  {
+    "key": "tech_brand::Звук и съёмка",
+    "new_p1_ru": "Тебе не нужна вещь «для всего понемногу». Нужен инструмент, который делает одно дело точно: пишет чище, снимает стабильнее, звучит глубже.",
+    "new_p1_en": "You don't need a thing that does a bit of everything. You need a tool that does one job precisely: records cleaner, shoots steadier, sounds deeper."
+  },
+  {
+    "key": "tech_brand::Бюджетная мудрость",
+    "new_p1_ru": "Ценник не должен гипнотизировать. Ты смотришь на реальные возможности, сравниваешь без фанатизма и радуешься, когда умная покупка побеждает статус.",
+    "new_p1_en": "The price tag shouldn't hypnotize anyone. You look at real capability, compare without drama, and enjoy when a smart purchase beats status."
+  },
+  {
+    "key": "tech_brand::Будущее-эксперимент",
+    "new_p1_ru": "Новинка для тебя — не риск, а приглашение посмотреть, куда всё движется. Ты готов тестировать сыроватое сегодня, чтобы раньше других увидеть завтра.",
+    "new_p1_en": "For you, a new device isn't a risk but an invitation to see where things are moving. You're willing to test rough edges today to glimpse tomorrow early."
+  },
+  {
+    "key": "clothing_style::Уличный кэжуал",
+    "new_p1_ru": "Кроссовки, свободный силуэт, одежда без лишней церемонии. Ты хочешь выглядеть живо и двигаться легко, не выбирая между комфортом и стилем.",
+    "new_p1_en": "Sneakers, a loose silhouette, clothes without too much ceremony. You want to look alive and move easily, without choosing between comfort and style."
+  },
+  {
+    "key": "clothing_style::Тихая роскошь",
+    "new_p1_ru": "Самая дорогая вещь в образе может не кричать вообще. Тебе важны ткань, посадка и ощущение, которое считывается ближе, чем логотип.",
+    "new_p1_en": "The most expensive thing in the outfit may not shout at all. You care about fabric, fit, and the feeling that reads closer than any logo."
+  },
+  {
+    "key": "clothing_style::Тёмная сторона",
+    "new_p1_ru": "В твоём шкафу темнота не про мрачность, а про плотность настроения. Рваный край, тяжёлая фактура и странная форма говорят точнее, чем «красиво».",
+    "new_p1_en": "In your wardrobe, darkness isn't gloom; it's density of mood. A torn edge, heavy texture, and strange shape say more precisely than \"pretty.\""
+  },
+  {
+    "key": "clothing_style::Природа и нежность",
+    "new_p1_ru": "Лён мнётся, ткань хранит следы, вещь будто пришла из чужой тихой истории. Ты одеваешься не модно, а так, чтобы вокруг стало мягче.",
+    "new_p1_en": "Linen wrinkles, fabric keeps traces, and a piece feels borrowed from someone else's quiet story. You don't dress trendy; you dress to make the world softer."
+  },
+  {
+    "key": "room_aesthetic::Чистая пустота",
+    "new_p1_ru": "В комнате дышится легче, когда ничего не спорит за внимание. Тебе нужен порядок, где каждый предмет стоит на своём месте и не просит лишнего.",
+    "new_p1_en": "A room breathes easier when nothing fights for attention. You need an order where every object has its place and doesn't ask for anything extra."
+  },
+  {
+    "key": "room_aesthetic::Тепло уюта",
+    "new_p1_ru": "Мягкий свет, тёплая ткань, живой зелёный угол — и день наконец отпускает плечи. Твоя комната не показывает характер, а возвращает силы.",
+    "new_p1_en": "Soft light, warm fabric, a living green corner — and the day finally lets go of your shoulders. Your room doesn't perform character; it restores you."
+  },
+  {
+    "key": "room_aesthetic::Тёмная академия",
+    "new_p1_ru": "В такой комнате хочется говорить тише, читать дольше и писать от руки. Тёмное дерево, тяжёлый воздух и вещи с прошлым собирают тебя в фокус.",
+    "new_p1_en": "In this room you want to speak lower, read longer, and write by hand. Dark wood, heavy air, and objects with a past pull you into focus."
+  },
+  {
+    "key": "room_aesthetic::Японская простота",
+    "new_p1_ru": "Пустое место здесь работает не хуже предмета. Тебе близка комната, где природа, тишина и неровная красота говорят больше, чем полные полки.",
+    "new_p1_en": "Empty space here works as hard as any object. You're drawn to a room where nature, quiet, and uneven beauty say more than crowded shelves."
+  },
+  {
+    "key": "room_aesthetic::Ретро-волны",
+    "new_p1_ru": "Одна эпоха для тебя слишком узкая. Ты собираешь комнату как плейлист из разных десятилетий, где цвет, материал и форма вдруг начинают дружить.",
+    "new_p1_en": "One era feels too narrow for you. You build a room like a playlist from different decades, where color, material, and shape suddenly start to get along."
+  },
+  {
+    "key": "green_flag::Активный слушатель",
+    "new_p1_ru": "Рядом с тобой человеку не нужно пробиваться сквозь шум. Твой green flag — внимание: ты замечаешь паузы, детали и остаёшься внутри разговора.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "green_flag::Честность и принципы",
+    "new_p1_ru": "«Сказать честно?» — у тебя это не угроза, а способ не мутить воду. Твой green flag — внутренний стержень: признать ошибку, выполнить обещание, не юлить.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "green_flag::Уважение к другому",
+    "new_p1_ru": "Твоё «можно?» звучит не из вежливости, а из уважения. Ты не лезешь туда, где закрыто, и умеешь быть рядом без давления, долга и скрытого счёта.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "green_flag::Эмоциональная зрелость",
+    "new_p1_ru": "Когда вокруг вспыхивают обиды, ты не подливаешь масла. Твой green flag — спокойная взрослость: радоваться за других, признавать промахи и не превращать всё в драму.",
+    "new_p1_en": ""
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "key": "your_real_profession::Tech-делатель",
+    "new_p1_ru": "",
+    "new_p1_en": "On your screen, an idea turns into a working thing people can touch. You need the place where logic, design, and user behavior meet."
+  },
+  {
+    "key": "your_real_profession::Креатив-делатель",
+    "new_p1_ru": "",
+    "new_p1_en": "A blank frame does not scare you. You know how to turn light, layout, rhythm, and taste into something people actually stop to look at."
+  },
+  {
+    "key": "your_real_profession::Творческий нарратор",
+    "new_p1_ru": "",
+    "new_p1_en": "The world becomes clearer when you give it form. A line, a scene, a melody, an image – you need work that carries a voice."
+  },
+  {
+    "key": "your_real_profession::Цифры и стратегия",
+    "new_p1_ru": "",
+    "new_p1_en": "A messy table looks like a problem to others and like a map to you. You see patterns, build logic, and turn numbers into decisions."
+  },
+  {
+    "key": "your_real_profession::Старт и риск",
+    "new_p1_ru": "",
+    "new_p1_en": "A calm path feels suspiciously small. You need work where the stakes are real, the upside is high, and failure is part of the deal."
+  },
+  {
+    "key": "your_real_profession::Помощь людям",
+    "new_p1_ru": "",
+    "new_p1_en": "Someone brings a problem, and you do not look away. You need work where another person’s state matters, and care becomes a skill."
+  },
+  {
+    "key": "your_real_profession::Точная инженерия",
+    "new_p1_ru": "",
+    "new_p1_en": "Here, almost right is still wrong. You need work where precision matters, where one small error can change the whole result."
+  },
+  {
+    "key": "your_real_profession::Слова и убеждение",
+    "new_p1_ru": "",
+    "new_p1_en": "A sentence can open a door or close it. You know this, so you choose words like tools – to explain, persuade, defend, or sell."
+  },
+  {
+    "key": "your_real_profession::Особый артистизм",
+    "new_p1_ru": "",
+    "new_p1_en": "Your material is not always language. Sometimes it is taste, sound, color, light – something physical that becomes a performance."
+  },
+  {
+    "key": "your_real_profession::Мост культур",
+    "new_p1_ru": "",
+    "new_p1_en": "You stand where one world fails to understand another. Your work is to carry meaning across borders, languages, and audiences."
+  },
+  {
+    "key": "your_real_profession::Спорт и тело",
+    "new_p1_ru": "",
+    "new_p1_en": "Your work does not live only in the head. It asks for stamina, coordination, sharp reflexes, and a body you cannot ignore."
+  },
+  {
+    "key": "ai_tool_2020s::Текстовые универсалы",
+    "new_p1_ru": "Открываешь окно – и черновик уже начинает двигаться. Тебе нужны слова: написать, сократить, объяснить, перевести, найти смысл.",
+    "new_p1_en": "You open a window, and the draft starts moving. You need words: writing, trimming, explaining, translating, finding the point."
+  },
+  {
+    "key": "ai_tool_2020s::Образ и видео",
+    "new_p1_ru": "Картинка в голове больше не обязана там застревать. Ты собираешь образ, сцену, видео, концепт – и быстро проверяешь, работает ли идея.",
+    "new_p1_en": "The image in your head no longer has to stay there. You build a scene, a visual, a clip, a concept – and test whether the idea works."
+  },
+  {
+    "key": "ai_tool_2020s::Код и продуктивность",
+    "new_p1_ru": "Перед тобой задача, а рядом второй черновой мозг. Он пишет, предлагает, собирает каркас – но финальное решение всё равно за тобой.",
+    "new_p1_en": "There is a task in front of you and a second draft brain beside it. It writes, suggests, builds the frame – but the final call stays yours."
+  },
+  {
+    "key": "ai_tool_2020s::Музыка и голос",
+    "new_p1_ru": "Звук больше не требует студии на другом конце города. Ты пробуешь голос, музыку, монтаж, настроение – и собираешь медиа почти из воздуха.",
+    "new_p1_en": "Sound no longer needs a studio across town. You test voice, music, editing, mood – and build media almost out of thin air."
+  },
+  {
+    "key": "ai_tool_2020s::Встроенные помощники",
+    "new_p1_ru": "Ты не идёшь за отдельным чудом – помощь уже встроена в рабочий стол. Сводка, поиск, заметка, черновик появляются прямо рядом с задачей.",
+    "new_p1_en": "You do not go looking for a separate miracle – help already sits inside your workspace. Summary, search, note, draft appear beside the task."
+  },
+  {
+    "key": "ai_tool_2020s::Open source и специфика",
+    "new_p1_ru": "Удобная кнопка тебе малоинтересна, если за ней нельзя ничего настроить. Тебе важны контроль, гибкость и право залезть под капот.",
+    "new_p1_en": "A convenient button means little if you cannot tune what sits behind it. You care about control, flexibility, and the right to look under the hood."
+  },
+  {
+    "key": "ai_tool_2020s::Локальные и российские",
+    "new_p1_ru": "Ты не веришь в одну универсальную модель на все случаи. Для одной задачи нужен глобальный ум, для другой – местный контекст и язык.",
+    "new_p1_en": "You do not believe in one universal model for every task. One job needs global range; another needs local context and language."
+  },
+  {
+    "key": "what_i_ask_ai::Бытовая помощь",
+    "new_p1_ru": "Не великое откровение, а пять минут экономии здесь и там. Перекинуть мысль на другой язык, привести к порядку, выбрать вариант – и неделя легче.",
+    "new_p1_en": "Not a grand revelation, just five minutes saved here and there. Move a thought into another language, tidy it up, choose an option – the week gets lighter."
+  },
+  {
+    "key": "addictive_game::Соревновательный шутер",
+    "new_p1_ru": "Раунд начинается – и всё решают реакция, угол, тайминг. Тебе нужен живой соперник, рейтинг и ощущение, что ты реально становишься сильнее.",
+    "new_p1_en": "The round starts, and reaction, angle, timing decide everything. You need live opponents, rank, and the feeling that you are getting sharper."
+  },
+  {
+    "key": "addictive_game::Battle royale",
+    "new_p1_ru": "Карта сжимается, ресурсов мало, сердце стучит чаще. Тебе нравится формат, где каждая партия превращается в отдельную историю выживания.",
+    "new_p1_en": "The map shrinks, resources run low, your heart picks up. You like a format where every match becomes its own survival story."
+  },
+  {
+    "key": "addictive_game::MOBA-волна",
+    "new_p1_ru": "Одна ошибка на линии может стоить всей партии. Тебе нравятся игры, где мастерство копится годами, а каждая роль требует своей школы.",
+    "new_p1_en": "One mistake in lane can cost the whole match. You like games where mastery builds for years and every role has its own school."
+  },
+  {
+    "key": "addictive_game::RPG-эпос",
+    "new_p1_ru": "Ты заходишь не на вечер, а будто открываешь толстый роман. Нужны выборы, последствия, спутники, мир, в котором можно задержаться надолго.",
+    "new_p1_en": "You do not log in for an evening; you open a thick novel. You need choices, consequences, companions, a world worth staying in."
+  },
+  {
+    "key": "addictive_game::Открытый мир",
+    "new_p1_ru": "Маркер задания ждёт, но ты сворачиваешь в переулок. Тебе нужна не цепочка миссий, а пространство, где случайная дорога тоже имеет смысл.",
+    "new_p1_en": "The quest marker waits, but you turn into an alley. You need more than missions – a space where a random road can matter too."
+  },
+  {
+    "key": "addictive_game::Уют и ферма",
+    "new_p1_ru": "День проходит в маленьких делах: посадить, построить, поговорить, украсить. Тебе нужны игры, где покой важнее победы, а темп можно выбрать самому.",
+    "new_p1_en": "The day passes in small tasks: plant, build, talk, decorate. You need games where peace matters more than victory, and the pace is yours."
+  },
+  {
+    "key": "addictive_game::Песочница и крафт",
+    "new_p1_ru": "Тебе дают не маршрут, а коробку инструментов. Что построить, кого позвать, во что превратить мир – решаешь ты, и в этом кайф.",
+    "new_p1_en": "You are given tools, not a route. What to build, who to invite, what the world becomes – you decide, and that is the pleasure."
+  },
+  {
+    "key": "addictive_game::Метроидвания и Souls",
+    "new_p1_ru": "Дверь закрыта, босс сильнее, карта молчит – и тебе именно это интересно. Победа должна быть заработана, иначе она не цепляет.",
+    "new_p1_en": "The door is locked, the boss is stronger, the map stays quiet – and that is exactly what interests you. Victory has to be earned."
+  },
+  {
+    "key": "addictive_game::Карточки и дека",
+    "new_p1_ru": "Три минуты в очереди – и уже партия. Тебе нравятся короткие сессии, где решение быстрое, ставка ясная, а рука тянется начать ещё одну.",
+    "new_p1_en": "Three minutes in line, and a match is already on. You like short sessions: quick decisions, clear stakes, one more round always tempting."
+  },
+  {
+    "key": "addictive_game::MMO эпоха",
+    "new_p1_ru": "Это не просто игра, если тебя там ждут люди. Тебе нужен общий виртуальный мир, где дружба, прогресс и вечерний сбор становятся ритуалом.",
+    "new_p1_en": "It is not just a game if people are waiting for you there. You need a shared world where friendship, progress, and nightly meetups become ritual."
+  },
+  {
+    "key": "addictive_game::Социальная дедукция и веселье",
+    "new_p1_ru": "Важен не счёт, а момент, когда весь голосовой чат взрывается смехом. Тебе нужны игры как повод быть с друзьями ярче, чем в обычной переписке.",
+    "new_p1_en": "The score matters less than the moment the voice chat explodes. You need games as a way to be with friends more vividly than in ordinary chat."
+  }
+]

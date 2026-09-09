@@ -1,0 +1,152 @@
+[
+  {
+    "key": "memorable_characters::Историческое зло",
+    "new_p1_ru": "Не демон из сказки, а человек в форме, с протоколом и холодной улыбкой. Тебя цепляет зло, в котором видны война, власть и обычные люди.",
+    "new_p1_en": "Not a fairy-tale demon, but a person in uniform, with paperwork and a cold smile. You’re drawn to evil shaped by war, power, and ordinary people."
+  },
+  {
+    "key": "memorable_characters::Философия монстра",
+    "new_p1_ru": "Монстр говорит спокойно — и от этого страшнее. Тебя цепляют антагонисты, которые не просто ломают мир, а объясняют, почему он для них уже сломан.",
+    "new_p1_en": "The monster speaks calmly — and that makes it worse. You’re drawn to antagonists who don’t just break the world, but explain why it already looks broken to them."
+  },
+  {
+    "key": "comeback_games::Атмосферный артхаус",
+    "new_p1_ru": "Игра начинается не с цели, а с ощущения. Ты входишь в неё как в выставку: медленно, внимательно, за следом настроения, мысли и образа.",
+    "new_p1_en": "The game doesn’t start with a goal, but with a feeling. You enter it like an exhibition: slowly, attentively, following a mood, a thought, an image."
+  },
+  {
+    "key": "comeback_games::Сложно и красиво",
+    "new_p1_ru": "Экран снова пишет «поражение», а ты уже тянешься к повтору. Тебе важна не лёгкая победа, а момент, когда система наконец щёлкает.",
+    "new_p1_en": "The screen says “defeat” again, and you’re already reaching for another run. You don’t want an easy win — you want the moment the system finally clicks."
+  },
+  {
+    "key": "comeback_games::Постапок и дикий запад",
+    "new_p1_ru": "Пыль, руины, дорога без гарантий — и ты уже дома. Тебя тянет в миры на грани, где порядок исчез или ещё не успел появиться.",
+    "new_p1_en": "Dust, ruins, a road with no guarantees — and somehow you’re home. You’re pulled toward worlds on the edge, where order is gone or not yet born."
+  },
+  {
+    "key": "comeback_games::Уют и творчество",
+    "new_p1_ru": "После шума дня тебе нужен мир, где никто не торопит. Можно строить, выращивать, бродить и чувствовать, что темп наконец твой.",
+    "new_p1_en": "After a loud day, you need a world that doesn’t rush you. You can build, grow, wander, and feel like the pace finally belongs to you."
+  },
+  {
+    "key": "comeback_games::Roguelike и метроидвания",
+    "new_p1_ru": "Смерть здесь не точка, а заметка на полях. Ты возвращаешься снова, потому что каждый круг открывает механику, карту и смысл чуть глубже.",
+    "new_p1_en": "Death here isn’t an ending, but a note in the margin. You come back because every loop reveals the mechanics, map, and meaning a little deeper."
+  },
+  {
+    "key": "comeback_games::Открытый мир",
+    "new_p1_ru": "",
+    "new_p1_en": "The main quest can wait; there’s a road turning left and you need to know where it goes. You like games that feel less like a corridor and more like a life."
+  },
+  {
+    "key": "childhood_cartoons::Постсоветский ностальгик",
+    "new_p1_ru": "Утро пахнет кашей, телевизор гудит на кухне, а на экране рядом живут два детства. Тебе близка смесь своего двора и большого мира.",
+    "new_p1_en": "The morning smells like porridge, the TV hums in the kitchen, and two childhoods live side by side on screen. You’re close to a mix of home and the wider world."
+  },
+  {
+    "key": "childhood_cartoons::Disney и приключения",
+    "new_p1_ru": "Тебе было мало просто смеяться — хотелось карты, тайны, команды и большого пути. Мультсериал становился не шумом фоном, а настоящей историей.",
+    "new_p1_en": "Just laughing wasn’t enough — you wanted maps, mysteries, a team, and a bigger road. The cartoon wasn’t background noise; it became a real story."
+  },
+  {
+    "key": "childhood_cartoons::Сатира взрослого",
+    "new_p1_ru": "Сначала кажется, что это просто кривляние. Потом замечаешь: шутка попала точно в эпоху, в политику, в семью, в тебя — и стало неловко.",
+    "new_p1_en": "At first it looks like pure clowning. Then you notice the joke lands right on the era, the politics, the family, and on you — uncomfortably."
+  },
+  {
+    "key": "childhood_cartoons::Магия и приключения",
+    "new_p1_ru": "Обычный двор тебе быстро становился тесен. Нужен был мир со своими законами, силами, картой и ощущением, что за углом начнётся приключение.",
+    "new_p1_en": "An ordinary yard got too small fast. You needed a world with its own laws, powers, map, and the feeling that an adventure could start around the corner."
+  },
+  {
+    "key": "childhood_cartoons::Старая школа",
+    "new_p1_ru": "Картинка может быть проще, звук тише, темп старомоднее — но магия держится. Тебя цепляет классика, которую понимают разные поколения.",
+    "new_p1_en": "The image may be simpler, the sound quieter, the pacing old-school — but the magic holds. You’re drawn to classics different generations understand."
+  },
+  {
+    "key": "childhood_cartoons::Безумие и абсурд",
+    "new_p1_ru": "Логика вышла покурить — и стало смешнее. Тебя цепляют мультсериалы, где мир гнётся как хочет, а абсурд вдруг говорит правду.",
+    "new_p1_en": "Logic stepped out for a smoke — and it got funnier. You’re drawn to cartoons where the world bends however it wants, and absurdity tells the truth."
+  },
+  {
+    "key": "childhood_cartoons::Боевики детства",
+    "new_p1_ru": "После серии хотелось бегать по комнате и спасать мир. Тебя цепляли истории с битвами, командами и храбростью, которую можно примерить на себя.",
+    "new_p1_en": "After an episode, you wanted to run around the room and save the world. You were hooked by battles, teams, and bravery you could try on yourself."
+  },
+  {
+    "key": "comfort_food::Простое и тёплое",
+    "new_p1_ru": "На столе пар, тяжёлая тарелка и ощущение, что тебя ждали. Твой comfort — простая сытная еда, которая греет сильнее батареи.",
+    "new_p1_en": "Steam on the table, a heavy plate, and the feeling that someone waited for you. Your comfort is simple, filling food that warms more than the radiator."
+  },
+  {
+    "key": "comfort_food::Итальянские базы",
+    "new_p1_ru": "Пара продуктов, сковорода, десять минут — и вечер уже спасён. Твой comfort там, где простота не бедность, а способ быстро стать сытым.",
+    "new_p1_en": "A few ingredients, a pan, ten minutes — and the evening is saved. Your comfort lives where simplicity isn’t poverty, but a fast way to feel fed."
+  },
+  {
+    "key": "comfort_food::Азиатская комфортность",
+    "new_p1_ru": "Вкус бьёт ярко: кислое, острое, солёное, тёплое — и сразу легче. Для тебя это уже не экзотика, а свой способ вернуться домой.",
+    "new_p1_en": "The flavor hits bright: sour, spicy, salty, warm — and you feel lighter. For you this isn’t exotic anymore, but your own way of coming home."
+  },
+  {
+    "key": "comfort_food::Сладкое и быстрое",
+    "new_p1_ru": "Иногда забота о себе помещается в десять минут. Тебе нужна не большая готовка, а быстрый тёплый кусок радости, пока день не развалился.",
+    "new_p1_en": "Sometimes taking care of yourself fits into ten minutes. You don’t need a big cooking ritual, just a quick warm piece of joy before the day falls apart."
+  },
+  {
+    "key": "comfort_food::Уличная еда",
+    "new_p1_ru": "Салфетка вместо скатерти, сок на пальцах, первый укус без церемоний. Тебе ближе еда, которая не притворяется выше простого удовольствия.",
+    "new_p1_en": "A napkin instead of a tablecloth, sauce on your fingers, the first bite without ceremony. You prefer food that doesn’t pretend to be above simple pleasure."
+  },
+  {
+    "key": "comfort_food::Хлеб и сыр",
+    "new_p1_ru": "Когда тянется расплавленная нить, вопросы заканчиваются. Твой comfort — тёплая, плотная простота, где хлеб и сыр делают всё честно.",
+    "new_p1_en": "When the melted strand stretches, the questions end. Your comfort is warm, dense simplicity, where bread and cheese do the honest work."
+  },
+  {
+    "key": "comfort_food::Тёплый суп",
+    "new_p1_ru": "Ложка горячего бульона — и тело будто выдыхает. Тебе нужен не просто ужин, а тепло изнутри, медленное, надёжное и без лишней суеты.",
+    "new_p1_en": "One spoon of hot broth, and your body exhales. You don’t just need dinner; you need warmth from the inside, slow, reliable, and without fuss."
+  },
+  {
+    "key": "world_desserts::Итальянский шик",
+    "new_p1_ru": "Десерт для тебя — маленькая церемония: крем, кофе, слой за слоем и пауза перед первым кусочком. Хочется не сахара, а шика.",
+    "new_p1_en": "For you, dessert is a small ceremony: cream, coffee, layer by layer, and a pause before the first bite. You don’t want sugar; you want chic."
+  },
+  {
+    "key": "world_desserts::Французская изящность",
+    "new_p1_ru": "Витрина сияет как ювелирный ряд, и ты уже выбираешь глазами. Тебе нужна сладость, где точность формы важна не меньше вкуса.",
+    "new_p1_en": "The display case shines like a row of jewelry, and you’re already choosing with your eyes. You need sweetness where form matters as much as flavor."
+  },
+  {
+    "key": "world_desserts::Восточная сладость",
+    "new_p1_ru": "Сладость здесь другая: тянется, хрустит, пряно липнет к пальцам. Тебя тянет к десертам, где вкус живёт по чужой, но понятной логике.",
+    "new_p1_en": "Sweetness works differently here: it stretches, crunches, clings with spice. You’re drawn to desserts whose logic feels foreign, but still readable."
+  },
+  {
+    "key": "world_desserts::Российская классика",
+    "new_p1_ru": "Слои требуют терпения — и ты это уважаешь. Тебе ближе десерты, где крем, тесто и время собираются в тяжёлую, честную классику.",
+    "new_p1_en": "Layers take patience, and you respect that. You’re closer to desserts where cream, pastry, and time become a weighty, honest classic."
+  },
+  {
+    "key": "world_desserts::Шоколадная мощь",
+    "new_p1_ru": "Не намёк, не лёгкая посыпка — тебе нужен вкус, который занимает весь рот. Плотный, тёмный, насыщенный, почти самостоятельная еда.",
+    "new_p1_en": "Not a hint, not a light dusting — you need a flavor that fills your whole mouth. Dense, dark, concentrated, almost a meal on its own."
+  },
+  {
+    "key": "world_desserts::Чай и тонкость",
+    "new_p1_ru": "Сладость не обязана кричать. Тебе ближе десерты, где всё держится на нюансе: лёгкой горчинке, мягкой текстуре, длинном послевкусии.",
+    "new_p1_en": "Sweetness doesn’t have to shout. You’re closer to desserts built on nuance: a soft bitterness, a gentle texture, a long aftertaste."
+  },
+  {
+    "key": "world_desserts::Хрусткая радость",
+    "new_p1_ru": "Первый звук важен: хруст, трещина, потом мягкая середина. Тебе нужны десерты, которые ощущаются не только вкусом, но и текстурой.",
+    "new_p1_en": "The first sound matters: crunch, crack, then a soft center. You need desserts you don’t just taste, but feel through texture."
+  },
+  {
+    "key": "ny_destinations::Уют и близкие",
+    "new_p1_ru": "",
+    "new_p1_en": "The countdown feels best in a smaller room, with warm light and familiar voices. You don’t need a spectacle; you need the right people nearby."
+  }
+]

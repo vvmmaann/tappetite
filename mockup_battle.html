@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNTITLED PICK GAME · Battle Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    background: #DDD5C7;
+    font-family: 'Inter', -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #1A1F36;
+  }
+
+  .review-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .phone {
+    width: 390px;
+    height: 844px;
+    background: linear-gradient(180deg, #FAF6F0 0%, #F5F0E8 100%);
+    border-radius: 44px;
+    box-shadow:
+      0 30px 80px rgba(40, 25, 10, 0.22),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* eле заметная бумажная фактура */
+  .phone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .status-bar {
+    padding: 18px 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1A1F36;
+    z-index: 2;
+    position: relative;
+  }
+
+  .round-block {
+    text-align: center;
+    padding: 30px 28px 4px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .round-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+  }
+
+  .progress {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D4C9B8;
+  }
+
+  .dot.done {
+    background: #B5532E;
+  }
+
+  .dot.current {
+    background: #B5532E;
+    box-shadow: 0 0 0 3px rgba(181, 83, 46, 0.18);
+  }
+
+  .category-name {
+    text-align: center;
+    margin-top: 18px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    color: #3D2424;
+    z-index: 2;
+    position: relative;
+  }
+
+  .battle {
+    flex: 1;
+    padding: 18px 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .card {
+    flex: 1;
+    background: #FFFCF7;
+    border-radius: 22px;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow:
+      0 1px 2px rgba(60, 40, 20, 0.04),
+      0 10px 30px rgba(60, 40, 20, 0.08);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  .card:hover {
+    transform: scale(0.985);
+    box-shadow:
+      0 1px 2px rgba(60, 40, 20, 0.04),
+      0 6px 18px rgba(60, 40, 20, 0.06);
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 0.96;
+    letter-spacing: -0.015em;
+    color: #1A1F36;
+    text-align: center;
+  }
+
+  .card-rule {
+    width: 38px;
+    height: 1px;
+    background: #C9BBA8;
+    margin: 22px auto 16px;
+  }
+
+  .card-context {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8A7A6A;
+    text-align: center;
+  }
+
+  .vs-divider {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    color: #B5532E;
+    margin: -2px 0;
+    z-index: 3;
+    position: relative;
+  }
+
+  .footer {
+    padding: 14px 28px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+  }
+
+  .footer a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #8A7A6A;
+    text-decoration: none;
+    border-bottom: 1px dotted #C9BBA8;
+    padding-bottom: 1px;
+  }
+
+  .caption {
+    margin-top: 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #5C5147;
+    text-align: center;
+    max-width: 420px;
+    line-height: 1.55;
+  }
+
+  .caption code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(0,0,0,0.05);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+  <div class="review-wrap">
+    <div class="phone">
+
+      <div class="status-bar">
+        <span>9:41</span>
+        <span>· · ·</span>
+      </div>
+
+      <div class="round-block">
+        <div class="round-text">Раунд 3 из 5</div>
+        <div class="progress">
+          <span class="dot done"></span>
+          <span class="dot done"></span>
+          <span class="dot current"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="category-name">Голливудские актёры · 50+</div>
+      </div>
+
+      <div class="battle">
+        <div class="card">
+          <div class="card-name">Роберт<br>Де Ниро</div>
+          <div class="card-rule"></div>
+          <div class="card-context">1943 · 2 оскара · «таксист»</div>
+        </div>
+
+        <div class="vs-divider">или</div>
+
+        <div class="card">
+          <div class="card-name">Аль<br>Пачино</div>
+          <div class="card-rule"></div>
+          <div class="card-context">1940 · 1 оскар · «лицо со шрамом»</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="#">Пропустить</a>
+        <a href="#">Не хватает кого-то?</a>
+      </div>
+
+    </div>
+
+    <div class="caption">
+      Mockup экрана битвы. Светлая тема «Кремовая». Засечный <code>Playfair Display</code> для имён, <code>Inter</code> для UI, <code>JetBrains Mono</code> для индикатора раунда. Тап-цель — вся карточка (наведи курсор чтобы увидеть микро-анимацию сжатия).
+    </div>
+  </div>
+</body>
+</html>

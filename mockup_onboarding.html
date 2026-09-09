@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNTITLED PICK GAME · Onboarding Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background: #DDD5C7;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1A1F36;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .col-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    color: #5C5147;
+    text-transform: uppercase;
+  }
+
+  .phone {
+    width: 360px;
+    height: 780px;
+    background: linear-gradient(180deg, #FAF6F0 0%, #F5F0E8 100%);
+    border-radius: 40px;
+    box-shadow: 0 30px 80px rgba(40, 25, 10, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .phone > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .top-bar {
+    padding: 18px 26px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .skip {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #8A7A6A;
+    text-decoration: none;
+    border-bottom: 1px dotted #C9BBA8;
+  }
+
+  .nav-row {
+    padding: 12px 26px 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* SCREEN CONTENT */
+  .content {
+    flex: 1;
+    padding: 0 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .issue-mast {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+
+  .display {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    color: #1A1F36;
+  }
+
+  .display em.long {
+    font-size: 44px;
+  }
+
+  .display .accent {
+    color: #B5532E;
+    font-style: italic;
+  }
+
+  .display em {
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .display.smaller {
+    font-size: 44px;
+  }
+
+  .lede {
+    margin-top: 22px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #4A4035;
+  }
+
+  .small-rule {
+    width: 36px;
+    height: 1px;
+    background: #C9BBA8;
+    margin: 26px auto;
+  }
+
+  /* MECHANIC ILLUSTRATION (text-only) */
+  .mini-pair {
+    margin: 8px auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 14px;
+    align-items: center;
+    max-width: 280px;
+  }
+
+  .mini-card {
+    background: #FFFCF7;
+    border-radius: 14px;
+    padding: 16px 12px;
+    box-shadow: 0 1px 2px rgba(60,40,20,0.04), 0 6px 16px rgba(60,40,20,0.06);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #1A1F36;
+    line-height: 1.05;
+  }
+
+  .mini-card.winner {
+    background: #FFF8EE;
+    box-shadow: 0 0 0 1.5px #B5532E, 0 6px 18px rgba(181,83,46,0.18);
+    transform: scale(1.04);
+  }
+
+  .mini-vs {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #B5532E;
+  }
+
+  /* FEATURES LIST */
+  .features {
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px dotted #D4C9B8;
+    align-items: baseline;
+  }
+
+  .feature-item:last-child { border-bottom: none; }
+
+  .feature-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    color: #B5532E;
+    width: 22px;
+    flex-shrink: 0;
+  }
+
+  .feature-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1A1F36;
+    line-height: 1.4;
+  }
+
+  .feature-text em {
+    font-style: italic;
+    color: #4A4035;
+    font-weight: 400;
+  }
+
+  /* PROGRESS DOTS */
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 0;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D4C9B8;
+  }
+
+  .dot.active {
+    width: 22px;
+    border-radius: 100px;
+    background: #B5532E;
+  }
+
+  /* FOOTER CTA */
+  .footer-cta {
+    padding: 0 26px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    background: #B5532E;
+    color: #FAF6F0;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 16px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(181, 83, 46, 0.28);
+    cursor: pointer;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #1A1F36;
+    border: 1px solid #1A1F36;
+    box-shadow: none;
+  }
+
+  .arrow {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+  }
+
+  .caption {
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #5C5147;
+    text-align: center;
+    max-width: 1100px;
+    line-height: 1.55;
+  }
+
+  .caption code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(0,0,0,0.05);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="row">
+
+    <!-- ─────────  SCREEN 1: COVER ──────── -->
+    <div class="col">
+      <div class="col-label">Экран 1 · обложка</div>
+      <div class="phone">
+
+        <div class="top-bar">
+          <span>9:41</span>
+          <a href="#" class="skip">пропустить</a>
+        </div>
+
+        <div class="content">
+          <div class="issue-mast">Издание №1 · 2026</div>
+          <div class="display">Журнал<br>твоих<br><em class="long">пристрастий</em></div>
+          <div class="small-rule"></div>
+          <div class="lede">Без картинок. Только имена, типографика и быстрые тапы.</div>
+        </div>
+
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="footer-cta">
+          <a href="#" class="btn-primary">Дальше <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────  SCREEN 2: MECHANIC ──────── -->
+    <div class="col">
+      <div class="col-label">Экран 2 · механика</div>
+      <div class="phone">
+
+        <div class="top-bar">
+          <span>9:41</span>
+          <a href="#" class="skip">пропустить</a>
+        </div>
+
+        <div class="content">
+          <div class="issue-mast">Как это устроено</div>
+          <div class="display smaller">Тапай<br>что <em>ближе</em></div>
+
+          <div class="small-rule"></div>
+
+          <div class="mini-pair">
+            <div class="mini-card winner">Тарковский</div>
+            <div class="mini-vs">или</div>
+            <div class="mini-card">Феллини</div>
+          </div>
+          <div class="lede">Несколько раундов · 30–90 секунд · твой топ-3 готов.</div>
+        </div>
+
+        <div class="dots">
+          <span class="dot"></span>
+          <span class="dot active"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="footer-cta">
+          <a href="#" class="btn-primary">Дальше <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────  SCREEN 3: PROMISE ──────── -->
+    <div class="col">
+      <div class="col-label">Экран 3 · обещание</div>
+      <div class="phone">
+
+        <div class="top-bar">
+          <span>9:41</span>
+          <a href="#" class="skip">пропустить</a>
+        </div>
+
+        <div class="content">
+          <div class="issue-mast">Что получишь</div>
+          <div class="display smaller"><em>Архетип.</em><br>Карточка.<br>Сравнение.</div>
+
+          <div class="small-rule"></div>
+
+          <div class="features">
+            <div class="feature-item">
+              <span class="feature-num">01</span>
+              <span class="feature-text">Профиль вкуса, который <em>копится</em> с каждым турниром</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-num">02</span>
+              <span class="feature-text">Сравнение <em>с друзьями</em> и большинством</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-num">03</span>
+              <span class="feature-text">Шеринг-карточка <em>в стиле обложки</em></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot active"></span>
+        </div>
+
+        <div class="footer-cta">
+          <a href="#" class="btn-primary">Открыть оглавление <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="caption">
+    Онбординг — 3 экрана как <strong>обложка + редакторская колонка + содержание выпуска</strong>. Везде «пропустить» в правом верхнем углу (никого не держим). <strong>Экран 1</strong>: манифест издания, минимум текста, ставит ожидание «без картинок». <strong>Экран 2</strong>: показывает механику живым мини-примером (Тарковский <code>vs</code> Феллини, левый выделен как «выбран»), не объясняет словами что такое турнир. <strong>Экран 3</strong>: три обещания нумерованным списком в духе содержания журнала. Прогресс - длинная капсула вместо третьей точки на активном шаге.
+  </div>
+
+</body>
+</html>

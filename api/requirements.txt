@@ -1,0 +1,19 @@
+# 2026-05-15: bumped from 0.115.6 → 0.136.1 to pull starlette ≥ 0.49.1 and
+# close FA-017 / pip-audit findings (CVE-2025-54121 + CVE-2025-62727 in
+# starlette 0.41.3 shipped by old fastapi). Verified pydantic 2.10.4
+# compatible. starlette pinned explicitly as a defense against future
+# fastapi resolver regressions.
+fastapi==0.136.1
+starlette>=1.0.0
+uvicorn[standard]==0.32.1
+bcrypt==4.2.1
+pydantic==2.10.4
+email-validator==2.2.0
+# Web Push (2026-05-11): VAPID signing + push delivery to browser push services.
+# pywebpush wraps the spec (RFC 8030/8291/8292), py-vapid does key gen + sign.
+pywebpush==2.3.0
+py-vapid==1.9.4
+# Native push via FCM (2026-05-12): Capacitor app delivers FCM tokens from the
+# device; backend uses firebase-admin to send pushes to those tokens. Requires
+# FIREBASE_CREDENTIALS env var pointing to a service-account JSON.
+firebase-admin==6.6.0

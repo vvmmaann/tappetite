@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNTITLED PICK GAME · Design System v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════════════════════════════
+     DESIGN TOKENS
+     ═══════════════════════════════════════════════════════════════ */
+
+  :root {
+    /* COLOR · LIGHT (Cream) */
+    --bg-page-light:        #DDD5C7;
+    --bg-app-light-from:    #FAF6F0;
+    --bg-app-light-to:      #F5F0E8;
+    --bg-card-light:        #FFFCF7;
+    --bg-elevated-light:    #F8F2E8;
+    --text-primary-light:   #1A1F36;
+    --text-secondary-light: #4A4035;
+    --text-tertiary-light:  #6B5C4A;
+    --text-muted-light:     #8A7A6A;
+    --rule-light:           #C9BBA8;
+    --rule-soft-light:      #D4C9B8;
+    --rule-faint-light:     #E5DCCB;
+
+    /* COLOR · DARK (Coffee) */
+    --bg-page-dark:         #0F0C09;
+    --bg-app-dark-from:     #1F1B16;
+    --bg-app-dark-to:       #2A241E;
+    --bg-card-dark-from:    #2F2922;
+    --bg-card-dark-to:      #332C25;
+    --text-primary-dark:    #F5F0E8;
+    --text-secondary-dark:  #E8DCC8;
+    --text-tertiary-dark:   #B5A48F;
+    --text-muted-dark:      #8A7A6A;
+    --rule-dark:            #6B5C4A;
+    --rule-soft-dark:       #4A3F33;
+
+    /* ACCENT · shared semantic */
+    --accent-light:         #B5532E;  /* terracotta on cream */
+    --accent-dark:          #D4885C;  /* lighter terracotta on coffee */
+    --accent-soft-light:    rgba(181, 83, 46, 0.10);
+    --accent-soft-dark:     rgba(212, 136, 92, 0.18);
+    --wine:                 #3D2424;  /* deep wine alt text on light */
+
+    /* SEMANTIC · status */
+    --success:              #2E7D32;
+    --warning:              #B07A1A;
+    --danger:               #B53023;
+
+    /* TYPOGRAPHY · families */
+    --font-display:         'Playfair Display', Georgia, serif;
+    --font-ui:              'Inter', -apple-system, sans-serif;
+    --font-mono:            'JetBrains Mono', 'SF Mono', monospace;
+
+    /* TYPOGRAPHY · sizes (used in actual mockups) */
+    --type-display-xl:      80px;   /* hero share-card */
+    --type-display-lg:      60px;   /* result hero */
+    --type-display-md:      48px;   /* battle name, onboarding cover */
+    --type-headline:        32px;   /* category names */
+    --type-title:           22px;   /* section titles */
+    --type-body-lg:         17px;   /* article-style lede */
+    --type-body:            14px;   /* default UI */
+    --type-body-sm:         12px;   /* helper text */
+    --type-caption:         11px;   /* mono captions */
+    --type-overline:        10px;   /* small caps labels */
+    --type-micro:            9px;   /* dense data */
+
+    /* TYPOGRAPHY · letter spacing */
+    --tracking-tight:       -0.025em;  /* large display */
+    --tracking-snug:        -0.015em;  /* headlines */
+    --tracking-normal:       0;
+    --tracking-wide:         0.18em;   /* small caps standard */
+    --tracking-wider:        0.22em;   /* status pills, mono labels */
+    --tracking-widest:       0.32em;   /* decorative section labels */
+
+    /* SPACING SCALE (used in mockups) */
+    --space-1:               4px;
+    --space-2:               8px;
+    --space-3:              12px;
+    --space-4:              16px;
+    --space-5:              22px;
+    --space-6:              28px;
+    --space-7:              36px;
+    --space-8:              48px;
+
+    /* RADII */
+    --radius-xs:             4px;   /* mono pill bg */
+    --radius-sm:             6px;   /* admin button */
+    --radius-md:            12px;   /* input field */
+    --radius-lg:            18px;   /* small card */
+    --radius-xl:            22px;   /* battle card */
+    --radius-2xl:           28px;   /* modal sheet */
+    --radius-pill:         100px;   /* button, badge, dot */
+    --radius-phone:         44px;   /* device frame */
+
+    /* SHADOWS */
+    --shadow-card-light:
+      0 1px 2px rgba(60, 40, 20, 0.04),
+      0 8px 24px rgba(60, 40, 20, 0.06);
+    --shadow-card-dark:
+      0 1px 0 rgba(255, 220, 180, 0.05) inset,
+      0 0 0 1px rgba(245, 240, 232, 0.05),
+      0 12px 30px rgba(0, 0, 0, 0.4);
+    --shadow-button:
+      0 6px 18px rgba(181, 83, 46, 0.28);
+    --shadow-button-hover:
+      0 10px 24px rgba(181, 83, 46, 0.34);
+    --shadow-modal:
+      0 -8px 30px rgba(0, 0, 0, 0.18);
+    --shadow-phone-light:
+      0 30px 80px rgba(40, 25, 10, 0.22),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+    --shadow-phone-dark:
+      0 30px 80px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(245, 240, 232, 0.05);
+
+    /* MOTION */
+    --ease-default:          cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-fast:         200ms;
+    --duration-base:         300ms;
+    --duration-slow:         400ms;
+
+    /* TEXTURE · shared paper noise (data URI, used everywhere) */
+    --noise-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --noise-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.7 0 0 0 0 0.55 0 0 0 0 0.4 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ═══════════════════════════════════════════════════════════════
+     PAGE STRUCTURE
+     ═══════════════════════════════════════════════════════════════ */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-ui);
+    color: var(--text-primary-light);
+    background: var(--bg-page-light);
+    padding: 48px 32px;
+    line-height: 1.5;
+  }
+
+  .ds-page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ds-masthead {
+    text-align: center;
+    padding: 0 0 48px;
+    border-bottom: 1px solid var(--rule-light);
+  }
+
+  .ds-masthead h1 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 56px;
+    color: var(--text-primary-light);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .ds-masthead .sub {
+    margin-top: 12px;
+    font-family: var(--font-mono);
+    font-size: var(--type-overline);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--text-muted-light);
+  }
+
+  .ds-masthead .desc {
+    margin: 22px auto 0;
+    max-width: 620px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--type-body-lg);
+    color: var(--text-secondary-light);
+  }
+
+  /* SECTION HEADING */
+  .ds-section {
+    padding: 56px 0 24px;
+  }
+
+  .ds-section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-soft-light);
+  }
+
+  .ds-section-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--accent-light);
+  }
+
+  .ds-section-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--text-primary-light);
+    letter-spacing: var(--tracking-snug);
+  }
+
+  .ds-section-desc {
+    margin-left: auto;
+    max-width: 380px;
+    font-family: var(--font-ui);
+    font-size: var(--type-body-sm);
+    color: var(--text-tertiary-light);
+    text-align: right;
+  }
+
+  /* TOKEN GRID */
+  .ds-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .ds-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .ds-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .ds-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .ds-grid.cols-6 { grid-template-columns: repeat(6, 1fr); }
+
+  /* COLOR CHIP */
+  .swatch {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .swatch-color {
+    height: 84px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--rule-faint-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .swatch-color.with-noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise-light);
+    pointer-events: none;
+  }
+
+  .swatch-info {
+    font-family: var(--font-mono);
+    font-size: var(--type-overline);
+    letter-spacing: 0.04em;
+    color: var(--text-tertiary-light);
+  }
+
+  .swatch-info .name {
+    color: var(--text-primary-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--type-micro);
+    margin-bottom: 2px;
+  }
+
+  /* TYPE SPECIMEN */
+  .type-specimen {
+    padding: 22px 0;
+    border-bottom: 1px dotted var(--rule-soft-light);
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 24px;
+    align-items: baseline;
+  }
+
+  .type-sample {
+    color: var(--text-primary-light);
+    line-height: 1.05;
+  }
+
+  .type-meta {
+    font-family: var(--font-mono);
+    font-size: var(--type-overline);
+    color: var(--text-tertiary-light);
+    line-height: 1.7;
+  }
+
+  .type-meta .meta-name {
+    color: var(--text-primary-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--type-micro);
+  }
+
+  /* SPACING DIAGRAM */
+  .space-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px;
+    gap: 14px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--rule-soft-light);
+  }
+
+  .space-row:last-child { border-bottom: none; }
+
+  .space-name {
+    font-family: var(--font-mono);
+    font-size: var(--type-caption);
+    color: var(--text-primary-light);
+    font-weight: 500;
+  }
+
+  .space-bar {
+    height: 14px;
+    background: var(--accent-soft-light);
+    border-radius: 3px;
+  }
+
+  .space-val {
+    font-family: var(--font-mono);
+    font-size: var(--type-caption);
+    color: var(--text-tertiary-light);
+    text-align: right;
+  }
+
+  /* RADIUS DEMO */
+  .radius-card {
+    height: 100px;
+    background: var(--bg-card-light);
+    box-shadow: var(--shadow-card-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: var(--type-overline);
+    color: var(--text-tertiary-light);
+  }
+
+  .radius-card .name {
+    color: var(--text-primary-light);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--type-micro);
+    text-transform: uppercase;
+  }
+
+  /* COMPONENT DEMO */
+  .demo-block {
+    background: linear-gradient(180deg, var(--bg-app-light-from) 0%, var(--bg-app-light-to) 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--rule-faint-light);
+    padding: 32px;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .demo-block.dark {
+    background: linear-gradient(180deg, var(--bg-app-dark-from) 0%, var(--bg-app-dark-to) 100%);
+    border: none;
+    color: var(--text-primary-dark);
+  }
+
+  .demo-block.dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise-dark);
+    pointer-events: none;
+  }
+
+  .demo-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise-light);
+    pointer-events: none;
+  }
+
+  .demo-block > * { position: relative; z-index: 1; }
+
+  .demo-label {
+    font-family: var(--font-mono);
+    font-size: var(--type-overline);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--text-tertiary-light);
+    margin-bottom: 16px;
+  }
+
+  .demo-block.dark .demo-label { color: var(--text-tertiary-dark); }
+
+  .demo-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-default);
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--accent-light);
+    color: var(--bg-app-light-from);
+    font-size: var(--type-body);
+    padding: 14px 24px;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-button);
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { box-shadow: var(--shadow-button-hover); transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent-light);
+    border: 1px solid var(--accent-light);
+    font-size: var(--type-body);
+    padding: 13px 23px;
+    border-radius: var(--radius-pill);
+  }
+  .btn-secondary:hover { background: var(--accent-light); color: var(--bg-app-light-from); }
+
+  .btn-text {
+    background: none;
+    color: var(--text-tertiary-light);
+    font-size: var(--type-body-sm);
+    border-bottom: 1px dotted var(--rule-light);
+    padding: 1px 0;
+    border-radius: 0;
+    font-weight: 500;
+  }
+
+  .btn-admin {
+    background: white;
+    color: var(--text-primary-light);
+    border: 1px solid var(--rule-light);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: var(--radius-sm);
+  }
+
+  .btn-admin.primary {
+    background: var(--accent-light);
+    color: white;
+    border-color: var(--accent-light);
+  }
+
+  /* CARDS */
+  .demo-card {
+    background: var(--bg-card-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card-light);
+    padding: 24px;
+    text-align: center;
+    width: 200px;
+  }
+
+  .demo-card .nm {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--text-primary-light);
+    line-height: 1;
+  }
+
+  .demo-card .rule {
+    width: 30px;
+    height: 1px;
+    background: var(--rule-light);
+    margin: 14px auto 10px;
+  }
+
+  .demo-card .ctx {
+    font-family: var(--font-ui);
+    font-size: var(--type-micro);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--text-muted-light);
+  }
+
+  .demo-card.dark {
+    background: linear-gradient(180deg, var(--bg-card-dark-from) 0%, var(--bg-card-dark-to) 100%);
+    box-shadow: var(--shadow-card-dark);
+  }
+  .demo-card.dark .nm { color: var(--text-primary-dark); }
+  .demo-card.dark .rule { background: var(--rule-dark); }
+  .demo-card.dark .ctx { color: var(--text-tertiary-dark); }
+
+  /* BADGE */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-ui);
+    font-size: var(--type-caption);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .badge.founding {
+    background: var(--accent-soft-light);
+    color: var(--accent-light);
+    border: 1px solid rgba(181, 83, 46, 0.25);
+  }
+
+  .badge.author {
+    background: rgba(26, 31, 54, 0.06);
+    color: var(--text-primary-light);
+    border: 1px solid rgba(26, 31, 54, 0.12);
+  }
+
+  .badge .glyph {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* INPUT */
+  .demo-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--rule-light);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--text-primary-light);
+    outline: none;
+  }
+
+  /* DECORATIVE DIVIDER */
+  .dec-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 16px 0;
+  }
+
+  .dec-divider .line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule-light);
+  }
+
+  .dec-divider .label {
+    font-family: var(--font-mono);
+    font-size: var(--type-overline);
+    font-weight: 500;
+    letter-spacing: var(--tracking-widest);
+    color: var(--text-muted-light);
+    text-transform: uppercase;
+  }
+
+  /* DOTS */
+  .dot-progress {
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+  }
+  .dot-progress .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rule-soft-light);
+  }
+  .dot-progress .dot.done { background: var(--accent-light); }
+  .dot-progress .dot.current {
+    background: var(--accent-light);
+    box-shadow: 0 0 0 3px var(--accent-soft-light);
+  }
+
+  /* CTA STRIP at bottom */
+  .ds-footer {
+    margin-top: 80px;
+    padding: 36px;
+    background: var(--bg-card-light);
+    border: 1px solid var(--rule-faint-light);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .ds-footer h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--text-primary-light);
+    margin-bottom: 8px;
+  }
+
+  .ds-footer p {
+    font-family: var(--font-ui);
+    font-size: var(--type-body);
+    color: var(--text-tertiary-light);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .ds-footer code {
+    font-family: var(--font-mono);
+    font-size: var(--type-caption);
+    background: var(--accent-soft-light);
+    color: var(--accent-light);
+    padding: 2px 7px;
+    border-radius: var(--radius-xs);
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="ds-page">
+
+  <!-- ═══════ MASTHEAD ═══════ -->
+  <header class="ds-masthead">
+    <div class="sub">Дизайн-система · v1 · 2026-05-04</div>
+    <h1>UNTITLED PICK GAME</h1>
+    <p class="desc">Журнальная типографика, два тёплых тона, минимум картинок. Эта страница - источник истины для всех визуальных решений приложения.</p>
+  </header>
+
+  <!-- ═══════ 1 · COLORS ═══════ -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <div class="ds-section-num">01</div>
+      <div class="ds-section-title">Цвет</div>
+      <div class="ds-section-desc">Две палитры на единой акцентной шкале. Тёплые тона, не серые.</div>
+    </div>
+
+    <h4 style="font-family:var(--font-mono); font-size:var(--type-overline); letter-spacing:var(--tracking-widest); text-transform:uppercase; color:var(--text-tertiary-light); margin-top:24px; margin-bottom:8px;">Светлая · Кремовая</h4>
+    <div class="ds-grid cols-6">
+      <div class="swatch">
+        <div class="swatch-color with-noise" style="background: linear-gradient(180deg, #FAF6F0, #F5F0E8);"></div>
+        <div class="swatch-info"><div class="name">bg app</div>#FAF6F0 → #F5F0E8</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FFFCF7;"></div>
+        <div class="swatch-info"><div class="name">bg card</div>#FFFCF7</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #1A1F36;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">text primary</div>#1A1F36</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #4A4035;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">text secondary</div>#4A4035</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #8A7A6A;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">text muted</div>#8A7A6A</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #C9BBA8;"></div>
+        <div class="swatch-info"><div class="name">rule</div>#C9BBA8</div>
+      </div>
+    </div>
+
+    <h4 style="font-family:var(--font-mono); font-size:var(--type-overline); letter-spacing:var(--tracking-widest); text-transform:uppercase; color:var(--text-tertiary-light); margin-top:32px; margin-bottom:8px;">Тёмная · Кофейная</h4>
+    <div class="ds-grid cols-6">
+      <div class="swatch">
+        <div class="swatch-color" style="background: linear-gradient(180deg, #1F1B16, #2A241E);"></div>
+        <div class="swatch-info"><div class="name">bg app</div>#1F1B16 → #2A241E</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: linear-gradient(180deg, #2F2922, #332C25);"></div>
+        <div class="swatch-info"><div class="name">bg card</div>#2F2922 → #332C25</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F5F0E8;"></div>
+        <div class="swatch-info"><div class="name">text primary</div>#F5F0E8</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #E8DCC8;"></div>
+        <div class="swatch-info"><div class="name">text secondary</div>#E8DCC8</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #B5A48F;"></div>
+        <div class="swatch-info"><div class="name">text tertiary</div>#B5A48F</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #6B5C4A;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">rule</div>#6B5C4A</div>
+      </div>
+    </div>
+
+    <h4 style="font-family:var(--font-mono); font-size:var(--type-overline); letter-spacing:var(--tracking-widest); text-transform:uppercase; color:var(--text-tertiary-light); margin-top:32px; margin-bottom:8px;">Акценты · общие</h4>
+    <div class="ds-grid cols-6">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #B5532E;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">accent (light)</div>#B5532E</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #D4885C;"></div>
+        <div class="swatch-info"><div class="name">accent (dark)</div>#D4885C</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #3D2424;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">wine alt text</div>#3D2424</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #2E7D32;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">success</div>#2E7D32</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #B07A1A;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">warning</div>#B07A1A</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #B53023;"></div>
+        <div class="swatch-info" style="color:#fff;"><div class="name" style="color:#fff;">danger</div>#B53023</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ 2 · TYPOGRAPHY ═══════ -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <div class="ds-section-num">02</div>
+      <div class="ds-section-title">Типографика</div>
+      <div class="ds-section-desc">Три гарнитуры. Дисплей засечный, UI сансериф, статистика моноширинный. Все имеют кириллицу.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family:var(--font-display); font-weight:500; font-size:60px; letter-spacing:-0.025em;">Аль Пачино</div>
+      <div class="type-meta">
+        <div class="meta-name">display-lg</div>
+        Playfair Display 500<br>
+        60px / -0.025em<br>
+        используется: hero result, name battle
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family:var(--font-display); font-weight:500; font-size:48px; letter-spacing:-0.015em;">Голливуд 50+</div>
+      <div class="type-meta">
+        <div class="meta-name">display-md</div>
+        Playfair Display 500<br>
+        48px / -0.015em<br>
+        используется: category title, onboarding
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family:var(--font-display); font-style:italic; font-weight:500; font-size:38px; letter-spacing:-0.01em; color:var(--wine);">Верный Новому Голливуду</div>
+      <div class="type-meta">
+        <div class="meta-name">display-italic</div>
+        Playfair Display Italic 500<br>
+        38px / -0.01em / wine<br>
+        используется: archetype name, masthead
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family:var(--font-ui); font-weight:600; font-size:14px;">Поделиться результатом</div>
+      <div class="type-meta">
+        <div class="meta-name">ui-button</div>
+        Inter 600<br>
+        14-15px / 0.02em<br>
+        используется: primary buttons
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family:var(--font-display); font-style:italic; font-size:17px; line-height:1.5; color:var(--text-secondary-light);">Эпоха кокаина и длинных монологов в твоей крови.</div>
+      <div class="type-meta">
+        <div class="meta-name">body-italic</div>
+        Playfair Display Italic 400<br>
+        17px / 1.5 line-height<br>
+        используется: archetype quote, lede
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-sample" style="font-family:var(--font-mono); font-size:11px; font-weight:500; letter-spacing:0.32em; text-transform:uppercase; color:var(--text-muted-light);">выпуск №47 · 4 мая 2026</div>
+      <div class="type-meta">
+        <div class="meta-name">overline-mono</div>
+        JetBrains Mono 500<br>
+        10-11px / 0.32em uppercase<br>
+        используется: section labels, masthead
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ 3 · SPACING ═══════ -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <div class="ds-section-num">03</div>
+      <div class="ds-section-title">Шкала отступов</div>
+      <div class="ds-section-desc">База 4px, нелинейная. Семь шагов покрывают всё что встретилось в мокапах.</div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <div class="space-row"><div class="space-name">space-1</div><div class="space-bar" style="width:4px;"></div><div class="space-val">4 px</div></div>
+      <div class="space-row"><div class="space-name">space-2</div><div class="space-bar" style="width:8px;"></div><div class="space-val">8 px</div></div>
+      <div class="space-row"><div class="space-name">space-3</div><div class="space-bar" style="width:12px;"></div><div class="space-val">12 px</div></div>
+      <div class="space-row"><div class="space-name">space-4</div><div class="space-bar" style="width:16px;"></div><div class="space-val">16 px</div></div>
+      <div class="space-row"><div class="space-name">space-5</div><div class="space-bar" style="width:22px;"></div><div class="space-val">22 px</div></div>
+      <div class="space-row"><div class="space-name">space-6</div><div class="space-bar" style="width:28px;"></div><div class="space-val">28 px</div></div>
+      <div class="space-row"><div class="space-name">space-7</div><div class="space-bar" style="width:36px;"></div><div class="space-val">36 px</div></div>
+      <div class="space-row"><div class="space-name">space-8</div><div class="space-bar" style="width:48px;"></div><div class="space-val">48 px</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════ 4 · RADII ═══════ -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <div class="ds-section-num">04</div>
+      <div class="ds-section-title">Радиусы</div>
+      <div class="ds-section-desc">От inputs до устройства - семь шагов скруглений.</div>
+    </div>
+
+    <div class="ds-grid cols-4" style="margin-top:24px;">
+      <div class="radius-card" style="border-radius: 4px;"><div class="name">radius-xs</div>4 px</div>
+      <div class="radius-card" style="border-radius: 6px;"><div class="name">radius-sm</div>6 px</div>
+      <div class="radius-card" style="border-radius: 12px;"><div class="name">radius-md</div>12 px</div>
+      <div class="radius-card" style="border-radius: 18px;"><div class="name">radius-lg</div>18 px</div>
+      <div class="radius-card" style="border-radius: 22px;"><div class="name">radius-xl</div>22 px</div>
+      <div class="radius-card" style="border-radius: 28px;"><div class="name">radius-2xl</div>28 px</div>
+      <div class="radius-card" style="border-radius: 100px;"><div class="name">radius-pill</div>100 px</div>
+      <div class="radius-card" style="border-radius: 44px;"><div class="name">radius-phone</div>44 px</div>
+    </div>
+  </section>
+
+  <!-- ═══════ 5 · COMPONENTS ═══════ -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <div class="ds-section-num">05</div>
+      <div class="ds-section-title">Компоненты</div>
+      <div class="ds-section-desc">Кирпичики, из которых собраны все 11 экранов.</div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="demo-block">
+      <div class="demo-label">Кнопки</div>
+      <div class="demo-row">
+        <a class="btn btn-primary">Поделиться результатом</a>
+        <a class="btn btn-secondary">+ Предложить категорию</a>
+        <a class="btn btn-text">Кого ты ещё ждал?</a>
+        <a class="btn btn-admin primary">Принять</a>
+        <a class="btn btn-admin">Уточнить</a>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="demo-block">
+      <div class="demo-label">Карточки битвы</div>
+      <div class="demo-row">
+        <div class="demo-card">
+          <div class="nm">Аль Пачино</div>
+          <div class="rule"></div>
+          <div class="ctx">1940 · 1 оскар</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-block dark">
+      <div class="demo-label">Тёмная вариация</div>
+      <div class="demo-row">
+        <div class="demo-card dark">
+          <div class="nm">Аль Пачино</div>
+          <div class="rule"></div>
+          <div class="ctx">1940 · 1 оскар</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="demo-block">
+      <div class="demo-label">Поля ввода</div>
+      <div class="demo-row">
+        <input class="demo-input" value="Дастин Хоффман" style="max-width:300px;" />
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="demo-block">
+      <div class="demo-label">Бейджи</div>
+      <div class="demo-row">
+        <span class="badge founding"><span class="glyph">★</span>Founding Reader</span>
+        <span class="badge author"><span class="glyph">✎</span>Автор × 3</span>
+      </div>
+    </div>
+
+    <!-- Decorative dividers -->
+    <div class="demo-block">
+      <div class="demo-label">Декоративные разделители</div>
+      <div class="dec-divider">
+        <div class="line"></div>
+        <div class="label">Твой типаж</div>
+        <div class="line"></div>
+      </div>
+      <div style="height:14px;"></div>
+      <div class="dec-divider">
+        <div class="line"></div>
+        <div class="label">Где сошлись</div>
+        <div class="line"></div>
+      </div>
+    </div>
+
+    <!-- Progress dots -->
+    <div class="demo-block">
+      <div class="demo-label">Прогресс</div>
+      <div class="demo-row">
+        <div class="dot-progress">
+          <span class="dot done"></span>
+          <span class="dot done"></span>
+          <span class="dot current"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════ 6 · TEXTURE ═══════ -->
+  <section class="ds-section">
+    <div class="ds-section-head">
+      <div class="ds-section-num">06</div>
+      <div class="ds-section-title">Бумажная фактура</div>
+      <div class="ds-section-desc">SVG-фильтр fractalNoise, два варианта - на тёплый светлый и на тёплый тёмный.</div>
+    </div>
+
+    <div class="ds-grid cols-2" style="margin-top:24px;">
+      <div>
+        <div class="swatch-color with-noise" style="height: 200px; background: linear-gradient(180deg, #FAF6F0, #F5F0E8);"></div>
+        <div class="swatch-info" style="margin-top: 10px;">
+          <div class="name">noise on cream</div>
+          baseFrequency 0.85, alpha 0.05<br>
+          цветовая матрица: коричневый
+        </div>
+      </div>
+      <div>
+        <div class="swatch-color" style="height: 200px; background: linear-gradient(180deg, #1F1B16, #2A241E); position: relative; overflow: hidden;">
+          <div style="position:absolute; inset:0; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='nd'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.7 0 0 0 0 0.55 0 0 0 0 0.4 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nd)'/%3E%3C/svg%3E&quot;);"></div>
+        </div>
+        <div class="swatch-info" style="margin-top: 10px;">
+          <div class="name">noise on coffee</div>
+          baseFrequency 0.85, alpha 0.05<br>
+          цветовая матрица: тёплое золото
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="ds-footer">
+    <h3>Что дальше</h3>
+    <p>
+      Все токены экспортируются как CSS custom properties (видно в <code>:root</code> наверху файла) - в момент перехода на React Native они тривиально портируются в <code>theme.ts</code> через <code>StyleSheet.create</code> или <code>Restyle</code>. Открывай DevTools → Sources → этот файл → блок <code>:root</code>, и копируй переменные оттуда.
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>

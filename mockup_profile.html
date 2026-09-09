@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNTITLED PICK GAME · Profile Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background: #DDD5C7;
+    font-family: 'Inter', -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #1A1F36;
+  }
+
+  .review-wrap { display: flex; flex-direction: column; align-items: center; }
+
+  .phone {
+    width: 390px;
+    height: 844px;
+    background: linear-gradient(180deg, #FAF6F0 0%, #F5F0E8 100%);
+    border-radius: 44px;
+    box-shadow: 0 30px 80px rgba(40, 25, 10, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    z-index: 2;
+    position: relative;
+    scrollbar-width: none;
+  }
+  .scroll-area::-webkit-scrollbar { display: none; }
+
+  .status-bar {
+    padding: 18px 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1A1F36;
+  }
+
+  /* IDENTITY HEADER */
+  .identity {
+    text-align: center;
+    padding: 22px 28px 18px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(140deg, #F8E5D2 0%, #E8C7A8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto;
+    box-shadow: 0 6px 16px rgba(181, 83, 46, 0.18);
+  }
+
+  .nickname {
+    margin-top: 14px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: #1A1F36;
+  }
+
+  .meta-line {
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+  }
+
+  /* MASTER ARCHETYPE */
+  .master-arch {
+    margin: 18px 24px 0;
+    padding: 22px 22px;
+    background: linear-gradient(180deg, #FFFCF7 0%, #F8F2E8 100%);
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(60,40,20,0.04), 0 8px 22px rgba(60,40,20,0.06);
+    text-align: center;
+  }
+
+  .master-arch .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #B5532E;
+    text-transform: uppercase;
+  }
+
+  .master-arch .name {
+    margin-top: 12px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.05;
+    color: #1A1F36;
+    letter-spacing: -0.01em;
+  }
+
+  .master-arch .body {
+    margin-top: 12px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #4A4035;
+  }
+
+  /* STATS STRIP */
+  .stats {
+    margin: 20px 28px 0;
+    padding: 16px 0;
+    border-top: 1px solid #C9BBA8;
+    border-bottom: 1px solid #C9BBA8;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .stat {
+    text-align: center;
+    border-right: 1px solid #E5DCCB;
+    padding: 0 6px;
+  }
+  .stat:last-child { border-right: none; }
+
+  .stat .num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #1A1F36;
+    line-height: 1;
+  }
+
+  .stat .lab {
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+  }
+
+  /* SECTION LABEL */
+  .sec-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 28px 12px;
+  }
+  .sec-label .line { flex: 1; height: 1px; background: #D4C9B8; }
+  .sec-label .text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+  }
+
+  /* BADGES */
+  .badges {
+    padding: 0 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .badge.founding {
+    background: rgba(181, 83, 46, 0.10);
+    color: #B5532E;
+    border: 1px solid rgba(181, 83, 46, 0.25);
+  }
+
+  .badge.author {
+    background: rgba(26, 31, 54, 0.06);
+    color: #1A1F36;
+    border: 1px solid rgba(26, 31, 54, 0.12);
+  }
+
+  .badge .glyph {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  /* HISTORY ROWS */
+  .history { padding: 0 28px; }
+
+  .hist-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px dotted #D4C9B8;
+    cursor: pointer;
+  }
+
+  .hist-row:last-child { border-bottom: none; }
+
+  .hist-row .left .cat {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1A1F36;
+  }
+  .hist-row .left .winner {
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #6B5C4A;
+  }
+  .hist-row .left .winner span { color: #B5532E; }
+
+  .hist-row .when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #8A7A6A;
+    letter-spacing: 0.04em;
+  }
+
+  /* PROPOSALS */
+  .prop-row {
+    padding: 12px 0;
+    border-bottom: 1px dotted #D4C9B8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .prop-row:last-child { border-bottom: none; }
+
+  .prop-row .name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1A1F36;
+    flex: 1;
+  }
+
+  .prop-row .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .status.review { background: rgba(180, 130, 50, 0.12); color: #8B5E1A; }
+  .status.live { background: rgba(46, 125, 50, 0.12); color: #2E7D32; }
+
+  /* SETTINGS */
+  .settings { padding: 0 28px 8px; }
+
+  .set-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px dotted #D4C9B8;
+  }
+  .set-row:last-child { border-bottom: none; }
+
+  .set-row .lab {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1A1F36;
+  }
+
+  .toggle {
+    display: inline-flex;
+    border: 1px solid #C9BBA8;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .toggle button {
+    background: transparent;
+    border: none;
+    padding: 6px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8A7A6A;
+    cursor: pointer;
+  }
+
+  .toggle button.active {
+    background: #1A1F36;
+    color: #FAF6F0;
+  }
+
+  .switch {
+    width: 38px;
+    height: 22px;
+    background: #B5532E;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 18px;
+    height: 18px;
+    background: #FAF6F0;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+
+  .switch.off { background: #C9BBA8; }
+  .switch.off::after { right: auto; left: 2px; }
+
+  /* TAB BAR */
+  .tab-bar {
+    flex-shrink: 0;
+    z-index: 2;
+    position: relative;
+    padding: 14px 28px 30px;
+    border-top: 1px solid #E5DCCB;
+    background: rgba(250, 246, 240, 0.92);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #8A7A6A;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .tab.active { color: #1A1F36; }
+
+  .tab .glyph {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .tab.active .glyph::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #B5532E;
+    margin: 4px auto 0;
+  }
+
+  .caption {
+    margin-top: 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #5C5147;
+    text-align: center;
+    max-width: 420px;
+    line-height: 1.55;
+  }
+
+  .caption code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(0,0,0,0.05);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+  <div class="review-wrap">
+    <div class="phone">
+
+      <div class="scroll-area">
+
+        <div class="status-bar">
+          <span>9:41</span>
+          <span>· · ·</span>
+        </div>
+
+        <!-- IDENTITY -->
+        <div class="identity">
+          <div class="avatar">✦</div>
+          <div class="nickname">@irinka_kino</div>
+          <div class="meta-line">с марта 2026 · Россия</div>
+        </div>
+
+        <!-- MASTER ARCHETYPE -->
+        <div class="master-arch">
+          <div class="label">Мастер-архетип</div>
+          <div class="name">Хранительница<br>Старого Голливуда</div>
+          <div class="body">Ты выбираешь взвешенно, как редактор, и доверяешь только тем, кто работал с настоящим целлулоидом.</div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats">
+          <div class="stat">
+            <div class="num">47</div>
+            <div class="lab">выпусков</div>
+          </div>
+          <div class="stat">
+            <div class="num">3</div>
+            <div class="lab">категории</div>
+          </div>
+          <div class="stat">
+            <div class="num">12</div>
+            <div class="lab">матчей</div>
+          </div>
+        </div>
+
+        <!-- BADGES -->
+        <div class="sec-label">
+          <div class="line"></div>
+          <div class="text">Знаки отличия</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="badges">
+          <span class="badge founding"><span class="glyph">★</span>Founding Reader</span>
+          <span class="badge author"><span class="glyph">✎</span>Автор × 3</span>
+        </div>
+
+        <!-- HISTORY -->
+        <div class="sec-label">
+          <div class="line"></div>
+          <div class="text">Последние выпуски</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="history">
+          <div class="hist-row">
+            <div class="left">
+              <div class="cat">Голливудские актёры · 50+</div>
+              <div class="winner">№1: <span>Аль Пачино</span></div>
+            </div>
+            <div class="when">сегодня</div>
+          </div>
+          <div class="hist-row">
+            <div class="left">
+              <div class="cat">Лучшая мировая кухня</div>
+              <div class="winner">№1: <span>Тайская</span></div>
+            </div>
+            <div class="when">вчера</div>
+          </div>
+          <div class="hist-row">
+            <div class="left">
+              <div class="cat">Sci-fi фильмы 2000-х</div>
+              <div class="winner">№1: <span>«Помни»</span></div>
+            </div>
+            <div class="when">3 дня</div>
+          </div>
+        </div>
+
+        <!-- MY PROPOSALS -->
+        <div class="sec-label">
+          <div class="line"></div>
+          <div class="text">Мои предложения</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="history">
+          <div class="prop-row">
+            <div class="name">Лучшие фильмы Орсона Уэллса</div>
+            <span class="status review">на ревью</span>
+          </div>
+          <div class="prop-row">
+            <div class="name">Самые недооценённые операторы</div>
+            <span class="status live">вышло</span>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="sec-label">
+          <div class="line"></div>
+          <div class="text">Настройки</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="settings">
+          <div class="set-row">
+            <div class="lab">Тема</div>
+            <div class="toggle">
+              <button class="active">Кремовая</button>
+              <button>Кофейная</button>
+            </div>
+          </div>
+          <div class="set-row">
+            <div class="lab">Звук</div>
+            <div class="switch"></div>
+          </div>
+          <div class="set-row">
+            <div class="lab">Уведомления о выпусках</div>
+            <div class="switch"></div>
+          </div>
+          <div class="set-row">
+            <div class="lab">Reduce motion</div>
+            <div class="switch off"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB BAR -->
+      <div class="tab-bar">
+        <a href="#" class="tab">
+          <div class="glyph">★</div>
+          <div>Главная</div>
+        </a>
+        <a href="#" class="tab active">
+          <div class="glyph">∼</div>
+          <div>Профиль</div>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="caption">
+      Профиль как <strong>«личная подписка на выпуски»</strong>. Аватар — типографический символ (без фото-аватаров, в духе всего приложения). Мастер-архетип — кросс-категорийный синтез всех турниров (отдельный текст, не повторяет архетипы из категорий). Бейджи: <code>Founding Reader</code> терракотовый (постоянный для APK-юзеров), <code>Автор × 3</code> нейтральный со счётчиком одобренных категорий. История - последние турниры, имя победителя выделено акцентом. Мои предложения - статус <code>на ревью</code> (охра) и <code>вышло</code> (зелёный). Настройки: тема как сегмент-контрол, остальное как переключатели.
+    </div>
+  </div>
+</body>
+</html>

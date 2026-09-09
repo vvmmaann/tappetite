@@ -1,0 +1,40 @@
+{
+  "appId": "me.isverifiedby.pickgame",
+  "appName": "Tappetite",
+  "webDir": "www",
+  "server": {
+    "url": "https://isverifiedby.me",
+    "androidScheme": "https",
+    "cleartext": false,
+    "allowNavigation": [
+      "isverifiedby.me",
+      "*.isverifiedby.me"
+    ]
+  },
+  "ios": {
+    "contentInset": "always",
+    "preferredContentMode": "mobile",
+    "scrollEnabled": true,
+    "limitsNavigationsToAppBoundDomains": true
+  },
+  "android": {
+    "allowMixedContent": false,
+    "_captureInput_comment": "2026-05-16: removed captureInput:true — was causing two IME bugs: (1) Gboard didn't get cursor-position events so spellcheck suggestions never appeared in submit form, (2) when user moved caret mid-word and typed a character, composition events were intercepted before reaching IME, so the char appended at end of input instead of inserting at caret. Default (false) restores standard WebView IME behavior.",
+    "webContentsDebuggingEnabled": false
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1500,
+      "launchAutoHide": true,
+      "backgroundColor": "#FAF6F0",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false,
+      "splashFullScreen": true,
+      "splashImmersive": true
+    },
+    "StatusBar": {
+      "style": "DEFAULT",
+      "backgroundColor": "#FAF6F0"
+    }
+  }
+}

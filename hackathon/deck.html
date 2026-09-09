@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Tappetite for Seeker · Clock In submission deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Bodoni+Moda:ital,wght@0,400;0,500;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF6F0; --paper: #FFFCF7; --text: #1A1F36; --text-2: #4A4035; --muted: #8A7A6A;
+    --line: #C9BBA8; --line-soft: #E5DCCC; --accent: #B5532E; --accent-soft: rgba(181,83,46,.08);
+    --ui: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+    --display: 'Bodoni Moda', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family:var(--ui); line-height:1.55; -webkit-font-smoothing:antialiased; scroll-behavior:smooth; }
+  body { scroll-snap-type:y mandatory; overflow-y:scroll; height:100vh; }
+  section.slide { background:var(--bg); min-height:100vh; padding:70px 8vw 100px; scroll-snap-align:start; position:relative; display:flex; flex-direction:column; justify-content:center; border-bottom:1px solid var(--line-soft); }
+  .masthead { display:flex; align-items:center; gap:12px; font-family:var(--mono); font-size:11px; letter-spacing:.25em; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
+  .masthead .pill { border:1px solid var(--line); padding:3px 8px; border-radius:3px; }
+  .masthead .line { flex:1; height:1px; background:var(--line); }
+  h1 { font-family:var(--display); font-weight:500; font-size:clamp(44px,7vw,84px); line-height:1.05; letter-spacing:-.015em; margin:24px 0 16px; }
+  h2 { font-family:var(--display); font-weight:500; font-size:clamp(34px,5vw,58px); line-height:1.12; letter-spacing:-.012em; margin:0 0 16px; }
+  h1 .accent, h2 .accent { color:var(--accent); font-style:italic; }
+  h3 { font-family:var(--display); font-weight:500; font-size:22px; margin:0 0 8px; }
+  .lede { font-family:var(--display); font-style:italic; font-size:clamp(20px,2.4vw,28px); color:var(--text-2); max-width:820px; line-height:1.45; margin:16px 0 32px; }
+  .body-text { font-size:16px; color:var(--text-2); line-height:1.65; max-width:760px; margin:0 0 16px; }
+  .body-text strong { color:var(--text); font-weight:700; }
+  .kicker { font-family:var(--mono); font-size:11px; letter-spacing:.25em; color:var(--accent); text-transform:uppercase; margin-bottom:20px; }
+  .pull { font-family:var(--display); font-style:italic; font-size:clamp(18px,2vw,24px); line-height:1.5; border-left:3px solid var(--accent); padding:12px 0 12px 22px; margin:32px 0; max-width:800px; }
+  .cols { display:grid; grid-template-columns:1fr; gap:32px; margin-top:12px; }
+  @media (min-width:800px) { .cols { grid-template-columns:1fr 1fr; gap:48px; } }
+  .card { background:var(--paper); border:1px solid var(--line-soft); border-radius:12px; padding:22px 24px; }
+  .card .num { font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:.2em; color:var(--accent); margin-bottom:6px; }
+  .card p { font-size:14.5px; color:var(--text-2); line-height:1.6; margin:6px 0 0; }
+  .clean-list { list-style:none; padding:0; margin:16px 0 0; }
+  .clean-list li { padding:10px 0; border-bottom:1px dotted var(--line-soft); font-size:15px; color:var(--text-2); line-height:1.55; display:flex; align-items:baseline; gap:10px; }
+  .clean-list li strong { color:var(--text); margin-right:4px; }
+  .clean-list .mono { font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--accent); flex-shrink:0; min-width:64px; }
+  .stats { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin:24px 0 32px; max-width:760px; }
+  @media (min-width:700px) { .stats { grid-template-columns:repeat(4,1fr); } }
+  .stat { background:var(--paper); border:1px solid var(--line-soft); border-radius:10px; padding:18px 16px; }
+  .stat .n { font-family:var(--display); font-weight:500; font-size:32px; line-height:1; color:var(--accent); }
+  .stat .l { font-family:var(--mono); font-size:10px; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-top:6px; }
+  .phone-row { display:flex; gap:24px; flex-wrap:wrap; justify-content:center; align-items:flex-start; margin-top:32px; }
+  .phone { width:240px; border-radius:28px; overflow:hidden; box-shadow:0 24px 64px rgba(40,25,10,.18), 0 0 0 1px rgba(0,0,0,.06); background:var(--paper); }
+  .phone img { width:100%; display:block; height:auto; }
+  .phone-cap { text-align:center; font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-top:12px; }
+  .phone-big { width:320px; }
+  .hero-grid { display:grid; grid-template-columns:1fr; gap:40px; align-items:center; margin-top:24px; }
+  @media (min-width:900px) { .hero-grid { grid-template-columns:1.4fr 1fr; gap:60px; } }
+  .cta { display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:var(--bg); padding:14px 28px; border-radius:100px; font-family:var(--display); font-style:italic; font-weight:500; font-size:16px; text-decoration:none; }
+  .cta-secondary { background:transparent; color:var(--accent); border:1px solid var(--accent); }
+  .sig { margin-top:auto; padding-top:32px; font-family:var(--mono); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
+  .sec-num { position:absolute; top:28px; right:8vw; font-family:var(--mono); font-size:10px; letter-spacing:.25em; color:var(--muted); }
+  .progress-dots { position:fixed; right:16px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:8px; z-index:100; }
+  .dot { width:8px; height:8px; border-radius:50%; background:var(--line); cursor:pointer; }
+  .dot.active { background:var(--accent); transform:scale(1.3); }
+  .slide-nav { position:fixed; bottom:24px; right:24px; display:flex; gap:8px; z-index:100; }
+  .slide-nav button { width:36px; height:36px; border-radius:50%; border:1px solid var(--line); background:var(--paper); color:var(--text); cursor:pointer; font-size:16px; }
+  .tag { display:inline-block; font-family:var(--mono); font-size:9.5px; letter-spacing:.18em; text-transform:uppercase; padding:3px 8px; border-radius:3px; margin-left:8px; vertical-align:middle; }
+  .tag.planned { color:var(--muted); border:1px solid var(--line); }
+  .tag.progress { color:var(--accent); border:1px solid var(--accent); }
+  .tag.shipped { color:var(--bg); background:var(--accent); }
+  .step { display:grid; grid-template-columns:44px 1fr; gap:16px; padding:16px 0; border-bottom:1px dotted var(--line-soft); }
+  .step .k { font-family:var(--display); font-size:28px; color:var(--accent); line-height:1; }
+  .step p { margin:0; font-size:15px; color:var(--text-2); line-height:1.6; }
+  .step p strong { color:var(--text); }
+  .arch { display:grid; grid-template-columns:1fr; gap:14px; margin-top:8px; }
+  @media (min-width:900px) { .arch { grid-template-columns:repeat(3,1fr); } }
+  .arch .card ul { margin:8px 0 0; padding-left:18px; font-size:14px; color:var(--text-2); line-height:1.6; }
+  .week { display:grid; grid-template-columns:120px 1fr; gap:20px; padding:18px 22px; background:var(--paper); border:1px solid var(--line-soft); border-left:3px solid var(--accent); border-radius:6px; margin-bottom:12px; }
+  .week .w { font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600; }
+  .week p { margin:0; font-size:14.5px; color:var(--text-2); line-height:1.6; }
+  video { width:100%; max-width:360px; border-radius:20px; box-shadow:0 24px 64px rgba(40,25,10,.18); display:block; }
+  code { font-family:var(--mono); font-size:13px; background:var(--accent-soft); padding:1px 5px; border-radius:3px; }
+  @media (max-width:640px) {
+    section.slide { padding:48px 20px 80px; min-height:auto; }
+    h1 { font-size:clamp(34px,9vw,48px); } h2 { font-size:clamp(26px,7.5vw,36px); }
+    .lede { font-size:17px; } .sec-num { display:none; } .masthead .line { display:none; }
+    .phone, .phone-big { width:100%; max-width:280px; margin:0 auto; }
+    .week { grid-template-columns:1fr; gap:6px; }
+    .cta { width:100%; justify-content:center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1 · COVER -->
+<section class="slide" id="s1">
+  <div class="masthead">
+    <span class="pill">Tappetite</span>
+    <span>Clock In · A Solana Mobile Hackathon</span>
+    <span class="line"></span>
+    <span>Submission deck · draft, September 2026</span>
+  </div>
+  <div class="hero-grid">
+    <div>
+      <div class="kicker">Consumer game · Live on Google Play and web · Coming to Seeker</div>
+      <h1>A taste-tournament game,<br><span class="accent">coming to Seeker.</span></h1>
+      <p class="lede">You tap your favourite out of two, the loser drops out, in the final you get your top-3, your taste type and an AI-written portrait. Tappetite has been live on Google Play and web since June 2026. During Clock In it gets a wallet, SKR payments for portraits and Seeker-only features.</p>
+      <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;">
+        <a class="cta" href="https://isverifiedby.me/dl/tappetite.apk">↓ APK</a>
+        <a class="cta cta-secondary" href="https://play.google.com/store/apps/details?id=me.isverifiedby.pickgame" target="_blank">Google Play</a>
+        <a class="cta cta-secondary" href="https://isverifiedby.me/?lang=en" target="_blank">Web</a>
+        <a class="cta cta-secondary" href="https://github.com/vvmmaann/tappetite" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <div class="phone phone-big"><img src="img/home.png" alt="Tappetite home screen"></div>
+    </div>
+  </div>
+  <div class="sig">Tappetite · Clock In 2026 · This deck is updated as work ships; tags show the state of each item</div>
+</section>
+
+<!-- 2 · THE GAME -->
+<section class="slide" id="s2">
+  <span class="sec-num">02</span>
+  <div class="kicker">02 · The game</div>
+  <h2>Sixteen taps.<br>Then the app <span class="accent">knows your taste.</span></h2>
+  <div class="cols">
+    <div>
+      <p class="body-text">Pick a theme: <strong>"Best world cuisine"</strong>, <strong>"Your 2020s music"</strong>, <strong>"Brands that match your style"</strong>, <strong>"Movies you'd want at your funeral"</strong>. The game pairs items in a bracket. A or B, tap the one that is closer to you. Sixteen fights, about four minutes, and you get your top-3 plus a taste type with a four-paragraph editorial write-up.</p>
+      <p class="body-text">Every theme you play adds a layer to your profile. After enough themes the app writes you an AI portrait that weaves the whole profile together. Friends play the same theme and see how close their taste is to yours, with a per-category fit score. Every result has a share card.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">152</div><div class="l">tournaments · 25 clusters</div></div>
+        <div class="stat"><div class="n">1,053</div><div class="l">taste types w/ write-ups</div></div>
+        <div class="stat"><div class="n">2,696</div><div class="l">items to choose from</div></div>
+        <div class="stat"><div class="n">RU · EN</div><div class="l">fully bilingual</div></div>
+      </div>
+    </div>
+    <div class="phone-row" style="margin-top:0;">
+      <div><div class="phone"><img src="img/random_preview.png" alt="Theme preview"></div><div class="phone-cap">Theme preview</div></div>
+      <div><div class="phone"><img src="img/battle.png" alt="Battle screen"></div><div class="phone-cap">A or B</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · WHAT IS LIVE -->
+<section class="slide" id="s3">
+  <span class="sec-num">03</span>
+  <div class="kicker">03 · Where we start from</div>
+  <h2>What is live today,<br>and <span class="accent">what the Android app really is.</span></h2>
+  <div class="cols">
+    <div>
+      <h3 style="margin-bottom:12px;">In production since June 2026</h3>
+      <ul class="clean-list">
+        <li><strong>The game</strong> on web and Google Play, RU and EN</li>
+        <li><strong>AI portraits</strong> written by Claude from the user's real results, with per-portrait share cards and public pages</li>
+        <li><strong>Friends</strong>: requests, result comparison, fit score per category</li>
+        <li><strong>Daily theme</strong> with push notifications, comeback and streak pushes</li>
+        <li><strong>Achievements</strong>, visit streaks, user-suggested themes with a moderation queue</li>
+        <li><strong>Backend</strong>: FastAPI + SQLite, admin panel, live event stream, backups</li>
+      </ul>
+      <h3 style="margin-top:24px;margin-bottom:12px;">The Android app, honestly</h3>
+      <p class="body-text">A Capacitor shell that loads the web app from our server, with native push (FCM), haptics, the share sheet and Google sign-in. It works, it is on Google Play, and it is the kind of wrapper this hackathon is right not to reward. No wallet, no on-chain interaction, no SKR anywhere. That is the starting line, and the commit history in the repository shows it.</p>
+    </div>
+    <div class="phone-row" style="margin-top:0;">
+      <div><div class="phone"><img src="img/result.png" alt="Result with taste type"></div><div class="phone-cap">Result + taste type</div></div>
+      <div><div class="phone"><img src="img/share.png" alt="Share card"></div><div class="phone-cap">Share card</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · WHY SEEKER -->
+<section class="slide" id="s4">
+  <span class="sec-num">04</span>
+  <div class="kicker">04 · Why this belongs on Seeker</div>
+  <h2>A daily four-minute habit<br>where the wallet is <span class="accent">the account.</span></h2>
+  <div class="cols">
+    <div class="card">
+      <div class="num">Habit</div>
+      <h3>Daily theme, streaks, friends</h3>
+      <p>One theme a day, a push when it is out, a streak to protect, a friend to compare with. The loop already runs in production. On Seeker the same loop runs with the wallet as identity, so there is no sign-up form between a new user and the first tournament.</p>
+    </div>
+    <div class="card">
+      <div class="num">Something worth paying for</div>
+      <h3>Portraits cost real money</h3>
+      <p>Every AI portrait is a paid API call on our side. Today we give them away. SKR becomes the way to pay for the one thing in the app that has a real cost, which makes the SKR integration a business mechanic, not decoration.</p>
+    </div>
+    <div class="card">
+      <div class="num">Seeker-only</div>
+      <h3>Genesis Token perks</h3>
+      <p>Seeker owners get their first portrait free, a Seeker achievement and an exclusive tournament. The Genesis Token mint address is the anti-sybil key, so the perks cannot be farmed from throwaway wallets.</p>
+    </div>
+    <div class="card">
+      <div class="num">Share loop</div>
+      <h3>Cards leave the app</h3>
+      <p>Every result and every portrait has a share card and a public page. On Seeker that means every shared card is an install path into the dApp Store listing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · HACKATHON SCOPE -->
+<section class="slide" id="s5">
+  <span class="sec-num">05</span>
+  <div class="kicker">05 · What we build during Clock In</div>
+  <h2>Five things,<br><span class="accent">in this order.</span></h2>
+  <p class="body-text">Tags show the state of each item and are updated as work ships. Everything below is scoped to land before the October 8 deadline; whatever does not land is removed from this deck before submission.</p>
+  <div class="step"><div class="k">1</div><p><strong>Wallet sign-in through Mobile Wallet Adapter</strong> <span class="tag planned">planned</span><br>A native Kotlin bridge inside the Capacitor app, using the official Android MWA client library, exposed to the web client as a small plugin (authorize, sign message, sign and send). Works with Seed Vault, Phantom and Solflare. The app never sees a key.</p></div>
+  <div class="step"><div class="k">2</div><p><strong>AI portraits paid in SKR</strong> <span class="tag planned">planned</span><br>Tap "get my portrait", the wallet is asked to send a small amount of SKR to the Tappetite treasury, the backend verifies the transfer on-chain and only then generates the portrait. Details on the next slide.</p></div>
+  <div class="step"><div class="k">3</div><p><strong>Seeker Genesis Token perks</strong> <span class="tag planned">planned</span><br>Detect the Genesis Token in the connected wallet, record its mint address once, unlock the free first portrait, the Seeker achievement and the exclusive tournament.</p></div>
+  <div class="step"><div class="k">4</div><p><strong>A real APK, not a shell</strong> <span class="tag planned">planned</span><br>Web assets bundled into the APK so the app starts offline, a new signing key separate from Google Play, dApp Store listing prepared.</p></div>
+  <div class="step"><div class="k">5</div><p><strong>Mobile polish</strong> <span class="tag planned">planned</span><br>Haptic feedback on every pick, the result card through the native share sheet, wallet state in the profile.</p></div>
+</section>
+
+<!-- 6 · SKR -->
+<section class="slide" id="s6">
+  <span class="sec-num">06</span>
+  <div class="kicker">06 · SKR integration</div>
+  <h2>SKR pays for <span class="accent">the portrait.</span></h2>
+  <div class="cols">
+    <div>
+      <div class="step"><div class="k">1</div><p>The user finishes a tournament and taps <strong>"Get my portrait"</strong>. The backend creates an order with an id and a price in SKR.</p></div>
+      <div class="step"><div class="k">2</div><p>The app asks the wallet through <strong>Mobile Wallet Adapter</strong> to sign and send an SPL transfer of the SKR mint to the Tappetite treasury, with the order id in the memo.</p></div>
+      <div class="step"><div class="k">3</div><p>The backend fetches the confirmed transaction by signature and checks <strong>mint, amount, recipient and memo</strong>, and that the signature has not been used before.</p></div>
+      <div class="step"><div class="k">4</div><p>Only then the portrait is generated and attached to the user. The transaction signature is stored next to the portrait.</p></div>
+      <div class="step"><div class="k">5</div><p><strong>Genesis Token holders</strong> skip the payment for their first portrait. The mint address of the token is recorded so one Seeker unlocks one free portrait.</p></div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="num">Why this and not a badge</div>
+        <h3>The cost is real</h3>
+        <p>Portraits are generated with Claude and each one costs us money. Charging for them in SKR ties the ecosystem token to the one thing in the product that actually has a price. No custody, no cards, no store billing in the flow.</p>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <div class="num">Price</div>
+        <h3>Small, close to cost</h3>
+        <p>A small amount of SKR per portrait, roughly generation cost plus a margin, set at launch from the SKR price at the time. Cooldown and free tiers stay as they are today for people without a wallet.</p>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <div class="num">State</div>
+        <h3>Designed, being built <span class="tag planned">planned</span></h3>
+        <p>Nothing on this slide exists yet as code. It is the first thing built after the wallet bridge, and the tag changes when it is live in the APK.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · ARCHITECTURE -->
+<section class="slide" id="s7">
+  <span class="sec-num">07</span>
+  <div class="kicker">07 · Architecture</div>
+  <h2>What runs where.</h2>
+  <div class="arch">
+    <div class="card">
+      <div class="num">Android app</div>
+      <h3>Capacitor + Kotlin</h3>
+      <ul>
+        <li>Web client bundled in the APK</li>
+        <li>Native plugins: push (FCM), haptics, share, preferences</li>
+        <li>New: MWA bridge plugin in Kotlin on the official client library</li>
+        <li>Release signed with a dApp Store key</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="num">Backend</div>
+      <h3>FastAPI + SQLite</h3>
+      <ul>
+        <li>Accounts, results, friends, achievements, push batches</li>
+        <li>Portrait generation with Claude, spend ledger</li>
+        <li>New: SKR orders, on-chain verification of transfers, Genesis Token registry</li>
+        <li>nginx behind Cloudflare, systemd timers</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="num">Solana</div>
+      <h3>Mainnet</h3>
+      <ul>
+        <li>Mobile Wallet Adapter, local association on the device</li>
+        <li>SPL transfers of the SKR mint to a treasury wallet</li>
+        <li>RPC reads to verify transactions and detect the Seeker Genesis Token</li>
+        <li>Testing on devnet in the emulator, then real devices</li>
+      </ul>
+    </div>
+  </div>
+  <p class="body-text" style="margin-top:24px;">The client is a single-file web app, the backend is one Python service, the content library is one JSON file. Small enough for one person to move fast and for a judge to read in an evening.</p>
+</section>
+
+<!-- 8 · TIMELINE -->
+<section class="slide" id="s8">
+  <span class="sec-num">08</span>
+  <div class="kicker">08 · The month</div>
+  <h2>Four weeks,<br><span class="accent">one person.</span></h2>
+  <div class="week"><div class="w">Week 1 · Sep 8-14</div><p>Repository public. MWA spike: wallet connects from our APK and signs a message. Decide web library vs native bridge based on the spike, then build the bridge.</p></div>
+  <div class="week"><div class="w">Week 2 · Sep 15-21</div><p>Wallet sign-in in the product. SKR order flow end to end on devnet with a test mint, then on mainnet with the real SKR mint. Genesis Token detection.</p></div>
+  <div class="week"><div class="w">Week 3 · Sep 22-28</div><p>Assets bundled into the APK, offline start, new signing key. Haptics, native share of the result card. Seeker achievement and exclusive tournament.</p></div>
+  <div class="week"><div class="w">Week 4 · Sep 29 - Oct 8</div><p>Real-device testing, demo video, final deck, dApp Store listing assets. Submission before the deadline with the tags on slide 5 reflecting what actually shipped.</p></div>
+</section>
+
+<!-- 9 · DEMO AND LINKS -->
+<section class="slide" id="s9">
+  <span class="sec-num">09</span>
+  <div class="kicker">09 · Try it</div>
+  <h2>Demo <span class="accent">and links.</span></h2>
+  <div class="cols">
+    <div>
+      <p class="body-text"><strong>Current clip</strong>: a 13-second look at the game as it is today. The full demo video, with wallet sign-in and the SKR flow, is recorded from a real Android device in the last week and replaces this clip.</p>
+      <video controls playsinline preload="metadata" src="https://isverifiedby.me/dl/tappetite_demo_ad.mp4"></video>
+    </div>
+    <div>
+      <ul class="clean-list">
+        <li><span class="mono">APK</span><a href="https://isverifiedby.me/dl/tappetite.apk">isverifiedby.me/dl/tappetite.apk</a></li>
+        <li><span class="mono">Play</span><a href="https://play.google.com/store/apps/details?id=me.isverifiedby.pickgame" target="_blank">play.google.com · me.isverifiedby.pickgame</a></li>
+        <li><span class="mono">Web</span><a href="https://isverifiedby.me/?lang=en" target="_blank">isverifiedby.me</a></li>
+        <li><span class="mono">Code</span><a href="https://github.com/vvmmaann/tappetite" target="_blank">github.com/vvmmaann/tappetite</a></li>
+      </ul>
+      <p class="body-text" style="margin-top:20px;font-size:14px;color:var(--muted);">The APK linked today is the current Google Play build. It is replaced by the hackathon build as soon as the wallet bridge is in. Play one tournament, it takes four minutes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · TEAM -->
+<section class="slide" id="s10">
+  <span class="sec-num">10</span>
+  <div class="kicker">10 · Who</div>
+  <h2>Solo founder,<br><span class="accent">Kazakhstan.</span></h2>
+  <p class="body-text">Elmurat Nigmatov. Full-stack engineer, day job in biometrics and liveness detection. Tappetite is a side project that shipped to Google Play in June 2026: the game, the content library, the AI portraits, the push loop, the admin tooling, the store compliance, all of it built alone with AI tooling as the extended team.</p>
+  <p class="body-text">Solana experience so far: none in production, which is why the plan starts with the wallet spike and not with the pitch. Everything in this deck that is not live yet is marked planned and stays marked until it is in the APK.</p>
+  <div class="pull">Contact: hello@isverifiedby.me</div>
+  <div class="sig">Tappetite · Clock In 2026 · draft deck, updated until October 8</div>
+</section>
+
+<div class="progress-dots" id="dots"></div>
+<div class="slide-nav"><button onclick="navSlide(-1)">←</button><button onclick="navSlide(+1)">→</button></div>
+<script>
+  const slides=document.querySelectorAll('section.slide'),dotsEl=document.getElementById('dots');
+  slides.forEach((s,i)=>{const d=document.createElement('div');d.className='dot';d.onclick=()=>s.scrollIntoView({behavior:'smooth'});dotsEl.appendChild(d);});
+  function currentSlide(){let b=0,bd=1e9;slides.forEach((s,i)=>{const d=Math.abs(s.getBoundingClientRect().top);if(d<bd){bd=d;b=i;}});return b;}
+  function navSlide(dl){const i=currentSlide(),n=Math.max(0,Math.min(slides.length-1,i+dl));slides[n].scrollIntoView({behavior:'smooth'});}
+  function updateDots(){const i=currentSlide();dotsEl.querySelectorAll('.dot').forEach((d,k)=>d.classList.toggle('active',k===i));}
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();navSlide(1);}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();navSlide(-1);}});
+  document.addEventListener('scroll',updateDots,{passive:true});updateDots();
+</script>
+</body>
+</html>

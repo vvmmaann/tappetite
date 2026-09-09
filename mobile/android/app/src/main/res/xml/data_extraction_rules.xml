@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Audit H4. Android 12+ Data Extraction Rules.
+     Both cloud-backup and device-to-device transfer are disabled at the
+     <application> level via android:allowBackup="false" and
+     android:dataExtractionRules pointing here. We additionally declare
+     empty include/exclude sets so the platform has explicit guidance:
+     nothing is eligible for either flow. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="root" />
+        <exclude domain="file" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="external" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="root" />
+        <exclude domain="file" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="external" />
+    </device-transfer>
+</data-extraction-rules>

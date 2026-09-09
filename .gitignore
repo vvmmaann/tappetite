@@ -1,0 +1,54 @@
+# --- secrets / credentials (never commit) ---
+mobile/android/keystore.properties
+mobile/android/*.jks
+mobile/android/*.keystore
+mobile/android/app/google-services.json
+mobile/ios/App/App/GoogleService-Info.plist
+*.pem
+*.p12
+.env
+.env.*
+*.env
+
+# --- runtime data ---
+api/data/db.sqlite*
+api/data/*.bak*
+api/data/backups/
+api/venv/
+api/__pycache__/
+**/__pycache__/
+*.pyc
+
+# --- generated / build ---
+mobile/node_modules/
+mobile/www/
+mobile/android/build/
+mobile/android/app/build/
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/app/release/
+mobile/android/capacitor-cordova-android-plugins/build/
+mobile/android/app/src/main/assets/public/
+mobile/ios/App/Pods/
+mobile/ios/App/build/
+mobile/ios/App/App/public/
+
+# --- local backups / scratch ---
+*.bak
+*.bak.*
+*.orig
+_sitecheck*.png
+pitches/
+en_chunks/
+EN_EXPORT.md
+audit_bundle/
+api/content_drafts/
+api/scripts/_*
+mobile/screenshots/
+pitch_screens/
+og_live.png
+og_preview.png
+
+# --- OS ---
+.DS_Store
+Thumbs.db

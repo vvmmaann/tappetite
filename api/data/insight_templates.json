@@ -1,0 +1,632 @@
+[
+  {
+    "id": "concentration_main_cluster_v1",
+    "type": "concentration",
+    "trigger": "top_cluster_pct > 35 AND total_tournaments >= 5",
+    "priority": 8,
+    "ru": {
+      "headline": "Главный кластер: «{top_cluster}»",
+      "body": "На него приходится {top_cluster_pct}% всех твоих турниров. Это уже не случайный заход, а место, где вкус быстрее всего начинает спорить."
+    },
+    "en": {
+      "headline": "You keep coming back to {top_cluster}",
+      "body": "This cluster takes {top_cluster_pct}% of all your tournaments. Not a random stop anymore, more like the place where your taste starts arguing fastest."
+    }
+  },
+  {
+    "id": "concentration_second_shadow_v1",
+    "type": "concentration",
+    "trigger": "top_cluster_pct >= 45 AND second_cluster_pct < 25 AND total_tournaments >= 8",
+    "priority": 7,
+    "ru": {
+      "headline": "Один раздел заметно громче остальных",
+      "body": "Главный кластер: «{top_cluster}». Доля - {top_cluster_pct}%. Второй кластер: «{second_cluster}», {second_cluster_pct}%. Это уже не листание каталога, а копание в одном месте."
+    },
+    "en": {
+      "headline": "One section is louder than the rest",
+      "body": "{top_cluster} owns {top_cluster_pct}% of your history. {second_cluster} sits far behind at {second_cluster_pct}%. Looks less like browsing and more like digging in one spot."
+    }
+  },
+  {
+    "id": "shift_recent_cluster_v1",
+    "type": "shift",
+    "trigger": "recent_shift_from != recent_shift_to AND tournaments_last_7d >= 3 AND total_tournaments >= 6",
+    "priority": 8,
+    "ru": {
+      "headline": "Последняя неделя звучит иначе",
+      "body": "Раньше в фокусе: «{recent_shift_from}». Последние 7 дней: «{recent_shift_to}». Это не диагноз, просто вкус повернул голову в другую сторону."
+    },
+    "en": {
+      "headline": "The last week sounds different",
+      "body": "Your old lead was {recent_shift_from}. In the last 7 days, {recent_shift_to} moved ahead. Not a diagnosis, just your taste turning its head."
+    }
+  },
+  {
+    "id": "shift_new_room_v1",
+    "type": "shift",
+    "trigger": "recent_shift_from != recent_shift_to AND tournaments_last_7d >= 5",
+    "priority": 7,
+    "ru": {
+      "headline": "Свежий след ведёт в другой раздел",
+      "body": "Общая история держит фокус: «{recent_shift_from}». Свежий след: «{recent_shift_to}». Иногда интерес меняется раньше, чем человек успевает это назвать."
+    },
+    "en": {
+      "headline": "You moved into another section for now",
+      "body": "Your full history still points to {recent_shift_from}, but the fresh trail leads to {recent_shift_to}. Sometimes interest shifts before you name it."
+    }
+  },
+  {
+    "id": "contrarian_single_choice_v1",
+    "type": "contrarian",
+    "trigger": "contrarian_majority_pct >= 70 AND total_tournaments >= 3",
+    "priority": 9,
+    "ru": {
+      "headline": "Категория «{contrarian_cat}»: против большинства",
+      "body": "{contrarian_majority_pct}% игроков остановились на варианте «{contrarian_majority_item}». Твой выбор: «{contrarian_item}». Не поза, просто в этой паре у тебя другой нерв."
+    },
+    "en": {
+      "headline": "In {contrarian_cat}, you went against the room",
+      "body": "{contrarian_majority_pct}% of players chose {contrarian_majority_item}. You chose {contrarian_item}. Not a pose, just a different nerve in that matchup."
+    }
+  },
+  {
+    "id": "contrarian_quiet_split_v1",
+    "type": "contrarian",
+    "trigger": "contrarian_majority_pct >= 60 AND total_tournaments >= 5",
+    "priority": 8,
+    "ru": {
+      "headline": "Твой выбор не совпал с залом",
+      "body": "Категория: «{contrarian_cat}». Большинство ушло к варианту «{contrarian_majority_item}», {contrarian_majority_pct}%. Твой выбор: «{contrarian_item}». Маленькое расхождение."
+    },
+    "en": {
+      "headline": "Your pick did not match the room",
+      "body": "In {contrarian_cat}, the majority went with {contrarian_majority_item} at {contrarian_majority_pct}%. You kept {contrarian_item}. A useful little split."
+    }
+  },
+  {
+    "id": "top_item_repeat_v1",
+    "type": "top_item",
+    "trigger": "top_item_count >= 2 AND total_tournaments >= 5",
+    "priority": 8,
+    "ru": {
+      "headline": "Снова на первом месте: «{top_item}»",
+      "body": "Категория: «{top_item_cat}». Этот вариант уже {top_item_count_phrase} доходил до первого места. Повторение тут важнее случайной победы."
+    },
+    "en": {
+      "headline": "{top_item} landed on top again",
+      "body": "In {top_item_cat}, it has reached first place {top_item_count} times already. The repeat matters more than one clean win."
+    }
+  },
+  {
+    "id": "twin_close_friend_v1",
+    "type": "twin",
+    "trigger": "top_twin_pct > 60 AND top_twin_count >= 3",
+    "priority": 8,
+    "ru": {
+      "headline": "Самый близкий по вкусу: {top_twin_nick}",
+      "body": "{top_twin_pct}% общих выборов. База сравнения: {top_twin_count_phrase}. Это не значит, что вы одинаковые. Просто ваши короткие списки часто идут рядом."
+    },
+    "en": {
+      "headline": "You have a clear overlap with {top_twin_nick}",
+      "body": "{top_twin_pct}% shared choices across {top_twin_count} tournaments. It does not mean you are the same. Your shortlists just often walk together."
+    }
+  },
+  {
+    "id": "opposite_friend_v1",
+    "type": "opposite",
+    "trigger": "opposite_pct < 30 AND total_tournaments >= 5",
+    "priority": 7,
+    "ru": {
+      "headline": "Самая дальняя точка по вкусу: {opposite_nick}",
+      "body": "Всего {opposite_pct}% общих выборов. Это не минус. Иногда самый полезный человек в рекомендациях - тот, кто стабильно смотрит в другую сторону."
+    },
+    "en": {
+      "headline": "You barely overlap with {opposite_nick}",
+      "body": "Only {opposite_pct}% of choices match. Not a flaw. Sometimes the most useful recommender is the one who reliably looks the other way."
+    }
+  },
+  {
+    "id": "coverage_wide_map_v1",
+    "type": "coverage",
+    "trigger": "coverage_pct >= 60 AND total_tournaments >= 10",
+    "priority": 7,
+    "ru": {
+      "headline": "Большая часть карты уже открыта",
+      "body": "{coverage_pct}% категорий уже открыты. Это не быстрый забег по кнопкам, а профиль, где разные темы успели оставить след."
+    },
+    "en": {
+      "headline": "You have crossed most of the map",
+      "body": "{coverage_pct}% of categories are already open. Less like tapping through buttons, more like a profile where different subjects left marks."
+    }
+  },
+  {
+    "id": "coverage_narrow_depth_v1",
+    "type": "coverage",
+    "trigger": "coverage_pct < 25 AND total_tournaments >= 6",
+    "priority": 5,
+    "ru": {
+      "headline": "Пока твоя карта узкая",
+      "body": "Открыто {coverage_pct}% категорий. Зато в выбранных местах уже видно давление вкуса: меньше маршрутов, больше повторных проверок."
+    },
+    "en": {
+      "headline": "Your map is narrow for now",
+      "body": "You have opened {coverage_pct}% of categories. But the places you picked already show pressure: fewer routes, more repeat checks."
+    }
+  },
+  {
+    "id": "uniqueness_high_split_v1",
+    "type": "uniqueness",
+    "trigger": "uniqueness_pct >= 65 AND total_tournaments >= 8",
+    "priority": 8,
+    "ru": {
+      "headline": "Ты часто расходишься со средним игроком",
+      "body": "В {uniqueness_pct}% выборов твой ответ не совпадает с медианой. Не из упрямства - просто твой компас не всегда смотрит туда же."
+    },
+    "en": {
+      "headline": "You often split from the average player",
+      "body": "In {uniqueness_pct}% of choices, your answer missed the median. Not out of stubbornness - your compass just does not always point there."
+    }
+  },
+  {
+    "id": "uniqueness_low_alignment_v1",
+    "type": "uniqueness",
+    "trigger": "uniqueness_pct <= 35 AND total_tournaments >= 8",
+    "priority": 5,
+    "ru": {
+      "headline": "Твой вкус часто попадает в общий ритм",
+      "body": "Только {uniqueness_pct}% решений уходят в сторону от медианы. Похоже, ты не споришь с залом, пока у зала нормальный вариант на столе."
+    },
+    "en": {
+      "headline": "Your taste often lands in the common rhythm",
+      "body": "Only {uniqueness_pct}% of decisions moved away from the median. Looks like you do not fight the room when the room has a decent option."
+    }
+  },
+  {
+    "id": "archetype_repeat_pattern_v1",
+    "type": "archetype",
+    "trigger": "archetype_most_freq_count >= 2 AND total_tournaments >= 5",
+    "priority": 7,
+    "ru": {
+      "headline": "«{archetype_most_freq}» появляется не впервые",
+      "body": "Этот архетип выпадает тебе уже {archetype_most_freq_count_phrase}. Один раз можно списать на турнир. Повтор уже похож на узор."
+    },
+    "en": {
+      "headline": "{archetype_most_freq} is not showing up for the first time",
+      "body": "This archetype has appeared {archetype_most_freq_count} times for you. Once can be the tournament. A repeat starts looking like a pattern."
+    }
+  },
+  {
+    "id": "behavioral_skip_pressure_v1",
+    "type": "behavioral",
+    "trigger": "skip_rate >= 30 AND total_tournaments >= 5",
+    "priority": 6,
+    "ru": {
+      "headline": "Ты не везде выбираешь одинаково легко",
+      "body": "Общий skip-rate - {skip_rate}%. Кластер с максимумом пауз: «{skip_cluster_high}». Похоже, в этой зоне выбор требует не вкуса, а внутреннего торга."
+    },
+    "en": {
+      "headline": "Not every choice comes equally easily",
+      "body": "Your overall skip rate is {skip_rate}%, with the most pauses in {skip_cluster_high}. In that zone, the choice seems to ask for bargaining, not just taste."
+    }
+  },
+  {
+    "id": "concentration_very_narrow_cluster_v1",
+    "type": "concentration",
+    "trigger": "top_cluster_pct > 60 AND total_tournaments >= 8",
+    "priority": 8,
+    "ru": {
+      "headline": "Почти вся карта уходит в один кластер",
+      "body": "Главный кластер: «{top_cluster}». Доля - {top_cluster_pct}% твоих турниров. Остальные разделы есть, но сейчас они работают скорее как боковые дорожки."
+    },
+    "en": {
+      "headline": "Almost the whole map leans into one cluster",
+      "body": "{top_cluster} accounts for {top_cluster_pct}% of your tournaments. The other sections are still there, but right now they act more like side roads."
+    }
+  },
+  {
+    "id": "concentration_top_category_loop_v1",
+    "type": "concentration",
+    "trigger": "top_cat_count >= 5 AND total_tournaments >= 8",
+    "priority": 7,
+    "ru": {
+      "headline": "Одна категория стала привычным маршрутом",
+      "body": "Категория: «{top_cat}». Ты заходишь туда уже {top_cat_count_phrase}. Это уже не просто интерес к теме, а место, где выборы проверяются повторно."
+    },
+    "en": {
+      "headline": "One category became a familiar route",
+      "body": "You have returned to {top_cat} {top_cat_count} times. Not just interest in a topic anymore, but a place where choices get checked again."
+    }
+  },
+  {
+    "id": "concentration_category_without_cluster_v1",
+    "type": "concentration",
+    "trigger": "top_cat_count >= 4 AND top_cluster_pct < 35 AND total_tournaments >= 8",
+    "priority": 6,
+    "ru": {
+      "headline": "Категория заметнее, чем весь кластер",
+      "body": "«{top_cat}» повторяется {top_cat_count_phrase}, хотя главный кластер не забирает много места. Скорее всего, тебя держит не зона целиком, а конкретная полка внутри неё."
+    },
+    "en": {
+      "headline": "The category stands out more than the cluster",
+      "body": "{top_cat} repeats {top_cat_count} times, while the main cluster does not take much space. Looks like one shelf holds you more than the whole section."
+    }
+  },
+  {
+    "id": "shift_return_after_pause_v1",
+    "type": "shift",
+    "trigger": "days_since_last_play >= 14 AND tournaments_last_7d >= 1",
+    "priority": 8,
+    "ru": {
+      "headline": "Ты снова заходишь после паузы",
+      "body": "Пауза перед последней сессией - {days_since_last_play} дн. После такого перерыва первые выборы часто показывают не историю целиком, а то, что снова зацепило."
+    },
+    "en": {
+      "headline": "You came back after a visible pause",
+      "body": "The pause before your last session was {days_since_last_play} days. After that kind of gap, the first choices often show what caught you again, not the whole history."
+    }
+  },
+  {
+    "id": "shift_archetype_recent_turn_v1",
+    "type": "shift",
+    "trigger": "archetype_recent_shift_from IS NOT NULL AND archetype_recent_shift_to IS NOT NULL AND archetype_recent_shift_from != archetype_recent_shift_to",
+    "priority": 8,
+    "ru": {
+      "headline": "Недавний архетип сменил силуэт",
+      "body": "Раньше чаще выпадал один архетип: «{archetype_recent_shift_from}». Теперь в фокусе: «{archetype_recent_shift_to}». Это не отменяет старый слой, просто свежие выборы рисуют другой контур."
+    },
+    "en": {
+      "headline": "The recent archetype changed shape",
+      "body": "{archetype_recent_shift_from} used to appear more often, now {archetype_recent_shift_to} is showing. It does not erase the old layer, it just draws a new outline."
+    }
+  },
+  {
+    "id": "contrarian_repeat_count_v1",
+    "type": "contrarian",
+    "trigger": "contrarian_count >= 5 AND total_tournaments >= 8",
+    "priority": 9,
+    "ru": {
+      "headline": "Расхождение с большинством повторяется",
+      "body": "Против основного выбора ты идёшь уже {contrarian_count_phrase}. Это не один странный финал, а повторяющийся способ отсекать очевидное."
+    },
+    "en": {
+      "headline": "The split from the majority repeats",
+      "body": "You have gone against the main choice {contrarian_count} times. Not one odd final, but a repeating way of cutting past the obvious option."
+    }
+  },
+  {
+    "id": "contrarian_category_hotspot_v1",
+    "type": "contrarian",
+    "trigger": "contrarian_top_cat IS NOT NULL AND contrarian_count >= 3",
+    "priority": 8,
+    "ru": {
+      "headline": "Контрарианство собирается в одной категории",
+      "body": "Категория с максимумом таких расхождений: «{contrarian_top_cat}». Когда спор с большинством повторяется в одном месте, это уже не шум, а локальная привычка вкуса."
+    },
+    "en": {
+      "headline": "Your contrarian picks gather in one category",
+      "body": "Most of those splits happen in {contrarian_top_cat}. When disagreement repeats in one place, it stops looking like noise and starts looking like a local habit."
+    }
+  },
+  {
+    "id": "top_item_early_favorite_v1",
+    "type": "top_item",
+    "trigger": "top_item_count >= 2 AND total_tournaments < 5",
+    "priority": 7,
+    "ru": {
+      "headline": "Первый фаворит появился рано",
+      "body": "Первое место уже {top_item_count_phrase} достаётся одному варианту: «{top_item}». Для короткой истории это заметный след: один выбор успевает вернуться раньше остальных."
+    },
+    "en": {
+      "headline": "The first favorite appeared early",
+      "body": "{top_item} has already taken first place {top_item_count} times. For a short history, that leaves a visible mark: one choice came back before the rest."
+    }
+  },
+  {
+    "id": "top_item_least_item_v1",
+    "type": "top_item",
+    "trigger": "least_item_count >= 2 AND total_tournaments >= 5",
+    "priority": 6,
+    "ru": {
+      "headline": "Есть вариант, который быстро вылетает",
+      "body": "Чаще всего рано вылетает вариант: «{least_item}». Первый раунд уже {least_item_count_phrase}. Не всё в профиле строится на победителях - иногда границу вкуса лучше видно по отказам."
+    },
+    "en": {
+      "headline": "One option keeps leaving early",
+      "body": "{least_item} has gone out in the first round {least_item_count} times. Not every profile is built by winners - sometimes the edge of taste is clearer in rejections."
+    }
+  },
+  {
+    "id": "top_item_favorite_vs_least_same_cat_v1",
+    "type": "top_item",
+    "trigger": "top_item_cat == least_item_cat AND top_item_count >= 2 AND least_item_count >= 2",
+    "priority": 8,
+    "ru": {
+      "headline": "В одной категории видны оба края",
+      "body": "Категория: «{top_item_cat}». Первое место: «{top_item}». Ранний вылет: «{least_item}». У этой темы уже есть верхняя и нижняя граница."
+    },
+    "en": {
+      "headline": "One category shows both edges",
+      "body": "In {top_item_cat}, {top_item} holds the top spot, while {least_item} most often exits early. This topic already has a top and bottom edge."
+    }
+  },
+  {
+    "id": "twin_first_signal_v1",
+    "type": "twin",
+    "trigger": "top_twin_count >= 1 AND top_twin_count < 3",
+    "priority": 6,
+    "ru": {
+      "headline": "Первое совпадение с другим игроком видно",
+      "body": "Рядом по вкусу: {top_twin_nick}. База пока короткая: {top_twin_count_phrase}. Данных мало, но первая похожая траектория уже появилась."
+    },
+    "en": {
+      "headline": "The first match with another player is visible",
+      "body": "{top_twin_nick} is close to your taste across only {top_twin_count} tournaments so far. The data is thin, but the first similar path is already there."
+    }
+  },
+  {
+    "id": "twin_cluster_overlap_v1",
+    "type": "twin",
+    "trigger": "top_twin_cluster IS NOT NULL AND top_twin_pct > 50 AND top_twin_count >= 3",
+    "priority": 7,
+    "ru": {
+      "headline": "Совпадение сильнее всего в одном кластере",
+      "body": "Самый близкий игрок: {top_twin_nick}. Кластер с самым сильным совпадением: «{top_twin_cluster}». Общий матч - {top_twin_pct}%, но именно эта зона держит совпадение заметнее остальных."
+    },
+    "en": {
+      "headline": "The overlap is strongest in one cluster",
+      "body": "With {top_twin_nick}, the clearest match is in {top_twin_cluster}. The overall match is {top_twin_pct}%, but this zone carries it more visibly than the rest."
+    }
+  },
+  {
+    "id": "twin_stable_top_match_v1",
+    "type": "twin",
+    "trigger": "twin_since_days >= 30 AND top_twin_pct > 60 AND top_twin_count >= 5",
+    "priority": 8,
+    "ru": {
+      "headline": "Этот твин держится не первый день",
+      "body": "{top_twin_nick} остаётся рядом по вкусу уже долго. Совпадение - {top_twin_pct}%. Это не всплеск, а устойчивый фильтр."
+    },
+    "en": {
+      "headline": "This twin has held for a while",
+      "body": "{top_twin_nick} has stayed close to your taste for a long stretch. At a {top_twin_pct}% match, it looks less like a spike and more like a stable filter."
+    }
+  },
+  {
+    "id": "opposite_category_split_v1",
+    "type": "opposite",
+    "trigger": "opposite_cat IS NOT NULL AND opposite_pct < 35",
+    "priority": 7,
+    "ru": {
+      "headline": "Самый сильный разрыв виден в категории",
+      "body": "Игрок: {opposite_nick}. Общий матч - всего {opposite_pct}%. Категория максимального расхождения: «{opposite_cat}». Там ваши финалы расходятся быстрее всего."
+    },
+    "en": {
+      "headline": "The sharpest split shows up in one category",
+      "body": "Your overall match with {opposite_nick} is only {opposite_pct}%, and the strongest split shows in {opposite_cat}. That is where your finals drift apart fastest."
+    }
+  },
+  {
+    "id": "opposite_cluster_vs_category_v1",
+    "type": "opposite",
+    "trigger": "top_twin_cluster IS NOT NULL AND opposite_cat IS NOT NULL AND top_twin_pct > 50 AND opposite_pct < 30",
+    "priority": 8,
+    "ru": {
+      "headline": "Близость и разрыв живут в разных местах",
+      "body": "Близкая точка: {top_twin_nick}. Кластер совпадения: «{top_twin_cluster}». Дальняя точка: {opposite_nick}; категория разрыва: «{opposite_cat}». Профиль не плоский."
+    },
+    "en": {
+      "headline": "Closeness and distance live in different places",
+      "body": "Your overlap with {top_twin_nick} is clearest in {top_twin_cluster}. Your split from {opposite_nick} is clearest in {opposite_cat}. The profile is not flat."
+    }
+  },
+  {
+    "id": "opposite_deep_history_low_match_v1",
+    "type": "opposite",
+    "trigger": "opposite_pct < 20 AND total_tournaments >= 15",
+    "priority": 8,
+    "ru": {
+      "headline": "Дистанция держится даже на длинной истории",
+      "body": "Турниров в истории: {total_tournaments}. Игрок дальше всего по вкусу: {opposite_nick}. Совпадение - только {opposite_pct}%. Когда данных много, такой разрыв выглядит уже не случайным."
+    },
+    "en": {
+      "headline": "The distance holds even across a long history",
+      "body": "After {total_tournaments} tournaments, your match with {opposite_nick} is only {opposite_pct}%. With that much data, the gap no longer looks accidental."
+    }
+  },
+  {
+    "id": "uniqueness_recent_turn_v1",
+    "type": "uniqueness",
+    "trigger": "uniqueness_pct <= 35 AND uniqueness_pct_recent >= 55 AND total_tournaments >= 8",
+    "priority": 9,
+    "ru": {
+      "headline": "Свежие выборы ушли дальше от среднего",
+      "body": "В общей истории расхождение с медианой - {uniqueness_pct}%, но за последние 7 дней уже {uniqueness_pct_recent}%. Свежий вкус спорит громче старого."
+    },
+    "en": {
+      "headline": "The fresh choices moved farther from average",
+      "body": "Across the full history, you split from the median by {uniqueness_pct}%, but in the last 7 days it is {uniqueness_pct_recent}%. The fresh taste seems to argue louder than the old one."
+    }
+  },
+  {
+    "id": "archetype_last_result_v1",
+    "type": "archetype",
+    "trigger": "archetype_last IS NOT NULL AND total_tournaments >= 3",
+    "priority": 6,
+    "ru": {
+      "headline": "Последний архетип оставил свежий слой",
+      "body": "Последний результат: «{archetype_last}». Категория: «{archetype_last_cat}». Это не весь портрет, но последняя линия часто заметнее старых, пока данные ещё тёплые."
+    },
+    "en": {
+      "headline": "The latest archetype left a fresh layer",
+      "body": "In {archetype_last_cat}, the result is {archetype_last}. Not the whole portrait, but the latest line often stands out while the data is still warm."
+    }
+  },
+  {
+    "id": "archetype_frequent_vs_last_v1",
+    "type": "archetype",
+    "trigger": "archetype_most_freq IS NOT NULL AND archetype_last IS NOT NULL AND archetype_most_freq != archetype_last AND total_tournaments >= 5",
+    "priority": 7,
+    "ru": {
+      "headline": "Частый архетип не совпал с последним",
+      "body": "Чаще всего в истории: «{archetype_most_freq}». Последний результат: «{archetype_last}». Портрет не сломался, просто свежий слой пошёл в сторону."
+    },
+    "en": {
+      "headline": "The frequent archetype did not match the latest",
+      "body": "Across the full history, {archetype_most_freq} appears most often, but the latest result is {archetype_last}. The portrait did not break, it just gained a side layer."
+    }
+  },
+  {
+    "id": "behavioral_current_streak_v1",
+    "type": "behavioral",
+    "trigger": "streak_days >= 5",
+    "priority": 7,
+    "ru": {
+      "headline": "Серия уже держится несколько дней",
+      "body": "Текущий streak - {streak_days_phrase}. Когда выборы приходят несколькими днями подряд, профиль меньше похож на снимок и больше на короткую запись движения."
+    },
+    "en": {
+      "headline": "The streak has held for several days",
+      "body": "Your current streak is {streak_days} days. When choices arrive across several days, the profile feels less like a snapshot and more like a short motion record."
+    }
+  },
+  {
+    "id": "behavioral_broken_streak_v1",
+    "type": "behavioral",
+    "trigger": "streak_days == 0 AND previous_streak_days >= 5",
+    "priority": 8,
+    "ru": {
+      "headline": "Серия оборвалась после заметного хода",
+      "body": "Предыдущая серия держалась {previous_streak_days_phrase}. Сейчас streak на нуле, и это тоже часть поведения: иногда пауза говорит не меньше, чем заход."
+    },
+    "en": {
+      "headline": "The streak broke after a visible run",
+      "body": "The previous streak lasted {previous_streak_days} days. Now the streak is at zero, and that is part of the behavior too: sometimes a pause says as much as a visit."
+    }
+  },
+  {
+    "id": "behavioral_night_owl_v1",
+    "type": "behavioral",
+    "trigger": "fav_hour IS NOT NULL AND fav_hour >= 0 AND fav_hour < 5 AND total_tournaments >= 10",
+    "priority": 7,
+    "ru": {
+      "headline": "Ты играешь, когда город уже спит",
+      "body": "Чаще всего ты заходишь около {fav_hour}:00. Это не статистика про сон - просто час, когда выборы проходят без лишнего шума."
+    },
+    "en": {
+      "headline": "You play when the city is asleep",
+      "body": "You most often show up around {fav_hour}:00. Not a sleep stat - just the hour when choices move with less noise around them."
+    }
+  },
+  {
+    "id": "behavioral_morning_picker_v1",
+    "type": "behavioral",
+    "trigger": "fav_hour IS NOT NULL AND fav_hour >= 5 AND fav_hour <= 9 AND total_tournaments >= 10",
+    "priority": 7,
+    "ru": {
+      "headline": "Твои выборы чаще приходят утром",
+      "body": "Самый частый час входа - около {fav_hour}:00. По ощущению, профиль собирается не в конце дня, а до того, как всё успело перемешаться."
+    },
+    "en": {
+      "headline": "Your choices arrive more often in the morning",
+      "body": "Your most common entry hour is around {fav_hour}:00. The profile seems to form before the day has had time to mix everything up."
+    }
+  },
+  {
+    "id": "behavioral_short_sessions_v1",
+    "type": "behavioral",
+    "trigger": "avg_session_len_min IS NOT NULL AND avg_session_len_min < 3 AND total_tournaments >= 10",
+    "priority": 6,
+    "ru": {
+      "headline": "Сессии короткие, но регулярные",
+      "body": "Средняя длина сессии - {avg_session_len_min_phrase}. Скорее всего, ты не зависаешь над выбором надолго, а заходишь короткими проверками."
+    },
+    "en": {
+      "headline": "The sessions are short, but regular",
+      "body": "Your average session is {avg_session_len_min} minutes. Looks like you do not sit with choices for long, you check in through short passes."
+    }
+  },
+  {
+    "id": "behavioral_low_completion_category_v1",
+    "type": "behavioral",
+    "trigger": "completion_low_cat IS NOT NULL AND skip_rate >= 20",
+    "priority": 7,
+    "ru": {
+      "headline": "Одна категория чаще остаётся недоигранной",
+      "body": "Категория с максимумом незавершённых проходов: «{completion_low_cat}». Общий skip-rate - {skip_rate}%. Это место, где выбор чаще тормозит."
+    },
+    "en": {
+      "headline": "One category is left unfinished more often",
+      "body": "Most unfinished runs happen in {completion_low_cat}. With an overall skip rate of {skip_rate}%, this looks like a place where the choice slows down."
+    }
+  },
+  {
+    "id": "warmup_empty_readout_v1",
+    "type": "warmup",
+    "trigger": "total_tournaments == 0",
+    "priority": 6,
+    "ru": {
+      "headline": "Прочтение пока пустое",
+      "body": "Здесь появятся карточки после первых турниров. Сейчас профилю нужны не выводы, а несколько простых выборов подряд."
+    },
+    "en": {
+      "headline": "The readout is empty for now",
+      "body": "Cards will appear here after the first tournaments. Right now the profile needs a few simple choices in a row, not conclusions."
+    }
+  },
+  {
+    "id": "warmup_after_first_tournament_v1",
+    "type": "warmup",
+    "trigger": "total_tournaments == 1",
+    "priority": 6,
+    "ru": {
+      "headline": "Первый турнир дал только направление",
+      "body": "Одного прохода мало для уверенной карточки. Но первая точка уже есть, и следующие выборы начнут показывать, куда она тянется."
+    },
+    "en": {
+      "headline": "The first tournament gave only a direction",
+      "body": "One run is not enough for a confident card. But the first point is already there, and the next choices will start showing where it stretches."
+    }
+  },
+  {
+    "id": "warmup_recent_category_first_trace_v1",
+    "type": "warmup",
+    "trigger": "total_tournaments == 2 AND recently_played_cat IS NOT NULL",
+    "priority": 6,
+    "ru": {
+      "headline": "Первые следы уже цепляются за категорию",
+      "body": "Последняя сыгранная категория: «{recently_played_cat}». Пока это не закономерность, но уже материал, из которого начнёт собираться профиль."
+    },
+    "en": {
+      "headline": "The first traces already catch on a category",
+      "body": "The latest trace came from {recently_played_cat}. Not a pattern yet, but already the material the profile will start building from."
+    }
+  },
+  {
+    "id": "warmup_first_archetype_hint_v1",
+    "type": "warmup",
+    "trigger": "total_tournaments >= 3 AND total_tournaments < 5 AND archetype_last IS NOT NULL",
+    "priority": 6,
+    "ru": {
+      "headline": "Первый архетип уже можно показать",
+      "body": "Последний результат: «{archetype_last}». Рано делать выводы, но эта карточка уже даёт профилю первый человеческий контур."
+    },
+    "en": {
+      "headline": "The first archetype can already be shown",
+      "body": "The latest result is {archetype_last}. Too early for conclusions, but this card already gives the profile its first human outline."
+    }
+  },
+  {
+    "id": "warmup_low_data_fallback_v1",
+    "type": "warmup",
+    "trigger": "total_tournaments < 5",
+    "priority": 3,
+    "ru": {
+      "headline": "Данных пока мало",
+      "body": "Прочтение ещё не набрало вес. Несколько следующих турниров добавят больше линий, и карточки станут точнее."
+    },
+    "en": {
+      "headline": "There is not much data yet",
+      "body": "The readout has not gained much weight yet. The next few tournaments will add more lines, and the cards will get sharper."
+    }
+  }
+]

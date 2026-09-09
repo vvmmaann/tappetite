@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNTITLED PICK GAME · UGC Modals Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    min-height: 100vh;
+    background: #DDD5C7;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1A1F36;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .row {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .col-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    color: #5C5147;
+    text-transform: uppercase;
+  }
+
+  .phone {
+    width: 390px;
+    height: 844px;
+    background: linear-gradient(180deg, #FAF6F0 0%, #F5F0E8 100%);
+    border-radius: 44px;
+    box-shadow: 0 30px 80px rgba(40, 25, 10, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .phone::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* DIMMED BACKGROUND CONTENT */
+  .behind {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding: 50px 28px 0;
+    opacity: 0.35;
+    filter: blur(2px);
+    pointer-events: none;
+  }
+
+  .behind .ghost-line {
+    height: 12px;
+    border-radius: 4px;
+    background: #C9BBA8;
+    margin-bottom: 12px;
+  }
+  .behind .ghost-line.short { width: 50%; }
+  .behind .ghost-line.med { width: 70%; }
+  .behind .ghost-card {
+    height: 200px;
+    background: #FFFCF7;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    border: 1px solid #E5DCCB;
+  }
+
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 12, 5, 0.42);
+    z-index: 3;
+    backdrop-filter: blur(3px);
+  }
+
+  /* MODAL SHEET */
+  .modal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, #FFFCF7 0%, #F8F2E8 100%);
+    border-radius: 28px 28px 0 0;
+    z-index: 4;
+    padding: 14px 28px 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -8px 30px rgba(0,0,0,0.18);
+    max-height: 88%;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .modal::-webkit-scrollbar { display: none; }
+
+  .modal-handle {
+    width: 40px;
+    height: 4px;
+    background: #C9BBA8;
+    border-radius: 100px;
+    margin: 0 auto 18px;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+  }
+
+  .modal-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: #1A1F36;
+  }
+
+  .modal-close {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #6B5C4A;
+    text-decoration: none;
+    border-bottom: 1px dotted #C9BBA8;
+    padding-bottom: 1px;
+  }
+
+  .modal-context {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8A7A6A;
+    margin-bottom: 4px;
+  }
+
+  /* FORM */
+  .field {
+    margin-bottom: 16px;
+  }
+
+  .field-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #8A7A6A;
+    margin-bottom: 6px;
+  }
+
+  .field-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #D4C9B8;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #1A1F36;
+    outline: none;
+  }
+
+  .field-input.focus {
+    border-color: #B5532E;
+    background: #FFFCF7;
+    box-shadow: 0 0 0 3px rgba(181, 83, 46, 0.1);
+  }
+
+  .field-input::placeholder {
+    color: #B5A48F;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .field-textarea {
+    min-height: 70px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    resize: none;
+  }
+
+  .field-helper {
+    margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #8A7A6A;
+    font-style: italic;
+  }
+
+  /* CLUSTER CHIPS */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .chip {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #D4C9B8;
+    color: #6B5C4A;
+    cursor: pointer;
+  }
+
+  .chip.active {
+    background: #1A1F36;
+    color: #FAF6F0;
+    border-color: #1A1F36;
+  }
+
+  /* AI FEEDBACK STRIPE */
+  .ai-feedback {
+    margin: 14px 0;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border-left: 3px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ai-feedback.checking {
+    background: rgba(180, 130, 50, 0.06);
+    border-color: #C09A4E;
+  }
+
+  .ai-feedback.success {
+    background: rgba(46, 125, 50, 0.07);
+    border-color: #2E7D32;
+  }
+
+  .ai-feedback .ai-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .ai-feedback.checking .ai-label { color: #8B5E1A; }
+  .ai-feedback.success .ai-label { color: #2E7D32; }
+
+  .ai-feedback .ai-msg {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #3D2424;
+  }
+
+  .ai-feedback .pulse {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    animation: pulse 1.2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* CROSS-CATEGORY SUGGESTIONS */
+  .cross-cats {
+    margin-top: 4px;
+  }
+
+  .cross-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted #D4C9B8;
+  }
+
+  .cross-row:last-child { border-bottom: none; }
+
+  .cross-row .cat-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #1A1F36;
+  }
+
+  .cross-row .add-here {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #B5532E;
+    text-decoration: none;
+    border-bottom: 1px dotted #B5532E;
+  }
+
+  /* SUBMIT BUTTON */
+  .submit-row {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    background: #B5532E;
+    color: #FAF6F0;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 14px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(181, 83, 46, 0.28);
+    cursor: pointer;
+  }
+
+  .btn-primary.disabled {
+    background: #C9BBA8;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  .submit-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #8A7A6A;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .quota {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: #8A7A6A;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .quota .num { color: #B5532E; font-weight: 500; }
+
+  .caption {
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #5C5147;
+    text-align: center;
+    max-width: 720px;
+    line-height: 1.55;
+  }
+
+  .caption code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(0,0,0,0.05);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="row">
+
+    <!-- ──────────────  ADD ENTRY MODAL ────────────── -->
+    <div class="col">
+      <div class="col-label">Модаль 1 · добавить имя</div>
+      <div class="phone">
+
+        <!-- ghost behind -->
+        <div class="behind">
+          <div class="ghost-line short"></div>
+          <div class="ghost-line med"></div>
+          <div class="ghost-card"></div>
+          <div class="ghost-card"></div>
+        </div>
+        <div class="scrim"></div>
+
+        <div class="modal">
+          <div class="modal-handle"></div>
+
+          <div class="modal-context">в категорию</div>
+          <div class="modal-header">
+            <div class="modal-title">Голливудские актёры · 50+</div>
+            <a href="#" class="modal-close">закрыть</a>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Имя</div>
+            <input class="field-input focus" value="Дастин Хоффман" />
+            <div class="field-helper">Реальное имя или сценический псевдоним</div>
+          </div>
+
+          <div class="ai-feedback success">
+            <div class="ai-label"><span class="pulse"></span>Проверка AI · готово</div>
+            <div class="ai-msg">Подходит. Дата рождения 1937, Оскар за «Крамер против Крамера». Не дубликат.</div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Кратко (по желанию)</div>
+            <textarea class="field-textarea field-input">Икона Нового Голливуда, «Выпускник», «Тутси»</textarea>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Может также подойти</div>
+            <div class="cross-cats">
+              <div class="cross-row">
+                <div class="cat-name">Лучшие комедийные актёры</div>
+                <a href="#" class="add-here">+ добавить</a>
+              </div>
+              <div class="cross-row">
+                <div class="cat-name">Актёры-перевоплощенцы</div>
+                <a href="#" class="add-here">+ добавить</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <a href="#" class="btn-primary">Предложить</a>
+            <div class="submit-hint">появится в будущих турнирах после проверки</div>
+            <div class="quota">сегодня осталось <span class="num">4</span> из 5</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ──────────  SUGGEST CATEGORY MODAL ───────── -->
+    <div class="col">
+      <div class="col-label">Модаль 2 · предложить категорию</div>
+      <div class="phone">
+
+        <div class="behind">
+          <div class="ghost-line short"></div>
+          <div class="ghost-line med"></div>
+          <div class="ghost-card"></div>
+          <div class="ghost-card"></div>
+        </div>
+        <div class="scrim"></div>
+
+        <div class="modal">
+          <div class="modal-handle"></div>
+
+          <div class="modal-header">
+            <div class="modal-title">Предложить выпуск</div>
+            <a href="#" class="modal-close">закрыть</a>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Название</div>
+            <input class="field-input focus" value="Лучшие фильмы Орсона Уэллса" />
+          </div>
+
+          <div class="field">
+            <div class="field-label">Что выбираем (одна строка)</div>
+            <textarea class="field-textarea field-input">Какой шедевр Уэллса лучше всех выдержал испытание временем</textarea>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Кластер</div>
+            <div class="chips">
+              <span class="chip active">Кино</span>
+              <span class="chip">Музыка</span>
+              <span class="chip">Литература</span>
+              <span class="chip">Тех</span>
+              <span class="chip">+ ещё</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Примеры (3–5 штук)</div>
+            <input class="field-input" value="Гражданин Кейн, Печать зла, Великолепные Эмберсоны" />
+          </div>
+
+          <div class="ai-feedback success">
+            <div class="ai-label"><span class="pulse"></span>AI-проверка · принято на ревью</div>
+            <div class="ai-msg">Не дубликат. AI нашёл 14 других фильмов Уэллса для турнира. Уйдёт основателям на финальное ревью, ответ в течение 48 часов.</div>
+          </div>
+
+          <div class="submit-row">
+            <a href="#" class="btn-primary">Отправить на ревью</a>
+            <div class="submit-hint">если выпустим - получишь бейдж «Автор» и push</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="caption">
+    Два UGC-модаля. Общий паттерн: <strong>bottom-sheet 88% высоты</strong>, родительский экран затемнён и слегка размыт сзади (видно по краям), drag-handle сверху. AI-фидбек в реальном времени - <code>зелёная полоска слева</code> = принято, оранжевая = проверка, красная (не показано) = отказ. Пульсирующая точка в лейбле AI имитирует «думаю». Модаль 1: после ввода имени AI верифицирует через Wikipedia + предлагает кросс-категории (моментальная виральность UGC). Модаль 2: чипы кластеров, сообщение что уйдёт основателям на финал-ревью с ETA. Квота «4 из 5 на сегодня» снимает страх «забанят».
+  </div>
+
+</body>
+</html>

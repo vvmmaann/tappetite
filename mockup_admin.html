@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNTITLED PICK GAME · Admin Dashboard Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-page: #F7F6F3;
+    --bg-panel: #FFFFFF;
+    --bg-hover: rgba(0,0,0,0.035);
+    --bg-selected: rgba(181, 83, 46, 0.07);
+    --border: rgba(0, 0, 0, 0.07);
+    --border-strong: rgba(0, 0, 0, 0.12);
+    --text-primary: #1F1F1F;
+    --text-secondary: #6B6B6B;
+    --text-muted: #9B9B9B;
+    --accent: #B5532E;
+    --accent-soft: rgba(181, 83, 46, 0.10);
+    --success: #2E7D32;
+    --warning: #B07A1A;
+    --danger: #B53023;
+  }
+
+  body {
+    min-height: 100vh;
+    background: #DDD5C7;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text-primary);
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .browser {
+    width: 1200px;
+    max-width: 100%;
+    background: var(--bg-page);
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(40, 25, 10, 0.22);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  /* BROWSER CHROME */
+  .chrome {
+    height: 36px;
+    background: #ECEBE6;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 8px;
+  }
+
+  .traffic {
+    display: flex;
+    gap: 6px;
+  }
+  .traffic .light {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+  .traffic .red { background: #ED6A5E; }
+  .traffic .yel { background: #F4BE4F; }
+  .traffic .grn { background: #61C554; }
+
+  .urlbar {
+    flex: 1;
+    margin: 0 14px;
+    height: 22px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    max-width: 480px;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    height: 56px;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    gap: 18px;
+  }
+
+  .brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .brand-suffix {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-left: 10px;
+    padding: 2px 8px;
+    background: var(--bg-hover);
+    border-radius: 4px;
+  }
+
+  .stats-line {
+    flex: 1;
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
+
+  .stats-line .num { color: var(--text-primary); font-weight: 500; }
+  .stats-line .accent-num { color: var(--accent); font-weight: 600; }
+
+  .topbar .user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .topbar .user .av {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(140deg, #F8E5D2, #E8C7A8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--accent);
+  }
+
+  /* THREE-COLUMN LAYOUT */
+  .three-col {
+    display: grid;
+    grid-template-columns: 200px 360px 1fr;
+    height: 720px;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    background: var(--bg-page);
+    border-right: 1px solid var(--border);
+    padding: 18px 0;
+  }
+
+  .nav-section {
+    padding: 0 14px;
+    margin-bottom: 18px;
+  }
+
+  .nav-section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0 8px 6px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 1px;
+  }
+
+  .nav-item:hover { background: var(--bg-hover); }
+
+  .nav-item.active {
+    background: var(--bg-selected);
+    color: var(--accent);
+  }
+
+  .nav-item .icon {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    width: 14px;
+    text-align: center;
+  }
+
+  .nav-item .badge {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    background: var(--accent);
+    color: white;
+    padding: 1px 7px;
+    border-radius: 100px;
+  }
+
+  /* QUEUE COLUMN */
+  .queue-col {
+    background: var(--bg-panel);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .queue-header {
+    padding: 16px 18px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .queue-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .filter-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .filter-chip {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+
+  .filter-chip.active {
+    background: var(--text-primary);
+    color: white;
+    border-color: var(--text-primary);
+  }
+
+  .queue-list {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .queue-list::-webkit-scrollbar { width: 6px; }
+  .queue-list::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 100px; }
+
+  .q-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .q-item:hover { background: var(--bg-hover); }
+  .q-item.selected { background: var(--bg-selected); }
+
+  .q-item.selected::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+  }
+
+  .q-item .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .q-item .title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.25;
+  }
+
+  .q-item .when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+  }
+
+  .q-item .meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 2px;
+  }
+
+  .q-item .author {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-secondary);
+  }
+
+  .type-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: var(--bg-hover);
+    color: var(--text-secondary);
+  }
+
+  .type-pill.cat { background: rgba(40, 70, 130, 0.08); color: #2C4A7A; }
+  .type-pill.name { background: rgba(46, 125, 50, 0.08); color: var(--success); }
+
+  .ai-flag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--warning);
+    margin-left: auto;
+  }
+
+  /* DETAIL PANE */
+  .detail {
+    background: var(--bg-panel);
+    overflow-y: auto;
+  }
+
+  .detail::-webkit-scrollbar { width: 6px; }
+  .detail::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 100px; }
+
+  .detail-header {
+    padding: 22px 28px 18px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .detail-meta-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-secondary);
+  }
+
+  .detail-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.15;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .detail-author {
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .detail-author strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .detail-body {
+    padding: 22px 28px;
+  }
+
+  .field-block {
+    margin-bottom: 22px;
+  }
+
+  .field-block-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .field-block-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+  }
+
+  .field-block-content.serif {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .example-chip {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 5px 12px;
+    background: var(--bg-page);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text-primary);
+  }
+
+  /* AI REPORT */
+  .ai-report {
+    background: var(--bg-page);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+  }
+
+  .ai-report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .ai-report-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .ai-report-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--success);
+  }
+
+  .ai-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ai-check {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+  }
+
+  .ai-check .mark {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    width: 14px;
+    text-align: center;
+  }
+
+  .ai-check.pass .mark { color: var(--success); }
+  .ai-check.warn .mark { color: var(--warning); }
+  .ai-check.fail .mark { color: var(--danger); }
+
+  .ai-check .label-text { color: var(--text-secondary); }
+  .ai-check .value { color: var(--text-primary); margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+
+  /* ACTIONS */
+  .actions {
+    position: sticky;
+    bottom: 0;
+    background: var(--bg-panel);
+    border-top: 1px solid var(--border);
+    padding: 16px 28px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border-strong);
+    background: white;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+
+  .btn:hover { background: var(--bg-hover); }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  .btn-primary:hover { background: #9F4827; }
+
+  .btn-danger {
+    color: var(--danger);
+    border-color: rgba(181, 48, 35, 0.3);
+  }
+  .btn-danger:hover { background: rgba(181, 48, 35, 0.06); }
+
+  .keyboard-hint {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .keyboard-hint kbd {
+    background: var(--bg-hover);
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--border-strong);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+  }
+
+  .caption {
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #5C5147;
+    text-align: center;
+    max-width: 1100px;
+    line-height: 1.55;
+  }
+
+  .caption code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(0,0,0,0.05);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  .caption strong { color: var(--accent); }
+</style>
+</head>
+<body>
+
+  <div class="browser">
+
+    <!-- BROWSER CHROME -->
+    <div class="chrome">
+      <div class="traffic">
+        <div class="light red"></div>
+        <div class="light yel"></div>
+        <div class="light grn"></div>
+      </div>
+      <div class="urlbar">admin.untitledpickgame.app/queue</div>
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div>
+        <span class="brand">UNTITLED PICK GAME</span>
+        <span class="brand-suffix">admin</span>
+      </div>
+      <div class="stats-line">
+        <span>в очереди <span class="accent-num">23</span></span>
+        <span>сегодня <span class="num">47</span> проверено</span>
+        <span>AI отсеял <span class="num">84%</span></span>
+        <span>среднее ревью <span class="num">12 сек</span></span>
+      </div>
+      <div class="user">
+        <div class="av">u</div>
+        <span>uncle@untitledpickgame</span>
+      </div>
+    </div>
+
+    <!-- THREE COLUMNS -->
+    <div class="three-col">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="nav-section">
+          <div class="nav-section-label">Модерация</div>
+          <a class="nav-item active">
+            <span class="icon">★</span><span>Очередь</span><span class="badge">23</span>
+          </a>
+          <a class="nav-item">
+            <span class="icon">∙</span><span>Жалобы</span>
+          </a>
+          <a class="nav-item">
+            <span class="icon">∙</span><span>Бан-листы</span>
+          </a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-label">Контент</div>
+          <a class="nav-item"><span class="icon">∙</span><span>Категории</span></a>
+          <a class="nav-item"><span class="icon">∙</span><span>Имена</span></a>
+          <a class="nav-item"><span class="icon">∙</span><span>Архетипы</span></a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-label">Аналитика</div>
+          <a class="nav-item"><span class="icon">∙</span><span>Юзеры</span></a>
+          <a class="nav-item"><span class="icon">∙</span><span>Турниры</span></a>
+          <a class="nav-item"><span class="icon">∙</span><span>Шеринги</span></a>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-section-label">Система</div>
+          <a class="nav-item"><span class="icon">∙</span><span>Feature flags</span></a>
+          <a class="nav-item"><span class="icon">∙</span><span>API ключи</span></a>
+        </div>
+      </aside>
+
+      <!-- QUEUE LIST -->
+      <div class="queue-col">
+        <div class="queue-header">
+          <div class="queue-title">Очередь модерации</div>
+          <div class="filter-row">
+            <span class="filter-chip active">Все 23</span>
+            <span class="filter-chip">Категории 14</span>
+            <span class="filter-chip">Имена 9</span>
+            <span class="filter-chip">⚐ RU 18</span>
+          </div>
+        </div>
+
+        <div class="queue-list">
+          <div class="q-item selected">
+            <div class="top-row">
+              <div class="title">Лучшие фильмы Орсона Уэллса</div>
+              <span class="when">2 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill cat">Категория</span>
+              <span class="author">@kino_seva</span>
+            </div>
+          </div>
+
+          <div class="q-item">
+            <div class="top-row">
+              <div class="title">Дастин Хоффман <span style="color:var(--text-secondary); font-size: 12px; font-style: italic;">→ в «Голливуд 50+»</span></div>
+              <span class="when">4 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill name">Имя</span>
+              <span class="author">@irinka_kino</span>
+            </div>
+          </div>
+
+          <div class="q-item">
+            <div class="top-row">
+              <div class="title">Самые странные русские мемы 2010-х</div>
+              <span class="when">5 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill cat">Категория</span>
+              <span class="author">@meme_archeolog</span>
+              <span class="ai-flag">⚠ нужно ревью</span>
+            </div>
+          </div>
+
+          <div class="q-item">
+            <div class="top-row">
+              <div class="title">Лучший российский подкаст десятилетия</div>
+              <span class="when">8 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill cat">Категория</span>
+              <span class="author">@podcast_lover</span>
+            </div>
+          </div>
+
+          <div class="q-item">
+            <div class="top-row">
+              <div class="title">Кто из политиков лучше всех танцует?</div>
+              <span class="when">11 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill cat">Категория</span>
+              <span class="author">@anon_42</span>
+              <span class="ai-flag">⚠ юрисдикция</span>
+            </div>
+          </div>
+
+          <div class="q-item">
+            <div class="top-row">
+              <div class="title">Хидэо Кодзима <span style="color:var(--text-secondary); font-size: 12px; font-style: italic;">→ в «Геймдев-режиссёры»</span></div>
+              <span class="when">14 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill name">Имя</span>
+              <span class="author">@kojima_fan</span>
+            </div>
+          </div>
+
+          <div class="q-item">
+            <div class="top-row">
+              <div class="title">Лучший AI-стартап из СНГ</div>
+              <span class="when">17 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill cat">Категория</span>
+              <span class="author">@vc_observer</span>
+            </div>
+          </div>
+
+          <div class="q-item">
+            <div class="top-row">
+              <div class="title">Самые красивые церкви России</div>
+              <span class="when">22 ч</span>
+            </div>
+            <div class="meta">
+              <span class="type-pill cat">Категория</span>
+              <span class="author">@architrip</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAIL PANE -->
+      <div class="detail">
+
+        <div class="detail-header">
+          <div class="detail-meta-line">
+            <span class="type-pill cat">Категория</span>
+            <span>· id <strong style="color:var(--text-primary)">cat_prop_8347</strong></span>
+            <span>· отправлено 2 ч назад</span>
+          </div>
+          <div class="detail-title">Лучшие фильмы Орсона Уэллса</div>
+          <div class="detail-author">от <strong>@kino_seva</strong> · в системе с янв 2026 · 12 одобренных предложений</div>
+        </div>
+
+        <div class="detail-body">
+
+          <div class="field-block">
+            <div class="field-block-label">Описание (что выбираем)</div>
+            <div class="field-block-content serif">Какой шедевр Уэллса лучше всех выдержал испытание временем</div>
+          </div>
+
+          <div class="field-block">
+            <div class="field-block-label">Кластер</div>
+            <div class="field-block-content">Кино</div>
+          </div>
+
+          <div class="field-block">
+            <div class="field-block-label">Примеры от автора</div>
+            <div class="examples">
+              <span class="example-chip">Гражданин Кейн</span>
+              <span class="example-chip">Печать зла</span>
+              <span class="example-chip">Великолепные Эмберсоны</span>
+            </div>
+          </div>
+
+          <div class="ai-report">
+            <div class="ai-report-header">
+              <div class="ai-report-label">AI-проверка</div>
+              <div class="ai-report-score">прошло 4/4</div>
+            </div>
+            <div class="ai-checks">
+              <div class="ai-check pass">
+                <span class="mark">✓</span>
+                <span class="label-text">Дубликаты в существующих категориях</span>
+                <span class="value">не найдено</span>
+              </div>
+              <div class="ai-check pass">
+                <span class="mark">✓</span>
+                <span class="label-text">Жизнеспособность (≥16 имён)</span>
+                <span class="value">найдено 14 фильмов + 8 связных</span>
+              </div>
+              <div class="ai-check pass">
+                <span class="mark">✓</span>
+                <span class="label-text">Юрисдикционные ограничения</span>
+                <span class="value">чисто</span>
+              </div>
+              <div class="ai-check pass">
+                <span class="mark">✓</span>
+                <span class="label-text">Токсичность / 18+ детектор</span>
+                <span class="value">0%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-block">
+            <div class="field-block-label">AI-предложение списка имён</div>
+            <div class="examples">
+              <span class="example-chip">Гражданин Кейн</span>
+              <span class="example-chip">Печать зла</span>
+              <span class="example-chip">Великолепные Эмберсоны</span>
+              <span class="example-chip">Леди из Шанхая</span>
+              <span class="example-chip">Чужестранец</span>
+              <span class="example-chip">Макбет (1948)</span>
+              <span class="example-chip">Отелло (1951)</span>
+              <span class="example-chip">Процесс</span>
+              <span class="example-chip">Полуночные колокола</span>
+              <span class="example-chip">F для фальшивки</span>
+              <span class="example-chip">Это всё правда</span>
+              <span class="example-chip">+ ещё 10</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ACTIONS BAR (sticky) -->
+        <div class="actions">
+          <button class="btn btn-primary">Принять и опубликовать</button>
+          <button class="btn">Уточнить</button>
+          <button class="btn">Изменить формулировку</button>
+          <button class="btn btn-danger">Отклонить</button>
+          <div class="keyboard-hint">
+            <kbd>A</kbd> принять &nbsp; <kbd>R</kbd> отклонить &nbsp; <kbd>↓</kbd> следующее
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="caption">
+    Админ-дашборд для основателей. <strong>Notion/Linear-стиль</strong>: плотные данные, белый фон, тонкие границы вместо теней. Брендовые вкрапления только в логотипе сверху (<code>Playfair italic</code>) и заголовках предложений в очереди — вся остальная UI на <code>Inter</code>. Терракотовый акцент только для главных действий и активного состояния. Три колонки: <strong>сайдбар</strong> (модерация / контент / аналитика / система), <strong>очередь</strong> с фильтрами и счётчиками, <strong>детальная панель</strong> с AI-отчётом по 4 проверкам и стики-баром действий внизу. Подсказки клавиатуры (<kbd>A</kbd>/<kbd>R</kbd>/<kbd>↓</kbd>) — для скорости модерации, чтобы 23 предложения проходились за минуты, а не часы.
+  </div>
+
+</body>
+</html>

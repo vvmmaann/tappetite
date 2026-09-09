@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Tappetite — friend & family deck</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FAF6F0;
+    --bg-deep: #F0E9DD;
+    --paper: #fff;
+    --text: #1A1F36;
+    --text-2: #4A4035;
+    --muted: #8A7A6A;
+    --line: #C9BBA8;
+    --line-soft: #E5DCCC;
+    --accent: #B5532E;
+    --accent-soft: rgba(181, 83, 46, 0.08);
+    --warn: #d66060;
+    --ui: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+    --display: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', 'DejaVu Sans Mono', monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    color: var(--text);
+    font-family: var(--ui);
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  section.slide {
+    min-height: 100vh;
+    padding: 70px 8vw 100px;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  /* Magazine masthead */
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .masthead .pill {
+    border: 1px solid var(--line);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .masthead .line { flex: 1; height: 1px; background: var(--line); }
+
+  /* Headlines — Onest, weight-based emphasis (no italic) */
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin: 24px 0 16px;
+    color: var(--text);
+  }
+  h1 .accent { color: var(--accent); }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    color: var(--text);
+  }
+  h2 .accent { color: var(--accent); }
+
+  h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 8px;
+    color: var(--text);
+    letter-spacing: -0.005em;
+  }
+
+  .lede {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: var(--text-2);
+    max-width: 800px;
+    line-height: 1.45;
+    margin: 16px 0 32px;
+    letter-spacing: -0.005em;
+  }
+  .body-text {
+    font-size: 16px;
+    color: var(--text-2);
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 0 16px;
+  }
+  .body-text strong { color: var(--text); font-weight: 700; }
+
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* Pull quote */
+  .pull {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.5;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding: 12px 0 12px 22px;
+    margin: 32px 0;
+    max-width: 800px;
+  }
+  .pull cite {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-style: normal;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Two-column layout */
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 12px;
+  }
+  @media (min-width: 800px) {
+    .cols { grid-template-columns: 1fr 1fr; gap: 48px; }
+  }
+
+  /* Cards */
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 22px 24px;
+  }
+  .card .num {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.20em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  /* Clean feature list */
+  .clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+  }
+  .clean-list li {
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--line-soft);
+    font-size: 15px;
+    color: var(--text-2);
+    line-height: 1.5;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .clean-list li:last-child { border-bottom: 0; }
+  .clean-list .mono {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    background: var(--accent-soft);
+    padding: 2px 8px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    min-width: 70px;
+    text-align: center;
+  }
+  .clean-list strong { color: var(--text); font-weight: 700; margin-right: 4px; }
+
+  /* CTA */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--text);
+    color: var(--bg);
+    text-decoration: none;
+    font-family: var(--ui);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 14px 24px;
+    border-radius: 999px;
+    transition: transform 120ms;
+  }
+  .cta:hover { transform: translateY(-1px); }
+  .cta-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+
+  .sig {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 40px;
+  }
+
+  /* Stats row */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 28px 0;
+  }
+  @media (min-width: 800px) {
+    .stats { grid-template-columns: repeat(4, 1fr); }
+  }
+  .stat {
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .stat .n {
+    font-family: var(--display);
+    font-size: clamp(34px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .stat .l {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Mockup of battle screen */
+  .mockup {
+    width: min(340px, 100%);
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px 16px 22px;
+    box-shadow: 0 12px 32px rgba(60, 40, 20, 0.10);
+  }
+  .mock-mast {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--line-soft);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .mock-cat {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .mock-q {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .mock-pair {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .mock-card {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .mock-card .name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .mock-card .ctx {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .mock-vs {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.20em;
+    color: var(--muted);
+    text-align: center;
+    margin: -2px 0 12px;
+  }
+  .mock-progress {
+    background: var(--line-soft);
+    height: 2px;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .mock-progress > div {
+    background: var(--accent);
+    width: 25%;
+    height: 100%;
+  }
+  .mock-step {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* Roadmap rows */
+  .roadmap { margin-top: 8px; }
+  .road-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line-soft);
+    align-items: start;
+  }
+  @media (max-width: 700px) {
+    .road-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+  .road-row:last-child { border-bottom: 0; }
+  .road-row .when {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-align: center;
+    height: fit-content;
+  }
+  .road-row .what strong {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: -0.005em;
+  }
+  .road-row .what p {
+    margin: 0 0 10px;
+    color: var(--text-2);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .road-row .what p:last-child { margin-bottom: 0; }
+
+  /* Simple table */
+  table.simple {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  table.simple th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  table.simple td {
+    padding: 14px 8px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+  table.simple td.num {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  table.simple td strong { color: var(--text); }
+
+  .chip {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    vertical-align: middle;
+    flex-shrink: 0;
+    min-width: 70px;
+    text-align: center;
+  }
+  .chip.warn { background: rgba(214, 96, 96, 0.10); color: var(--warn); }
+
+  /* Progress dots nav */
+  .progress-dots {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--line);
+    cursor: pointer;
+    transition: all 200ms;
+  }
+  .dot.active {
+    background: var(--accent);
+    transform: scale(1.4);
+  }
+  @media (max-width: 700px) { .progress-dots { display: none; } }
+
+  /* Slide nav buttons */
+  .slide-nav {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+  }
+  .slide-nav button {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text);
+    transition: all 150ms;
+    box-shadow: 0 4px 12px rgba(60, 40, 20, 0.08);
+  }
+  .slide-nav button:hover {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+  @media (max-width: 700px) { .slide-nav { display: none; } }
+</style>
+</head>
+
+<body>
+
+<!-- ════════════ SLIDE 1: COVER ════════════ -->
+<section class="slide" id="s1">
+  <div class="masthead">
+    <span class="pill">Tappetite</span>
+    <span>ВЫПУСК № 1 · ДЛЯ СВОИХ</span>
+    <span class="line"></span>
+    <span>МАЙ 2026</span>
+  </div>
+  <h1>Турниры выбора.<br><span class="accent">Профиль вкуса.</span></h1>
+  <p class="lede">Taste-tournament игра в magazine-эстетике, которая собирает портрет вкуса игрока и потом превращает его в инструмент — для дружбы, романтики, рекомендаций.</p>
+  <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;">
+    <a class="cta" href="https://isverifiedby.me/" target="_blank">→ ОТКРЫТЬ ЖИВУЮ ВЕРСИЮ</a>
+    <a class="cta cta-secondary" href="#s2">↓ ЛИСТАТЬ КОЛОДУ</a>
+  </div>
+  <div class="sig">DECK FOR FRIENDS &amp; FAMILY · НЕ ДЛЯ ПУБЛИКАЦИИ</div>
+</section>
+
+<!-- ════════════ SLIDE 2: WHAT IS IT ════════════ -->
+<section class="slide" id="s2">
+  <div class="kicker">02 · ЧТО ЭТО</div>
+  <h2>Игра, в которой ты <span class="accent">тапаешь</span><br>и через 4 минуты у тебя есть профиль.</h2>
+
+  <div class="cols">
+    <div>
+      <p class="body-text">Берёшь тему — например, <strong>«Лучшая мировая кухня»</strong> или <strong>«Какая соцсеть реально твоя»</strong>. Игра в формате турнира выводит пары вариантов: А или Б. Ты тапаешь то, что ближе. 16 битв = 4 минуты = твой <strong>топ-3</strong> + <strong>типаж</strong>.</p>
+      <p class="body-text">Дальше можешь шерить результат другу — ему приходит ссылка-приглашение, проходит то же самое, видит <strong>процент совпадения</strong>. Это и есть viral hook.</p>
+      <p class="body-text">Каждая сыгранная тема добавляет штрих к твоему профилю вкуса. Через 5-10 тем у тебя есть карта личных предпочтений по разным областям жизни.</p>
+
+      <ul class="clean-list">
+        <li><span class="mono">97</span><strong>тем</strong> в 23 кластерах · кино, музыка, отношения, стиль, философия, бренды</li>
+        <li><span class="mono">~4 мин</span><strong>одна тема</strong> · 16 быстрых выборов</li>
+        <li><span class="mono">PWA</span><strong>играется в браузере</strong> · ставится на iOS/Android home-screen</li>
+        <li><span class="mono">RU/EN</span><strong>полный bilingual</strong> · все категории, items, архетипы на двух языках</li>
+      </ul>
+    </div>
+    <div style="display:flex;justify-content:center;align-items:center;">
+      <div class="mockup">
+        <div class="mock-mast">Tappetite · ВЫПУСК № 1</div>
+        <div class="mock-cat">КИНО · 4/16</div>
+        <div class="mock-q">«Что выберешь?»</div>
+        <div class="mock-pair">
+          <div class="mock-card">
+            <div class="name">Тарантино</div>
+            <div class="ctx">диалоги · насилие · стиль</div>
+          </div>
+          <div class="mock-card">
+            <div class="name">Скорсезе</div>
+            <div class="ctx">мафия · нью-йорк · рассказчик</div>
+          </div>
+        </div>
+        <div class="mock-vs">или</div>
+        <div class="mock-progress"><div></div></div>
+        <div class="mock-step">бой 4 из 16</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SLIDE 3: WHY INTERESTING ════════════ -->
+<section class="slide" id="s3">
+  <div class="kicker">03 · ПОЧЕМУ ИНТЕРЕСНО</div>
+  <h2>Это не очередной тест.<br>Это <span class="accent">профиль вкуса как идентичность.</span></h2>
+
+  <div class="pull">
+    «Большинство тестов после прохождения умирают — получил результат, забыл. Здесь каждая сыгранная тема накапливается. Через месяц ты не помнишь свой результат, ты <em>знаешь себя глубже</em>.»
+    <cite>основная гипотеза продукта</cite>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="num">A. ОТСТРОЙКА ОТ ТЕСТОВ</div>
+      <h3>Накопление, не одноразовость</h3>
+      <p>16personalities, BuzzFeed, dating-quiz — все живут одну сессию. Здесь каждая тема пополняет профиль; через год у юзера 30+ микро-портретов разных областей жизни. Это контент, к которому возвращаются.</p>
+    </div>
+    <div class="card">
+      <div class="num">B. ОТСТРОЙКА ОТ DATING-АПП</div>
+      <h3>Magazine, не Tinder</h3>
+      <p>Премиум-эстетика, типографика на Onest, тёплая палитра. Это бренд, который не стыдно расшарить, который собирают на скриншотах. Tinder visuals давно выдохлись.</p>
+    </div>
+    <div class="card">
+      <div class="num">C. ВИРУСНЫЙ КОНТУР</div>
+      <h3>Шеринг = приглашение = реферал</h3>
+      <p>Один тап = «вызов» другу. Получатель проходит то же самое, видит процент совпадения. Каждая ссылка — персональная OG-карточка с именем игрока и его топ-3. Превращение результата в коммуникацию вместо «вот мой типаж, ну ок».</p>
+    </div>
+    <div class="card">
+      <div class="num">D. ПРИМЕНИМОСТЬ ДАЛЬШЕ</div>
+      <h3>Профиль = инструмент</h3>
+      <p>Сейчас профиль — просто профиль. На горизонте: <strong>dating-layer</strong> (matching по совместимости вкусов), <strong>рекомендации</strong> (фильмы/музыка/еда исходя из twins), <strong>18+ контур</strong> отдельным верифицированным продуктом.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SLIDE 4: WHAT'S BUILT ════════════ -->
+<section class="slide" id="s4">
+  <div class="kicker">04 · ЧТО УЖЕ СДЕЛАНО</div>
+  <h2>Не презентация идеи.<br><span class="accent">Живой работающий продукт.</span></h2>
+
+  <div class="stats">
+    <div class="stat"><div class="n">97</div><div class="l">тем · 23 кластера</div></div>
+    <div class="stat"><div class="n">1 654</div><div class="l">item'ов вручную</div></div>
+    <div class="stat"><div class="n">760</div><div class="l">архетипов с разбором</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">RU / EN покрытие</div></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h3 style="margin-bottom:12px;">Frontend</h3>
+      <ul class="clean-list">
+        <li><strong>PWA на isverifiedby.me</strong>, ставится на home-screen iOS/Android</li>
+        <li><strong>Magazine UI</strong> на Onest + JetBrains Mono, тёплая палитра, light + dark</li>
+        <li><strong>Турнир-движок</strong> 16/32/64 + replay режим + история всех прохождений</li>
+        <li><strong>Шеринг</strong> с персональными OG-картинками + PNG-экспорт share-карты</li>
+        <li><strong>Друзья + сравнение вкусов</strong> + challenge-ссылки + match popup</li>
+        <li><strong>Реферальные ссылки</strong> в профиле каждого игрока</li>
+        <li><strong>18 ачивок</strong> + taste overview (uniqueness % vs всех юзеров)</li>
+        <li><strong>Service Worker</strong>, install banner, offline-friendly, RU/EN dropdown</li>
+      </ul>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;">Backend</h3>
+      <ul class="clean-list">
+        <li>FastAPI + SQLite + bcrypt + cookie sessions</li>
+        <li>Аккаунты (guest / registered), auth, friends graph, рефералы</li>
+        <li><strong>UGC-submissions</strong> + полная админка с copy-prompt → AI-JSON workflow</li>
+        <li><strong>Real-time админ-очередь</strong> на SSE — заявки появляются без F5</li>
+        <li><strong>DIY error tracker</strong> в админке (frontend errors + backend exceptions)</li>
+        <li><strong>Ежедневные бэкапы</strong> SQLite + categories.json (gzip, 30 дней retention)</li>
+        <li>Server-side OG-render через rsvg-convert (SVG → PNG, кэш на диске)</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-bottom:12px;">Контент &amp; контур</h3>
+      <ul class="clean-list">
+        <li><strong>97 тем</strong> в 23 культурных кластерах: кино, сериалы, мульты, аниме, музыка, отношения, dating, бренды, философия, эстетика, путешествия, спорт, карьера, характер, лайфстайл, интернет</li>
+        <li><strong>1 654 item'а</strong> — все вручную, с контекст-блёрбами, на двух языках</li>
+        <li><strong>760 архетипов</strong> + 97 default — у каждого 4-абзацный editorial-портрет, RU + EN</li>
+        <li><strong>Editorial pass</strong> — все EN тексты прошли литературную полировку</li>
+        <li><strong>Domain isverifiedby.me</strong> (placeholder, проплачен; ребрендинг до launch)</li>
+        <li>Cloudflare proxy + nginx + Origin Cert + SSL</li>
+      </ul>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;">Юр./compliance</h3>
+      <ul class="clean-list">
+        <li><strong>Privacy Policy</strong> и <strong>Terms of Service</strong> bilingual — на /privacy.html и /terms.html</li>
+        <li>Footer-ссылки и legal note в auth-modal</li>
+        <li>Готово к App Store / Google Play submission на этом фронте</li>
+      </ul>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;">Что осталось до App-store launch</h3>
+      <ul class="clean-list">
+        <li><span class="chip">Q2'26</span>Email-верификация + сброс пароля</li>
+        <li><span class="chip">Q2'26</span>Account deletion + data export (GDPR)</li>
+        <li><span class="chip">Q2'26</span>Capacitor wrap (PWA → нативный iOS/Android)</li>
+        <li><span class="chip">Q2'26</span>Real branding — текущее имя placeholder</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:30px;">
+    <a class="cta" href="https://isverifiedby.me/" target="_blank">→ ПРОЙДИ ТУР, 4 МИНУТЫ</a>
+  </div>
+</section>
+
+<!-- ════════════ SLIDE 5: ROADMAP ════════════ -->
+<section class="slide" id="s5">
+  <div class="kicker">05 · ДОРОЖНАЯ КАРТА</div>
+  <h2>Четыре фазы.<br><span class="accent">Каждая стоит на предыдущей.</span></h2>
+
+  <div class="roadmap">
+    <div class="road-row">
+      <div class="when">NOW Q2'26</div>
+      <div class="what">
+        <strong>Compliance + аппстор-обёртка</strong>
+        <p>Закрываем оставшиеся требования сторов: email-верификация, password reset, account deletion, data export. Параллельно — Capacitor wrap, App Store + Google Play submission. Real branding (имя/лого). Контент уже добит — 97 тем × 760 архетипов × bilingual.</p>
+      </div>
+    </div>
+    <div class="road-row">
+      <div class="when">Q3'26</div>
+      <div class="what">
+        <strong>Оба сторфронта живые + первая публичная аудитория</strong>
+        <p>iOS и Android live в обоих сторах. Первая волна — друзья, семья, reddit (subreddits about taste, personality, casual quizzes), небольшие twitter-треды. Цель: dogfooding и early feedback от 200-500 юзеров. <strong>Без платной рекламы.</strong></p>
+      </div>
+    </div>
+    <div class="road-row">
+      <div class="when">Q4'26</div>
+      <div class="what">
+        <strong>Закрытые комнаты + dating-layer (closed beta)</strong>
+        <p><strong>Закрытые комнаты:</strong> приватные клубы для семей, друзей, тусовок. Своё пространство, кастомные турниры («наш топ-10 любимых блюд»), сравнение совпадений между всеми участниками. Игра становится поводом тусоваться регулярно, а не одноразовым тестом.</p>
+        <p><strong>Dating-layer:</strong> применение taste-profile к подбору пар — «найди людей, чей профиль вкуса совпадает с твоим на X%». Не tinder-killer — инструмент для тех, кто не хочет свайпать фото. Beta для 100-200 человек.</p>
+      </div>
+    </div>
+    <div class="road-row">
+      <div class="when">Q1'27</div>
+      <div class="what">
+        <strong>Контекстные подсказки на основе профилей близких</strong>
+        <p>Игра выходит из приложения в жизнь. На основе профилей друзей и семьи продукт даёт практические подсказки: «у твоей жены ДР через 9 дней — её топ блюдо тирамису, любит итальянско-японский фьюжн, вот ресторан в её стиле»; «твой друг Вася — типаж "Тихий капитан", громкий сюрприз ему не зайдёт — вот идея потише». LLM-генерация на основе агрегированных топ-3.</p>
+        <p>Это превращает casual taste-app в <strong>инструмент для отношений</strong>. Killer-feature, которой нет ни у одного конкурента.</p>
+      </div>
+    </div>
+    <div class="road-row">
+      <div class="when">2027+</div>
+      <div class="what">
+        <strong>18+ verified product (отдельный контур)</strong>
+        <p>Если основной продукт находит аудиторию — отдельная gated версия для взрослых тем (фантазии, kinks, динамики отношений). Через verification + явный opt-in. Технически отделено от основного приложения, юридически отдельная сущность. <strong>Не строится сейчас, проектируется.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ SLIDE 6: GOALS ════════════ -->
+<section class="slide" id="s6">
+  <div class="kicker">06 · ЦЕЛИ НА 12 МЕСЯЦЕВ</div>
+  <h2>Приземлённо.<br><span class="accent">Без хайпа и единорогов.</span></h2>
+
+  <p class="body-text">Я не строю приложение на миллион пользователей. Я строю продукт, который интересен людям и окупает себя. Ниже — три сценария: что точно случится, что реалистично, и что не обещаем.</p>
+
+  <table class="simple">
+    <thead>
+      <tr>
+        <th>Сценарий</th>
+        <th>Регистрации</th>
+        <th>Weekly active</th>
+        <th>Сторфронты</th>
+        <th>Dating-layer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Минимум</strong> (через друзей и органику, $0 на ads)</td>
+        <td class="num">500</td>
+        <td class="num">50</td>
+        <td>1 живой</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>Реалистично</strong> (немного органики, без paid)</td>
+        <td class="num">2-5K</td>
+        <td class="num">200-500</td>
+        <td>оба живы</td>
+        <td>beta для 100</td>
+      </tr>
+      <tr>
+        <td><strong>Не обещаем</strong></td>
+        <td colspan="4" style="color:var(--muted);font-style:italic;">единорога, миллион юзеров, exit, серия А, viral-loop, growth-hack</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pull">
+    «Цель года — быть продуктом, к которому возвращаются. Не быть продуктом, у которого огромный CAC и пустые DAU. Это разные стратегии, и я выбираю первую.»
+  </div>
+</section>
+
+<!-- ════════════ SLIDE 7: THE ASK ════════════ -->
+<section class="slide" id="s7">
+  <div class="kicker">07 · ЗАПРОС</div>
+  <h2><span class="accent">$500 в месяц.</span><br>Это два максимальных AI-пакета.</h2>
+
+  <p class="body-text">Я строю продукт сам. Вместо команды — <strong>два AI-инструмента на максимальных тарифах</strong>. Это и есть моя «команда». Запрос — $500/месяц на их подписки + резерв на доп. токены когда упираюсь в лимит пакетов.</p>
+
+  <div class="cols">
+    <div>
+      <h3 style="margin-bottom:12px;">Куда идут деньги</h3>
+      <table class="simple">
+        <tbody>
+          <tr>
+            <td><strong>Claude Max</strong> (Anthropic)<br><span style="color:var(--muted);font-size:12px;">основной контур: код, контент, длинный контекст, рефакторинги</span></td>
+            <td class="num">~$200</td>
+          </tr>
+          <tr>
+            <td><strong>ChatGPT / Codex Pro</strong> (OpenAI)<br><span style="color:var(--muted);font-size:12px;">второй контур: автокомплит, быстрые итерации, альтернативный взгляд на сложное</span></td>
+            <td class="num">~$200</td>
+          </tr>
+          <tr>
+            <td>Резерв на доп. API-токены<br><span style="color:var(--muted);font-size:12px;">когда упираюсь в лимиты пакетов: генерация тем, контентные batch'и, image-gen для OG</span></td>
+            <td class="num">~$100</td>
+          </tr>
+          <tr style="border-top:2px solid var(--line);"><td><strong>Итого</strong></td><td class="num"><strong>$500/мес</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="body-text" style="font-size:13px;color:var(--muted);margin-top:12px;font-style:italic;">Сейчас сервер ($30), домен ($5) — тяну сам. Apple Dev ($99/год) и Google Play ($25) — расход когда подойдём к сторам (Q2-Q3'26). Всё это <strong>встанет в плановый бюджет позже</strong>, когда вырастет нагрузка / появится storefront-выручка. В текущем запросе на $500 — только AI-инструменты, которые нужны прямо сейчас, ежедневно.</p>
+    </div>
+    <div>
+      <h3 style="margin-bottom:12px;">Почему именно два AI</h3>
+      <ul class="clean-list">
+        <li><span class="chip">A</span><strong>Разные сильные стороны.</strong> Claude хорош в длинном контексте, ревью больших файлов, написании прозы. Codex быстрее на коротких итерациях, лучше на автокомплите. Используя оба — покрываю спектр задач.</li>
+        <li><span class="chip">B</span><strong>Защита от вендора.</strong> Outage / смена ToS / rate-limit одного вендора не останавливает работу. Второй AI всегда доступен.</li>
+        <li><span class="chip">C</span><strong>Параллельная работа.</strong> Один AI пишет код, второй проверяет; один генерит контент, второй модерирует. Эффективнее чем один и тот же.</li>
+      </ul>
+
+      <h3 style="margin-top:24px;margin-bottom:12px;">На что НЕ идут</h3>
+      <ul class="clean-list">
+        <li><span class="chip warn">×</span><strong>Платная реклама</strong>. Раунд закрыт по органике + друзья.</li>
+        <li><span class="chip warn">×</span><strong>Найм людей</strong>. AI-пакеты и есть моя «команда».</li>
+        <li><span class="chip warn">×</span><strong>«Расти любой ценой»</strong>. Цель — устойчивый продукт, не хайп-история.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="body-text" style="margin-top:24px;"><strong>Длительность запроса:</strong> 12 месяцев ($6,000 итого). К концу года: оба сторфронта живы, dating-layer в beta, окупаемость становится реальной задачей.</p>
+</section>
+
+<!-- ════════════ SLIDE 8: WHAT YOU GET ════════════ -->
+<section class="slide" id="s8">
+  <div class="kicker">08 · ЧТО ТЫ ПОЛУЧАЕШЬ</div>
+  <h2>Три формата.<br><span class="accent">Выбери, что комфортно.</span></h2>
+
+  <p class="body-text">Это не классический инвест-раунд. Это раунд для своих, и я не хочу делать тебе предложение, которое тебе не подходит. Поэтому три варианта, выбери, который ближе.</p>
+
+  <div class="cols" style="margin-top:30px;">
+    <div class="card">
+      <div class="num">A. FRIEND HANDSHAKE EQUITY</div>
+      <h3>Доля без юр. оформления сейчас</h3>
+      <p><strong>1% за каждые $5,000 вложенных</strong>, потолок 10%. Без формальных бумаг сейчас (мы друзья), но я фиксирую устную договорённость письменно. Если продукт превращается в компанию — оформляется через стандартный convertible note или SAFE.</p>
+      <p><strong>Кому подходит:</strong> хочешь долю, но не хочешь усложнять.</p>
+    </div>
+
+    <div class="card">
+      <div class="num">B. REVENUE SHARE</div>
+      <h3>Процент с выручки сторфронтов</h3>
+      <p>После того как продукт начнёт зарабатывать (in-app purchases, premium-features) — <strong>10% от выручки</strong> в течение 24 месяцев, до 2x возврата вложенного. Если выручка не появится за 24 мес — возврат тела вложения тогда, когда будет возможность, без процентов.</p>
+      <p><strong>Кому подходит:</strong> не хочешь долю, хочешь прозрачную возвратность.</p>
+    </div>
+
+    <div class="card">
+      <div class="num">C. GOOD KARMA + EARLY ACCESS</div>
+      <h3>Без обязательств с моей стороны</h3>
+      <p>Просто помощь другу. Возврат — когда выйдем в плюс, без процентов, без сроков. Взамен: ранний доступ ко всем фичам, твой вес в продуктовых решениях, твоё имя в credits если захочешь.</p>
+      <p><strong>Кому подходит:</strong> готов поддержать без расчёта на материальный возврат.</p>
+    </div>
+  </div>
+
+  <div class="pull">
+    «Я предпочитаю отдать долю или revenue-share друзьям, чем брать у фондов. Меньше давления на growth-метрики, больше свободы строить продукт.»
+  </div>
+</section>
+
+<!-- ════════════ SLIDE 9: NEXT STEP ════════════ -->
+<section class="slide" id="s9">
+  <div class="kicker">09 · СЛЕДУЮЩИЙ ШАГ</div>
+  <h2>Если интересно — <span class="accent">давай поговорим.</span></h2>
+
+  <p class="body-text">Никакой презентации в zoom. Кофе или мессенджер — что комфортно. 30 минут разговора + 4 минуты пройти один турнир в живом продукте.</p>
+
+  <div style="margin-top:40px;">
+    <a class="cta" href="https://isverifiedby.me/" target="_blank">→ СНАЧАЛА ПРОЙДИ ОДИН ТУРНИР</a>
+    <a class="cta cta-secondary" href="#s1">↑ В НАЧАЛО</a>
+  </div>
+
+  <div style="margin-top:60px;max-width:700px;">
+    <div class="kicker" style="color:var(--muted);">СРОКИ</div>
+    <p class="body-text" style="margin-top:8px;">Не горит. Я работаю над продуктом независимо. Эта поддержка — ускорение, не выживание.</p>
+  </div>
+
+  <div class="sig" style="margin-top:60px;">
+    Tappetite · ВЫПУСК № 1 · DECK FOR FRIENDS &amp; FAMILY · MAY 2026
+  </div>
+</section>
+
+<!-- ════════════ NAV ════════════ -->
+<div class="progress-dots" id="dots"></div>
+<div class="slide-nav">
+  <button onclick="navSlide(-1)" title="назад (←)">←</button>
+  <button onclick="navSlide(+1)" title="вперёд (→)">→</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('section.slide');
+  const dotsEl = document.getElementById('dots');
+  slides.forEach((s, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    dot.title = 'слайд ' + (i + 1);
+    dot.onclick = () => s.scrollIntoView({ behavior: 'smooth' });
+    dotsEl.appendChild(dot);
+  });
+  function currentSlide() {
+    let best = 0, bestDist = Infinity;
+    slides.forEach((s, i) => {
+      const r = s.getBoundingClientRect();
+      const d = Math.abs(r.top);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  }
+  function navSlide(delta) {
+    const idx = currentSlide();
+    const next = Math.max(0, Math.min(slides.length - 1, idx + delta));
+    slides[next].scrollIntoView({ behavior: 'smooth' });
+  }
+  function updateDots() {
+    const idx = currentSlide();
+    dotsEl.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault(); navSlide(+1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault(); navSlide(-1);
+    } else if (e.key === 'Home') {
+      slides[0].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'End') {
+      slides[slides.length - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+  document.body.addEventListener('scroll', updateDots, { passive: true });
+  window.addEventListener('scroll', updateDots, { passive: true });
+  updateDots();
+</script>
+</body>
+</html>

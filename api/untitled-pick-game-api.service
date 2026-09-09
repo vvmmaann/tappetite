@@ -1,0 +1,39 @@
+[Unit]
+Description=UNTITLED PICK GAME backend API (FastAPI + SQLite)
+Documentation=https://isverifiedby.me/api/docs
+After=network.target
+
+[Service]
+Type=simple
+User=upgapi
+Group=upgapi
+WorkingDirectory=/opt/untitled-pick-game-api
+Environment=PYTHONUNBUFFERED=1
+Environment=UPG_DB_PATH=/opt/untitled-pick-game-api/data/db.sqlite
+EnvironmentFile=-/etc/untitled-pick-game-api.env
+# CRITICAL DEPLOY INVARIANT (audit-6 M4):#   --host 127.0.0.1 MUST stay loopback-only.#   _client_ip() in main.py trusts X-Real-IP / X-Forwarded-For headers#   under the assumption that nginx is the ONLY thing reaching uvicorn.#   If you ever change to --host 0.0.0.0, also close port 8001 in the#   firewall AND validate nginx is set_real_ip_from-trusted, otherwise#   attackers can spoof their IP via direct hits to port 8001 and bypass#   all rate limits.
+# 2026-05-16: added --timeout-graceful-shutdown 5 so deploy-time restarts
+# don't hang up to 90s waiting on long-lived SSE streams (admin panel polls
+# /api/admin/events). Without this flag, uvicorn's default graceful shutdown
+# waits indefinitely until systemd SIGKILLs after the unit's stop timeout —
+# which on 2026-05-16 caused 90s of 502s for testers mid-deploy. With the
+# flag, uvicorn force-closes idle connections after 5s. Active POSTs (e.g.
+# tournament results submission) still finish normally because they take
+# milliseconds; only persistent streams hit the deadline.
+ExecStart=/opt/untitled-pick-game-api/venv/bin/uvicorn main:app --host 127.0.0.1 --port 8001 --workers 1 --no-access-log --timeout-graceful-shutdown 5
+Restart=on-failure
+RestartSec=3
+# Defense in depth: cap systemd's own stop timeout at 10s so even if
+# uvicorn ignores its flag (e.g. on a future version bump), the worst-case
+# downtime stays at ~10s instead of the systemd default 90s. SIGKILL after.
+TimeoutStopSec=10
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/opt/untitled-pick-game-api/data
+
+[Install]
+WantedBy=multi-user.target

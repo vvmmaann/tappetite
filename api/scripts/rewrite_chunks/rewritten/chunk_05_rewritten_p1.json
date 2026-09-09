@@ -1,0 +1,152 @@
+[
+  {
+    "key": "best_dystopia_novel::Постапокалипсис",
+    "new_p1_ru": "Мир уже кончился, а люди всё ещё идут вперёд. Тебя цепляют антиутопии после финала цивилизации, где важнее не победить, а выжить и не исчезнуть внутри.",
+    "new_p1_en": "The world has already ended, and people are still moving. You're drawn to dystopias after civilization, where survival matters more than victory."
+  },
+  {
+    "key": "best_dystopia_novel::Технологическая дистопия",
+    "new_p1_ru": "Экран удобен, система умна, кнопки сами знают что делать. Тебя цепляет момент, где прогресс перестаёт служить человеку и начинает управлять им.",
+    "new_p1_en": "The screen is convenient, the system is smart, the buttons know what to do. You're drawn to the moment progress stops serving people and starts managing them."
+  },
+  {
+    "key": "best_dystopia_novel::Олигархия и сила",
+    "new_p1_ru": "Наверху их мало, внизу слишком много тех, кто платит телом и жизнью. Тебя цепляют антиутопии о классе, силе и власти, которая сама себя воспроизводит.",
+    "new_p1_en": "At the top there are few; below, too many pay with their bodies and lives. You're drawn to dystopias about class, force, and power that reproduces itself."
+  },
+  {
+    "key": "best_dystopia_novel::Климат и катастрофа",
+    "new_p1_ru": "Воздух становится плотным, вода поднимается, земля больше не обещает опоры. Тебе важны антиутопии, где природа и жертва, и ответ на человеческую гордыню.",
+    "new_p1_en": "The air thickens, the water rises, the ground no longer promises support. You need dystopias where nature is both victim and answer to human pride."
+  },
+  {
+    "key": "your_social_network::Геймер-комьюнити",
+    "new_p1_ru": "Окно чата открыто, стрим идёт фоном, мем понятен только своим. Твоя соцсеть – не лента, а параллельная жизнь с кланами, голосом и лором.",
+    "new_p1_en": "The chat window is open, a stream hums in the background, the meme makes sense only to your people. Your network is a parallel life, not a feed."
+  },
+  {
+    "key": "messaging_style::Голос важнее текста",
+    "new_p1_ru": "Печатать долго, интонацию терять жалко. Тебе проще сказать живьём: с паузами, лицом, дыханием и тем тоном, который текст всё равно украдёт.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "messaging_style::Простыня и пунктуация",
+    "new_p1_ru": "Сообщение у тебя редко выходит случайным. Ты собираешь его как маленький документ: с ритмом, знаками, интонацией и правкой перед отправкой.",
+    "new_p1_en": "Your message rarely comes out by accident. You build it like a small document: rhythm, punctuation, tone, and one last edit before sending."
+  },
+  {
+    "key": "messaging_style::Через картинки",
+    "new_p1_ru": "Сначала картинка, потом уже слова. Ты думаешь визуально: иногда один образ передаёт настроение точнее, чем длинное объяснение в чате.",
+    "new_p1_en": "First comes the image, then the words. You think visually: sometimes one picture carries the mood better than a long explanation in chat."
+  },
+  {
+    "key": "messaging_style::Эмоциональная вата",
+    "new_p1_ru": "В твоих сообщениях всегда есть запас мягкости, даже когда внутри спокойно. Ты ставишь интонацию заранее, чтобы фраза не прозвучала холоднее, чем надо.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "messaging_style::Призрак чата",
+    "new_p1_ru": "Ты можешь быть онлайн и всё равно далеко. Сообщение лежит открытым, ответ созревает где-то внутри, а собеседник видит только паузу.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "messaging_style::Постоянно онлайн",
+    "new_p1_ru": "Чат для тебя не приложение, а пульс дня. Диалог идёт быстро, почти на лету, и пауза в несколько минут уже кажется маленькой вечностью.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "ru_classic_memes::Диванный критик",
+    "new_p1_ru": "Ты мгновенно чувствуешь фальшь: дешёвый ход, натянутую позу, слишком старательную шутку. Твоя критика короткая, точная и иногда больно попадает.",
+    "new_p1_en": "You sense fakeness instantly: a cheap move, a forced pose, a joke trying too hard. Your criticism is short, precise, and sometimes painfully accurate."
+  },
+  {
+    "key": "ru_classic_memes::Самоархетипажник",
+    "new_p1_ru": "Ярлык для тебя не клетка, а шапка на вечер. Ты примеряешь типажи с самоиронией и радуешься, когда в чужой шутке вдруг узнаёшь себя.",
+    "new_p1_en": "A label is not a cage for you, but a hat for the evening. You try on archetypes with self-irony and enjoy recognizing yourself in someone else's joke."
+  },
+  {
+    "key": "ru_classic_memes::Поколенческий пограничник",
+    "new_p1_ru": "Поколения для тебя как разные страны: свой язык, свои жесты, свои слепые зоны. Ты стоишь на границе и умеешь иронизировать в обе стороны.",
+    "new_p1_en": "Generations feel like different countries to you: their own language, gestures, blind spots. You stand on the border and know how to joke both ways."
+  },
+  {
+    "key": "ru_classic_memes::Фольклорист",
+    "new_p1_ru": "Интернет для тебя как устный фольклор: фразы рождаются в подвалах сети, мигрируют по чатам и становятся культурой быстрее, чем их успевают объяснить.",
+    "new_p1_en": "The internet feels like oral folklore to you: phrases are born in its basements, migrate through chats, and become culture faster than anyone can explain them."
+  },
+  {
+    "key": "ru_classic_memes::Тёмный эстет",
+    "new_p1_ru": "В обычном ты легко видишь странное, а в странном – что-то родное. Твой юмор живёт на тёмной стороне, где шутка чуть холоднее, чем ожидают.",
+    "new_p1_en": "You easily see the strange in the ordinary, and something familiar in the strange. Your humor lives on the dark side, where the joke lands a little colder."
+  },
+  {
+    "key": "ru_classic_memes::Тонкий язык",
+    "new_p1_ru": "Одной короткой фразой ты умеешь заменить абзац. Внутри такого кода – позиция, ирония и оценка, которые свои считывают без перевода.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "music_vibe_2020s::Уют и спальня",
+    "new_p1_ru": "В наушниках не концерт, а мягкая комната внутри дня. Тебе нужна музыка для дождя, работы и одиночества – не разгонять, а возвращать в себя.",
+    "new_p1_en": "In your headphones, not a concert but a soft room inside the day. You need music for rain, work, and solitude – not to hype you up, but bring you back."
+  },
+  {
+    "key": "ru_music_2020s::Тёмная сцена",
+    "new_p1_ru": "Бит тяжёлый, текст тревожный, воздух будто плотнее. Тебе нужна музыка, которая не сглаживает темноту, а честно даёт ей форму.",
+    "new_p1_en": "The beat is heavy, the lyrics anxious, the air feels thicker. You need music that doesn't smooth over the darkness, but honestly gives it shape."
+  },
+  {
+    "key": "ru_music_2020s::Phonk-волна РФ",
+    "new_p1_ru": "Бас хрипит, голос проваливается в туман, а бит едет как ночная трасса. Ты слышишь не шум, а сцену: молодую, грубую, уже узнаваемую.",
+    "new_p1_en": "The bass growls, the voice falls into fog, and the beat rides like a night road. You don't hear noise, but a scene: young, rough, already recognizable."
+  },
+  {
+    "key": "ru_music_2020s::Поп-короли 2020-х",
+    "new_p1_ru": "Утро в маршрутке, припев сам цепляется за память, и спорить с этим бесполезно. Тебе близок поп-рэп без лишней философии, но с точным хуком.",
+    "new_p1_en": "Morning in a minibus, the chorus sticks by itself, and arguing is pointless. You're close to pop-rap without extra philosophy, but with a perfect hook."
+  },
+  {
+    "key": "ru_music_2020s::Лирический рэп",
+    "new_p1_ru": "За битом тебе нужно слово: образ, строчка, фраза, которая остаётся после трека. Рэп для тебя работает, когда язык не слабее звука.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "ru_music_2020s::Качовый рэп",
+    "new_p1_ru": "Бит бьёт в грудь, куплет несёт вперёд, тело отвечает раньше головы. Тебе нужен рэп не для разбора, а для движения и внутреннего разгона.",
+    "new_p1_en": "The beat hits the chest, the verse pushes forward, the body answers before the head. You need rap not for analysis, but for motion and inner acceleration."
+  },
+  {
+    "key": "mood_artist::Поп-универсалы",
+    "new_p1_ru": "",
+    "new_p1_en": "A chorus starts, and the room already knows what to do. You like artists who work everywhere: gym, wedding, headphones, supermarket, bad day."
+  },
+  {
+    "key": "mood_artist::Драма поколения Z",
+    "new_p1_ru": "В наушниках – голос, который произносит за тебя то, что ты стесняешься назвать. Любовные катастрофы, тревога и разочарование становятся языком.",
+    "new_p1_en": "In your headphones – a voice saying what you're embarrassed to name. Love disasters, anxiety, and disappointment turn into a language you understand."
+  },
+  {
+    "key": "mood_artist::Хип-хоп интеллектуалы",
+    "new_p1_ru": "Куплет здесь не фон, а текст для повторного чтения. Тебе нужен рэп, где за голосом стоят сюжет, образ, мысль и пауза между строк.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "mood_artist::Трэп-стадион",
+    "new_p1_ru": "Трек гремит из машины, из окна, из чужого телефона – и ты не сопротивляешься. Тебе близка музыка большого уличного вайба, когда звук сам ведёт.",
+    "new_p1_en": "The track booms from a car, a window, someone else's phone – and you don't resist. You're into music with a big street vibe, where the sound leads."
+  },
+  {
+    "key": "mood_artist::Альт и инди",
+    "new_p1_ru": "Гитара звучит чуть устало, барабаны держат землю, а альбом хочется слушать целиком. Тебя всё ещё кормит альтернативная сцена, не поток хитов.",
+    "new_p1_en": "The guitar sounds a little tired, the drums hold the ground, and the album asks to be heard whole. Alternative scenes still feed you, not a stream of hits."
+  },
+  {
+    "key": "mood_artist::Латино-карнавал",
+    "new_p1_ru": "В ритме сразу становится жарче, будто улица превращается в праздник. Тебе нужна музыка с телом, солнцем и движением, а не спокойный фон.",
+    "new_p1_en": "The rhythm makes everything hotter, as if the street turns into a party. You need music with body, sun, and movement, not a calm background."
+  },
+  {
+    "key": "mood_artist::Русские иконы",
+    "new_p1_ru": "Родной язык в песне попадает иначе: ближе к памяти, к дворам, к словам из обычной жизни. Для тебя местная сцена не запасной вариант, а равная территория.",
+    "new_p1_en": "A familiar language in a song hits differently: closer to memory, to courtyards, to ordinary words. For you, the local scene isn't a backup, but equal ground."
+  }
+]

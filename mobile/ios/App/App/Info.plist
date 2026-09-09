@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CAPACITOR_DEBUG</key>
+	<string>$(CAPACITOR_DEBUG)</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+        <string>Tappetite</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<!-- Tappetite is portrait-only on iPhone — the magazine layout assumes
+	     vertical reading and landscape adds no value. iPad supports all
+	     orientations as the App Store reviewer expects. -->
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<!-- Localizations available in the app. Apple uses this when picking
+	     the App Store listing language and for the iOS system language
+	     fallback chain. -->
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>ru</string>
+		<string>en</string>
+	</array>
+	<!-- Export compliance: Tappetite uses only HTTPS to its own domain
+	     (system-provided crypto), which qualifies as exempt under US Export
+	     Administration Regulations. Setting this skips the manual export
+	     compliance question on every TestFlight build upload. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<!-- App Store category. "Lifestyle" matches the personal-taste +
+	     social-comparison framing better than "Games" (which Apple reserves
+	     for traditional game mechanics). Re-evaluate if we ever add real
+	     gameplay loops. -->
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.lifestyle</string>
+	<!-- OAuth callback URL types. The Capgo SocialLogin plugin invokes Sign
+	     in with Apple natively (no URL type needed for that), but Google
+	     Sign-In on iOS uses a reversed-client-ID URL scheme to receive the
+	     callback. The string below is a PLACEHOLDER until we create an iOS
+	     OAuth client in Google Cloud Console (which requires the Apple Dev
+	     account to know the Team ID + Bundle ID combination). To replace:
+	     take the iOS OAuth client ID (looks like
+	     980583459741-XXXXXXX.apps.googleusercontent.com), reverse the
+	     dot-segments (com.googleusercontent.apps.980583459741-XXXXXXX),
+	     and put that as the URL scheme. -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>me.isverifiedby.pickgame.google-oauth</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.PLACEHOLDER-IOS-CLIENT-ID</string>
+			</array>
+		</dict>
+	</array>
+	<!-- Audit-4 follow-up: WKAppBoundDomains restricts the WKWebView to a
+	     fixed allowlist of origins, which is what unlocks the
+	     limitsNavigationsToAppBoundDomains: true Capacitor flag. Without
+	     this list the flag is silently a no-op. Maximum 10 domains allowed
+	     per Apple. Add more here if/when we ever serve from another host. -->
+	<key>WKAppBoundDomains</key>
+	<array>
+		<string>isverifiedby.me</string>
+		<string>www.isverifiedby.me</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Font preview — UNTITLED PICK GAME</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Load Onest, Inter (current UI), Playfair Display (current display), JetBrains Mono -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;600&display=swap">
+
+<style>
+:root {
+  --bg-page: #DDD5C7;
+  --bg-app-from: #FAF6F0;
+  --bg-app-to: #F5F0E8;
+  --bg-card: #FFFCF7;
+  --bg-elevated: #F8F2E8;
+  --text-primary: #1A1F36;
+  --text-secondary: #4A4035;
+  --text-tertiary: #6B5C4A;
+  --text-muted: #8A7A6A;
+  --rule: #C9BBA8;
+  --rule-soft: #D4C9B8;
+  --accent: #B5532E;
+  --accent-soft: rgba(181, 83, 46, 0.10);
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* Three variants we toggle */
+  --font-display-A: 'Playfair Display', Georgia, serif;
+  --font-ui-A: 'Inter', -apple-system, sans-serif;
+
+  --font-display-B: 'Onest', -apple-system, sans-serif;
+  --font-ui-B: 'Inter', -apple-system, sans-serif;
+
+  --font-display-C: 'Onest', -apple-system, sans-serif;
+  --font-ui-C: 'Onest', -apple-system, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --bg-page: #1F1B16;
+  --bg-app-from: #2A2520;
+  --bg-app-to: #221E1A;
+  --bg-card: #2F2A24;
+  --bg-elevated: #322C26;
+  --text-primary: #F0E8DA;
+  --text-secondary: #C7BCAA;
+  --text-tertiary: #9A8E7C;
+  --text-muted: #7A6E5C;
+  --rule: #4A4035;
+  --rule-soft: #3A3128;
+  --accent: #E07849;
+  --accent-soft: rgba(224, 120, 73, 0.14);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg-page); color: var(--text-primary); }
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  padding: 32px 16px 80px;
+  min-height: 100vh;
+}
+
+.page { max-width: 1280px; margin: 0 auto; }
+
+/* Top bar */
+.controls {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg-page); padding: 12px 0 16px;
+  margin-bottom: 24px; border-bottom: 1px solid var(--rule-soft);
+  display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
+}
+.controls h1 {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  margin: 0; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-tertiary);
+}
+.controls .seg { display: inline-flex; gap: 0; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; background: var(--bg-card); }
+.controls .seg button {
+  border: none; background: transparent; color: var(--text-secondary);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 999px; cursor: pointer;
+}
+.controls .seg button.active { background: var(--text-primary); color: var(--bg-card); }
+.controls label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-tertiary); }
+
+/* Three columns side-by-side */
+.three { display: grid; grid-template-columns: 1fr; gap: 28px; }
+@media (min-width: 1100px) { .three { grid-template-columns: repeat(3, 1fr); } }
+
+.col {
+  background: linear-gradient(170deg, var(--bg-app-from), var(--bg-app-to));
+  border: 1px solid var(--rule-soft);
+  border-radius: 22px;
+  padding: 22px;
+}
+.col-head {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-tertiary);
+  padding-bottom: 10px; margin-bottom: 18px; border-bottom: 1px solid var(--rule-soft);
+}
+.col-A { --font-display: var(--font-display-A); --font-ui: var(--font-ui-A); }
+.col-B { --font-display: var(--font-display-B); --font-ui: var(--font-ui-B); }
+.col-C { --font-display: var(--font-display-C); --font-ui: var(--font-ui-C); }
+
+/* Sample blocks (mimic real game.html elements) */
+.block { padding: 14px 0 18px; border-bottom: 1px dashed var(--rule-soft); }
+.block:last-child { border-bottom: 0; }
+.block-label { font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+
+/* APP-LIKE typography (mirrors --font-display / --font-ui inside col) */
+.app-eyebrow { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
+.app-h1 { font-family: var(--font-display); font-size: 30px; font-weight: 700; line-height: 1.15; color: var(--text-primary); margin: 0 0 6px; letter-spacing: -0.005em; }
+.app-h1-italic { font-style: italic; }
+.app-h2 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--text-primary); margin: 0 0 4px; line-height: 1.2; }
+.app-h3 { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--text-primary); margin: 0 0 6px; line-height: 1.25; }
+.app-body { font-family: var(--font-ui); font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.app-body p { margin: 0 0 10px; }
+.app-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--text-muted); }
+
+.app-cluster-card {
+  background: var(--bg-card); border: 1px solid var(--rule-soft); border-radius: 14px; padding: 16px;
+  margin-top: 8px;
+}
+.app-cluster-card .cc-name { font-family: var(--font-display); font-size: 18px; font-weight: 600; }
+.app-cluster-card .cc-count { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: var(--text-muted); margin-top: 4px; }
+
+.app-vs {
+  display: flex; align-items: center; justify-content: center; gap: 22px;
+  padding: 14px 0;
+}
+.app-vs .pick {
+  flex: 1; background: var(--bg-card); border: 1px solid var(--rule-soft); border-radius: 16px;
+  padding: 18px; text-align: center;
+}
+.app-vs .pick-name { font-family: var(--font-display); font-size: 19px; font-weight: 600; line-height: 1.2; }
+.app-vs .pick-ctx { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-top: 6px; letter-spacing: 0.05em; }
+.app-vs .or { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--text-tertiary); }
+
+.app-btn {
+  display: inline-block; background: var(--accent); color: #FFFCF7;
+  font-family: var(--font-ui); font-weight: 600; font-size: 13px;
+  border: 0; border-radius: 999px; padding: 10px 22px; cursor: pointer; margin-top: 8px;
+}
+.app-btn-ghost {
+  background: transparent; color: var(--accent); border: 1px solid var(--accent);
+}
+
+/* Stats card */
+.po-card {
+  background: var(--bg-card); border: 1px solid var(--rule-soft); border-radius: 16px;
+  padding: 18px; margin-top: 8px; text-align: center;
+}
+.po-percent { font-family: var(--font-display); font-size: 56px; font-weight: 700; line-height: 1; color: var(--text-primary); }
+.po-percent .pct { font-size: 24px; color: var(--accent); margin-left: 4px; }
+.po-label { font-family: var(--font-display); font-style: italic; font-size: 18px; color: var(--text-secondary); margin-top: 4px; }
+.po-meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-tertiary); margin-top: 8px; }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<div class="controls">
+  <h1>FONT PREVIEW</h1>
+  <div class="seg" id="langSeg">
+    <button data-lang="ru" class="active">RU</button>
+    <button data-lang="en">EN</button>
+  </div>
+  <div class="seg" id="themeSeg">
+    <button data-theme="light" class="active">LIGHT</button>
+    <button data-theme="dark">DARK</button>
+  </div>
+  <label style="margin-left:auto;">A = current · B = display only · C = full Onest</label>
+</div>
+
+<div class="three">
+
+<!-- ─── COLUMN A: current (Playfair + Inter) ─── -->
+<div class="col col-A">
+  <div class="col-head">A · current  ·  Playfair Display + Inter</div>
+
+  <div class="block">
+    <div class="block-label">Hero / app title</div>
+    <div class="app-eyebrow" data-i18n="eyebrow.start">главное</div>
+    <h1 class="app-h1" data-i18n="hero.title">Что тебе ближе?</h1>
+    <div class="app-body" data-i18n="hero.body">Тапай то, что ближе. Проигравший вылетает. В финале остаётся один — твой №1.</div>
+    <button class="app-btn" data-i18n="hero.btn">Случайная тема</button>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Cluster card</div>
+    <div class="app-cluster-card">
+      <div class="cc-name" data-i18n="cluster.name">Кино</div>
+      <div class="cc-count" data-i18n="cluster.count">12 категорий · 158 имён</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Battle screen</div>
+    <div class="app-vs">
+      <div class="pick">
+        <div class="pick-name" data-i18n="pick1.name">Хичкок</div>
+        <div class="pick-ctx" data-i18n="pick1.ctx">саспенс · «Психо»</div>
+      </div>
+      <div class="or" data-i18n="vs">или</div>
+      <div class="pick">
+        <div class="pick-name" data-i18n="pick2.name">Скорсезе</div>
+        <div class="pick-ctx" data-i18n="pick2.ctx">мафия · «Славные парни»</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Result archetype</div>
+    <div class="app-eyebrow" data-i18n="arch.eyebrow">твой типаж</div>
+    <h2 class="app-h2" data-i18n="arch.title">Тёмный романтик</h2>
+    <div class="app-body" data-i18n-html="arch.body">
+      <p>Ты жил на стыке боли и красоты. Чёрный лайнер, дневник стихов и музыка, которая понимала тебя лучше людей.</p>
+      <p>Окружающие иногда не различают между бунтом и просто хайпом. Ты различаешь. И в этом — большая часть искусства, которое выживает веками.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Taste overview</div>
+    <div class="po-card">
+      <div class="app-eyebrow" data-i18n="po.eyebrow">обзор вкуса</div>
+      <div class="po-percent">90<span class="pct">%</span></div>
+      <div class="po-label" data-i18n="po.label">редчайший вкус</div>
+      <div class="po-meta" data-i18n="po.meta">сравнение по 13 темам</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COLUMN B: Onest display + Inter UI ─── -->
+<div class="col col-B">
+  <div class="col-head">B · soft swap  ·  Onest display + Inter UI</div>
+
+  <div class="block">
+    <div class="block-label">Hero / app title</div>
+    <div class="app-eyebrow" data-i18n="eyebrow.start">главное</div>
+    <h1 class="app-h1" data-i18n="hero.title">Что тебе ближе?</h1>
+    <div class="app-body" data-i18n="hero.body">Тапай то, что ближе. Проигравший вылетает. В финале остаётся один — твой №1.</div>
+    <button class="app-btn" data-i18n="hero.btn">Случайная тема</button>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Cluster card</div>
+    <div class="app-cluster-card">
+      <div class="cc-name" data-i18n="cluster.name">Кино</div>
+      <div class="cc-count" data-i18n="cluster.count">12 категорий · 158 имён</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Battle screen</div>
+    <div class="app-vs">
+      <div class="pick">
+        <div class="pick-name" data-i18n="pick1.name">Хичкок</div>
+        <div class="pick-ctx" data-i18n="pick1.ctx">саспенс · «Психо»</div>
+      </div>
+      <div class="or" data-i18n="vs">или</div>
+      <div class="pick">
+        <div class="pick-name" data-i18n="pick2.name">Скорсезе</div>
+        <div class="pick-ctx" data-i18n="pick2.ctx">мафия · «Славные парни»</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Result archetype</div>
+    <div class="app-eyebrow" data-i18n="arch.eyebrow">твой типаж</div>
+    <h2 class="app-h2" data-i18n="arch.title">Тёмный романтик</h2>
+    <div class="app-body" data-i18n-html="arch.body">
+      <p>Ты жил на стыке боли и красоты. Чёрный лайнер, дневник стихов и музыка, которая понимала тебя лучше людей.</p>
+      <p>Окружающие иногда не различают между бунтом и просто хайпом. Ты различаешь. И в этом — большая часть искусства, которое выживает веками.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Taste overview</div>
+    <div class="po-card">
+      <div class="app-eyebrow" data-i18n="po.eyebrow">обзор вкуса</div>
+      <div class="po-percent">90<span class="pct">%</span></div>
+      <div class="po-label" data-i18n="po.label">редчайший вкус</div>
+      <div class="po-meta" data-i18n="po.meta">сравнение по 13 темам</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COLUMN C: full Onest ─── -->
+<div class="col col-C">
+  <div class="col-head">C · unified  ·  Onest everywhere</div>
+
+  <div class="block">
+    <div class="block-label">Hero / app title</div>
+    <div class="app-eyebrow" data-i18n="eyebrow.start">главное</div>
+    <h1 class="app-h1" data-i18n="hero.title">Что тебе ближе?</h1>
+    <div class="app-body" data-i18n="hero.body">Тапай то, что ближе. Проигравший вылетает. В финале остаётся один — твой №1.</div>
+    <button class="app-btn" data-i18n="hero.btn">Случайная тема</button>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Cluster card</div>
+    <div class="app-cluster-card">
+      <div class="cc-name" data-i18n="cluster.name">Кино</div>
+      <div class="cc-count" data-i18n="cluster.count">12 категорий · 158 имён</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Battle screen</div>
+    <div class="app-vs">
+      <div class="pick">
+        <div class="pick-name" data-i18n="pick1.name">Хичкок</div>
+        <div class="pick-ctx" data-i18n="pick1.ctx">саспенс · «Психо»</div>
+      </div>
+      <div class="or" data-i18n="vs">или</div>
+      <div class="pick">
+        <div class="pick-name" data-i18n="pick2.name">Скорсезе</div>
+        <div class="pick-ctx" data-i18n="pick2.ctx">мафия · «Славные парни»</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Result archetype</div>
+    <div class="app-eyebrow" data-i18n="arch.eyebrow">твой типаж</div>
+    <h2 class="app-h2" data-i18n="arch.title">Тёмный романтик</h2>
+    <div class="app-body" data-i18n-html="arch.body">
+      <p>Ты жил на стыке боли и красоты. Чёрный лайнер, дневник стихов и музыка, которая понимала тебя лучше людей.</p>
+      <p>Окружающие иногда не различают между бунтом и просто хайпом. Ты различаешь. И в этом — большая часть искусства, которое выживает веками.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-label">Taste overview</div>
+    <div class="po-card">
+      <div class="app-eyebrow" data-i18n="po.eyebrow">обзор вкуса</div>
+      <div class="po-percent">90<span class="pct">%</span></div>
+      <div class="po-label" data-i18n="po.label">редчайший вкус</div>
+      <div class="po-meta" data-i18n="po.meta">сравнение по 13 темам</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /three -->
+
+</div><!-- /page -->
+
+<script>
+const STR = {
+  ru: {
+    'eyebrow.start':  'главное',
+    'hero.title':     'Что тебе ближе?',
+    'hero.body':      'Тапай то, что ближе. Проигравший вылетает. В финале остаётся один — твой №1.',
+    'hero.btn':       'Случайная тема',
+    'cluster.name':   'Кино',
+    'cluster.count':  '12 категорий · 158 имён',
+    'pick1.name':     'Хичкок',
+    'pick1.ctx':      'саспенс · «Психо»',
+    'vs':             'или',
+    'pick2.name':     'Скорсезе',
+    'pick2.ctx':      'мафия · «Славные парни»',
+    'arch.eyebrow':   'твой типаж',
+    'arch.title':     'Тёмный романтик',
+    'arch.body':      '<p>Ты жил на стыке боли и красоты. Чёрный лайнер, дневник стихов и музыка, которая понимала тебя лучше людей.</p><p>Окружающие иногда не различают между бунтом и просто хайпом. Ты различаешь. И в этом — большая часть искусства, которое выживает веками.</p>',
+    'po.eyebrow':     'обзор вкуса',
+    'po.label':       'редчайший вкус',
+    'po.meta':        'сравнение по 13 темам',
+  },
+  en: {
+    'eyebrow.start':  'today',
+    'hero.title':     'What\'s closer to you?',
+    'hero.body':      'Tap whichever sits closer. The loser drops. One remains — your №1.',
+    'hero.btn':       'Random theme',
+    'cluster.name':   'Films',
+    'cluster.count':  '12 categories · 158 names',
+    'pick1.name':     'Hitchcock',
+    'pick1.ctx':      'suspense · «Psycho»',
+    'vs':             'or',
+    'pick2.name':     'Scorsese',
+    'pick2.ctx':      'mafia · «Goodfellas»',
+    'arch.eyebrow':   'your archetype',
+    'arch.title':     'Dark romantic',
+    'arch.body':      '<p>You lived at the seam of pain and beauty. Black eyeliner, a notebook of poems, and music that understood you better than people did.</p><p>People sometimes can\'t tell rebellion from hype. You can. And that is most of the art that survives centuries.</p>',
+    'po.eyebrow':     'taste overview',
+    'po.label':       'rare-bird taste',
+    'po.meta':        'compared on 13 themes',
+  },
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n');
+    if (STR[lang][k]) el.textContent = STR[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.getAttribute('data-i18n-html');
+    if (STR[lang][k]) el.innerHTML = STR[lang][k];
+  });
+  document.querySelectorAll('#langSeg button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+}
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  document.querySelectorAll('#themeSeg button').forEach(b => {
+    b.classList.toggle('active', b.dataset.theme === theme);
+  });
+}
+document.querySelectorAll('#langSeg button').forEach(b => b.onclick = () => setLang(b.dataset.lang));
+document.querySelectorAll('#themeSeg button').forEach(b => b.onclick = () => setTheme(b.dataset.theme));
+</script>
+</body>
+</html>

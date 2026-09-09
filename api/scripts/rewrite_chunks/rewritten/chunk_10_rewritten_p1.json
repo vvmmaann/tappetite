@@ -1,0 +1,152 @@
+[
+  {
+    "key": "female_power_films::Лёгкий феминизм",
+    "new_p1_ru": "Сила не всегда приходит с тяжёлым лицом. Иногда она улыбается, шутит, идёт на каблуках и спокойно делает своё – без просьбы разрешить.",
+    "new_p1_en": "Power doesn’t always arrive with a solemn face. Sometimes it smiles, jokes, walks in heels, and quietly does the work without asking permission."
+  },
+  {
+    "key": "female_power_films::Героиня в одиночку",
+    "new_p1_ru": "Она выходит одна, и вокруг слишком много мира. Тебя цепляют истории, где женская сила проверяется не поддержкой, а одиночным выбором.",
+    "new_p1_en": "She steps out alone, and the world is too large around her. You’re drawn to stories where female strength is tested by choice, not support."
+  },
+  {
+    "key": "female_power_films::Тёмная справедливость",
+    "new_p1_ru": "Здесь сила не светится мягко. Она приходит через злость, риск и цену, которую героиня платит за право не молчать дальше.",
+    "new_p1_en": "Here, strength doesn’t glow softly. It comes through anger, risk, and the price a heroine pays for refusing to stay silent any longer."
+  },
+  {
+    "key": "ideal_date_format::Уютная классика",
+    "new_p1_ru": "Тебе не нужен аттракцион ради впечатления. Лучше простой вечер, где есть разговор, паузы, взгляд напротив и шанс спокойно понять человека.",
+    "new_p1_en": "You don’t need a stunt built to impress. You’d rather have a simple evening with pauses, real talk, a face across from you, and room to understand."
+  },
+  {
+    "key": "ideal_date_format::Активные и спорт",
+    "new_p1_ru": "Тебе проще узнавать человека в движении. Пусть рядом будет задача, маршрут или маленький вызов – так характер проявляется быстрее слов.",
+    "new_p1_en": "It’s easier for you to know someone in motion. Give the evening a small task, route, or challenge, and character appears faster than words."
+  },
+  {
+    "key": "ideal_date_format::Кино и культура",
+    "new_p1_ru": "Сначала общее впечатление, потом разговор о нём. Тебе важно пройти через один образ или звук вместе, чтобы увидеть, как человек чувствует.",
+    "new_p1_en": "First comes a shared impression, then the conversation around it. You want to pass through one image or sound together and see how someone feels."
+  },
+  {
+    "key": "ideal_date_format::Атмосферно и романтично",
+    "new_p1_ru": "Огни, ветер, полутень – и обычный разговор уже звучит иначе. Тебе важно, чтобы встреча имела настроение, а не только адрес.",
+    "new_p1_en": "Lights, wind, half-shadow – and an ordinary conversation already sounds different. You need the meeting to have a mood, not just an address."
+  },
+  {
+    "key": "ideal_date_format::Дома и интимно",
+    "new_p1_ru": "Тебе ближе встреча без витрины: рядом, спокойно, почти без публики. В таком формате связь становится заметнее, чем декорации вокруг.",
+    "new_p1_en": "You prefer a meeting without a display window: close, calm, almost without an audience. In that format, the bond matters more than the setting."
+  },
+  {
+    "key": "ideal_date_format::Спонтанность",
+    "new_p1_ru": "План хорош, пока не мешает чуду. Тебе нравится встреча, где можно свернуть не туда и вдруг получить историю, которую не придумаешь заранее.",
+    "new_p1_en": "A plan is fine until it blocks the magic. You like a date where you can turn the wrong way and suddenly get a story no one could schedule."
+  },
+  {
+    "key": "ideal_date_format::Первое впечатление",
+    "new_p1_ru": "На старте тебе нужен лёгкий формат без ставки ва-банк. Немного времени, немного пространства – и уже понятно, хочется ли продолжать.",
+    "new_p1_en": "At the start, you need something light with no all-in pressure. A little time, a little space – and you can tell whether you want more."
+  },
+  {
+    "key": "my_film_genre::Серьёзная глубина",
+    "new_p1_ru": "Ты включаешь фильм не для шума на фоне. Тебе нужен след после титров: тяжесть, вопрос, новая мысль, которая ещё долго не отпускает.",
+    "new_p1_en": "You don’t put on a film as background noise. You want a trace after the credits: weight, a question, a new thought that won’t let go."
+  },
+  {
+    "key": "my_film_genre::Адреналин",
+    "new_p1_ru": "Тебе нужен экран, от которого тело напрягается раньше головы. Темп растёт, дыхание сбивается, и именно это ощущается как отдых.",
+    "new_p1_en": "You need a screen that makes your body tense before your mind catches up. The pace rises, breath shifts, and somehow that feels like rest."
+  },
+  {
+    "key": "my_film_genre::Ум и логика",
+    "new_p1_ru": "Ты смотришь не пассивно, а с внутренней доской и нитями. Пока другие следят за сценой, ты уже собираешь схему и ищешь ключ.",
+    "new_p1_en": "You don’t watch passively; there’s a board and red strings in your head. While others follow the scene, you’re already looking for the key."
+  },
+  {
+    "key": "my_film_genre::Фантастические миры",
+    "new_p1_ru": "Тебе тесно в одной реальности. Хочется открыть дверь туда, где другие законы, странные существа и мир шире, чем вчерашний день.",
+    "new_p1_en": "One reality feels too tight for you. You want a door into different rules, strange beings, and a world wider than yesterday’s ordinary day."
+  },
+  {
+    "key": "my_film_genre::Лёгкость и улыбка",
+    "new_p1_ru": "Иногда лучший фильм – тот, после которого легче дышать. Тебе не всегда нужна глубина до дна; иногда достаточно радости, тепла и улыбки.",
+    "new_p1_en": "Sometimes the best film is the one that makes breathing easier. You don’t always need depth to the bottom; sometimes joy and warmth are enough."
+  },
+  {
+    "key": "my_film_genre::Тьма",
+    "new_p1_ru": "Ты не отворачиваешься от тревожного. В тёмных историях тебе важен не страх сам по себе, а то, что он вытаскивает наружу.",
+    "new_p1_en": "You don’t look away from the uneasy. In dark stories, fear itself isn’t the point – it’s what fear pulls into the open and makes visible."
+  },
+  {
+    "key": "my_film_genre::Эпос и история",
+    "new_p1_ru": "Тебе нужен экран большого дыхания: судьбы, эпохи, дороги, которые длиннее одной жизни. Маленькая история здесь становится частью полотна.",
+    "new_p1_en": "You need a screen with a larger breath: fates, eras, roads longer than one life. A small story becomes part of a much wider canvas."
+  },
+  {
+    "key": "movie_character_like_you::Доверчивая искренность",
+    "new_p1_ru": "В тебе есть редкая вера, которую цинизм не успел испортить. Ты тянешься к героям, чья мягкость оказывается упрямее чужой жесткости.",
+    "new_p1_en": "There’s a rare faith in you that cynicism hasn’t managed to ruin. You’re drawn to heroes whose softness turns out stronger than others’ hardness."
+  },
+  {
+    "key": "movie_character_like_you::Чувак-философ",
+    "new_p1_ru": "Ты не спешишь туда, куда все бегут. В твоём темпе есть ленивый вид снаружи, но внутри – тихая философия не суетиться зря.",
+    "new_p1_en": "You don’t rush where everyone else is running. From outside, your pace looks lazy; inside it’s a quiet philosophy of not fussing for nothing."
+  },
+  {
+    "key": "movie_character_like_you::Гений-аутсайдер",
+    "new_p1_ru": "Ты часто видишь лишний слой там, где другим достаточно поверхности. Это даёт силу, но и одиночество: не всё, что ясно тебе, ясно миру.",
+    "new_p1_en": "You often see an extra layer where others are fine with the surface. That gives power, and loneliness: not everything clear to you is clear to the world."
+  },
+  {
+    "key": "movie_character_like_you::Авантюрист",
+    "new_p1_ru": "Тебе трудно жить без движения. Внутри будто всегда открыт чемодан: ещё один маршрут, ещё один риск, ещё одна дверь в неизвестное.",
+    "new_p1_en": "It’s hard for you to live without motion. Inside, a suitcase always seems open: one more route, one more risk, one more door into the unknown."
+  },
+  {
+    "key": "movie_character_like_you::Бунтарь",
+    "new_p1_ru": "Ты не принимаешь правила только потому, что они уже стоят. В тебе есть нерв протеста: если система давит, хочется найти трещину.",
+    "new_p1_en": "You don’t accept rules just because they’re already standing. There’s a protest nerve in you: when a system presses, you look for the crack."
+  },
+  {
+    "key": "movie_character_like_you::Стратег",
+    "new_p1_ru": "Пока другие реагируют, ты уже мысленно переставляешь фигуры. Тебе важно видеть не шаг, а цепочку – и заранее понимать цену хода.",
+    "new_p1_en": "While others react, you’re already moving pieces in your head. You need to see not one step, but the chain – and the cost of the move."
+  },
+  {
+    "key": "movie_character_like_you::Сильная женщина",
+    "new_p1_ru": "Тебя цепляют героини, у которых есть собственный вектор. Они не ждут, пока сюжет их спасёт, – сами выбирают, куда идти дальше.",
+    "new_p1_en": "You’re drawn to heroines with their own direction. They don’t wait for the plot to save them – they choose where to go themselves."
+  },
+  {
+    "key": "you_in_comments::Молчун-наблюдатель",
+    "new_p1_ru": "Ты присутствуешь почти невидимо: смотришь, читаешь, иногда оставляешь крошечный след. Тебе важнее понять поток, чем стать его частью.",
+    "new_p1_en": "You’re present almost invisibly: watching, reading, sometimes leaving the smallest trace. You’d rather understand the stream than become part of it."
+  },
+  {
+    "key": "you_in_comments::Боец комментариев",
+    "new_p1_ru": "Ты не умеешь спокойно пройти мимо ошибки. Внутри сразу поднимается редактор, прокурор и стендап-комик – и пальцы уже набирают ответ.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "you_in_comments::Сленг и ирония",
+    "new_p1_ru": "Тебе не нужны длинные формулы, когда один короткий знак уже передаёт позицию. Ты пишешь языком сети – быстро, плотно, с прищуром.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "you_in_comments::Вопрошающий",
+    "new_p1_ru": "Ты заходишь в обсуждение не ради победы, а ради ясности. Один точный вопрос для тебя ценнее десяти громких мнений без смысла.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "you_in_comments::Тегатель",
+    "new_p1_ru": "Ты видишь пост и сразу вспоминаешь, кому он нужен. Для тебя комментарии – не сцена, а мостик между людьми, шутками и общими темами.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "you_in_comments::Минималист реакций",
+    "new_p1_ru": "Твой комментарий может быть почти невидимым, но точным. Один знак, одна реакция, короткий импульс – и всё уже сказано без лишнего шума.",
+    "new_p1_en": "Your comment can be almost invisible, but precise. One sign, one reaction, one short pulse – and everything is already said without extra noise."
+  }
+]

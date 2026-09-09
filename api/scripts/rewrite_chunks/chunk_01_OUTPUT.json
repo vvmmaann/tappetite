@@ -1,0 +1,152 @@
+[
+  {
+    "key": "hollywood_actors_30_50::Чувствительные интеллектуалы",
+    "new_p1_ru": "На экране — мужчина с дрожью в голосе, который не просит сочувствия. Уязвимость без размазни — твой жанр; тебе важно, чтобы герой чувствовал без театра.",
+    "new_p1_en": "On screen, a man with a tremor in his voice isn't asking for pity. Vulnerability without sloppiness is your genre; you need a hero who can feel without performing."
+  },
+  {
+    "key": "hollywood_actors_30_50::Драматическая интенсивность",
+    "new_p1_ru": "В кадре будто выкручивают свет на максимум. Тебе нужны актёры, которые не экономят себя в роли: не ровные, а каждый раз будто на последнем дубле.",
+    "new_p1_en": "The frame feels turned up to full power. You need actors who don't save themselves inside a role: not steady, but playing every scene like the last take."
+  },
+  {
+    "key": "hollywood_actors_30_50::Свежая волна",
+    "new_p1_ru": "Ты замечаешь момент, когда имя ещё не легенда, но уже меняет воздух вокруг. Тебя цепляют актёры, которые прямо сейчас собирают новый язык кино.",
+    "new_p1_en": "You notice the moment before a name becomes a legend, when it already changes the air. What gets you are actors building cinema's new language in real time."
+  },
+  {
+    "key": "hollywood_actors_30_50::Молодой авангард",
+    "new_p1_ru": "Не продолжение старых типажей, а странный новый угол лица и поведения. Тебя цепляют актёры, которые не вписываются в форму — они её сдвигают.",
+    "new_p1_en": "Not a continuation of old types, but a strange new angle of face and behavior. What gets you are actors who don't fit the mold — they shift it."
+  },
+  {
+    "key": "hollywood_actresses_30_50::Эмма-сильные",
+    "new_p1_ru": "Не «милашки», не «инженю» — те, кого узнаёшь со второй секунды. Тебе нужны актрисы с харизмой, своим лицом и присутствием, которое не спутать.",
+    "new_p1_en": "Not cuties, not ingénues — the ones you recognize within two seconds. You need actresses with charisma, a face of their own, and a presence you can't mistake."
+  },
+  {
+    "key": "hollywood_actresses_30_50::Гламурные иконы",
+    "new_p1_ru": "Красота здесь не упаковка, а часть игры. Тебе важно, когда актриса держит кадр эстетически: взглядом, силуэтом, присутствием и талантом.",
+    "new_p1_en": "Beauty here isn't packaging, it's part of the craft. You care when an actress holds the frame aesthetically: with gaze, silhouette, presence, and talent."
+  },
+  {
+    "key": "hollywood_actresses_30_50::Артхаус и интенсив",
+    "new_p1_ru": "Не фон для вечера, а работа, в которую надо войти с вниманием. Тебя цепляют актрисы серьёзной школы: они не развлекают, они втягивают.",
+    "new_p1_en": "Not background for the evening, but work you enter with attention. What grabs you are actresses of the serious school: they don't entertain, they pull you in."
+  },
+  {
+    "key": "hollywood_actresses_30_50::Свежая волна",
+    "new_p1_ru": "На экране появляется новое поколение, и ты слышишь его раньше остальных. Тебя цепляют актрисы, которые говорят с сегодняшним кино на одном языке.",
+    "new_p1_en": "A new generation steps onto the screen, and you hear it before most people do. What grabs you are actresses speaking the same language as today's cinema."
+  },
+  {
+    "key": "hollywood_actresses_30_50::Британская школа",
+    "new_p1_ru": "Тишина, чёткая дикция, жест меньше сантиметра — и всё понятно. Тебе ближе актрисы, у которых эмоция держится на дисциплине, а не на крике.",
+    "new_p1_en": "Silence, crisp diction, a gesture barely an inch wide — and everything lands. You're closer to actresses whose emotion rests on discipline, not shouting."
+  },
+  {
+    "key": "hollywood_actresses_30_50::Драматические артистки",
+    "new_p1_ru": "Сложная роль для них не риск, а причина войти в проект. Тебя цепляют актрисы, которые выбирают работу, где надо расти, а не просто сиять.",
+    "new_p1_en": "For them, a difficult role isn't a risk, it's the reason to join. What grabs you are actresses choosing work where they have to grow, not just shine."
+  },
+  {
+    "key": "hollywood_actresses_30_50::Молодые универсалы",
+    "new_p1_ru": "Сегодня драма, завтра ирония, потом экшен или арт — и всё звучит честно. Тебя цепляют актрисы, которые не дают жанру поставить их в угол.",
+    "new_p1_en": "Today drama, tomorrow irony, then action or art — and it all feels honest. What grabs you are actresses who don't let one genre box them in."
+  },
+  {
+    "key": "anime_essential::Шёнен-эпопея",
+    "new_p1_ru": "Сериал длится дольше школы — и ты не против. Тебе нужны эпические истории дружбы и роста: не десять серий, а сотни, где взрослеешь вместе с героями.",
+    "new_p1_en": "The series lasts longer than school — and you don't mind. You need epic stories of friendship and growth: not ten episodes, but hundreds you grow through with the heroes."
+  },
+  {
+    "key": "anime_essential::Тёмная философия",
+    "new_p1_ru": "Это не вечерний шум на фоне, а спор о морали, власти и цене выбора. Тебе нужно аниме, которое смотрит мрачно и не обещает лёгкий финал.",
+    "new_p1_en": "This isn't evening noise in the background, but an argument about morality, power, and the price of choice. You need anime that looks dark and offers no easy ending."
+  },
+  {
+    "key": "anime_essential::Сёнен с глубиной",
+    "new_p1_ru": "Удар важен только тогда, когда за ним есть вопрос. Ты любишь сёнен, где под экшеном лежат мораль, выбор и цена победы, а не просто прокачка.",
+    "new_p1_en": "A punch matters only when there's a question behind it. You love shonen where action carries morality, choice, and the price of victory, not just power-ups."
+  },
+  {
+    "key": "anime_essential::Kyoto и красота",
+    "new_p1_ru": "Красота кадра для тебя не бонус, а способ ударить точнее. Тебя цепляет аниме, где анимация и эмоция работают на одном уровне.",
+    "new_p1_en": "For you, a beautiful frame isn't a bonus, it's how the story hits harder. What grabs you is anime where animation and emotion work on the same level."
+  },
+  {
+    "key": "anime_essential::Меха и психология",
+    "new_p1_ru": "Внешне — технологии и битвы, внутри — человек, которого несёт кризис. Тебе нравится сай-фай, где железо только усиливает трещину в психике.",
+    "new_p1_en": "Outside, technology and battles; inside, a person carried by crisis. You like sci-fi where the machine only amplifies the crack in the mind."
+  },
+  {
+    "key": "anime_essential::Лёгкое и душевное",
+    "new_p1_ru": "После тяжёлого дня хочется не пустоты, а тепла с нервом. Тебе нужен баланс: немного серьёзности, немного улыбки и чувство, что тебя обняли.",
+    "new_p1_en": "After a heavy day, you don't want emptiness, but warmth with a nerve. You need balance: some seriousness, some smile, and the feeling of being hugged."
+  },
+  {
+    "key": "anime_essential::Магический эксперимент",
+    "new_p1_ru": "Реальность здесь не декорация, а механизм, который щёлкает под пальцами. Тебя цепляет аниме, где мир живёт по странным правилам и проверяет тебя.",
+    "new_p1_en": "Reality here isn't decoration, but a mechanism clicking under your fingers. What grabs you is anime where the world runs on strange rules and tests you back."
+  },
+  {
+    "key": "night_films::Тёмная психология",
+    "new_p1_ru": "Не история, а состояние. Главный герой постепенно теряет или находит себя — и ты вместе с ним. Тебе важно чувствовать, как внутри человека растёт мир.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "night_films::Сюжет-головоломка",
+    "new_p1_ru": "Фильм работает как коробка с двойным дном. Тебе нужно думать прямо во время просмотра: следить за трещинами, слоями и тем, как финал всё меняет.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "night_films::Сюрреализм и сны",
+    "new_p1_ru": "Сцена ведёт себя как сон: не объясняет правила, а просто тянет дальше. Тебя цепляет кино, где логика уступает ощущению, а смысл приходит боком.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "night_films::Холодный сай-фай",
+    "new_p1_ru": "Космос, лаборатория или пустой город — не ради эффектов, а ради вопроса. Тебе нравится фантастика, где идея звучит холодно, точно и тревожно.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "night_films::Глубокая боль",
+    "new_p1_ru": "После титров хочется посидеть в тишине и не сразу включать свет. Ты не боишься тёмного кино: идёшь туда за правдой, которую больно назвать.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "night_films::Артхаус с шоком",
+    "new_p1_ru": "Кино должно не гладить, а выбивать воздух на пару секунд. Тебе нужен артхаус с ударом: не просто «понравилось», а опыт, который оставляет след.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "night_films::Тревога и крах",
+    "new_p1_ru": "Мир рушится не взрывом, а изнутри — через быт, тело, работу, привычку. Тебя цепляет кино, где крах одного человека становится катастрофой.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "memorable_characters::Хаос обаяния",
+    "new_p1_ru": "В комнате становится опасно ещё до первого поступка: кто-то улыбается, и порядок уже трещит. Ты любишь злодеев, чей хаос заразителен.",
+    "new_p1_en": "The room turns dangerous before the first move: someone smiles, and order already cracks. You love villains whose chaos is contagious."
+  },
+  {
+    "key": "memorable_characters::Холодные психопаты",
+    "new_p1_ru": "Самое страшное — когда в лице нет ни злости, ни азарта. Тебя цепляют злодеи, которые действуют спокойно: из расчёта, привычки или пустоты.",
+    "new_p1_en": "The scariest part is a face with no rage and no thrill in it. What gets you are villains who act calmly: from calculation, habit, or emptiness."
+  },
+  {
+    "key": "memorable_characters::Великолепные злодеи",
+    "new_p1_ru": "Плохой поступок забывается, сильный жест — нет. Тебе нужны злодеи со стилем: реплика, пауза, взгляд, и образ остаётся в памяти годами.",
+    "new_p1_en": "A bad deed can fade; a strong gesture doesn't. You need villains with style: a line, a pause, a look, and the image stays for years."
+  },
+  {
+    "key": "memorable_characters::Современная жестокость",
+    "new_p1_ru": "Ужас сильнее, когда он сидит рядом и выглядит нормально. Тебе ближе современные монстры: внешне обычные, внутри выстроенные как ловушка.",
+    "new_p1_en": "Horror hits harder when it sits nearby and looks normal. You're closer to modern monsters: ordinary on the outside, built like a trap within."
+  },
+  {
+    "key": "memorable_characters::Архетипы зла",
+    "new_p1_ru": "Иногда зло нужно не объяснять, а выводить на экран как миф. Тебе нравятся злодеи масштаба легенды: не бытовая жестокость, а чистый символ.",
+    "new_p1_en": "Sometimes evil doesn't need explaining; it needs to enter the screen like myth. You like villains on a legendary scale: not everyday cruelty, but a pure symbol."
+  }
+]

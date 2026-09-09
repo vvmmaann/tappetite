@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FA-010 fix 2026-05-15: was external-path with path="." which let any
+    future share-code accidentally pass an arbitrary external file. Narrowed
+    to app-private cache only — this is sufficient for share-card PNG export
+    via html2canvas (the only current FileProvider use). If you ever need to
+    share a file from external storage, add an explicit narrow path here.
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path name="shared_images" path="shared/" />
+</paths>

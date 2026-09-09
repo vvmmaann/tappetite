@@ -1,0 +1,211 @@
+{
+  "id": "best_series_alltime",
+  "name": "Лучший сериал всех времён",
+  "name_en": "Best TV series of all time",
+  "blurb": "Сериалы, которые стоит пересмотреть",
+  "blurb_en": "Series worth rewatching",
+  "category_type": "general",
+  "category_subtype": "entertainment",
+  "cluster": "Сериалы",
+  "recommended_tournament_size": 16,
+  "is_experimental": false,
+  "items": [
+    {
+      "id": "breaking-bad",
+      "name": "Breaking Bad",
+      "name_en": "Breaking Bad",
+      "ctx": "2008-2013 · учитель химии становится наркобароном",
+      "ctx_en": "2008-2013 · chem teacher turns drug lord"
+    },
+    {
+      "id": "the-wire",
+      "name": "The Wire",
+      "name_en": "The Wire",
+      "ctx": "2002-2008 · Балтимор, наркотики, институты",
+      "ctx_en": "2002-2008 · Baltimore, drugs, institutions"
+    },
+    {
+      "id": "game-of-thrones",
+      "name": "Игра престолов",
+      "name_en": "Game of Thrones",
+      "ctx": "2011-2019 · фэнтези-сага по Джорджу Мартину",
+      "ctx_en": "2011-2019 · fantasy saga by George R.R. Martin"
+    },
+    {
+      "id": "friends",
+      "name": "Friends",
+      "name_en": "Friends",
+      "ctx": "1994-2004 · шесть друзей, кофейня, Нью-Йорк",
+      "ctx_en": "1994-2004 · six friends, coffeehouse, New York"
+    },
+    {
+      "id": "the-office-us",
+      "name": "The Office (US)",
+      "name_en": "The Office (US)",
+      "ctx": "2005-2013 · мокьюментари про офис в Скрэнтоне",
+      "ctx_en": "2005-2013 · mockumentary about a Scranton office"
+    },
+    {
+      "id": "the-sopranos",
+      "name": "The Sopranos",
+      "name_en": "The Sopranos",
+      "ctx": "1999-2007 · мафиози ходит к психотерапевту",
+      "ctx_en": "1999-2007 · mob boss in therapy"
+    },
+    {
+      "id": "mad-men",
+      "name": "Mad Men",
+      "name_en": "Mad Men",
+      "ctx": "2007-2015 · рекламщики Манхэттена 1960-х",
+      "ctx_en": "2007-2015 · 1960s Madison Avenue admen"
+    },
+    {
+      "id": "twin-peaks",
+      "name": "Твин Пикс",
+      "name_en": "Twin Peaks",
+      "ctx": "1990-1991 · Линч, кофе, кто убил Лору Палмер",
+      "ctx_en": "1990-1991 · Lynch, coffee, who killed Laura Palmer"
+    },
+    {
+      "id": "better-call-saul",
+      "name": "Better Call Saul",
+      "name_en": "Better Call Saul",
+      "ctx": "2015-2022 · приквел Breaking Bad про Джимми МакГилла",
+      "ctx_en": "2015-2022 · Breaking Bad prequel about Jimmy McGill"
+    },
+    {
+      "id": "the-crown",
+      "name": "The Crown",
+      "name_en": "The Crown",
+      "ctx": "2016- · правление Елизаветы II, Netflix",
+      "ctx_en": "2016- · reign of Elizabeth II, Netflix"
+    },
+    {
+      "id": "stranger-things",
+      "name": "Очень странные дела",
+      "name_en": "Stranger Things",
+      "ctx": "2016- · 80-е, дети, монстры из Изнанки",
+      "ctx_en": "2016- · the '80s, kids, monsters from the Upside Down"
+    },
+    {
+      "id": "seinfeld",
+      "name": "Seinfeld",
+      "name_en": "Seinfeld",
+      "ctx": "1989-1998 · комедия буквально ни о чём",
+      "ctx_en": "1989-1998 · comedy literally about nothing"
+    },
+    {
+      "id": "true-detective-s1",
+      "name": "Настоящий детектив (S1)",
+      "name_en": "True Detective (S1)",
+      "ctx": "2014 · Луизиана, Макконахи, Жёлтый Король",
+      "ctx_en": "2014 · Louisiana, McConaughey, the Yellow King"
+    },
+    {
+      "id": "chernobyl",
+      "name": "Чернобыль",
+      "name_en": "Chernobyl",
+      "ctx": "2019 · мини-сериал HBO про катастрофу 1986-го",
+      "ctx_en": "2019 · HBO miniseries on the 1986 disaster"
+    },
+    {
+      "id": "bojack-horseman",
+      "name": "BoJack Horseman",
+      "name_en": "BoJack Horseman",
+      "ctx": "2014-2020 · анимация про депрессивную лошадь-актёра",
+      "ctx_en": "2014-2020 · animation about a depressed horse actor"
+    },
+    {
+      "id": "succession",
+      "name": "Наследники",
+      "name_en": "Succession",
+      "ctx": "2018-2023 · медиа-империя и токсичная семья Роев",
+      "ctx_en": "2018-2023 · media empire and the toxic Roy family"
+    }
+  ],
+  "archetypes": [
+    {
+      "name": "Алхимик распада",
+      "name_en": "Decay alchemist",
+      "body": "Кухня в трейлере, резиновые перчатки, голубоватый порошок на весах. Тебя не пугает зрелище, как нормальный человек шаг за шагом превращается в кого-то, кого сам бы испугался год назад. Тебя это притягивает — потому что ты узнаёшь механику.\n\nТебе интересно не зло как театр, а зло как химический процесс. Маленький компромисс, ещё один, ещё один — и спустя пять лет человек уже не помнит, кем был в начале. Тебя цепляет именно эта инженерия падения: где была развилка, где её перестали замечать.\n\nДрузья считают, что у тебя странный вкус — «как ты можешь сочувствовать этим персонажам». А ты не сочувствуешь, ты изучаешь. Ты единственный в комнате, кто после серии задаёт вопрос «а я бы на каком шаге сломался».\n\nЧто стоит знать: долго смотреть, как другие медленно гниют, можно только если ты сам в этот момент стоишь на твёрдом. Если внутри уже расшатано — такие истории не диагноз героя, а зеркало для тебя. Иногда полезно сделать паузу и спросить, ты сейчас наблюдатель или участник того же процесса.",
+      "body_en": "A trailer kitchen, rubber gloves, pale-blue powder on a scale. You aren't unsettled by the spectacle of an ordinary person turning, step by step, into someone he would have feared a year earlier. You're drawn to it, because you recognise the mechanics.\n\nWhat interests you isn't evil as theatre but evil as a chemical process. One small compromise, then another, then another, and five years later the person can't remember who he was at the start. You're hooked on the engineering of the fall itself: where the fork was, where they stopped noticing it.\n\nFriends say you have strange taste — \"how can you sympathise with these characters.\" You don't sympathise, you study. You're the only one in the room who, after the episode, asks \"and at which step would I have broken.\"\n\nWhat's worth knowing: you can watch others slowly rot only if you yourself stand on solid ground. If something inside is already loose, these stories aren't a diagnosis of the hero, they're a mirror. Pause sometimes and ask whether you're the observer or a participant.",
+      "triggers": [
+        "breaking-bad",
+        "the-sopranos",
+        "better-call-saul"
+      ]
+    },
+    {
+      "name": "Картограф системы",
+      "name_en": "System cartographer",
+      "body": "Балтиморский порт, чернобыльский реактор, медиа-империя Логана Роя — для тебя это не три разные истории, а три карты одного и того же феномена: как машина крупнее любого человека внутри неё. Тебе нужны сериалы, которые рисуют систему целиком, со всеми этажами.\n\nТы любишь, когда камера не залипает на одном лице, а двигается между профсоюзом, прокуратурой, школой и редакцией газеты — потому что только так становится видно, что ни один отдельный человек не виноват и одновременно виноваты все. Это не цинизм, это инженерное мышление о власти.\n\nЛюди, с которыми ты обсуждаешь такие сериалы, иногда раздражаются: «ну скажи же, кто плохой». Ты не можешь сказать. Ты видишь схему, в которой плохими становятся почти все, кто остаётся в ней слишком долго.\n\nЧто стоит знать: системное зрение мощное, но у него есть побочка — паралич. Если всё связано и виноваты все, непонятно, что делать тебе лично. Возьми одну маленькую часть схемы, до которой дотягиваешься, и работай там. Иначе системность превращается в хорошо обоснованное бездействие.",
+      "body_en": "Baltimore docks, the Chernobyl reactor, Logan Roy's media empire — to you these aren't three different stories but three maps of the same phenomenon: how a machine grows larger than any human inside it. You need series that draw the whole system, every floor of it.\n\nYou love it when the camera doesn't lock onto one face but moves between the union, the prosecutor's office, the school and the newsroom — because only then can you see that no single person is to blame, and at the same time everyone is. That isn't cynicism, it's engineering thinking about power.\n\nThe people you discuss these shows with sometimes get irritated: \"just tell me who's the bad guy already.\" You can't. You see a whole scheme in which almost everyone who stays inside it long enough eventually turns bad.\n\nWhat's worth knowing: systemic vision is powerful but has a side effect — paralysis. If everything is connected and everyone is to blame, it's unclear what you should do. Pick one small piece of the scheme you can reach, and work there. Otherwise systemic thinking becomes well-argued inaction.",
+      "triggers": [
+        "the-wire",
+        "chernobyl",
+        "succession"
+      ]
+    },
+    {
+      "name": "Уютный ритуал",
+      "name_en": "Cozy ritual",
+      "body": "Ты включаешь сериал, который пересматривал уже четвёртый раз, и это не про лень — это про конкретную форму отдыха, которую больше ничто не заменяет. Тебе не нужны сюжетные повороты, ты идёшь не за «что будет», а за «уже знакомо, и пусть будет».\n\nВ ситкоме, который ты знаешь наизусть, мозг получает то, чего ему обычно не дают: предсказуемость. Никаких ловушек, никакой тревоги, никаких «а вдруг плохо кончится». Ты заранее знаешь, кто шутит, кто обижается и кто помирится через двадцать минут. Это не глупость, это разрешение себе выдохнуть.\n\nЛюди вокруг иногда подкалывают: «ну ты опять Friends в десятый раз смотришь». Они не понимают, что ты не «смотришь», ты находишься внутри. Это как зайти в любимое кафе, где тебя уже знают и не надо объяснять заказ.\n\nЧто стоит знать: уютный ритуал — отличное лекарство, но плохой ежедневный рацион. Если ты включаешь знакомую серию каждый раз, когда становится тревожно, ты не учишься справляться с тревогой, ты её замораживаешь. Оставь ритуал как праздник, а не как обезболивающее на каждый вечер.",
+      "body_en": "You put on a series you've already rewatched four times, and it isn't about laziness — it's about a specific form of rest that nothing else replaces. You aren't there for plot twists, you aren't going for \"what happens next,\" you're going for \"I already know it, and let it be.\"\n\nIn a sitcom you know by heart, your brain gets something it usually doesn't: predictability. No traps, no anxiety, no \"what if it ends badly.\" You know in advance who jokes, who gets offended, and who makes up twenty minutes later. That isn't simplicity, that's giving yourself permission to exhale.\n\nPeople around you sometimes tease: \"oh, Friends again.\" They don't get that you aren't \"watching,\" you're inhabiting. It's like walking into a favourite café where they already know you and you don't need to explain your order.\n\nWhat's worth knowing: a cozy ritual is a great medicine but a bad daily diet. If you put on a familiar episode every time you get anxious, you aren't learning to handle anxiety, you're freezing it. Keep the ritual as a holiday, not a painkiller for every evening.",
+      "triggers": [
+        "friends",
+        "the-office-us",
+        "seinfeld"
+      ]
+    },
+    {
+      "name": "Тяжёлый трон",
+      "name_en": "Heavy throne",
+      "body": "Корона тяжела не от золота, а от того, что тот, кто её носит, перестаёт принадлежать себе. Тебя притягивают сериалы, где власть — не приз, а проклятие, и где главный конфликт всегда внутри одного человека, у которого больше нет права на личную жизнь.\n\nТы любишь сагу: длинную династию, перетекание власти от отца к сыну, измены, союзы, троны, которые жгут тех, кто на них садится. Тебе важно ощутить вес — что у решения есть последствия не на одну серию, а на поколение, что ошибка молодого правителя аукнется его внукам.\n\nДрузьям такие сериалы кажутся «слишком медленными». Тебя их темп не пугает, наоборот: ты получаешь удовольствие от того, что история разворачивается с гравитацией реки, а не с суетой коротких клипов. Ты тот человек, который досматривает 73 серии, чтобы понять одну сцену в финале.\n\nЧто стоит знать: тяга к сагам часто маскирует тоску по большой задаче в твоей жизни — по чему-то, что больше тебя и переживёт тебя. Подумай, чему ты можешь служить так же преданно, как любимый герой служит своему престолу. Иначе ты живёшь чужими судьбами, пока твоя стоит на паузе.",
+      "body_en": "A crown is heavy not from gold but because whoever wears it stops belonging to himself. You're drawn to series where power isn't a prize but a curse, and where the central conflict is always inside one person who no longer has the right to a private life.\n\nYou love the saga: a long dynasty, power flowing father to son, betrayals, alliances, thrones that burn whoever sits on them. You need to feel the weight — that a decision has consequences not for one episode but for a generation, that a young ruler's mistake echoes to his grandchildren.\n\nFriends find these shows \"too slow.\" Their pace doesn't bother you, the opposite: you take pleasure in the way the story unfolds with the gravity of a river, not the fidgeting of short clips. You're the kind of person who finishes 73 episodes to understand one scene in the finale.\n\nWhat's worth knowing: the pull toward sagas often masks a longing for a big task in your own life — something larger than you that will outlive you. Think about what you can serve as devotedly as your hero serves his throne. Otherwise you live through others' destinies while your own sits on pause.",
+      "triggers": [
+        "game-of-thrones",
+        "the-crown",
+        "succession"
+      ]
+    },
+    {
+      "name": "Туман на границе",
+      "name_en": "Fog at the border",
+      "body": "Сцена тёмная, но это не страшно — это пасмурно. Кто-то говорит вполголоса фразу, которую не сразу разбираешь, на заднем плане бубнит телевизор, и ты ловишь себя на том, что досмотрел бы эту серию, даже если бы в ней просто шёл дождь и больше ничего. Атмосфера важнее ответа — это про тебя.\n\nТы выбираешь не загадку, а туман вокруг неё. Тебе важно, чтобы оставалось что-то непоказанное — символ, сон, странный ракурс камеры, который нельзя объяснить через сюжет. Если в финале всё аккуратно собралось в одну схему, ты разочарован: значит, не было настоящей тайны, был просто кроссворд.\n\nЛюди, которые смотрят с тобой, в какой-то момент спрашивают: «погоди, а это вообще что значит?» Ты пожимаешь плечами с лёгким удовольствием. Тебе интереснее жить с вопросом, чем владеть ответом. Ты тот, кто пересматривает финал три раза не ради разгадки, а ради текстуры.\n\nЧто стоит знать: любовь к недосказанности красива в искусстве, но опасна в отношениях. Если ты переносишь приём «пусть остаётся туман» на близких, ты собираешь людей, которые так и не понимают, что с тобой. Не путай художественный приём с привычкой прятаться: людям иногда нужна не загадка, а ответ.",
+      "body_en": "The scene is dark, but it isn't scary — it's overcast. Someone half-mutters a line you don't catch, a television rambles in the background, and you catch yourself willing to watch this episode even if it just rained for an hour and nothing else happened. Atmosphere over answer — that's you.\n\nYou pick not the riddle but the fog around it. It's important to you that something stays unshown — a symbol, a dream, a strange camera angle that can't be justified by plot. If the finale tidily folds everything into one scheme, you feel let down: there was no real mystery, just a crossword puzzle.\n\nThe people watching with you at some point ask: \"wait, what does this even mean?\" You shrug with a small pleasure. You'd rather live with the question than own the answer. You're the one who rewatches the finale three times not to crack it but for the texture.\n\nWhat's worth knowing: love of the unsaid is beautiful in art but dangerous in relationships. If you carry the trick — \"let the fog stay\" — into the people close to you, you end up surrounded by people who never quite understand what's happening with you. Sometimes people need an answer.",
+      "triggers": [
+        "twin-peaks",
+        "stranger-things",
+        "true-detective-s1"
+      ]
+    },
+    {
+      "name": "Зеркало эпохи",
+      "name_en": "Mirror of an era",
+      "body": "Не люди делают эпоху, а эпоха проступает через людей — это твой негласный принцип выбора. Тебе нужно, чтобы сериал был не просто историей героя, а срезом времени: чтобы по обоям, по сигаретам, по форме шляпы можно было читать целое десятилетие.\n\nТебя цепляет не ностальгия, а оптика. Сериал хорош, когда он показывает, как невидимая ткань эпохи — её страхи, её приличия, её цена компромисса — проходит сквозь конкретного человека и формирует его мелкие жесты. Ты любишь видеть в герое систему координат, в которой он не может думать иначе.\n\nЛюди вокруг говорят: «ну костюмы красивые, и что». Тебе хочется ответить, что костюмы тут — не декор, а аргумент. Ты тот, кто после серии лезет читать, как реально была устроена партийная иерархия или кто реально командовал на кухне в 60-х. Тебе вкусно сверять.\n\nЧто стоит знать: умение видеть эпоху сквозь человека — мощный инструмент, но он притупляет чувство своего времени. Иногда полезно спросить: через какие невидимые рамки сейчас формируюсь я сам? Какие мои «очевидности» через сорок лет покажут как примету эпохи? Это страшный, но честный вопрос.",
+      "body_en": "It isn't people who make an era — it's the era that shows through people. That's your unspoken principle of choice. You need a series to be not just a hero's story but a cross-section of time: the wallpaper, the cigarettes, the shape of a hat should let you read an entire decade.\n\nWhat hooks you isn't nostalgia but optics. A show is good when it shows how the invisible fabric of an era — its fears, its proprieties, its price of compromise — passes through a person and shapes his small gestures. You love seeing in a character the system that lets him think no other way.\n\nPeople around you say: \"well, the costumes are pretty, so what.\" You want to answer that here costumes aren't decor but argument. You're the one who, after an episode, goes to read how the party hierarchy was actually structured or who really ran a kitchen in the '60s. It tastes good to cross-check.\n\nWhat's worth knowing: seeing an era through a person is a powerful tool, but it dulls your sense of your own time. Sometimes it helps to ask: through which invisible frames am I being shaped now? Which of my \"obvious things\" will look in forty years like a sign of an era? A frightening question.",
+      "triggers": [
+        "mad-men",
+        "the-crown",
+        "chernobyl"
+      ]
+    },
+    {
+      "name": "Тёмный смех",
+      "name_en": "Dark laughter",
+      "body": "Лошадь в розовом халате стоит на дне бассейна в три часа ночи и спокойно говорит про депрессию — а ты смеёшься, и через секунду понимаешь, что смеёшься не от шутки, а от точности. Ты ищешь именно такие сериалы: где боль и юмор не сменяют друг друга, а звучат одной нотой.\n\nТебе не интересна чистая комедия, в которой нечему болеть, и не интересна чистая трагедия, в которой нечему дышать. Тебе нужен жанр, где герой шутит про собственный распад — потому что это единственный способ продолжать жить и не врать. Смех тут не убегание, смех — это форма зрелости.\n\nДрузья после такого сериала иногда выходят из комнаты тихими и говорят «как-то странно мне сейчас». Ты не понимаешь, что странного. Для тебя это и есть нормальный вечер: посмеяться над тем, что в реальности заставило бы плакать, и почувствовать себя меньше одиноко.\n\nЧто стоит знать: тёмный смех — отличный анестетик, но не лечение. Если ты часто отшучиваешься от собственных тяжёлых тем теми же приёмами, что любимые герои, ты рискуешь так и не сказать ни одной важной фразы всерьёз. Дай себе хотя бы один разговор в месяц, где не разрешено шутить.",
+      "body_en": "A horse in a pink robe stands at the bottom of a pool at three in the morning calmly talking about depression — and you laugh, then a second later realise you're laughing not at the joke but at how exact it is. You look for series where pain and humour don't alternate, they sound one note.\n\nPure comedy bores you because nothing aches in it, and pure tragedy suffocates you because nothing breathes. You need the genre where the hero jokes about his own collapse — because that's the only way to keep living without lying. Here laughter isn't escape, laughter is a form of maturity.\n\nFriends sometimes leave the room quiet after a show like that and say \"I feel kind of strange right now.\" You don't see what's strange. For you that's a normal evening: laugh at things that, in reality, would make you cry, and feel a little less alone.\n\nWhat's worth knowing: dark laughter is an excellent anaesthetic but not a treatment. If you keep brushing off your own heavy topics with the tricks your heroes use, you risk never saying one important sentence seriously. Give yourself at least one conversation a month where joking isn't allowed.",
+      "triggers": [
+        "the-office-us",
+        "the-sopranos",
+        "bojack-horseman"
+      ]
+    }
+  ],
+  "defaultArchetype": {
+    "name": "Свой канал",
+    "name_en": "Your own channel",
+    "body": "Твой топ не складывается ни в один чистый жанр, и это не разболтанность вкуса, а его объём. Ты выбираешь сериал не по полке, а по конкретному состоянию, которое он даёт — и поэтому в одной тройке у тебя могут оказаться вещи, которые критики никогда не поставят рядом.\n\nТы не покупаешь чужие списки «100 лучших», потому что знаешь: лучший сериал — это тот, который сейчас точно попадает в твою клетку настроения. Сегодня тебе нужна сага, завтра — тихий ситком, послезавтра — тревожная мистика. И ты не считаешь себя за это непоследовательным.\n\nДрузья иногда не знают, что тебе посоветовать: «у тебя слишком разный вкус». Это комплимент, хотя сказан как претензия. Ты тот человек, у которого на полке мирно стоят рядом фэнтези, артхаус и ситком про офис, и никто никого не презирает.\n\nЧто стоит знать: свобода от жанровых рамок — это сила, но она требует от тебя честности с самим собой про настроение. Иначе превращается в хаотичное переключение, при котором ты так и не досматриваешь ничего до конца. Заведи правило: один сериал — до финала, даже если по дороге настроение меняется. Это не про дисциплину, это про уважение к тому, что ты сам когда-то выбрал.",
+    "body_en": "Your top three doesn't add up to any clean genre, and that isn't a taste in disarray — it's a taste with volume. You pick a series not by its shelf but by the specific state it gives you, which is why your top three can hold things critics would never place side by side.\n\nYou don't buy other people's \"100 best\" lists, because you know: the best series is the one that fits exactly into your current mood-cell. Today you need a saga, tomorrow a quiet sitcom, the day after an anxious mystery. And you don't consider yourself inconsistent for that.\n\nFriends sometimes don't know what to recommend to you: \"your taste is too varied.\" It's a compliment, even though it's said as a complaint. You're the person whose shelf peacefully holds fantasy, arthouse and an office sitcom side by side, and none of them looks down on the others.\n\nWhat's worth knowing: freedom from genre frames is a strength, but it demands honesty with yourself about your mood. Otherwise it turns into chaotic switching, where you never finish anything to the end. Make a rule: one series, all the way to the finale, even if your mood shifts along the way. It isn't about discipline, it's about respecting what you yourself once chose."
+  }
+}

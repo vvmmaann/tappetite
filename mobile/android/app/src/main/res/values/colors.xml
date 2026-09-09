@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Color resources for the Tappetite app. 2026-05-28 (v0.1.3): added
+    notification_color so FCM-delivered pushes pick up the brand orange
+    when Android tints the white silhouette in @drawable/ic_stat_tappetite.
+    Without this entry the system tints with grey (visually generic).
+-->
+<resources>
+    <color name="notification_color">#B5532E</color>
+</resources>

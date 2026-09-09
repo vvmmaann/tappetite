@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Tappetite loading animations - demo</title>
+<style>
+  :root {
+    --bg:      #FAF6F0;
+    --bg-2:    #F0E9DD;
+    --text:    #1A1F36;
+    --text-2:  #4A4035;
+    --muted:   #8A7A6A;
+    --accent:  #B5532E;
+    --border:  #C9BBA8;
+    --card-bg: #FFFFFF;
+  }
+  [data-theme="dark"] {
+    --bg:      #1F1B16;
+    --bg-2:    #2A241E;
+    --text:    #F5F0E8;
+    --text-2:  #C9B9A8;
+    --muted:   #8A7A6A;
+    --accent:  #D4885C;
+    --border:  #3A3128;
+    --card-bg: #2A241E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    transition: background 0.25s, color 0.25s;
+  }
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  h1 {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+  .controls {
+    font-family: 'JetBrains Mono', Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .controls button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 14px;
+    margin-left: 8px;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.15s;
+  }
+  .controls button:hover { background: var(--bg-2); }
+  .controls button.active {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+  }
+  .intro {
+    color: var(--text-2);
+    font-size: 14px;
+    margin: 16px 0 32px;
+    max-width: 720px;
+    line-height: 1.55;
+  }
+
+  .variant {
+    margin: 32px 0 48px;
+    padding-top: 24px;
+    border-top: 1px dotted var(--border);
+  }
+  .variant:first-of-type { border-top: 0; padding-top: 0; }
+  .variant h2 {
+    font-family: 'JetBrains Mono', Menlo, monospace;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+    font-weight: 500;
+  }
+  .variant .label {
+    font-style: italic;
+    font-size: 22px;
+    margin: 0 0 8px;
+  }
+  .variant .desc {
+    color: var(--text-2);
+    font-size: 13px;
+    max-width: 560px;
+    line-height: 1.5;
+    margin: 0 0 22px;
+  }
+
+  .scenes {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  /* Splash mock - phone screen feel */
+  .scene-splash {
+    width: 260px;
+    height: 420px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: 0 8px 24px rgba(26, 31, 54, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .scene-splash::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .scene-splash .scene-label {
+    position: absolute;
+    top: 14px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .scene-splash .splash-canvas-wrap {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .scene-splash .splash-caption {
+    z-index: 2;
+    font-family: 'JetBrains Mono', Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: lowercase;
+  }
+
+  /* Portrait loading mock */
+  .scene-portrait {
+    width: 340px;
+    min-height: 420px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(26, 31, 54, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .scene-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .scene-portrait .scene-label {
+    position: absolute;
+    top: 14px;
+    left: 0; right: 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', Menlo, monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    z-index: 2;
+  }
+  .scene-portrait .portrait-canvas-wrap {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .scene-portrait .portrait-caption {
+    z-index: 2;
+    text-align: center;
+    font-family: 'JetBrains Mono', Menlo, monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--text-2);
+    text-transform: lowercase;
+    max-width: 240px;
+    line-height: 1.5;
+  }
+
+  canvas {
+    display: block;
+    background: transparent;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>tappetite loading animations</h1>
+    <div class="controls">
+      theme:
+      <button id="themeLight" class="active">light</button>
+      <button id="themeDark">dark</button>
+    </div>
+  </header>
+  <p class="intro">
+    Три варианта анимации для двух контекстов: маленькая на splash при загрузке приложения (~80px) и большая на экране генерации портрета (~240px). Цвет берётся из CSS-переменной <code>--accent</code>, поэтому автоматически работает в обеих темах. Никаких зависимостей, чистый canvas + requestAnimationFrame.
+  </p>
+
+  <!-- VARIANT 1: INK BREATH -->
+  <section class="variant">
+    <h2>вариант 1</h2>
+    <div class="label">Чернильное дыхание</div>
+    <div class="desc">
+      Одна терракотовая точка медленно распускается и собирается обратно. Радиальный градиент с лёгким дрейфом центра. Самый спокойный, минимальный, бумажный.
+    </div>
+    <div class="scenes">
+      <div class="scene-splash">
+        <div class="scene-label">splash · загрузка</div>
+        <div class="splash-canvas-wrap"><canvas data-variant="ink" width="160" height="160" style="width:80px;height:80px;"></canvas></div>
+        <div class="splash-caption">загружаю</div>
+      </div>
+      <div class="scene-portrait">
+        <div class="scene-label">portrait · генерация</div>
+        <div class="portrait-canvas-wrap"><canvas data-variant="ink" width="480" height="480" style="width:240px;height:240px;"></canvas></div>
+        <div class="portrait-caption">читаю твою историю турниров</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VARIANT 2: CONSTELLATION -->
+  <section class="variant">
+    <h2>вариант 2</h2>
+    <div class="label">Созвездие</div>
+    <div class="desc">
+      ~40 терракотовых точек медленно дрейфуют. Между ближайшими прорисовываются тонкие линии. Связи постоянно перестраиваются. Magazine-editorial вайб с лёгкой математической эстетикой.
+    </div>
+    <div class="scenes">
+      <div class="scene-splash">
+        <div class="scene-label">splash · загрузка</div>
+        <div class="splash-canvas-wrap"><canvas data-variant="constellation" width="160" height="160" style="width:80px;height:80px;"></canvas></div>
+        <div class="splash-caption">загружаю</div>
+      </div>
+      <div class="scene-portrait">
+        <div class="scene-label">portrait · генерация</div>
+        <div class="portrait-canvas-wrap"><canvas data-variant="constellation" width="480" height="480" style="width:240px;height:240px;"></canvas></div>
+        <div class="portrait-caption">читаю твою историю турниров</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VARIANT 3: HALFTONE -->
+  <section class="variant">
+    <h2>вариант 3</h2>
+    <div class="label">Halftone дыхание</div>
+    <div class="desc">
+      Сетка точек 12x12 как в журнальной полиграфической печати. Каждая точка пульсирует со сдвигом фазы от центра - получается мягкая радиальная волна, прокатывающаяся через сетку. Самый прямой кивок к magazine-identity.
+    </div>
+    <div class="scenes">
+      <div class="scene-splash">
+        <div class="scene-label">splash · загрузка</div>
+        <div class="splash-canvas-wrap"><canvas data-variant="halftone" width="160" height="160" style="width:80px;height:80px;"></canvas></div>
+        <div class="splash-caption">загружаю</div>
+      </div>
+      <div class="scene-portrait">
+        <div class="scene-label">portrait · генерация</div>
+        <div class="portrait-canvas-wrap"><canvas data-variant="halftone" width="480" height="480" style="width:240px;height:240px;"></canvas></div>
+        <div class="portrait-caption">читаю твою историю турниров</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VARIANT 4: RADIAL EMISSION -->
+  <section class="variant">
+    <h2>вариант 4</h2>
+    <div class="label">Сборка</div>
+    <div class="desc">
+      Метафора того что Tappetite делает с тобой: собирает портрет из множества пиков. На сжатии ВСЕ точки сходятся в одну точку центра (момент сборки). На расширении дают равномерно-плотное облако по всему диску. Распределение rMax через sqrt(random) - равномерная плотность по площади (а не по радиусу), поэтому bloom выглядит ровным кругом, а не «ядро + редкие выстрелы».
+    </div>
+    <div class="scenes">
+      <div class="scene-splash">
+        <div class="scene-label">splash · загрузка</div>
+        <div class="splash-canvas-wrap"><canvas data-variant="radiate" width="160" height="160" style="width:80px;height:80px;"></canvas></div>
+        <div class="splash-caption">загружаю</div>
+      </div>
+      <div class="scene-portrait">
+        <div class="scene-label">portrait · генерация</div>
+        <div class="portrait-canvas-wrap"><canvas data-variant="radiate" width="480" height="480" style="width:240px;height:240px;"></canvas></div>
+        <div class="portrait-caption">читаю твою историю турниров</div>
+      </div>
+    </div>
+  </section>
+
+<script>
+  // Single rAF loop drives every canvas on the page (one ticker, not N).
+  const canvases = Array.from(document.querySelectorAll('canvas[data-variant]'));
+  const ctx = new Map();
+  const state = new Map();
+
+  function getAccent() {
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue('--accent').trim() || '#B5532E';
+  }
+
+  // Convert hex (#RRGGBB or #RGB) to rgba() string with given alpha (0..1).
+  function withAlpha(hex, a) {
+    let h = hex.replace('#', '');
+    if (h.length === 3) h = h.split('').map(c => c + c).join('');
+    const r = parseInt(h.slice(0, 2), 16);
+    const g = parseInt(h.slice(2, 4), 16);
+    const b = parseInt(h.slice(4, 6), 16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+  }
+
+  // ─── INK BREATH ────────────────────────────────────────────────
+  function initInk(c) {
+    const w = c.width, h = c.height;
+    return { w, h, cx: w / 2, cy: h / 2, baseR: w * 0.08, maxR: w * 0.38 };
+  }
+  function drawInk(c, s, t) {
+    const g = ctx.get(c);
+    const accent = getAccent();
+    g.clearRect(0, 0, s.w, s.h);
+    // Slow breath: ~5s period
+    const phase = (Math.sin(t * 0.0013) + 1) / 2;
+    const r = s.baseR + (s.maxR - s.baseR) * phase;
+    // Slight wobble in center for "ink in water" feel
+    const ox = Math.sin(t * 0.0007) * (s.w * 0.015);
+    const oy = Math.cos(t * 0.0009) * (s.w * 0.015);
+    // Build radial gradient: dense terracotta at center, fades to transparent
+    const grad = g.createRadialGradient(
+      s.cx + ox, s.cy + oy, 0,
+      s.cx + ox, s.cy + oy, r
+    );
+    const innerAlpha = 0.55 - phase * 0.25;
+    grad.addColorStop(0,    withAlpha(accent, innerAlpha));
+    grad.addColorStop(0.45, withAlpha(accent, innerAlpha * 0.5));
+    grad.addColorStop(1,    withAlpha(accent, 0));
+    g.fillStyle = grad;
+    g.fillRect(0, 0, s.w, s.h);
+  }
+
+  // ─── CONSTELLATION ─────────────────────────────────────────────
+  function initConstellation(c) {
+    const w = c.width, h = c.height;
+    // Particle count scales with canvas area, but capped sensibly.
+    const baseCount = Math.min(60, Math.max(18, Math.round(w * h / 4500)));
+    const particles = [];
+    for (let i = 0; i < baseCount; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r: 1 + Math.random() * 1.2,
+      });
+    }
+    return { w, h, particles, linkDist: w * 0.22 };
+  }
+  function drawConstellation(c, s, t) {
+    const g = ctx.get(c);
+    const accent = getAccent();
+    g.clearRect(0, 0, s.w, s.h);
+    // Update positions, bounce off edges
+    for (const p of s.particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > s.w) p.vx *= -1;
+      if (p.y < 0 || p.y > s.h) p.vy *= -1;
+    }
+    // Draw connections (under the dots)
+    g.lineWidth = 1;
+    for (let i = 0; i < s.particles.length; i++) {
+      for (let j = i + 1; j < s.particles.length; j++) {
+        const a = s.particles[i], b = s.particles[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < s.linkDist) {
+          const alpha = (1 - d / s.linkDist) * 0.25;
+          g.strokeStyle = withAlpha(accent, alpha);
+          g.beginPath();
+          g.moveTo(a.x, a.y);
+          g.lineTo(b.x, b.y);
+          g.stroke();
+        }
+      }
+    }
+    // Draw dots
+    g.fillStyle = withAlpha(accent, 0.85);
+    for (const p of s.particles) {
+      g.beginPath();
+      g.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      g.fill();
+    }
+  }
+
+  // ─── ASSEMBLY (collapse-to-center + uniform-disk bloom) ───────
+  // Narrative: animates what Tappetite does to the user. Tournaments are
+  // the many scattered points; the portrait is what they collapse into.
+  // Every dot's rMin = 0 — on exhale ALL converge to a single central
+  // point (the "you got assembled" moment). On inhale they spread to
+  // their personal rMax.
+  //
+  // rMax uses sqrt(u) which produces uniform density per unit area
+  // (not per unit radius). With per-radius distribution, the outer ring
+  // is necessarily sparser than the center because the same N of dots
+  // is spread over a larger circumference — that read as "wonky bloom"
+  // (sparse outliers + dense core). sqrt(u) gives a clean even cloud
+  // over the full disk at peak inhale.
+  function initRadiate(c) {
+    const w = c.width, h = c.height;
+    // Higher density needed since dots now spread to outer zones (with the
+    // old power-bias most stayed near center, so fewer total felt fine).
+    // ~170 for 160x160 splash, ~430 for 480x480 portrait.
+    const N = Math.max(170, Math.min(450, Math.round(w * h / 580)));
+    const particles = [];
+    for (let i = 0; i < N; i++) {
+      // sqrt(u) → uniform area density. Range: ~4% to ~34% of w. Bloom
+      // reads as a smooth circular cloud rather than core+outliers.
+      const u = Math.random();
+      const rMax = w * (0.04 + Math.sqrt(u) * 0.30);
+      particles.push({
+        // Even angular distribution with light jitter (±9°) — enough to
+        // avoid clock-face regularity, not enough to look chaotic at the
+        // edge of the bloom.
+        angle: (i / N) * Math.PI * 2 + (Math.random() - 0.5) * 0.16,
+        rMin: 0,           // EVERY dot collapses fully to center on exhale
+        rMax,
+        // Small phase offset so the convergence isn't a hard snap on the
+        // exact same frame for all dots — slight stagger reads as "being
+        // pulled together" rather than "stamped to center".
+        phase: Math.random() * 0.35,
+        size: 1.0 + Math.random() * 1.4,
+      });
+    }
+    return { w, h, cx: w / 2, cy: h / 2, particles };
+  }
+  function drawRadiate(c, s, t) {
+    const g = ctx.get(c);
+    const accent = getAccent();
+    g.clearRect(0, 0, s.w, s.h);
+    const tt = t * 0.0015;  // ~4.2s full breath cycle
+    for (const p of s.particles) {
+      // 0..1 sinusoid, offset by per-dot phase.
+      const v = (Math.sin(tt - p.phase) + 1) / 2;
+      const dist = p.rMin + (p.rMax - p.rMin) * v;
+      const x = s.cx + Math.cos(p.angle) * dist;
+      const y = s.cy + Math.sin(p.angle) * dist;
+      // Slightly brighter at peak expansion, never invisible.
+      const alpha = 0.5 + v * 0.35;
+      g.fillStyle = withAlpha(accent, alpha);
+      g.beginPath();
+      g.arc(x, y, p.size, 0, Math.PI * 2);
+      g.fill();
+    }
+  }
+
+  // ─── HALFTONE BREATHING ────────────────────────────────────────
+  function initHalftone(c) {
+    const w = c.width, h = c.height;
+    const grid = 12;
+    const step = w / (grid + 1);
+    return { w, h, grid, step, cx: w / 2, cy: h / 2 };
+  }
+  function drawHalftone(c, s, t) {
+    const g = ctx.get(c);
+    const accent = getAccent();
+    g.clearRect(0, 0, s.w, s.h);
+    const tt = t * 0.002;
+    const maxDist = Math.sqrt(2) * s.w / 2;
+    for (let i = 1; i <= s.grid; i++) {
+      for (let j = 1; j <= s.grid; j++) {
+        const x = s.step * i;
+        const y = s.step * j;
+        const dx = x - s.cx, dy = y - s.cy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        // Phase: distance from center drives the propagating wave
+        const phase = dist / maxDist * 4;
+        const v = (Math.sin(tt * 2 - phase) + 1) / 2;
+        const radius = s.step * 0.12 + v * s.step * 0.22;
+        const alpha = 0.25 + v * 0.55;
+        g.fillStyle = withAlpha(accent, alpha);
+        g.beginPath();
+        g.arc(x, y, radius, 0, Math.PI * 2);
+        g.fill();
+      }
+    }
+  }
+
+  // Init all canvases
+  for (const c of canvases) {
+    ctx.set(c, c.getContext('2d'));
+    const v = c.dataset.variant;
+    if (v === 'ink')           state.set(c, initInk(c));
+    if (v === 'constellation') state.set(c, initConstellation(c));
+    if (v === 'halftone')      state.set(c, initHalftone(c));
+    if (v === 'radiate')       state.set(c, initRadiate(c));
+  }
+
+  function tick(t) {
+    for (const c of canvases) {
+      const v = c.dataset.variant;
+      const s = state.get(c);
+      if (v === 'ink')           drawInk(c, s, t);
+      if (v === 'constellation') drawConstellation(c, s, t);
+      if (v === 'halftone')      drawHalftone(c, s, t);
+      if (v === 'radiate')       drawRadiate(c, s, t);
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Theme toggle
+  const btnLight = document.getElementById('themeLight');
+  const btnDark  = document.getElementById('themeDark');
+  function setTheme(name) {
+    if (name === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      btnDark.classList.add('active');
+      btnLight.classList.remove('active');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      btnLight.classList.add('active');
+      btnDark.classList.remove('active');
+    }
+  }
+  btnLight.addEventListener('click', () => setTheme('light'));
+  btnDark.addEventListener('click', () => setTheme('dark'));
+</script>
+</body>
+</html>

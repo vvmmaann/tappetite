@@ -1,0 +1,152 @@
+[
+  {
+    "key": "cult_90s_series::Сатира и ирония",
+    "new_p1_ru": "Ты включаешь смех не ради фона. Тебе нужен такой юмор, который кусает реальность за край рукава и показывает, где в ней фальшь.",
+    "new_p1_en": "You don’t put on laughter as background. You want humor that bites reality at the sleeve and points straight to the fake parts."
+  },
+  {
+    "key": "cult_90s_series::Подростковая эра",
+    "new_p1_ru": "Школьный коридор, первый crush, дружба на грани драмы. Тебя цепляют истории, где взросление выглядит большим событием, а не паузой между уроками.",
+    "new_p1_en": "A school hallway, a first crush, bonds on the edge of drama. You like stories where growing up feels huge, not like a pause between classes."
+  },
+  {
+    "key": "cult_90s_series::Латиноамериканские страсти",
+    "new_p1_ru": "Там всегда слишком много чувств — и именно поэтому тебе хорошо. Ты выбираешь сериалы, где любовь, ревность и тайны не стесняются быть огромными.",
+    "new_p1_en": "Everything is too emotional there — and that is why it works for you. You choose stories where love, jealousy, and secrets are allowed to be enormous."
+  },
+  {
+    "key": "cult_90s_series::Российские бандитские",
+    "new_p1_ru": "Серые подъезды, мигалки, город после перестройки. Ты смотришь эти истории как память о времени, где детство шло рядом с тревожным фоном.",
+    "new_p1_en": "Gray stairwells, sirens, a city after the old order collapsed. You watch these stories as memory of a childhood lived beside an anxious backdrop."
+  },
+  {
+    "key": "cult_90s_series::Драма и медицина",
+    "new_p1_ru": "Тебе нужны сериалы, где ставка чувствуется телом. Не лёгкий вечерний шум, а истории, в которых ошибка, тайна или выбор меняют всё.",
+    "new_p1_en": "You need shows where the stakes hit the body. Not soft evening noise, but stories where one mistake, secret, or choice can change everything."
+  },
+  {
+    "key": "jewelry_houses::Французская сказка",
+    "new_p1_ru": "В бархате витрины ты видишь не блеск, а родословную. Тебя тянет к украшениям, где за линией камня стоят дворцы, архивы и ателье.",
+    "new_p1_en": "In a velvet display, you see not sparkle but lineage. You’re drawn to jewelry where every stone seems backed by palaces, archives, and ateliers."
+  },
+  {
+    "key": "jewelry_houses::Итальянское барокко",
+    "new_p1_ru": "Тонкий шёпот тебе скучен. Ты выбираешь украшения с телом, объёмом и темпераментом — чтобы вещь не дополняла образ, а говорила первой.",
+    "new_p1_en": "A delicate whisper bores you. You choose jewelry with body, volume, and temperament — pieces that speak before the outfit says a word."
+  },
+  {
+    "key": "jewelry_houses::Большие камни",
+    "new_p1_ru": "Сначала свет, потом форма. Тебя интересует не просто украшение, а сам камень — его вес, огранка, история и та странная власть, которую он держит.",
+    "new_p1_en": "First comes the light, then the form. You care not just about the piece, but the stone itself — weight, cut, history, and its quiet power."
+  },
+  {
+    "key": "jewelry_houses::Японская смелость",
+    "new_p1_ru": "Ты любишь точность, в которой есть риск. Украшение должно быть тихим с первого взгляда, но смелым в деталях — как дисциплина, решившая сыграть.",
+    "new_p1_en": "You like precision with a risk inside it. A piece should look quiet at first, then reveal boldness in the details, like discipline deciding to play."
+  },
+  {
+    "key": "jewelry_houses::Голливудский шик",
+    "new_p1_ru": "Красная дорожка начинается ещё до вспышек. Тебя тянет к украшениям, которые умеют быть событием — сиять не только на коже, но и в кадре.",
+    "new_p1_en": "The red carpet begins before the flashbulbs. You’re drawn to jewelry that can become an event — shining on skin and on camera."
+  },
+  {
+    "key": "jewelry_houses::Восток и наследие",
+    "new_p1_ru": "Тебе важно, чтобы вещь несла линию рода. В украшениях ты ищешь не моду сезона, а ремесло, которое помнит руки мастеров до тебя.",
+    "new_p1_en": "You want an object to carry a lineage. In jewelry, you look not for seasonal fashion, but craft that remembers the hands before yours."
+  },
+  {
+    "key": "jewelry_houses::Современный люкс",
+    "new_p1_ru": "Классика не обязана пахнуть музеем. Тебе нужны украшения, где традиция говорит современным голосом — спокойно, дорого и без пыли.",
+    "new_p1_en": "A classic does not have to smell like a museum. You want jewelry where tradition speaks in a modern voice — calm, expensive, and alive."
+  },
+  {
+    "key": "recognizable_brands::Гламур и роскошь",
+    "new_p1_ru": "Ты считываешь вещь как сообщение. Для тебя роскошь — не просто цена, а язык статуса, вкуса и той уверенности, которую нельзя подделать.",
+    "new_p1_en": "You read an object as a message. For you, luxury is not just price, but a language of status, taste, and confidence that cannot be faked."
+  },
+  {
+    "key": "recognizable_brands::Высокая инженерия",
+    "new_p1_ru": "Под красивым корпусом тебе нужен механизм. Ты уважаешь бренды, где за гладкой поверхностью чувствуется инженерная дисциплина и долгий расчёт.",
+    "new_p1_en": "Under the beautiful shell, you need the mechanism. You respect brands where smooth surfaces still carry engineering discipline and long calculation."
+  },
+  {
+    "key": "recognizable_brands::Технологические гиганты",
+    "new_p1_ru": "Ты видишь не сервисы, а инфраструктуру эпохи. Эти компании для тебя — не просто удобные кнопки, а силы, которые меняют привычки мира.",
+    "new_p1_en": "You see not services, but the infrastructure of an era. These companies are not just useful buttons, but forces changing the world's habits."
+  },
+  {
+    "key": "recognizable_brands::Спорт и драйв",
+    "new_p1_ru": "Тебе нужен логотип, который двигается. Бренд должен звучать как стартовый сигнал: быстрее, выше, смелее, будто день уже требует победы.",
+    "new_p1_en": "You need a logo that moves. A brand should sound like a starting signal: faster, higher, bolder, as if the day already demands a win."
+  },
+  {
+    "key": "recognizable_brands::Еда-напитки массмаркет",
+    "new_p1_ru": "В чужом городе ты ищешь знакомый вкус как точку опоры. Эти бренды для тебя — не про качество века, а про предсказуемое маленькое облегчение.",
+    "new_p1_en": "In a strange city, familiar taste becomes a handrail. These brands are not about greatness, but predictable little relief when you need it."
+  },
+  {
+    "key": "recognizable_brands::Радость детства",
+    "new_p1_ru": "Иногда бренд — это не покупка, а воспоминание. Праздничный ролик, детский фильм, первый бургер после школы — и ты снова там.",
+    "new_p1_en": "Sometimes a brand is not a purchase, but a memory. A holiday ad, a childhood film, a first burger after school — and you are back there."
+  },
+  {
+    "key": "recognizable_brands::Культурные легенды",
+    "new_p1_ru": "Логотип может стать мифом. Тебя интересуют бренды, которые давно вышли за пределы товара и превратились в часть поп-культуры.",
+    "new_p1_en": "A logo can become a myth. You are interested in brands that long ago outgrew the product and turned into part of pop culture."
+  },
+  {
+    "key": "beach_countries::Доступная классика",
+    "new_p1_ru": "Тебе не нужен отдых как выставка богатства. Достаточно тёплой воды, песка, нормального отеля и ощущения, что неделя наконец-то принадлежит тебе.",
+    "new_p1_en": "You do not need vacation as a wealth exhibition. Warm water, sand, a decent hotel, and the feeling that the week finally belongs to you."
+  },
+  {
+    "key": "beach_countries::Премиум-острова",
+    "new_p1_ru": "Ты выбираешь не просто море, а тишину, где всё уже продумано за тебя. Отдых должен быть редким, дорогим и почти нереально гладким.",
+    "new_p1_en": "You choose not just the sea, but a quiet world where everything is already handled. Rest should feel rare, costly, and almost unreal smooth."
+  },
+  {
+    "key": "beach_countries::Средиземноморский шик",
+    "new_p1_ru": "Пляж без города тебе быстро наскучит. Тебе нужен юг, где утром море, днём старые улицы, вечером еда и разговоры под тёплым светом.",
+    "new_p1_en": "A beach without a city would bore you fast. You need the south: sea in the morning, old streets by day, dinner under warm light."
+  },
+  {
+    "key": "beach_countries::Тропический рай",
+    "new_p1_ru": "Тебе хочется туда, где воздух липнет к коже, а океан кажется теплее мыслей. Не просто пляж — другой климат, другой ритм, другой ты.",
+    "new_p1_en": "You want air that sticks to the skin and an ocean warmer than thought. Not just a beach — another climate, another rhythm, another you."
+  },
+  {
+    "key": "beach_countries::Океаны и серф",
+    "new_p1_ru": "Закрытое море слишком спокойно для тебя. Нужна большая вода с волной, ветром и характером — чтобы отдых был движением, а не только лежанием.",
+    "new_p1_en": "Enclosed seas feel too calm for you. You need big water with waves, wind, and character — rest as motion, not only lying still."
+  },
+  {
+    "key": "beach_countries::Карибская свобода",
+    "new_p1_ru": "Тебя манит отпуск без жёсткого расписания. Цвет, музыка, жара, немного риска — и ощущение, что день может повернуть куда угодно.",
+    "new_p1_en": "You’re drawn to a vacation without a strict schedule. Color, music, heat, a little risk — and the sense that the day may turn anywhere."
+  },
+  {
+    "key": "beach_countries::Восточная экзотика",
+    "new_p1_ru": "Ты едешь не только к воде. Тебе нужен мир, где еда, запахи, храмы, рынки и океан смешиваются в одно большое непривычное чувство.",
+    "new_p1_en": "You travel not only for the water. You want food, smells, temples, markets, and ocean blending into one large unfamiliar feeling."
+  },
+  {
+    "key": "female_power_films::Карьера без извинений",
+    "new_p1_ru": "Она не просит разрешения войти в комнату. Тебя вдохновляют героини, которые работают, ошибаются, растут и не объясняют, почему имеют право.",
+    "new_p1_en": "She does not ask permission to enter the room. You’re inspired by heroines who work, fail, grow, and never explain why they have the right."
+  },
+  {
+    "key": "female_power_films::Реальные истории силы",
+    "new_p1_ru": "Когда на экране стоит реальная судьба, история бьёт сильнее. Тебя тянет к женщинам, которые боролись не красиво, а по-настоящему.",
+    "new_p1_en": "When a real life stands behind the screen, the story hits harder. You’re drawn to women who fought not beautifully, but for real."
+  },
+  {
+    "key": "female_power_films::Подъём к равенству",
+    "new_p1_ru": "Ты смотришь не только на победу, а на цену дороги к ней. Эти истории важны тебе тем, что показывают: права не падают с неба.",
+    "new_p1_en": "You look not only at the victory, but at the price of the road to it. These stories matter because they show rights do not fall from the sky."
+  },
+  {
+    "key": "female_power_films::Бунт и побег",
+    "new_p1_ru": "Иногда сила начинается с отказа быть удобной. Тебя цепляют героини, которые выбирают бегство, бой или бунт вместо послушной роли.",
+    "new_p1_en": "Sometimes strength begins with refusing to be convenient. You’re drawn to heroines who choose escape, fight, or rebellion over the obedient role."
+  }
+]

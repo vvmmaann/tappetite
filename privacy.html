@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Tappetite</title>
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/icon.svg">
+
+<!-- Pre-apply theme synchronously (matches game.html) -->
+<script>
+  (function() {
+    try {
+      var saved = localStorage.getItem('upg.theme');
+      var theme = (saved === 'light' || saved === 'dark')
+        ? saved
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+      var lang = localStorage.getItem('upg.lang');
+      if (lang === 'ru' || lang === 'en') document.documentElement.lang = lang;
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Self-hosted fonts (audit-6 H1). -->
+<link rel="stylesheet" href="/assets/fonts.css">
+
+<style>
+  :root {
+    --bg-page: #DDD5C7;
+    --bg-app: #FAF6F0;
+    --bg-card: #FFFCF7;
+    --text-primary: #1A1F36;
+    --text-secondary: #4A4035;
+    --text-tertiary: #6B5C4A;
+    --text-muted: #8A7A6A;
+    --rule: #C9BBA8;
+    --rule-soft: #D4C9B8;
+    --accent: #B5532E;
+    --accent-soft: rgba(181, 83, 46, 0.10);
+    --font-ui: 'Onest', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg-page: #1F1B16;
+    --bg-app: #2A2520;
+    --bg-card: #2F2A24;
+    --text-primary: #F0E8DA;
+    --text-secondary: #C7BCAA;
+    --text-tertiary: #9A8E7C;
+    --text-muted: #7A6E5C;
+    --rule: #4A4035;
+    --rule-soft: #3A3128;
+    --accent: #E07849;
+    --accent-soft: rgba(224, 120, 73, 0.14);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg-page); color: var(--text-primary); }
+  body {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    line-height: 1.65;
+    padding: 32px 18px 80px;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .topbar a.brand {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.20em; text-transform: uppercase;
+    color: var(--text-tertiary); text-decoration: none;
+  }
+  .topbar a.brand:hover { color: var(--accent); }
+  .lang-toggle {
+    display: inline-flex; gap: 0; padding: 3px;
+    background: var(--bg-card); border: 1px solid var(--rule); border-radius: 999px;
+  }
+  .lang-toggle button {
+    background: transparent; border: 0; cursor: pointer;
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text-secondary);
+    padding: 6px 12px; border-radius: 999px;
+  }
+  .lang-toggle button.active { background: var(--text-primary); color: var(--bg-card); }
+
+  .doc-tabs {
+    display: flex; gap: 4px; margin-bottom: 28px;
+    background: var(--bg-card); border: 1px solid var(--rule-soft); border-radius: 12px;
+    padding: 4px; width: fit-content;
+  }
+  .doc-tabs a {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--text-secondary); text-decoration: none;
+    padding: 8px 16px; border-radius: 8px;
+  }
+  .doc-tabs a.active { background: var(--text-primary); color: var(--bg-card); }
+
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.20em; text-transform: uppercase;
+    color: var(--text-tertiary); margin-bottom: 10px;
+  }
+  h1 {
+    font-family: var(--font-ui); font-size: 36px; font-weight: 700;
+    margin: 0 0 6px; line-height: 1.15; letter-spacing: -0.01em;
+  }
+  .updated {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--text-muted); margin-bottom: 28px;
+  }
+  h2 {
+    font-family: var(--font-ui); font-size: 19px; font-weight: 600;
+    margin: 36px 0 10px; line-height: 1.3;
+  }
+  h2 .num {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+    color: var(--text-muted); margin-right: 8px; vertical-align: middle;
+  }
+  p { margin: 0 0 14px; color: var(--text-secondary); }
+  ul { padding-left: 22px; margin: 0 0 14px; color: var(--text-secondary); }
+  li { margin-bottom: 6px; }
+  .tldr {
+    background: var(--bg-card); border: 1px solid var(--rule-soft);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px; border-radius: 8px;
+    margin-bottom: 28px;
+  }
+  .tldr strong { color: var(--text-primary); }
+  .placeholder {
+    background: var(--accent-soft); color: var(--accent);
+    font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+    padding: 1px 6px; border-radius: 4px;
+  }
+  code {
+    font-family: var(--font-mono); font-size: 12px;
+    background: var(--bg-card); border: 1px solid var(--rule-soft);
+    padding: 1px 6px; border-radius: 4px;
+  }
+  table.processors {
+    width: 100%; border-collapse: collapse; margin: 0 0 14px;
+    font-size: 13px; color: var(--text-secondary);
+  }
+  table.processors th, table.processors td {
+    border-bottom: 1px solid var(--rule-soft);
+    padding: 9px 10px; text-align: left; vertical-align: top;
+  }
+  table.processors th {
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+    color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em;
+    background: var(--bg-card);
+  }
+  table.processors td a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  table.processors td a:hover { border-bottom-style: solid; }
+  .lang-block { display: none; }
+  html[lang="ru"] .lang-block.ru,
+  html[lang="en"] .lang-block.en { display: block; }
+  footer {
+    margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule-soft);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em;
+    color: var(--text-muted); text-align: center;
+  }
+  footer a { color: var(--text-tertiary); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a href="/" class="brand">← Tappetite</a>
+    <div class="lang-toggle" id="langToggle">
+      <button data-lang="ru">RU</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <div class="doc-tabs">
+    <a href="/privacy.html" class="active">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
+
+  <!-- ───────────────────────── RU ───────────────────────── -->
+  <div class="lang-block ru">
+    <div class="eyebrow">политика конфиденциальности</div>
+    <h1>Что мы собираем и зачем</h1>
+    <div class="updated">Версия 2026-05-10. Применима к Tappetite (web + iOS + Android).</div>
+
+    <div class="tldr">
+      <strong>Если коротко:</strong> мы храним то, что нужно чтобы игра работала и улучшалась - твой ник, email (если оставил), результаты, согласия, заявки, базовые сессии. Используем PostHog для продуктовой аналитики и Resend для писем (ниже подробно). По умолчанию мы НЕ шлём тебе маркетинг и НЕ передаём твои персональные данные третьим лицам - только если ты сам отдельно включишь это в профиле. Обезличенные данные мы используем без ограничений (это часть согласия). Удалить аккаунт можно в любой момент - забираем личные данные.
+    </div>
+
+    <h2><span class="num">01</span>Кто мы</h2>
+    <p>Tappetite - независимый проект (физическое лицо, оператор находится в Республике Казахстан). Юрлицо на момент публикации этой версии не оформлено; будет оформлено по мере роста сервиса. По вопросам приватности и обработки персональных данных пиши на <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>.</p>
+    <p>Применимое регулирование на момент этой версии: Закон Республики Казахстан от 21 мая 2013 года № 94-V «О персональных данных и их защите» (для пользователей в Казахстане), Регламент GDPR (для пользователей в EU/EEA/UK), и применимые законы страны проживания пользователя для остальных регионов.</p>
+
+    <h2><span class="num">02</span>Какие данные мы собираем</h2>
+    <ul>
+      <li><strong>Аккаунт:</strong> ник, email (если регистрировался по email), хешированный пароль (bcrypt - мы не видим оригинал), аватар-символ, дата создания, дата последнего входа.</li>
+      <li><strong>Сессии:</strong> токен сессии (cookie HttpOnly), IP-адрес, user-agent, время последней активности.</li>
+      <li><strong>Социальные идентификаторы:</strong> если входишь через Google/Apple - provider ID, email из токена и факт входа. Пароль провайдера мы никогда не получаем.</li>
+      <li><strong>Согласия:</strong> категория (core / email-marketing / push-marketing), статус (granted/revoked), время изменения, IP и user-agent на момент изменения, версия политики, под которой согласие было дано. Это аудит-журнал - нужен чтобы доказать факт согласия в случае спора.</li>
+      <li><strong>Игровые результаты:</strong> категория, твоя тройка, архетип, длительность турнира, время прохождения. Используются для истории, сравнений с друзьями и улучшения рекомендаций.</li>
+      <li><strong>Заявки и обратная связь:</strong> темы, имена, описания и сообщения, которые ты сам отправил через «Предложить» / форму фидбека. Email для ответа - опционально.</li>
+      <li><strong>Социальные связи:</strong> запросы дружбы, принятые и отклонённые связи.</li>
+      <li><strong>Ачивки:</strong> какие открыты и когда.</li>
+      <li><strong>Реферальные данные:</strong> если зарегистрировался по чужой ссылке-приглашению - мы запоминаем кто тебя пригласил (для механики реферальных ачивок).</li>
+      <li><strong>Технические логи:</strong> ошибки и сбои в работе приложения (тип ошибки, стек, URL, user-agent, IP). Для починки багов. Личное содержимое страниц или нажатия НЕ собираем.</li>
+      <li><strong>Аналитические события (PostHog):</strong> запуск приложения, открытие экрана, начало турнира, завершение, регистрация, вход. С каждым событием - анонимный distinct_id (или ID аккаунта если ты залогинен), язык, тема, тип браузера/устройства. Не собираем содержимое экранов и не записываем сессии.</li>
+    </ul>
+    <p><strong>Чего мы не собираем:</strong> историю просмотров вне нашего сайта, контакты телефона, точную геолокацию, биометрию, данные платёжных карт, сторонние трекеры в сторонних доменах.</p>
+
+    <h2><span class="num">03</span>Зачем (цели обработки)</h2>
+    <ul>
+      <li>Авторизация и предотвращение несанкционированного доступа.</li>
+      <li>Сохранение твоей истории и настроек, синхронизация между устройствами.</li>
+      <li>Расчёт совпадения вкусов с друзьями (только взаимными).</li>
+      <li>Модерация пользовательских заявок и поддержка.</li>
+      <li>Поиск и устранение багов, мониторинг работоспособности.</li>
+      <li>Продуктовая аналитика - какие категории популярны, где люди отваливаются, какие фичи стоит улучшить. На уровне агрегатов (не «что конкретный Иван выбрал»).</li>
+      <li>Обучение наших рекомендательных алгоритмов на основе результатов и предпочтений (никогда не передаём сырые персональные данные третьим лицам без отдельного согласия).</li>
+      <li>Транзакционная коммуникация: подтверждение регистрации, сброс пароля, важные обновления безопасности и сервиса.</li>
+      <li>Маркетинг (только если ты отдельно подписался в профиле): новости продукта, рассылки, промо.</li>
+      <li>Защита прав в случае споров и соблюдение применимого законодательства.</li>
+      <li>Подготовка к потенциальным коммерческим инициативам: лицензирование обезличенных датасетов исследовательским и индустриальным партнёрам, продажа или передача бизнеса целиком (см. §05.5).</li>
+    </ul>
+
+    <h2><span class="num">04</span>Третьи стороны (процессоры)</h2>
+    <p>Чтобы сервис работал, мы обрабатываем твои данные через перечисленных ниже подрядчиков. Каждый из них - независимый процессор; они получают только то, что необходимо им для своей функции, и обязаны защищать твои данные согласно применимому законодательству. Полный список:</p>
+
+    <table class="processors">
+      <thead><tr><th>Процессор</th><th>Что получает</th><th>Юрисдикция</th><th>Их политика</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>PostHog</strong> (продуктовая аналитика)</td>
+          <td>Анонимные события использования, distinct_id, язык, тема, тип устройства. Если ты залогинен - твой числовой ID и ник.</td>
+          <td>EU (ЕС, eu.i.posthog.com)</td>
+          <td><a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Resend</strong> (отправка email)</td>
+          <td>Твой email-адрес и текст транзакционных писем (сброс пароля, broadcast-рассылки если ты подписался). IP-адрес и заголовки доставки технически проходят через их инфраструктуру.</td>
+          <td>США (Delaware, USA)</td>
+          <td><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">resend.com/legal/privacy-policy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google</strong> (Sign in with Google)</td>
+          <td>Только если ты выбираешь вход через Google. Google получает факт входа в наше приложение; мы получаем твой Google ID, email и имя из токена.</td>
+          <td>США / ЕС (зависит от региона аккаунта)</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple</strong> (Sign in with Apple)</td>
+          <td>Только если выбираешь вход через Apple. Apple получает факт входа; мы получаем Apple ID и email (real или relay-адрес по твоему выбору).</td>
+          <td>США / ЕС</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Хостинг-провайдер</strong></td>
+          <td>Серверы, на которых физически работает наш бэкенд и хранится база данных.</td>
+          <td>EU (ЕС, дата-центр в Европе)</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><strong>Cloudflare</strong> (CDN, DNS)</td>
+          <td>Технические заголовки HTTP-запросов проходят через их прокси (IP, user-agent). Контент запросов не дешифруется.</td>
+          <td>США (с европейскими PoP)</td>
+          <td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Передача за пределы Казахстана и EU/EEA: для пользователей в Казахстане - мы используем процессоров за рубежом и заявим об этом в Минцифры РК как требует ст. 16 Закона о персональных данных. Для пользователей в EU - переносы в США осуществляются на основании Standard Contractual Clauses (SCC) или адекватных решений.</p>
+
+    <h2><span class="num">05</span>Cookies, токены и localStorage</h2>
+    <ul>
+      <li><code>upg_session</code> - авторизация. HttpOnly, Secure, SameSite=Lax. Без неё ты будешь играть как гость.</li>
+      <li><code>upg_admin_v3</code> - авторизация модераторов и админов (только для них).</li>
+      <li><code>ph_*</code> - cookies PostHog для продуктовой аналитики (distinct_id).</li>
+      <li><strong>localStorage:</strong> язык, тема, оффлайн-кэш результатов, неотправленные результаты турниров. Не отправляются на сервер кроме случаев когда ты завершаешь турнир и они синхронизируются.</li>
+    </ul>
+
+    <h2><span class="num">05.5</span>Передача бизнеса (M&A) и публичное использование</h2>
+    <p>Если Tappetite будет приобретён, объединён или иным образом передан другой компании (включая продажу активов или реорганизацию), персональные данные пользователей могут быть переданы покупателю как часть сделки. Покупатель будет связан как минимум этой же политикой конфиденциальности (или эквивалентной). Если правила обработки данных у покупателя будут отличаться существенно, мы предупредим заранее и дадим возможность удалить аккаунт.</p>
+    <p><strong>Обезличенные и агрегированные данные.</strong> Мы можем создавать обезличенные и агрегированные датасеты (не позволяющие идентифицировать конкретных пользователей) на основе игровых результатов, статистики выборов, паттернов вкусов. Такие датасеты не являются персональными данными и могут использоваться нами без ограничений: для публикации, лицензирования партнёрам, исследований, обучения моделей и любых других коммерческих и некоммерческих целей. Это часть согласия на обработку, которое ты даёшь при регистрации.</p>
+
+    <h2><span class="num">06</span>Срок хранения</h2>
+    <ul>
+      <li><strong>Аккаунт и связанные данные</strong> (профиль, результаты, друзья, ачивки, заявки): пока существует аккаунт. После нажатия «Удалить аккаунт навсегда» данные удаляются из активной БД немедленно в одной транзакции (см. §07). В резервных копиях БД могут оставаться до 30 дней - после ротации копий пропадают и оттуда.</li>
+      <li><strong>Сессии:</strong> 30 дней неактивности → автоматическое истечение.</li>
+      <li><strong>Аудит согласий</strong> (consent_acceptances): пока существует аккаунт. При удалении аккаунта удаляется вместе с ним (CASCADE). Если хочешь сохранить доказательство своего согласия для собственных целей - выгрузи данные через «Скачать мои данные» перед удалением: экспорт включает полную историю согласий.</li>
+      <li><strong>Логи ошибок:</strong> 90 дней с момента события.</li>
+      <li><strong>Аналитические события в PostHog:</strong> до 7 лет (политика самого PostHog), привязка к аккаунту разрывается при удалении аккаунта.</li>
+      <li><strong>Резервные копии БД:</strong> 30 дней.</li>
+      <li><strong>Запросы поддержки:</strong> 2 года для разрешения повторных обращений.</li>
+    </ul>
+
+    <h2><span class="num">07</span>Что происходит при удалении аккаунта</h2>
+    <p>Когда ты нажимаешь «Удалить аккаунт навсегда» - мы в одной транзакции:</p>
+    <ul>
+      <li>Удаляем строку профиля, все твои сессии, результаты, заявки, друзей, ачивки, согласия (актуальные и историю).</li>
+      <li>Анонимизируем твои логи ошибок (стираем ник, IP, user-agent - оставляем стек/сообщение для аналитики багов).</li>
+      <li>Удаляем твой email из обратной связи (текст обращения остаётся как анонимный сообщение для модерации).</li>
+      <li>Заменяем содержимое твоих расшаренных «челленджей» на пустую заглушку (ссылки остаются валидными, но твой ник и top-3 удаляются).</li>
+      <li>В связанных системах (PostHog) разрываем связь distinct_id с твоим аккаунт-ID, делая последующие события полностью анонимными.</li>
+    </ul>
+    <p>Резервные копии БД, в которых могут быть твои данные, циркулируют максимум 30 дней - после ротации они полностью пропадают и оттуда.</p>
+
+    <h2><span class="num">08</span>Твои права</h2>
+    <ul>
+      <li><strong>Получить копию данных</strong> - кнопка «Скачать мои данные» в профиле. JSON со всем что у нас есть на тебя, включая историю согласий.</li>
+      <li><strong>Удалить аккаунт</strong> - кнопка «Удалить аккаунт навсегда» в профиле. Действие необратимо.</li>
+      <li><strong>Изменить ник, email или пароль</strong> - через профиль.</li>
+      <li><strong>Управлять опциональными согласиями</strong> - раздел «Мои согласия» в профиле. Включай и выключай email-рассылки, push-уведомления в любой момент.</li>
+      <li><strong>Возражать против обработки или ограничить её</strong> - пиши на support@, разберём конкретный случай.</li>
+      <li><strong>Подать жалобу регулятору</strong> - в Казахстане: Комитет по защите прав потребителей и Минцифры РК. В EU/EEA: соответствующий национальный supervisory authority.</li>
+    </ul>
+
+    <h2><span class="num">09</span>Возрастные ограничения</h2>
+    <p>Сервис рассчитан на пользователей 16 лет и старше. Это требование GDPR для обработки данных без согласия родителей. Если ты родитель и обнаружил, что твой ребёнок младше 16 зарегистрировался - напиши нам, мы удалим аккаунт.</p>
+
+    <h2><span class="num">10</span>Изменения политики</h2>
+    <p>Если меняем политику - обновляем версию вверху страницы. При существенных изменениях (новые процессоры, новые цели обработки, существенно расширенные сроки хранения) мы попросим тебя заново подтвердить согласие при следующем входе. Старая версия будет доступна по ссылке в архиве.</p>
+
+    <h2><span class="num">11</span>Связаться</h2>
+    <p>По любым вопросам приватности, запросам данных, удалению аккаунта или жалобам: <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>. Стараемся отвечать в течение 14 дней.</p>
+  </div>
+
+  <!-- ───────────────────────── EN ───────────────────────── -->
+  <div class="lang-block en">
+    <div class="eyebrow">privacy policy</div>
+    <h1>What we collect and why</h1>
+    <div class="updated">Version 2026-05-10. Applies to Tappetite (web + iOS + Android).</div>
+
+    <div class="tldr">
+      <strong>Short version:</strong> we store what's needed for the game to work and improve - your nickname, email (if you provided one), results, consents, submissions, basic session data. We use PostHog for product analytics and Resend for emails (full disclosure below). By default we do NOT send you marketing and do NOT pass your personal data to third parties unless you separately opt in via your profile. Anonymised aggregates we use without limits (part of the consent). You can delete your account anytime - personal data goes away.
+    </div>
+
+    <h2><span class="num">01</span>Who we are</h2>
+    <p>Tappetite is an independent project (individual operator, based in the Republic of Kazakhstan). No legal entity is registered at the time of this version; one will be registered as the service grows. For privacy questions, data requests or complaints: <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>.</p>
+    <p>Applicable regulations at the time of this version: Kazakhstan Personal Data Protection Law of 21 May 2013 № 94-V (for users in Kazakhstan), GDPR Regulation (for users in EU/EEA/UK), and applicable laws of the user's country of residence elsewhere.</p>
+
+    <h2><span class="num">02</span>What data we collect</h2>
+    <ul>
+      <li><strong>Account:</strong> nickname, email (if you registered with email), hashed password (bcrypt - we never see the original), avatar glyph, account creation date, last login.</li>
+      <li><strong>Sessions:</strong> session token (HttpOnly cookie), IP address, user-agent, last active time.</li>
+      <li><strong>Social identities:</strong> if you sign in via Google or Apple - provider ID, email from the token, sign-in event. We never receive your provider password.</li>
+      <li><strong>Consents:</strong> category (core / email-marketing / push-marketing), status (granted/revoked), change timestamp, IP and user-agent at the moment of change, the policy version under which consent was given. This is an audit log - needed to prove consent if ever disputed.</li>
+      <li><strong>Game results:</strong> category, your top 3, archetype, tournament duration, completion time. Used for history, friend comparisons, and improving recommendations.</li>
+      <li><strong>Submissions and feedback:</strong> themes, names, descriptions, and messages you submit through "Suggest" / feedback form. Reply email is optional.</li>
+      <li><strong>Social connections:</strong> friend requests, accepted and declined connections.</li>
+      <li><strong>Achievements:</strong> which are unlocked and when.</li>
+      <li><strong>Referral data:</strong> if you registered via someone's invite link - we record who invited you (for the referral-achievement mechanic).</li>
+      <li><strong>Technical logs:</strong> errors and crashes (error type, stack trace, URL, user-agent, IP). For bug fixes. We do NOT collect page contents or keystrokes.</li>
+      <li><strong>Analytics events (PostHog):</strong> app launch, screen open, tournament start, completion, registration, login. Each event ships with an anonymous distinct_id (or your account ID if signed in), language, theme, browser/device type. We don't capture screen contents or record sessions.</li>
+    </ul>
+    <p><strong>What we don't collect:</strong> browsing history outside our site, phone contacts, precise geolocation, biometrics, payment card data, third-party trackers on third-party domains.</p>
+
+    <h2><span class="num">03</span>Why (purposes of processing)</h2>
+    <ul>
+      <li>Authentication and prevention of unauthorised access.</li>
+      <li>Saving your history and settings, syncing across devices.</li>
+      <li>Calculating taste matches with mutual friends.</li>
+      <li>Moderating user submissions and support.</li>
+      <li>Bug detection and fixing, uptime monitoring.</li>
+      <li>Product analytics - which categories are popular, where people drop off, which features are worth improving. At an aggregate level (not "what specific Ivan picked").</li>
+      <li>Training our recommendation algorithms based on results and preferences (we never share raw personal data with third parties without separate consent).</li>
+      <li>Transactional communication: registration confirmation, password reset, security and service updates.</li>
+      <li>Marketing (only if you separately opt in via your profile): product news, newsletters, promos.</li>
+      <li>Defending rights in disputes and complying with applicable law.</li>
+      <li>Preparing for potential commercial initiatives: licensing of anonymised datasets to research and industry partners, sale or transfer of the business as a whole (see §05.5).</li>
+    </ul>
+
+    <h2><span class="num">04</span>Third parties (processors)</h2>
+    <p>For the service to function, we process your data through the contractors listed below. Each is an independent processor; they receive only what's needed for their function and are bound to protect your data under applicable law. Full list:</p>
+
+    <table class="processors">
+      <thead><tr><th>Processor</th><th>What they receive</th><th>Jurisdiction</th><th>Their policy</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>PostHog</strong> (product analytics)</td>
+          <td>Anonymous usage events, distinct_id, language, theme, device type. If signed in - your numeric account ID and nickname.</td>
+          <td>EU (eu.i.posthog.com)</td>
+          <td><a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Resend</strong> (email delivery)</td>
+          <td>Your email address and the text of transactional emails (password reset, broadcast newsletters if subscribed). IP and delivery headers technically transit their infrastructure.</td>
+          <td>USA (Delaware)</td>
+          <td><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">resend.com/legal/privacy-policy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google</strong> (Sign in with Google)</td>
+          <td>Only if you choose Google sign-in. Google sees that you signed into our app; we receive your Google ID, email and name from the token.</td>
+          <td>USA / EU (depends on account region)</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple</strong> (Sign in with Apple)</td>
+          <td>Only if you choose Apple sign-in. Apple sees the sign-in event; we receive Apple ID and email (real or relay-address by your choice).</td>
+          <td>USA / EU</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></td>
+        </tr>
+        <tr>
+          <td><strong>Hosting provider</strong></td>
+          <td>Servers physically running our backend and storing the database.</td>
+          <td>EU (data centre in Europe)</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><strong>Cloudflare</strong> (CDN, DNS)</td>
+          <td>HTTP request headers transit their proxy (IP, user-agent). Request contents are not decrypted.</td>
+          <td>USA (with EU PoPs)</td>
+          <td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Cross-border transfer: for users in Kazakhstan - we use processors abroad and will register this with the KZ Ministry of Digital Development as required by Article 16 of the Personal Data Law. For users in the EU - transfers to the US rely on Standard Contractual Clauses (SCC) or adequacy decisions.</p>
+
+    <h2><span class="num">05</span>Cookies, tokens and localStorage</h2>
+    <ul>
+      <li><code>upg_session</code> - authentication. HttpOnly, Secure, SameSite=Lax. Without it you stay as a guest.</li>
+      <li><code>upg_admin_v3</code> - moderator and admin authentication (only used by them).</li>
+      <li><code>ph_*</code> - PostHog cookies for product analytics (distinct_id).</li>
+      <li><strong>localStorage:</strong> language, theme, offline cache of results, unsynced tournament results. Not sent to the server unless you complete a tournament and they sync.</li>
+    </ul>
+
+    <h2><span class="num">05.5</span>Business transfer (M&A) and public use</h2>
+    <p>If Tappetite is acquired, merged, or otherwise transferred to another company (including asset sale or reorganisation), users' personal data may be transferred to the buyer as part of the deal. The buyer will be bound at minimum by this same privacy policy (or an equivalent). If the buyer's data practices materially differ, we will give advance notice and an opportunity to delete your account.</p>
+    <p><strong>Anonymised and aggregated data.</strong> We may create anonymised and aggregated datasets (not allowing identification of specific users) based on game results, choice statistics, taste patterns. Such datasets are not personal data and may be used by us without limits: for publication, licensing to partners, research, model training, and any other commercial and non-commercial purposes. This is part of the processing consent you give at registration.</p>
+
+    <h2><span class="num">06</span>Retention</h2>
+    <ul>
+      <li><strong>Account and related data</strong> (profile, results, friends, achievements, submissions): while the account exists. After "Delete account permanently" the rows are removed from the active database immediately in a single transaction (see §07). They may remain in DB backups for up to 30 days - after backup rotation they're gone from there too.</li>
+      <li><strong>Sessions:</strong> 30 days of inactivity → automatic expiry.</li>
+      <li><strong>Consent audit log</strong> (consent_acceptances): for as long as the account exists. Deleted together with the account (CASCADE). If you want to keep proof of your consent for your own records - use "Download my data" before deletion: the export includes your full consent history.</li>
+      <li><strong>Error logs:</strong> 90 days from the event.</li>
+      <li><strong>PostHog analytics events:</strong> up to 7 years (PostHog's own policy); the link to your account is broken on account deletion.</li>
+      <li><strong>Database backups:</strong> 30 days.</li>
+      <li><strong>Support requests:</strong> 2 years to handle repeat enquiries.</li>
+    </ul>
+
+    <h2><span class="num">07</span>What happens when you delete the account</h2>
+    <p>When you tap "Delete account permanently" - in a single transaction we:</p>
+    <ul>
+      <li>Delete your profile row, all your sessions, results, submissions, friends, achievements, current and historical consents.</li>
+      <li>Anonymise your error logs (strip nickname, IP, user-agent - keep stack/message for crash analysis).</li>
+      <li>Strip your email from feedback rows (the text remains as an anonymous moderation report).</li>
+      <li>Replace the contents of your shared challenges with an empty tombstone (links remain valid, but your nickname and top-3 are removed).</li>
+      <li>In linked systems (PostHog) we sever the distinct_id ↔ account-ID link, making subsequent events fully anonymous.</li>
+    </ul>
+    <p>Database backups containing your data circulate for at most 30 days - after rotation they're gone from there too.</p>
+
+    <h2><span class="num">08</span>Your rights</h2>
+    <ul>
+      <li><strong>Get a copy of your data</strong> - "Download my data" button in profile. A JSON file with everything we hold about you, including consent history.</li>
+      <li><strong>Delete your account</strong> - "Delete account permanently" in profile. Irreversible.</li>
+      <li><strong>Change nickname, email, or password</strong> - through your profile.</li>
+      <li><strong>Manage optional consents</strong> - "My consents" section in profile. Toggle email and push marketing on/off anytime.</li>
+      <li><strong>Object or restrict processing</strong> - write to support@, we'll handle it case by case.</li>
+      <li><strong>File a complaint with a regulator</strong> - in Kazakhstan: Consumer Protection Committee and Ministry of Digital Development. In EU/EEA: your national supervisory authority.</li>
+    </ul>
+
+    <h2><span class="num">09</span>Age restrictions</h2>
+    <p>The service is intended for users aged 16 and older. This is a GDPR requirement for processing data without parental consent. If you're a parent and discover that your child under 16 has registered, please write to us and we will delete the account.</p>
+
+    <h2><span class="num">10</span>Policy changes</h2>
+    <p>If we change the policy - we update the version at the top. For material changes (new processors, new processing purposes, materially extended retention) we will ask you to re-confirm consent at the next sign-in. Old versions will be available via an archive link.</p>
+
+    <h2><span class="num">11</span>Contact</h2>
+    <p>For any privacy questions, data requests, account deletion, or complaints: <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>. We aim to respond within 14 days.</p>
+  </div>
+
+  <footer>
+    <a href="/">Home</a>  ·  <a href="/privacy.html">Privacy</a>  ·  <a href="/terms.html">Terms</a>
+  </footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('upg.lang', lang); } catch (e) {}
+    document.querySelectorAll('#langToggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+  document.querySelectorAll('#langToggle button').forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.lang));
+  });
+  // Initial highlight matches current <html lang>
+  const initial = document.documentElement.lang === 'en' ? 'en' : 'ru';
+  setLang(initial);
+</script>
+</body>
+</html>

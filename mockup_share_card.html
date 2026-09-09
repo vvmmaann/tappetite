@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNTITLED PICK GAME · Share Card Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    background: #DDD5C7;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1A1F36;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  /* ── full-size card 540×960 (= 1080×1920 / 2) ───────── */
+  .card {
+    width: 540px;
+    height: 960px;
+    background: linear-gradient(170deg, #FAF6F0 0%, #F0E9DD 100%);
+    border-radius: 18px;
+    box-shadow:
+      0 30px 80px rgba(40, 25, 10, 0.30),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 44px;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .card > * {
+    z-index: 2;
+    position: relative;
+  }
+
+  /* TOP STRIP */
+  .top-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #C9BBA8;
+  }
+
+  .top-strip .brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: #3D2424;
+  }
+
+  /* SECTION LABEL (decorative divider with text) */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .section-label .line {
+    flex: 1;
+    height: 1px;
+    background: #C9BBA8;
+  }
+
+  .section-label .text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+  }
+
+  /* CATEGORY BREADCRUMB */
+  .breadcrumb {
+    margin-top: 14px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    color: #3D2424;
+  }
+
+  /* MAIN HEADLINE (archetype) */
+  .headline {
+    margin-top: 22px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 76px;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    color: #1A1F36;
+  }
+
+  /* ARCHETYPE QUOTE */
+  .quote {
+    margin-top: 24px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.4;
+    color: #4A4035;
+    padding: 0 8px;
+  }
+
+  .quote::before { content: '«'; color: #B5532E; }
+  .quote::after { content: '»'; color: #B5532E; }
+
+  /* TOP-3 LIST */
+  .top3 {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid #C9BBA8;
+  }
+
+  .top3 .list-label {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .top3-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 8px 8px;
+    border-bottom: 1px dotted #D4C9B8;
+  }
+
+  .top3-row:last-child {
+    border-bottom: none;
+  }
+
+  .top3-row .num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    color: #B5532E;
+    width: 36px;
+    flex-shrink: 0;
+  }
+
+  .top3-row .name {
+    flex: 1;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #1A1F36;
+    letter-spacing: -0.005em;
+  }
+
+  .top3-row .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8A7A6A;
+  }
+
+  /* SPACER pushes footer to bottom */
+  .spacer {
+    flex: 1;
+  }
+
+  /* AUTHOR BYLINE */
+  .byline {
+    padding-top: 18px;
+    border-top: 1px solid #C9BBA8;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .byline .author-block .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+  }
+
+  .byline .author-block .name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: #3D2424;
+    margin-top: 4px;
+  }
+
+  .byline .url-block {
+    text-align: right;
+  }
+
+  .byline .url-block .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: #8A7A6A;
+    text-transform: uppercase;
+  }
+
+  .byline .url-block .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: #B5532E;
+    margin-top: 4px;
+  }
+
+  /* ── PREVIEWS ROW ──────────────────────────────── */
+  .previews {
+    display: flex;
+    gap: 32px;
+    align-items: flex-end;
+    margin-top: 12px;
+  }
+
+  .preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .preview-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #5C5147;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .preview-frame-ig {
+    width: 270px;
+    height: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(40, 25, 10, 0.18);
+    background: white;
+    position: relative;
+  }
+
+  .preview-frame-tg {
+    width: 180px;
+    height: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(40, 25, 10, 0.18);
+    background: white;
+    position: relative;
+  }
+
+  /* shrink the card content for previews */
+  .preview-frame-ig .card,
+  .preview-frame-tg .card {
+    transform-origin: top left;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .preview-frame-ig .card {
+    transform: scale(0.5);
+    width: 540px;
+    height: 960px;
+  }
+
+  .preview-frame-tg .card {
+    transform: scale(0.333);
+    width: 540px;
+    height: 960px;
+  }
+
+  .caption {
+    margin-top: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #5C5147;
+    text-align: center;
+    max-width: 560px;
+    line-height: 1.55;
+  }
+
+  .caption code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(0,0,0,0.05);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  .caption strong {
+    color: #B5532E;
+  }
+</style>
+</head>
+<body>
+
+  <!-- MAIN CARD -->
+  <div class="card">
+    <div class="top-strip">
+      <span class="brand">UNTITLED PICK GAME</span>
+      <span>Выпуск № 47 · 4 мая 2026</span>
+    </div>
+
+    <div class="section-label">
+      <div class="line"></div>
+      <div class="text">Категория</div>
+      <div class="line"></div>
+    </div>
+
+    <div class="breadcrumb">Голливудские актёры · 50+</div>
+
+    <div class="headline">Верный<br>Новому<br>Голливуду</div>
+
+    <div class="quote">Эпоха кокаина и длинных монологов в твоей крови</div>
+
+    <div class="top3">
+      <div class="list-label">Твой топ-3</div>
+      <div class="top3-row">
+        <div class="num">01</div>
+        <div class="name">Аль Пачино</div>
+        <div class="meta">«Лицо со шрамом»</div>
+      </div>
+      <div class="top3-row">
+        <div class="num">02</div>
+        <div class="name">Роберт Де Ниро</div>
+        <div class="meta">«Таксист»</div>
+      </div>
+      <div class="top3-row">
+        <div class="num">03</div>
+        <div class="name">Энтони Хопкинс</div>
+        <div class="meta">«Молчание ягнят»</div>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="byline">
+      <div class="author-block">
+        <div class="label">Автор</div>
+        <div class="name">@irinka_kino</div>
+      </div>
+      <div class="url-block">
+        <div class="label">Найди свой</div>
+        <div class="url">untitledpickgame.app</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THUMBNAIL PREVIEWS -->
+  <div class="previews">
+    <div class="preview-item">
+      <div class="preview-frame-ig">
+        <div class="card">
+          <div class="top-strip">
+            <span class="brand">UNTITLED PICK GAME</span>
+            <span>Выпуск № 47 · 4 мая 2026</span>
+          </div>
+          <div class="section-label">
+            <div class="line"></div>
+            <div class="text">Категория</div>
+            <div class="line"></div>
+          </div>
+          <div class="breadcrumb">Голливудские актёры · 50+</div>
+          <div class="headline">Верный<br>Новому<br>Голливуду</div>
+          <div class="quote">Эпоха кокаина и длинных монологов в твоей крови</div>
+          <div class="top3">
+            <div class="list-label">Твой топ-3</div>
+            <div class="top3-row"><div class="num">01</div><div class="name">Аль Пачино</div><div class="meta">«Лицо со шрамом»</div></div>
+            <div class="top3-row"><div class="num">02</div><div class="name">Роберт Де Ниро</div><div class="meta">«Таксист»</div></div>
+            <div class="top3-row"><div class="num">03</div><div class="name">Энтони Хопкинс</div><div class="meta">«Молчание ягнят»</div></div>
+          </div>
+          <div class="spacer"></div>
+          <div class="byline">
+            <div class="author-block"><div class="label">Автор</div><div class="name">@irinka_kino</div></div>
+            <div class="url-block"><div class="label">Найди свой</div><div class="url">untitledpickgame.app</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="preview-label">Instagram-лента (270×480)</div>
+    </div>
+
+    <div class="preview-item">
+      <div class="preview-frame-tg">
+        <div class="card">
+          <div class="top-strip">
+            <span class="brand">UNTITLED PICK GAME</span>
+            <span>Выпуск № 47 · 4 мая 2026</span>
+          </div>
+          <div class="section-label">
+            <div class="line"></div>
+            <div class="text">Категория</div>
+            <div class="line"></div>
+          </div>
+          <div class="breadcrumb">Голливудские актёры · 50+</div>
+          <div class="headline">Верный<br>Новому<br>Голливуду</div>
+          <div class="quote">Эпоха кокаина и длинных монологов в твоей крови</div>
+          <div class="top3">
+            <div class="list-label">Твой топ-3</div>
+            <div class="top3-row"><div class="num">01</div><div class="name">Аль Пачино</div><div class="meta">«Лицо со шрамом»</div></div>
+            <div class="top3-row"><div class="num">02</div><div class="name">Роберт Де Ниро</div><div class="meta">«Таксист»</div></div>
+            <div class="top3-row"><div class="num">03</div><div class="name">Энтони Хопкинс</div><div class="meta">«Молчание ягнят»</div></div>
+          </div>
+          <div class="spacer"></div>
+          <div class="byline">
+            <div class="author-block"><div class="label">Автор</div><div class="name">@irinka_kino</div></div>
+            <div class="url-block"><div class="label">Найди свой</div><div class="url">untitledpickgame.app</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="preview-label">Telegram-чат (180×320)</div>
+    </div>
+  </div>
+
+  <div class="caption">
+    Шеринг-карточка <code>9:16</code> в формате <strong>обложки журнала</strong>. Архетип («Верный Новому Голливуду») — главный заголовок выпуска. Категория — мелкий подзаголовок сверху. Топ-3 — список «статей выпуска» с пунктирными разделителями. Автор @username стилизован как байлайн редактора. Брендинг <code>untitledpickgame.app</code> в правом нижнем углу с CTA «Найди свой». Превью справа показывает что карточка остаётся читаемой при сжатии до 270px (Instagram-лента) и даже 180px (превью в чате).
+  </div>
+
+</body>
+</html>

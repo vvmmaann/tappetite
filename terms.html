@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service · Tappetite</title>
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/icon.svg">
+
+<script>
+  (function() {
+    try {
+      var saved = localStorage.getItem('upg.theme');
+      var theme = (saved === 'light' || saved === 'dark')
+        ? saved
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+      var lang = localStorage.getItem('upg.lang');
+      if (lang === 'ru' || lang === 'en') document.documentElement.lang = lang;
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Self-hosted fonts (audit-6 H1). -->
+<link rel="stylesheet" href="/assets/fonts.css">
+
+<style>
+  :root {
+    --bg-page: #DDD5C7; --bg-app: #FAF6F0; --bg-card: #FFFCF7;
+    --text-primary: #1A1F36; --text-secondary: #4A4035; --text-tertiary: #6B5C4A; --text-muted: #8A7A6A;
+    --rule: #C9BBA8; --rule-soft: #D4C9B8;
+    --accent: #B5532E; --accent-soft: rgba(181, 83, 46, 0.10);
+    --font-ui: 'Onest', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg-page: #1F1B16; --bg-app: #2A2520; --bg-card: #2F2A24;
+    --text-primary: #F0E8DA; --text-secondary: #C7BCAA; --text-tertiary: #9A8E7C; --text-muted: #7A6E5C;
+    --rule: #4A4035; --rule-soft: #3A3128;
+    --accent: #E07849; --accent-soft: rgba(224, 120, 73, 0.14);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg-page); color: var(--text-primary); }
+  body { font-family: var(--font-ui); font-size: 15px; line-height: 1.65; padding: 32px 18px 80px; min-height: 100vh; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--rule-soft);
+  }
+  .topbar a.brand {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.20em; text-transform: uppercase; color: var(--text-tertiary); text-decoration: none;
+  }
+  .topbar a.brand:hover { color: var(--accent); }
+  .lang-toggle {
+    display: inline-flex; gap: 0; padding: 3px;
+    background: var(--bg-card); border: 1px solid var(--rule); border-radius: 999px;
+  }
+  .lang-toggle button {
+    background: transparent; border: 0; cursor: pointer;
+    font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary);
+    padding: 6px 12px; border-radius: 999px;
+  }
+  .lang-toggle button.active { background: var(--text-primary); color: var(--bg-card); }
+
+  .doc-tabs {
+    display: flex; gap: 4px; margin-bottom: 28px;
+    background: var(--bg-card); border: 1px solid var(--rule-soft); border-radius: 12px;
+    padding: 4px; width: fit-content;
+  }
+  .doc-tabs a {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.10em; text-transform: uppercase;
+    color: var(--text-secondary); text-decoration: none;
+    padding: 8px 16px; border-radius: 8px;
+  }
+  .doc-tabs a.active { background: var(--text-primary); color: var(--bg-card); }
+
+  .eyebrow { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.20em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px; }
+  h1 { font-family: var(--font-ui); font-size: 36px; font-weight: 700; margin: 0 0 6px; line-height: 1.15; letter-spacing: -0.01em; }
+  .updated { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: 28px; }
+  h2 { font-family: var(--font-ui); font-size: 19px; font-weight: 600; margin: 36px 0 10px; line-height: 1.3; }
+  h2 .num { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--text-muted); margin-right: 8px; vertical-align: middle; }
+  p { margin: 0 0 14px; color: var(--text-secondary); }
+  ul { padding-left: 22px; margin: 0 0 14px; color: var(--text-secondary); }
+  li { margin-bottom: 6px; }
+  .tldr {
+    background: var(--bg-card); border: 1px solid var(--rule-soft);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px; border-radius: 8px; margin-bottom: 28px;
+  }
+  .tldr strong { color: var(--text-primary); }
+  .placeholder {
+    background: var(--accent-soft); color: var(--accent);
+    font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+    padding: 1px 6px; border-radius: 4px;
+  }
+  code { font-family: var(--font-mono); font-size: 12px; background: var(--bg-card); border: 1px solid var(--rule-soft); padding: 1px 6px; border-radius: 4px; }
+  .lang-block { display: none; }
+  html[lang="ru"] .lang-block.ru,
+  html[lang="en"] .lang-block.en { display: block; }
+  footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule-soft); font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.10em; color: var(--text-muted); text-align: center; }
+  footer a { color: var(--text-tertiary); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <a href="/" class="brand">← Tappetite</a>
+    <div class="lang-toggle" id="langToggle">
+      <button data-lang="ru">RU</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <div class="doc-tabs">
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html" class="active">Terms</a>
+  </div>
+
+  <!-- ───────────────────────── RU ───────────────────────── -->
+  <div class="lang-block ru">
+    <div class="eyebrow">условия использования</div>
+    <h1>Правила игры</h1>
+    <div class="updated">Версия 2026-05-10. Применима к Tappetite (web + iOS + Android).</div>
+
+    <div class="tldr">
+      <strong>Если коротко:</strong> играй на здоровье, не спамь и не присылай чужой контент. Если что-то пошлёшь нам через «Предложить» - даёшь нам право это опубликовать в журнале. Сервис «как есть», без гарантий. Аккаунт можно удалить в любой момент.
+    </div>
+
+    <h2><span class="num">01</span>Что это</h2>
+    <p>Tappetite - это веб-игра в формате «турнира вкуса»: выбираешь между двумя вариантами, в финале остаётся один - твой топ. По итогам прохождения получаешь архетип, можешь делиться результатами и сравнивать с друзьями.</p>
+    <p>Сервис управляется как независимый проект (физическое лицо, без зарегистрированного юрлица на момент публикации этой версии). По любым вопросам - <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>.</p>
+
+    <h2><span class="num">02</span>Аккаунт и ответственность</h2>
+    <ul>
+      <li>Можешь играть как гость или зарегистрировать аккаунт.</li>
+      <li>Аккаунт - твой, не передавай его другим. Ты отвечаешь за всё что происходит с твоего аккаунта.</li>
+      <li>Если подозреваешь что аккаунт скомпрометирован - смени пароль и напиши нам.</li>
+      <li>Регистрация - только для 16+ (требование GDPR для обработки данных без согласия родителей).</li>
+    </ul>
+
+    <h2><span class="num">03</span>Что нельзя</h2>
+    <ul>
+      <li>Спамить, рассылать рекламу, фишинг через ник или заявки.</li>
+      <li>Публиковать через «Предложить» материалы, нарушающие закон или авторские права.</li>
+      <li>Оскорблять, угрожать или преследовать других пользователей (через ник, заявки, сообщения).</li>
+      <li>Пытаться сломать инфраструктуру (брутфорс, scraping в промышленных масштабах, эксплоиты).</li>
+      <li>Создавать множественные аккаунты, чтобы обходить лимиты или модерацию.</li>
+    </ul>
+    <p>За нарушения мы можем заблокировать или удалить аккаунт без предупреждения и без возмещения.</p>
+
+    <h2><span class="num">04</span>Контент пользователей (UGC)</h2>
+    <p>Когда ты предлагаешь тему, имя для категории или оставляешь фидбек:</p>
+    <ul>
+      <li>Ты подтверждаешь что у тебя есть права на этот контент (или это public domain).</li>
+      <li>Ты даёшь нам неисключительную, бесплатную, бессрочную, мировую лицензию на использование, изменение и публикацию этого контента в рамках сервиса (включая редактирование, перевод и форматирование).</li>
+      <li>Атрибуция: мы можем указывать твой ник как автора заявки.</li>
+      <li>Можем отклонить заявку без объяснения.</li>
+    </ul>
+
+    <h2><span class="num">04.5</span>Лицензия на обезличенные данные</h2>
+    <p>Регистрируясь и используя сервис, ты предоставляешь Tappetite неисключительную, безвозмездную, бессрочную, мировую и сублицензируемую лицензию на использование, обработку, агрегирование, обезличивание, публикацию и иное распоряжение результатами твоих игр, статистикой выборов и паттернами вкусов <strong>в обезличенном или агрегированном виде</strong> (то есть без возможности идентифицировать тебя как конкретное лицо).</p>
+    <p>Сферы применения такой лицензии:</p>
+    <ul>
+      <li>Улучшение алгоритмов рекомендаций и категорий внутри сервиса.</li>
+      <li>Обучение наших моделей машинного обучения.</li>
+      <li>Лицензирование обезличенных датасетов исследовательским институтам, академическим организациям и индустриальным партнёрам.</li>
+      <li>Публикация обезличенных статистик и трендов в маркетинговых, журналистских и научных материалах.</li>
+      <li>Любые иные коммерческие и некоммерческие цели, не требующие идентификации конкретных пользователей.</li>
+    </ul>
+    <p>Эта лицензия не покрывает использование твоих <em>персональных данных</em> (того, что позволяет идентифицировать тебя). Передача персональных данных третьим лицам регулируется отдельно через гранулярные согласия в разделе «Мои согласия» в профиле и описана в <a href="/privacy.html">Политике конфиденциальности</a>.</p>
+    <p>Удаление аккаунта прекращает дальнейшее формирование обезличенных данных из твоего нового поведения, но не отзывает ранее уже сформированные обезличенные датасеты - они уже не персональные и продолжают существовать на основании этой лицензии.</p>
+
+    <h2><span class="num">05</span>Чужой контент в игре</h2>
+    <p>Имена реальных людей, фильмов, групп, брендов и т.п. в категориях используются в учебных и развлекательных целях, как точки отсчёта для пользовательского выбора. Никаких прав на них мы не заявляем; правообладатели - соответствующие компании и физлица. Если ты правообладатель и считаешь что какой-то item должен быть удалён - пиши на <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>.</p>
+
+    <h2><span class="num">06</span>Прекращение использования</h2>
+    <ul>
+      <li><strong>С твоей стороны:</strong> можешь удалить аккаунт в любой момент через профиль.</li>
+      <li><strong>С нашей стороны:</strong> можем заблокировать аккаунт за нарушения этих условий, либо если будем закрывать сервис целиком (предупредим заранее).</li>
+    </ul>
+
+    <h2><span class="num">07</span>Гарантии и ответственность</h2>
+    <p>Сервис предоставляется «как есть» (AS IS), без явных или подразумеваемых гарантий. Мы не гарантируем непрерывную работу, отсутствие ошибок или сохранность данных в случае катастрофы (хотя делаем регулярные бэкапы).</p>
+    <p>В максимальной степени, разрешённой применимым законодательством, мы не несём ответственности за косвенный, случайный или штрафной ущерб. Совокупная ответственность ограничена суммой, которую ты заплатил нам за использование сервиса (то есть нулём, пока сервис бесплатный).</p>
+
+    <h2><span class="num">08</span>Изменения</h2>
+    <p>Можем менять эти условия. Если изменения существенные - покажем баннер в приложении. Дату обновления увидишь вверху этой страницы.</p>
+
+    <h2><span class="num">09</span>Применимое право</h2>
+    <p>На момент публикации этой версии оператор не имеет зарегистрированного юрлица. Применимое право и место разрешения споров определяются в соответствии с законодательством страны фактического проживания оператора на момент возникновения спора. Эта секция будет обновлена после оформления юрлица.</p>
+
+    <h2><span class="num">10</span>Связаться</h2>
+    <p><a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a></p>
+  </div>
+
+  <!-- ───────────────────────── EN ───────────────────────── -->
+  <div class="lang-block en">
+    <div class="eyebrow">terms of service</div>
+    <h1>Rules of the game</h1>
+    <div class="updated">Version 2026-05-10. Applies to Tappetite (web + iOS + Android).</div>
+
+    <div class="tldr">
+      <strong>Short version:</strong> play to your heart's content, don't spam, don't submit content you don't own. Anything you send us through "Suggest" - you grant us the right to publish in the journal. Service is provided "as is", no guarantees. You can delete your account anytime.
+    </div>
+
+    <h2><span class="num">01</span>What this is</h2>
+    <p>Tappetite is a web game in the format of a "taste tournament": you pick between two options, one survives - your top. After completing a tournament you get an archetype, can share results and compare with friends.</p>
+    <p>The service is operated as an independent project (individual operator, no registered legal entity at the time of this version). For any questions - <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>.</p>
+
+    <h2><span class="num">02</span>Account and responsibility</h2>
+    <ul>
+      <li>You can play as a guest or register an account.</li>
+      <li>The account is yours - don't share it. You're responsible for everything happening from your account.</li>
+      <li>If you suspect your account is compromised - change the password and write to us.</li>
+      <li>Registration is for 16+ only (GDPR requirement for processing data without parental consent).</li>
+    </ul>
+
+    <h2><span class="num">03</span>What's not allowed</h2>
+    <ul>
+      <li>Spamming, sending ads, phishing through nicknames or submissions.</li>
+      <li>Submitting content that violates laws or copyright through "Suggest".</li>
+      <li>Insulting, threatening, or harassing other users (through nicknames, submissions, messages).</li>
+      <li>Trying to break the infrastructure (brute-force, large-scale scraping, exploits).</li>
+      <li>Creating multiple accounts to bypass limits or moderation.</li>
+    </ul>
+    <p>For violations, we may block or delete your account without warning and without compensation.</p>
+
+    <h2><span class="num">04</span>User-generated content (UGC)</h2>
+    <p>When you suggest a theme, a name for a category, or leave feedback:</p>
+    <ul>
+      <li>You confirm that you have the rights to this content (or it's public domain).</li>
+      <li>You grant us a non-exclusive, royalty-free, perpetual, worldwide license to use, modify, and publish this content within the service (including editing, translation, and formatting).</li>
+      <li>Attribution: we may credit your nickname as the submission author.</li>
+      <li>We may reject a submission without explanation.</li>
+    </ul>
+
+    <h2><span class="num">04.5</span>License for anonymised data</h2>
+    <p>By registering and using the service, you grant Tappetite a non-exclusive, royalty-free, perpetual, worldwide and sublicensable license to use, process, aggregate, anonymise, publish, and otherwise dispose of your game results, choice statistics, and taste patterns <strong>in anonymised or aggregated form</strong> (i.e. without the ability to identify you as a specific person).</p>
+    <p>Scope of this license:</p>
+    <ul>
+      <li>Improving recommendation algorithms and categories within the service.</li>
+      <li>Training our machine-learning models.</li>
+      <li>Licensing anonymised datasets to research institutes, academic organisations and industry partners.</li>
+      <li>Publishing anonymised statistics and trends in marketing, journalistic and scientific materials.</li>
+      <li>Any other commercial and non-commercial purposes that don't require identifying specific users.</li>
+    </ul>
+    <p>This license does NOT cover use of your <em>personal data</em> (anything that lets you be identified). Transfer of personal data to third parties is governed separately through granular consents in the "My consents" section of your profile and described in the <a href="/privacy.html">Privacy Policy</a>.</p>
+    <p>Account deletion stops the further generation of anonymised data from your new behaviour, but does not revoke previously generated anonymised datasets - they are no longer personal and continue to exist under this license.</p>
+
+    <h2><span class="num">05</span>Third-party content in the game</h2>
+    <p>Names of real people, films, bands, brands, etc. used in categories serve educational and entertainment purposes as reference points for user choice. We claim no rights to them; rights belong to the respective companies and individuals. If you're a rights holder and believe an item should be removed - write to <a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a>.</p>
+
+    <h2><span class="num">06</span>Termination</h2>
+    <ul>
+      <li><strong>By you:</strong> you can delete your account anytime through the profile.</li>
+      <li><strong>By us:</strong> we may block an account for violations of these terms, or if we shut down the service entirely (we'll give notice in advance).</li>
+    </ul>
+
+    <h2><span class="num">07</span>Warranties and liability</h2>
+    <p>The service is provided "AS IS", without express or implied warranties. We don't guarantee uninterrupted operation, absence of bugs, or data preservation in case of disaster (though we run regular backups).</p>
+    <p>To the maximum extent permitted by applicable law, we are not liable for indirect, incidental, or punitive damages. Aggregate liability is limited to the amount you paid us for using the service (which is zero while the service is free).</p>
+
+    <h2><span class="num">08</span>Changes</h2>
+    <p>We may change these terms. If changes are material, we'll show a banner in the app. The update date is shown at the top of this page.</p>
+
+    <h2><span class="num">09</span>Governing law</h2>
+    <p>At the time of this version, the operator has no registered legal entity. The applicable law and place of dispute resolution are determined under the laws of the operator's country of actual residence at the time the dispute arises. This section will be updated once a legal entity is registered.</p>
+
+    <h2><span class="num">10</span>Contact</h2>
+    <p><a href="mailto:support@isverifiedby.me">support@isverifiedby.me</a></p>
+  </div>
+
+  <footer>
+    <a href="/">Home</a>  ·  <a href="/privacy.html">Privacy</a>  ·  <a href="/terms.html">Terms</a>
+  </footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('upg.lang', lang); } catch (e) {}
+    document.querySelectorAll('#langToggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+  }
+  document.querySelectorAll('#langToggle button').forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.lang));
+  });
+  const initial = document.documentElement.lang === 'en' ? 'en' : 'ru';
+  setLang(initial);
+</script>
+</body>
+</html>

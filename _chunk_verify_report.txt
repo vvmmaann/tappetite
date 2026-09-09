@@ -1,0 +1,128 @@
+
+========================================================================
+EN_CHUNK_00_ui.md  vs  EN_CHUNK_00_ui_edited.md
+========================================================================
+  UI strings: original 382 -> edited 382
+  Changed values: 42 of 382 (10%)
+  Sample edits:
+    `ach.eyebrow`
+      - 'achievements archive'
+      + 'achievement archive'
+    `ach.guest.cta`
+      - 'Sign up — achievements save to your account and work across devices.'
+      + 'Sign up — your achievements save to your account and follow you across devices.'
+    `auth.err.session.expired`
+      - 'Session expired, log in again'
+      + 'Session expired. Log in again'
+    `auth.note.login`
+      - 'Already registered? Enter nickname or email and password.'
+      + 'Already registered? Enter your nickname or email and password.'
+    `auth.note.register`
+      - 'Account is saved on the server. Log in from any device.'
+      + 'Your account is saved on the server. Log in from any device.'
+  OK: editorial notes section present
+
+========================================================================
+EN_CHUNK_01_categories.md  vs  EN_CHUNK_01_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  OK: editorial notes section present
+  WARN: only 0 category names changed
+
+========================================================================
+EN_CHUNK_02_categories.md  vs  EN_CHUNK_02_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  OK: editorial notes section present
+  WARN: only 0 category names changed
+
+========================================================================
+EN_CHUNK_03_categories.md  vs  EN_CHUNK_03_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  OK: editorial notes section present
+  WARN: only 0 category names changed
+
+========================================================================
+EN_CHUNK_04_categories.md  vs  EN_CHUNK_04_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  OK: editorial notes section present
+  WARN: only 0 category names changed
+
+========================================================================
+EN_CHUNK_05_categories.md  vs  EN_CHUNK_05_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  WARN: no editorial notes section found
+  WARN: only 0 category names changed
+
+========================================================================
+EN_CHUNK_06_categories.md  vs  EN_CHUNK_06_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  OK: editorial notes section present
+  WARN: only 0 category names changed
+  X ERROR: ITEM COUNT MISMATCH in 10 categories
+
+========================================================================
+EN_CHUNK_07_categories.md  vs  EN_CHUNK_07_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  OK: editorial notes section present
+  WARN: only 0 category names changed
+  X ERROR: ITEM COUNT MISMATCH in 10 categories
+
+========================================================================
+EN_CHUNK_08_categories.md  vs  EN_CHUNK_08_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 2 of 10 edited (20%)
+  Sample H3 edits:
+    - What pushes you away the fastest
+    + What turns you off fastest
+    - Which philosophy is closer to you
+    + Which philosophy feels closest to you
+  OK: editorial notes section present
+  X ERROR: ITEM COUNT MISMATCH in 10 categories
+
+========================================================================
+EN_CHUNK_09_categories.md  vs  EN_CHUNK_09_categories_edited.md
+========================================================================
+  Categories: original 10 -> edited 10
+  Category names: 0 of 10 edited (0%)
+  OK: editorial notes section present
+  WARN: only 0 category names changed
+  X ERROR: ITEM COUNT MISMATCH in 10 categories
+
+========================================================================
+EN_CHUNK_10_categories.md  vs  EN_CHUNK_10_categories_edited.md
+========================================================================
+  Categories: original 7 -> edited 7
+  Category names: 0 of 7 edited (0%)
+  WARN: no editorial notes section found
+  WARN: only 0 category names changed
+
+========================================================================
+EN_CHUNK_99_achievements.md  vs  EN_CHUNK_99_achievements_edited.md
+========================================================================
+  Achievements: original 18 -> edited 18
+  Achievements changed: 7/18
+    `culture_heart` name: 'At the heart of culture' -> 'At the heart of culture'
+    `explorer` name: 'Section connoisseur' -> 'Section connoisseur'
+    `first_friend` name: 'First subscription' -> 'First connection'
+    `first_referral` name: 'First subscriber' -> 'First subscriber'
+    `five_friends` name: 'Your circle' -> 'Your circle'
+    `hundred_tournaments` name: 'Chronicler' -> 'Chronicler'
+    `rare_taste` name: 'Rare taste' -> 'Rare taste'
+  WARN: no editorial notes section found
+
+========================================================================
+TOTAL: 4 errors / 12 warnings

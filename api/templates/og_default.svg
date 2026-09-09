@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF6F0"/>
+      <stop offset="1" stop-color="#F0E9DD"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0.05 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" filter="url(#grain)" opacity="0.55"/>
+
+  <!-- Wordmark — large italic serif, the brand signature -->
+  <text x="600" y="270" font-family="DejaVu Serif, Georgia, serif" font-style="italic" font-weight="600" font-size="140" fill="#1A1F36" text-anchor="middle" letter-spacing="-3">tappetite</text>
+
+  <!-- Accent stripe under wordmark -->
+  <line x1="500" y1="305" x2="700" y2="305" stroke="#B5532E" stroke-width="3"/>
+
+  <!-- Tagline -->
+  <text x="600" y="390" font-family="DejaVu Serif, Georgia, serif" font-style="italic" font-size="36" fill="#4A4035" text-anchor="middle">турниры выбора. портрет вкуса.</text>
+
+  <!-- Footer: domain -->
+  <text x="600" y="555" font-family="DejaVu Sans Mono, JetBrains Mono, monospace" font-size="22" letter-spacing="5" fill="#8A7A6A" text-anchor="middle">isverifiedby.me</text>
+</svg>

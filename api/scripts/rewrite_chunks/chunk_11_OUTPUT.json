@@ -1,0 +1,152 @@
+[
+  {
+    "key": "digital_red_flag::Минимализм без эмоций",
+    "new_p1_ru": "Когда вместо живого ответа прилетает крошка смысла, ты сразу считываешь холод. Не драматизируешь — просто видишь, где тебя держат на минимуме.",
+    "new_p1_en": "When a real reply arrives as a tiny crumb of meaning, you feel the chill fast. You’re not dramatic — you just notice when someone keeps you on minimum."
+  },
+  {
+    "key": "digital_red_flag::Голос вместо текста",
+    "new_p1_ru": "",
+    "new_p1_en": "When someone chooses their convenience over your attention, the format stops feeling like contact. It turns into homework you never agreed to take."
+  },
+  {
+    "key": "digital_red_flag::Спам коротких",
+    "new_p1_ru": "Когда экран дёргается от мелких обрывков, ты быстро устаёшь. Для тебя переписка — общее пространство, а не место для чужого внутреннего шума.",
+    "new_p1_en": ""
+  },
+  {
+    "key": "digital_red_flag::Пассивная агрессия",
+    "new_p1_ru": "Недовольство иногда звучит не словами, а паузами, холодом и слишком ровным тоном. Ты это слышишь сразу — и не любишь угадывать настроение по крошкам.",
+    "new_p1_en": "Displeasure doesn’t always speak in words. Sometimes it shows up as pauses, chill, and a tone too flat to be accidental — and you hear it."
+  },
+  {
+    "key": "digital_red_flag::Нарушение приватности",
+    "new_p1_ru": "Личная переписка для тебя не реквизит и не материал для чужих обсуждений. Если человек выносит ваше наружу, доверие трескается сразу.",
+    "new_p1_en": "Private messages are not props or material for someone else’s audience. Once a person carries your shared space outside, trust cracks fast."
+  },
+  {
+    "key": "digital_red_flag::Странное поведение в чате",
+    "new_p1_ru": "Когда человек то исчезает, то зависает между фразами, то уходит от прямого ответа, ты видишь не загадку, а тревожный стиль общения.",
+    "new_p1_en": "When someone vanishes, hovers between phrases, then slips away from a direct reply, you don’t see mystery. You see an anxious way to communicate."
+  },
+  {
+    "key": "your_creator_type::Влогер жизни",
+    "new_p1_ru": "Камера для тебя не про образ эксперта, а про присутствие. Ты показываешь день, маршрут, мелочи — и именно в этом люди узнают тебя.",
+    "new_p1_en": "For you, the camera isn’t about looking like an expert. It’s about presence: the day, the route, the small details where people recognize you."
+  },
+  {
+    "key": "your_creator_type::Юмор и тренды",
+    "new_p1_ru": "Ты ловишь шутку раньше, чем она становится общей. Тебе важны скорость, реакция и тот момент, когда весь интернет вдруг говорит на твоём языке.",
+    "new_p1_en": "You catch the joke before it becomes everyone’s joke. Speed, reaction, that moment when the whole internet suddenly speaks your language — that’s yours."
+  },
+  {
+    "key": "your_creator_type::Эстетический",
+    "new_p1_ru": "Кадр для тебя начинается до кнопки записи. Свет, линия, пауза, предмет на краю — всё должно лечь так, будто случайность тоже была продумана.",
+    "new_p1_en": "For you, a frame begins before the record button. Light, line, pause, an object at the edge — even the accident has to look intentional."
+  },
+  {
+    "key": "your_creator_type::Сторителлер",
+    "new_p1_ru": "Ты не складываешь факты в ряд — ты ведёшь человека через них. Начало, поворот, напряжение, финальная мысль: тебе важна форма пути.",
+    "new_p1_en": "You don’t line facts up in a row — you lead people through them. Opening, turn, tension, final thought: the shape of the journey matters to you."
+  },
+  {
+    "key": "your_creator_type::Гейминг и стримы",
+    "new_p1_ru": "Игра для тебя не заканчивается на экране. Вокруг неё появляются голос, реакция, зрители, свои шутки — и обычный матч становится событием.",
+    "new_p1_en": "For you, the game doesn’t end on the screen. Voice, reactions, viewers, inside jokes gather around it — and a normal match becomes an event."
+  },
+  {
+    "key": "your_creator_type::Арт и творчество",
+    "new_p1_ru": "Ты превращаешь повседневность в визуальный язык. Рисунок, блюдо, комната или жест — всё может стать работой, если в нём есть твой взгляд.",
+    "new_p1_en": "You turn everyday life into a visual language. A drawing, a dish, a room, a gesture — anything can become work if your eye is inside it."
+  },
+  {
+    "key": "your_mood_color::Глубокая тишина",
+    "new_p1_ru": "Твоя палитра сейчас уходит в глубину. Не хочется лишнего шума, резких вспышек и объяснений — только собранность, воздух и ровный внутренний ритм.",
+    "new_p1_en": "Your palette is moving inward now. No extra noise, sharp flashes, or explanations — just focus, air, and a steady rhythm under the surface."
+  },
+  {
+    "key": "your_mood_color::Энергия движения",
+    "new_p1_ru": "Внутри сейчас много искры. Хочется начинать, отвечать, идти, говорить первым — будто день сам подталкивает тебя к действию.",
+    "new_p1_en": "There’s a lot of spark in you now. You want to start, reply, move, speak first — as if the day itself is pushing you into action."
+  },
+  {
+    "key": "your_mood_color::Сила тишины",
+    "new_p1_ru": "Ты выбираешь сдержанность как броню. Не потому что нечего чувствовать, а потому что не каждое чувство обязано выходить наружу.",
+    "new_p1_en": "You choose restraint like armor. Not because there is nothing to feel, but because not every feeling has to be performed for the outside world."
+  },
+  {
+    "key": "your_mood_color::Тёплая ностальгия",
+    "new_p1_ru": "В тебе сейчас тихая осень: мягкая память, зрелое тепло, немного грусти без провала. Не драма — просто настроение, которое хочется беречь.",
+    "new_p1_en": "There’s a quiet autumn in you now: soft memory, mature warmth, a little sadness without falling through. Not drama — just a mood to protect."
+  },
+  {
+    "key": "your_mood_color::Мечтательность",
+    "new_p1_ru": "Мысли уходят в сторону от текущего момента. Ты вроде здесь, но часть тебя уже строит другой мир — мягкий, странный и чуть недосягаемый.",
+    "new_p1_en": "Your thoughts drift away from the present moment. You’re here, but part of you is already building another world — soft, strange, slightly out of reach."
+  },
+  {
+    "key": "your_mood_color::Землистое",
+    "new_p1_ru": "Тебя тянет к вещам, которые можно потрогать: ткани, руки, еда, земля, порядок. Сейчас важнее не идея в воздухе, а опора под ногами.",
+    "new_p1_en": "You’re drawn to things you can touch: fabric, hands, food, earth, order. Right now the idea in the air matters less than ground underfoot."
+  },
+  {
+    "key": "your_avatar_style::Открытое лицо",
+    "new_p1_ru": "На аватарке ты не ставишь маску между собой и миром. Пусть видно, кто говорит: для тебя открытость — не риск, а нормальный способ быть онлайн.",
+    "new_p1_en": "On your avatar, you don’t place a mask between yourself and the world. Let people see who’s speaking: openness feels normal to you online."
+  },
+  {
+    "key": "your_avatar_style::Загадка и анонимность",
+    "new_p1_ru": "Ты оставляешь между собой и экраном расстояние. Не всё личное должно быть на витрине; иногда лучший образ — тот, который не раскрывает тебя полностью.",
+    "new_p1_en": "You keep a distance between yourself and the screen. Not everything personal belongs in the window; sometimes the best image doesn’t reveal you fully."
+  },
+  {
+    "key": "your_avatar_style::Лица замены",
+    "new_p1_ru": "Вместо прямого лица ты выбираешь образ, который точнее передаёт внутреннее. Это не побег, а попытка показать себя языком символов.",
+    "new_p1_en": "Instead of a direct face, you choose an image that feels more internally true. It isn’t escape — it’s showing yourself in the language of symbols."
+  },
+  {
+    "key": "your_avatar_style::Эстетика без лица",
+    "new_p1_ru": "Твоё изображение больше похоже на настроение, чем на документ. Атмосфера, свет, место или знак говорят за тебя мягче и точнее, чем случайное фото.",
+    "new_p1_en": "Your image feels more like a mood than a document. Atmosphere, light, place, or symbol can speak for you more softly than a random photo."
+  },
+  {
+    "key": "your_background::Город ночью",
+    "new_p1_ru": "После полуночи мегаполис становится твоим фоном. В нём меньше чужих требований, больше огней и то редкое чувство, что можно быть никем и собой.",
+    "new_p1_en": "After midnight, the metropolis becomes your backdrop. Fewer demands, more lights, and that rare feeling that you can be nobody and yourself at once."
+  },
+  {
+    "key": "your_background::Природа",
+    "new_p1_ru": "Тебя возвращает к себе большой воздух. Там, где нет витрин и расписаний, тело наконец выдыхает, а мысли перестают толкаться локтями.",
+    "new_p1_en": "Big open air brings you back to yourself. Where there are no displays or schedules, the body exhales and thoughts stop elbowing each other."
+  },
+  {
+    "key": "your_background::Тихий уголок",
+    "new_p1_ru": "Тебе нужна тишина с мягким фоном: не вакуум, а спокойное место, где жизнь шуршит рядом и не мешает думать своими мыслями.",
+    "new_p1_en": "You need quiet with a soft background: not a vacuum, but a calm place where life rustles nearby and doesn’t interrupt your own thoughts."
+  },
+  {
+    "key": "your_background::Транзит и движение",
+    "new_p1_ru": "Тебя цепляет не пункт назначения, а промежуток между ними. В дороге легче думать, менять кожу и чувствовать, что жизнь ещё не застыла.",
+    "new_p1_en": "What pulls you isn’t the destination, but the space between places. In motion, it’s easier to think, shed skin, and feel life hasn’t frozen yet."
+  },
+  {
+    "key": "your_background::Творчество",
+    "new_p1_ru": "Идеи приходят не за любым столом. Тебе нужно пространство, где воздух уже намекает на работу — и рука сама тянется что-то собрать.",
+    "new_p1_en": "Ideas don’t arrive at just any desk. You need a space where the air already hints at making — and your hand starts reaching to build something."
+  },
+  {
+    "key": "your_background::Ночь и одиночество",
+    "new_p1_ru": "После полуночи мир наконец снижает громкость. В этой паузе ты слышишь себя яснее, будто день был чужим, а ночь возвращает тебе право на себя.",
+    "new_p1_en": "After midnight, the world finally lowers its volume. In that pause you hear yourself clearer, as if day belonged to others and night gives you back."
+  },
+  {
+    "key": "your_stories_style::Минималист",
+    "new_p1_ru": "В сторис ты появляешься редко и без суеты. Не каждый момент просится наружу; иногда лучше прожить его полностью, а не упаковать в публикацию.",
+    "new_p1_en": "In stories, you appear rarely and without fuss. Not every moment wants to go outside; sometimes it’s better to live it fully than package it."
+  },
+  {
+    "key": "your_stories_style::Хаотик",
+    "new_p1_ru": "Твои сторис похожи на живую ленту дня: смешное, случайное, вкусное, странное, личное — всё летит туда, пока настроение горячее.",
+    "new_p1_en": "Your stories feel like a live feed of the day: funny, random, tasty, strange, personal — everything flies in while the mood is still hot."
+  }
+]

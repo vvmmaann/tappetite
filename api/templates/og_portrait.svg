@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF6F0"/>
+      <stop offset="1" stop-color="#F0E9DD"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0.05 0"/>
+    </filter>
+  </defs>
+
+  <!-- Paper background with grain -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" filter="url(#grain)" opacity="0.55"/>
+
+  <!-- HEADER: brand + section -->
+  <text x="60" y="68" font-family="DejaVu Sans Mono, JetBrains Mono, monospace" font-size="20" letter-spacing="5" fill="#8A7A6A">TAPPETITE · ПРОЧТЕНИЕ</text>
+  <line x1="60" y1="92" x2="640" y2="92" stroke="#C9BBA8" stroke-width="1"/>
+
+  <!-- AUTHOR -->
+  <text x="60" y="148" font-family="DejaVu Sans Mono, JetBrains Mono, monospace" font-size="22" letter-spacing="4" fill="#B5532E">AI-ПОРТРЕТ ИГРОКА</text>
+  <text x="60" y="218" font-family="DejaVu Serif, Georgia, serif" font-style="italic" font-weight="500" font-size="62" fill="#1A1F36" letter-spacing="-2">@{{NICKNAME}}</text>
+
+  <!-- DIVIDER -->
+  <line x1="60" y1="282" x2="1140" y2="282" stroke="#C9BBA8" stroke-width="1"/>
+
+  <!-- HEADLINE (split into up-to-3 lines by renderer; tspan x="60" resets to left margin) -->
+  <text x="60" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, monospace" font-size="18" letter-spacing="4" fill="#8A7A6A">ГЛАВНЫЙ ОБРАЗ</text>
+  <text font-family="DejaVu Serif, Georgia, serif" font-style="italic" font-weight="500" fill="#B5532E" letter-spacing="-1" font-size="{{HEADLINE_FONT_SIZE}}">
+    <tspan x="60" y="395">{{HEADLINE_L1}}</tspan>
+    <tspan x="60" dy="52">{{HEADLINE_L2}}</tspan>
+    <tspan x="60" dy="52">{{HEADLINE_L3}}</tspan>
+  </text>
+
+  <!-- FOOTER: domain + CTA -->
+  <line x1="60" y1="555" x2="1140" y2="555" stroke="#C9BBA8" stroke-width="1"/>
+  <text x="60" y="595" font-family="DejaVu Sans Mono, JetBrains Mono, monospace" font-size="20" letter-spacing="3" fill="#8A7A6A">isverifiedby.me</text>
+  <text x="1140" y="595" font-family="DejaVu Sans Mono, JetBrains Mono, monospace" font-size="22" letter-spacing="4" fill="#B5532E" text-anchor="end">→ СОБЕРИ СВОЁ</text>
+</svg>
